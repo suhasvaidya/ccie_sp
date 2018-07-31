@@ -1,0 +1,249 @@
+
+CSR6#
+CSR6#
+CSR6#
+CSR6#
+CSR6#sh
+CSR6#show 
+% Type "show ?" for a list of subcommands
+CSR6#
+CSR6#
+CSR6#terminal length 0
+CSR6#more system:running-config
+!
+! Last configuration change at 10:49:40 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR6
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 600 699
+mpls ldp session protection
+mpls ldp label
+ allocate global prefix-list LABELS
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 945V2JQGOFZ
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 6.6.6.6 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address 20.3.6.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.5.6.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet3
+ ip address 20.4.6.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet4
+ ip address 20.6.19.1 255.255.255.252
+ negotiation auto
+!
+router ospf 1
+ network 6.6.6.6 0.0.0.0 area 0
+ network 20.3.6.0 0.0.0.3 area 0
+ network 20.4.6.0 0.0.0.3 area 0
+ network 20.5.6.0 0.0.0.3 area 0
+ network 20.6.19.0 0.0.0.3 area 0
+ mpls ldp sync
+ mpls ldp autoconfig
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+ip prefix-list LABELS seq 10 permit 3.3.3.3/32
+ip prefix-list LABELS seq 15 permit 4.4.4.4/32
+ip prefix-list LABELS seq 20 permit 5.5.5.5/32
+ip prefix-list LABELS seq 25 permit 6.6.6.6/32
+ip prefix-list LABELS seq 30 permit 19.19.19.19/32
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR6#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR6 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+

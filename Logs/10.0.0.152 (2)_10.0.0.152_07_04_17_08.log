@@ -1,0 +1,1207 @@
+
+CSR3>en
+CSR3#
+CSR3#
+CSR3#sh
+CSR3#show mpl
+CSR3#show mpls inter
+CSR3#show mpls interfaces 
+Interface              IP            Tunnel   BGP Static Operational
+GigabitEthernet1       Yes (ldp)     No       No  No     Yes        
+GigabitEthernet3       Yes (ldp)     No       No  No     Yes        
+GigabitEthernet4       Yes (ldp)     No       No  No     Yes        
+CSR3#
+CSR3#conf 
+CSR3#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR3(config)#inter
+CSR3(config)#interface gi1
+CSR3(config-if)#no mo
+CSR3(config-if)#no mop 
+CSR3(config-if)#no mp  
+CSR3(config-if)#no mpls ip
+CSR3(config-if)#
+CSR3(config-if)#no mpls ip
+*Jul  4 08:59:29.909: %LDP-5-NBRCHG: LDP Neighbor 6.6.6.6:0 (3) is DOWN (LDP disabled on interface gi1
+CSR3(config-if)#interface gi3
+CSR3(config-if)#
+CSR3(config-if)#no mpls ip   
+CSR3(config-if)#
+CSR3(config-if)#interface gi3
+*Jul  4 08:59:35.526: %LDP-5-NBRCHG: LDP Neighbor 2.2.2.2:0 (2) is DOWN (LDP disabled on interface4
+CSR3(config-if)#
+CSR3(config-if)#no mpls ip   
+CSR3(config-if)#
+CSR3(config-if)#
+CSR3(config-if)#
+CSR3(config-if)#
+CSR3(config-if)#
+*Jul  4 08:59:38.979: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (1) is DOWN (LDP disabled on interface)
+CSR3(config-if)#
+CSR3(config-if)#
+CSR3(config-if)#
+CSR3(config-if)#router os
+CSR3(config-if)#router ospf 1
+CSR3(config-router)#
+CSR3(config-router)#mpl
+CSR3(config-router)#mpls ld
+CSR3(config-router)#mpls ldp au
+CSR3(config-router)#mpls ldp autoconfig 
+CSR3(config-router)#end
+CSR3#
+CSR3#
+CSR3#wr
+*Jul  4 08:59:49.205: %LDP-5-NBRCHG: LDP Neighbor 2.2.2.2:0 (1) is UP
+*Jul  4 08:59:49.224: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (2) is UP
+*Jul  4 08:59:49.817: %SYS-5-CONFIG_I: Configured from console by console
+Building configuration...
+[OK]
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+*Jul  4 08:59:53.519: %LDP-5-NBRCHG: LDP Neighbor 6.6.6.6:0 (3) is UP
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+*Jul  4 09:00:27.396: %LDP-5-NBRCHG: LDP Neighbor 6.6.6.6:0 (3) is DOWN (Received error notification from peer: Holddown time expired)
+*Jul  4 09:00:50.135: %LDP-5-NBRCHG: LDP Neighbor 6.6.6.6:0 (3) is UP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR3 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+CSR3>
+CSR3>
+CSR3>enable
+CSR3#terminal length 0
+CSR3#more system:running-config
+!
+! Last configuration change at 08:59:49 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR3
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 300 399
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9Z9HDVKGAI0
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 3.3.3.3 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address 20.3.6.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet3
+ ip address 20.2.3.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet4
+ ip address 20.3.4.1 255.255.255.252
+ negotiation auto
+!
+router ospf 1
+ network 3.3.3.3 0.0.0.0 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.3.4.0 0.0.0.3 area 0
+ network 20.3.6.0 0.0.0.3 area 0
+ mpls ldp autoconfig
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR3#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR3 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+CSR3>
+CSR3>
+CSR3>enable
+CSR3#terminal length 0
+CSR3#more system:running-config
+!
+! Last configuration change at 08:59:49 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR3
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 300 399
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9Z9HDVKGAI0
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 3.3.3.3 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address 20.3.6.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet3
+ ip address 20.2.3.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet4
+ ip address 20.3.4.1 255.255.255.252
+ negotiation auto
+!
+router ospf 1
+ network 3.3.3.3 0.0.0.0 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.3.4.0 0.0.0.3 area 0
+ network 20.3.6.0 0.0.0.3 area 0
+ mpls ldp autoconfig
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR3#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR3 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+CSR3>
+CSR3>
+CSR3>en
+CSR3#
+CSR3#
+CSR3#wr
+Building configuration...
+[OK]
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#terminal length 0
+CSR3#more system:running-config
+!
+! Last configuration change at 08:59:49 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR3
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 300 399
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9Z9HDVKGAI0
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 3.3.3.3 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address 20.3.6.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet3
+ ip address 20.2.3.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet4
+ ip address 20.3.4.1 255.255.255.252
+ negotiation auto
+!
+router ospf 1
+ network 3.3.3.3 0.0.0.0 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.3.4.0 0.0.0.3 area 0
+ network 20.3.6.0 0.0.0.3 area 0
+ mpls ldp autoconfig
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR3#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR3 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+CSR3>
+CSR3>end
+% Bad IP address or host name% Unknown command or computer name, or unable to find computer address
+CSR3>
+CSR3>
+CSR3>
+CSR3>
+CSR3>
+CSR3>
+CSR3>
+CSR3>
+CSR3>
+CSR3>
+CSR3>
+CSR3>en
+CSR3#
+CSR3#
+CSR3#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR3(config)#
+CSR3(config)#
+CSR3(config)#ip prefix-list LABELS permit 2.2.2.2/32
+CSR3(config)#ip prefix-list LABELS permit 3.3.3.3/32
+CSR3(config)#ip prefix-list LABELS permit 4.4.4.4/32
+CSR3(config)#ip prefix-list LABELS permit 5.5.5.5/32
+CSR3(config)#ip prefix-list LABELS permit 6.6.6.6/32
+CSR3(config)#ip prefix-list LABELS permit 19.19.19.19/32
+CSR3(config)#
+CSR3(config)#
+CSR3(config)#
+CSR3(config)#end
+CSR3#
+CSR3#
+CSR3#
+*Jul  4 09:29:07.752: %SYS-5-CONFIG_I: Configured from console by console
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#    
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR3(config)# mpls ldp label
+CSR3(config-ldp-lbl)#      allocate global prefix-list LABELS
+CSR3(config-ldp-lbl)#
+CSR3(config-ldp-lbl)#
+CSR3(config-ldp-lbl)#
+CSR3(config-ldp-lbl)#
+CSR3(config-ldp-lbl)#
+CSR3(config-ldp-lbl)#end
+CSR3#
+CSR3#sh
+CSR3#show 
+*Jul  4 09:30:54.557: %SYS-5-CONFIG_I: Configured from console by consolempl
+CSR3#show mpls for
+CSR3#show mpls forwarding-table 
+Local      Outgoing   Prefix           Bytes Label   Outgoing   Next Hop    
+Label      Label      or Tunnel Id     Switched      interface              
+300        Pop Label  4.4.4.4/32       0             Gi4        20.3.4.2    
+302        400        5.5.5.5/32       0             Gi4        20.3.4.2    
+           607        5.5.5.5/32       0             Gi1        20.3.6.2    
+305        609        19.19.19.19/32   180           Gi1        20.3.6.2    
+308        Pop Label  6.6.6.6/32       0             Gi1        20.3.6.2    
+309        Pop Label  2.2.2.2/32       0             Gi3        20.2.3.1    
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#wr
+Building configuration...
+[OK]
+CSR3#
+CSR3#
+CSR3#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR3 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+CSR3>
+CSR3>
+CSR3>enable
+CSR3#terminal length 0
+CSR3#more system:running-config
+!
+! Last configuration change at 09:30:54 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR3
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 300 399
+mpls ldp label
+ allocate global prefix-list LABELS
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9Z9HDVKGAI0
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 3.3.3.3 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address 20.3.6.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet3
+ ip address 20.2.3.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet4
+ ip address 20.3.4.1 255.255.255.252
+ negotiation auto
+!
+router ospf 1
+ network 3.3.3.3 0.0.0.0 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.3.4.0 0.0.0.3 area 0
+ network 20.3.6.0 0.0.0.3 area 0
+ mpls ldp autoconfig
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+ip prefix-list LABELS seq 10 permit 3.3.3.3/32
+ip prefix-list LABELS seq 15 permit 4.4.4.4/32
+ip prefix-list LABELS seq 20 permit 5.5.5.5/32
+ip prefix-list LABELS seq 25 permit 6.6.6.6/32
+ip prefix-list LABELS seq 30 permit 19.19.19.19/32
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR3#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR3 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+

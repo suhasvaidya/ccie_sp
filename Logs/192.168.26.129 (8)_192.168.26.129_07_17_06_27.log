@@ -1,0 +1,187 @@
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh run router bgp 
+Tue Jul 10 15:56:00.614 UTC
+router bgp 100
+ address-family ipv4 unicast
+ !
+ address-family vpnv4 unicast
+ !
+ neighbor 2.2.2.2
+  remote-as 100
+  update-source Loopback0
+  address-family ipv4 unicast
+   next-hop-self
+  !
+  address-family vpnv4 unicast
+  !
+ !
+ vrf VPN_A
+  rd 100:1
+  address-family ipv4 unicast
+   redistribute ospf 100
+  !
+ !
+!
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh run router ospf
+Tue Jul 10 15:59:56.018 UTC
+router ospf 1
+ mpls ldp sync
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+ !
+!
+router ospf 100
+ vrf VPN_A
+  domain-id type 0005 value 000000640200
+  redistribute bgp 100
+  area 0
+   interface GigabitEthernet0/0/0/2
+   !
+  !
+ !
+!
+
+RP/0/0/CPU0:XR1#conf t 
+Tue Jul 10 16:00:07.357 UTC
+RP/0/0/CPU0:XR1(config)#no router ospf 100
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#router bgp 100
+RP/0/0/CPU0:XR1(config-bgp)#vrf VPN_A
+RP/0/0/CPU0:XR1(config-bgp-vrf)#neighbor 10.19.20.2 remote-as 1
+RP/0/0/CPU0:XR1(config-bgp-vrf)#no redistribute ospf 100
+                                    ^
+% Invalid input detected at '^' marker.
+RP/0/0/CPU0:XR1(config-bgp-vrf)#                        
+RP/0/0/CPU0:XR1(config-bgp-vrf)#
+RP/0/0/CPU0:XR1(config-bgp-vrf)#
+RP/0/0/CPU0:XR1(config-bgp-vrf)#commit
+Tue Jul 10 16:01:08.153 UTC
+RP/0/0/CPU0:XR1(config-bgp-vrf)#end
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#conf t            
+Tue Jul 10 16:01:28.492 UTC
+RP/0/0/CPU0:XR1(config)#router bgp 100
+RP/0/0/CPU0:XR1(config-bgp)#vrf VPN_A
+RP/0/0/CPU0:XR1(config-bgp-vrf)#neighbor 10.19.20.2 ?   
+  address-family          Enter Address Family command mode
+  advertisement-interval  Minimum interval between sending BGP routing updates
+  bfd                     Configure BFD parameters
+  bmp-activate            Enable BMP logging for this neighbor
+  capability              Advertise capability to the peer
+  description             Neighbor specific description
+  dmz-link-bandwidth      Propagate the DMZ link bandwidth
+  dscp                    Set IP DSCP (DiffServ CodePoint)
+  ebgp-multihop           Allow EBGP neighbors not on directly connected networks
+  egress-engineering      Enable egress peer engineering for this neighbor
+  enforce-first-as        Enforce the first AS for EBGP routes
+  graceful-maintenance    Attributes for Graceful Maintenance. This will cause
+                          neighbors to de-prefer routes from this router and
+                          choose alternates. This allows the router to be
+                          brought in or out of service gracefully.
+  graceful-restart        Enable graceful restart support for this neighbor
+  ignore-connected-check  Bypass the directly connected nexthop check for single-hop eBGP peering
+  internal-vpn-client     Preserve iBGP CE neighbor path in ATTR_SET across VPN core
+  keychain                Set keychain based authentication
+  local                   Configure local parameter
+  local-as                Specify local AS number
+  log                     Logging update messages per neighbor
+  password                Set a password
+  precedence              Set precedence
+  receive-buffer-size     Set socket and BGP receive buffer size
+  remote-as               Set remote AS
+  send-buffer-size        Set socket and BGP send buffer size
+  session-open-mode       Establish BGP session using this TCP open mode
+  shutdown                Administratively shut down this neighbor
+  tcp                     TCP session configuration commands
+  timers                  BGP per neighbor timers
+  ttl-security            Enable EBGP TTL security
+  update                  BGP Update configuration
+  update-source           Source of routing updates
+  use                     Inherit configuration from a group
+  <cr>                    
+RP/0/0/CPU0:XR1(config-bgp-vrf)#neighbor 10.19.20.2 ad
+address-family  advertisement-interval  
+RP/0/0/CPU0:XR1(config-bgp-vrf)#neighbor 10.19.20.2 ad
+address-family  advertisement-interval  
+RP/0/0/CPU0:XR1(config-bgp-vrf)#neighbor 10.19.20.2 address-family ?
+  ipv4  IPv4 Address Family
+  ipv6  IPv6 Address Family
+RP/0/0/CPU0:XR1(config-bgp-vrf)#$family ipv4 unicast ?dress-family ipv4 un
+  advertise                     Per neighbor advertisement options
+  aigp                          Enable AIGP for this neighbor 
+  allowas-in                    Allow as-path with my AS present in it
+  as-override                   Override matching AS-number while sending update
+  capability                    Advertise capability to the peer
+  default-originate             Originate default route to this neighbor
+  long-lived-graceful-restart   Enable long lived graceful restart support
+  maximum-prefix                Maximum number of prefixes to accept from this peer
+  multipath                     Paths from this neighbor is eligible for multipath
+  next-hop-self                 Disable the next hop calculation for this neighbor
+  next-hop-unchanged            Do not overwrite next hop before advertising to eBGP peers
+  optimal-route-reflection      Configure optiomal-route-reflection for this neighbor
+  orf                           Specify ORF and inbound filtering criteria
+  remove-private-AS             Remove private AS number from outbound updates
+  route-policy                  Apply route policy to neighbor
+  route-reflector-client        Configure a neighbor as Route Reflector client
+  send-community-ebgp           Send community attribute to this external neighbor
+  send-community-gshut-ebgp     Allow the g-shut community to be sent to this external neighbor
+  send-extended-community-ebgp  Send extended community attribute to this external neighbor
+  site-of-origin                Site-of-Origin extended community associated with the neighbor
+  soft-reconfiguration          Per neighbor soft reconfiguration
+  use                           Inherit configuration for this address-family from a group
+  weight                        Set default weight for routes from this neighbor
+  <cr>                          
+RP/0/0/CPU0:XR1(config-bgp-vrf)#neighbor 10.19.20.2 address-family ipv4 unicas$
+RP/0/0/CPU0:XR1(config-bgp-vrf-nbr-af)#commit
+Tue Jul 10 16:02:06.779 UTC
+RP/0/0/CPU0:XR1(config-bgp-vrf-nbr-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-nbr-af)#end

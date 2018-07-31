@@ -1,0 +1,102 @@
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh run router eigrp
+Tue Jul 10 10:50:36.419 UTC
+router eigrp 1
+ address-family ipv4
+  redistribute bgp 100
+  interface GigabitEthernet0/0/0/2
+  !
+ !
+!
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#conf t
+Tue Jul 10 10:50:59.068 UTC
+RP/0/0/CPU0:XR1(config)#no router eigrp 
+% Incomplete command.
+RP/0/0/CPU0:XR1(config)#no router eigrp 1
+RP/0/0/CPU0:XR1(config)#commit 
+Tue Jul 10 10:51:11.687 UTC
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#router eigrp 1
+RP/0/0/CPU0:XR1(config-eigrp)#vrf VPN_A
+RP/0/0/CPU0:XR1(config-eigrp-vrf)#?
+  address-family      EIGRP VRF address-family configuration submode
+  apply-group         Apply configuration from a group
+  apply-group-append  Append apply-group configuration from a group
+  apply-group-remove  Remove a group from apply-group configuration
+  clear               Clear the uncommitted configuration
+  commit              Commit the configuration changes to running
+  describe            Describe a command without taking real actions
+  do                  Run an exec command
+  exclude-group       Exclude apply-group configuration from a group
+  exclude-item        Negate a command or set its defaults
+  exit                Exit from this submode
+  no                  Negate a command or set its defaults
+  pwd                 Commands used to reach current submode
+  root                Exit to the global configuration mode
+  show                Show contents of configuration
+RP/0/0/CPU0:XR1(config-eigrp-vrf)#address-family ipv4 ?
+  auto-summary           Auto summarisation
+  autonomous-system      Set the autonomous system of VRF
+  default-information    Handling of default route
+  default-metric         Set metric of redistributed routes
+  distance               Set distance for EIGRP routes
+  interface              EIGRP interface configuration submode
+  log-neighbor-changes   Enable/Disable EIGRP neighbor logging
+  log-neighbor-warnings  Enable/Disable EIGRP neighbor warnings
+  maximum-paths          Maximum paths
+  maximum-prefix         Maximum number of IP prefixes acceptable in aggregate
+  metric                 Modify EIGRP routing metrics and parameters
+  neighbor               Neighbor prefix limits configuration
+  nsf                    Address family specific NSF related configuration
+  passive-interface      Suppress routing updates on all interfaces
+  redistribute           Redistribute another protocol
+  route-policy           Configure inbound/outbound policies
+  router-id              Set router ID
+  stub                   EIGRP stub
+  timers                 Configure EIGRP timers
+  variance               Control load balancing variance
+  <cr>                   
+RP/0/0/CPU0:XR1(config-eigrp-vrf)#address-family ipv4 
+RP/0/0/CPU0:XR1(config-eigrp-vrf-af)#interface gigabitEthernet 0/0/0/2
+RP/0/0/CPU0:XR1(config-eigrp-vrf-af-if)#commit 
+Tue Jul 10 10:51:55.214 UTC
+RP/0/0/CPU0:XR1(config-eigrp-vrf-af-if)#
+RP/0/0/CPU0:XR1(config-eigrp-vrf-af-if)#
+RP/0/0/CPU0:XR1(config-eigrp-vrf-af-if)#
+RP/0/0/CPU0:XR1(config-eigrp-vrf-af-if)#

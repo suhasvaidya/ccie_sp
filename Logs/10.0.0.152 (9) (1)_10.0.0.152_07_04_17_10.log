@@ -1,0 +1,972 @@
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR1 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: 
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR1#terminal length 0
+Wed Jul  4 09:12:06.470 UTC
+RP/0/0/CPU0:XR1#configure terminal
+Wed Jul  4 09:12:06.630 UTC
+RP/0/0/CPU0:XR1(config)#no logging console
+RP/0/0/CPU0:XR1(config)#commit
+Wed Jul  4 09:12:07.060 UTC
+RP/0/0/CPU0:XR1(config)#exit
+RP/0/0/CPU0:XR1#show running-config
+Wed Jul  4 09:12:07.400 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 08:20:57 2018 by cisco
+!
+hostname XR1
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/1
+ shutdown
+!
+interface GigabitEthernet0/0/0/2
+ shutdown
+!
+end
+
+RP/0/0/CPU0:XR1#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR1 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: 
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR1#terminal length 0
+Wed Jul  4 09:14:25.011 UTC
+RP/0/0/CPU0:XR1#configure terminal
+Wed Jul  4 09:14:25.160 UTC
+RP/0/0/CPU0:XR1(config)#no logging console
+RP/0/0/CPU0:XR1(config)#commit
+Wed Jul  4 09:14:25.560 UTC
+RP/0/0/CPU0:XR1(config)#exit
+RP/0/0/CPU0:XR1#show running-config
+Wed Jul  4 09:14:25.870 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 08:20:57 2018 by cisco
+!
+hostname XR1
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/1
+ shutdown
+!
+interface GigabitEthernet0/0/0/2
+ shutdown
+!
+end
+
+RP/0/0/CPU0:XR1#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR1 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: 
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR1#terminal length 0
+Wed Jul  4 09:19:57.918 UTC
+RP/0/0/CPU0:XR1#configure terminal
+Wed Jul  4 09:19:58.108 UTC
+RP/0/0/CPU0:XR1(config)#no logging console
+RP/0/0/CPU0:XR1(config)#commit
+Wed Jul  4 09:19:58.548 UTC
+RP/0/0/CPU0:XR1(config)#exit
+RP/0/0/CPU0:XR1#show running-config
+Wed Jul  4 09:19:58.848 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 08:20:57 2018 by cisco
+!
+hostname XR1
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/1
+ shutdown
+!
+interface GigabitEthernet0/0/0/2
+ shutdown
+!
+end
+
+RP/0/0/CPU0:XR1#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR1 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: 
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR1#terminal length 0
+Wed Jul  4 09:46:39.738 UTC
+RP/0/0/CPU0:XR1#configure terminal
+Wed Jul  4 09:46:39.928 UTC
+RP/0/0/CPU0:XR1(config)#no logging console
+RP/0/0/CPU0:XR1(config)#commit
+Wed Jul  4 09:46:40.348 UTC
+RP/0/0/CPU0:XR1(config)#exit
+RP/0/0/CPU0:XR1#show running-config
+Wed Jul  4 09:46:40.698 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 08:20:57 2018 by cisco
+!
+hostname XR1
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/1
+ shutdown
+!
+interface GigabitEthernet0/0/0/2
+ shutdown
+!
+end
+
+RP/0/0/CPU0:XR1#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR1 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+

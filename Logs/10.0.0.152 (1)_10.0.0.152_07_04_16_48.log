@@ -1,0 +1,1162 @@
+
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#traceroute 19.19.19.19
+Type escape sequence to abort.
+Tracing the route to 19.19.19.19
+VRF info: (vrf in name/id, vrf out name/id)
+  1 20.2.4.2 [MPLS: Label 406 Exp 0] 16 msec
+    20.2.3.2 [MPLS: Label 310 Exp 0] 11 msec
+    20.2.4.2 [MPLS: Label 406 Exp 0] 14 msec
+  2 20.3.6.2 [MPLS: Label 609 Exp 0] 8 msec
+    20.4.6.2 [MPLS: Label 609 Exp 0] 13 msec
+    20.3.6.2 [MPLS: Label 609 Exp 0] 9 msec
+  3 20.6.19.2 17 msec 16 msec * 
+CSR2#
+CSR2#
+CSR2#
+*Jul  4 08:55:30.195: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (2) is DOWN (Received error notification from peer: Holddown time expired)
+*Jul  4 08:56:04.797: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (2) is UP
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh
+CSR2#show mpl
+CSR2#show mpls inter
+CSR2#show mpls interfaces 
+Interface              IP            Tunnel   BGP Static Operational
+GigabitEthernet2       Yes (ldp)     No       No  No     Yes        
+GigabitEthernet3       Yes (ldp)     No       No  No     Yes        
+CSR2#conf 
+CSR2#conf 
+Configuring from terminal, memory, or network [terminal]? t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#inter
+CSR2(config)#interface gi
+CSR2(config)#interface gigabitEthernet 2
+CSR2(config-if)#no mpl
+CSR2(config-if)#no mpls ip
+CSR2(config-if)#interface gigabitEthernet 2
+*Jul  4 08:56:36.318: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (2) is DOWN (LDP disabled on interface2
+CSR2(config-if)#interface gigabitEthernet 3
+CSR2(config-if)#no mpls ip                 
+CSR2(config-if)#
+CSR2(config-if)#
+*Jul  4 08:56:42.188: %LDP-5-NBRCHG: LDP Neighbor 3.3.3.3:0 (1) is DOWN (LDP disabled on interface)
+CSR2(config-if)#
+CSR2(config-if)#
+CSR2(config-if)#
+CSR2(config-if)#router os
+CSR2(config-if)#router osp
+CSR2(config-if)#router ospf
+CSR2(config-if)#router ospf 1
+CSR2(config-router)#
+CSR2(config-router)#mpl
+CSR2(config-router)#mpls ld
+CSR2(config-router)#mpls ldp au
+CSR2(config-router)#mpls ldp autoconfig 
+CSR2(config-router)#
+CSR2(config-router)#end
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+*Jul  4 08:56:54.519: %LDP-5-NBRCHG: LDP Neighbor 3.3.3.3:0 (1) is UP
+*Jul  4 08:56:54.533: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (2) is UP
+CSR2#
+CSR2#
+*Jul  4 08:56:55.640: %SYS-5-CONFIG_I: Configured from console by consolewr
+CSR2#write me
+CSR2#write memory 
+Building configuration...
+[OK]
+CSR2#
+CSR2#
+*Jul  4 08:59:35.942: %LDP-5-NBRCHG: LDP Neighbor 3.3.3.3:0 (1) is DOWN (Received error notification from peer: Holddown time expired)
+*Jul  4 08:59:49.627: %LDP-5-NBRCHG: LDP Neighbor 3.3.3.3:0 (1) is UP
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh
+CSR2#show mpl
+CSR2#show mpls fo
+CSR2#show mpls forwarding-table 
+Local      Outgoing   Prefix           Bytes Label   Outgoing   Next Hop    
+Label      Label      or Tunnel Id     Switched      interface              
+200        400        5.5.5.5/32       0             Gi2        20.2.4.2    
+201        308        6.6.6.6/32       0             Gi3        20.2.3.2    
+           401        6.6.6.6/32       0             Gi2        20.2.4.2    
+202        Pop Label  20.3.6.0/30      0             Gi3        20.2.3.2    
+203        Pop Label  20.4.5.0/30      0             Gi2        20.2.4.2    
+204        Pop Label  20.4.6.0/30      0             Gi2        20.2.4.2    
+205        303        20.5.6.0/30      0             Gi3        20.2.3.2    
+           403        20.5.6.0/30      0             Gi2        20.2.4.2    
+206        Pop Label  20.3.4.0/30      0             Gi3        20.2.3.2    
+           Pop Label  20.3.4.0/30      0             Gi2        20.2.4.2    
+207        Pop Label  4.4.4.4/32       0             Gi2        20.2.4.2    
+208        311        20.6.19.0/30     0             Gi3        20.2.3.2    
+           409        20.6.19.0/30     0             Gi2        20.2.4.2    
+209        305        19.19.19.19/32   0             Gi3        20.2.3.2    
+           406        19.19.19.19/32   0             Gi2        20.2.4.2    
+210        410        20.19.5.0/30     0             Gi2        20.2.4.2    
+211        Pop Label  3.3.3.3/32       0             Gi3        20.2.3.2    
+212        306        20.5.19.0/30     0             Gi3        20.2.3.2    
+           408        20.5.19.0/30     0             Gi2        20.2.4.2    
+CSR2# 
+CSR2#
+CSR2#
+CSR2#tra
+CSR2#traceroute 19.19.19.19 
+Type escape sequence to abort.
+Tracing the route to 19.19.19.19
+VRF info: (vrf in name/id, vrf out name/id)
+  1 20.2.3.2 [MPLS: Label 305 Exp 0] 15 msec
+    20.2.4.2 [MPLS: Label 406 Exp 0] 13 msec
+    20.2.3.2 [MPLS: Label 305 Exp 0] 14 msec
+  2 20.4.6.2 [MPLS: Label 609 Exp 0] 8 msec
+    20.3.6.2 [MPLS: Label 609 Exp 0] 12 msec
+    20.4.6.2 [MPLS: Label 609 Exp 0] 11 msec
+  3 20.6.19.2 17 msec 15 msec * 
+CSR2#
+CSR2#
+CSR2#
+CSR2#terminal length 0
+CSR2#more system:running-config
+!
+! Last configuration change at 08:56:55 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 200 299
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9S2KOPAUVOD
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+!
+interface Loopback10
+ no ip address
+!
+interface GigabitEthernet1
+ ip address 10.1.2.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.2.4.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet3
+ ip address 20.2.3.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+!
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp autoconfig
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR2#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR2 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+CSR2>
+CSR2>
+CSR2>enable
+CSR2#terminal length 0
+CSR2#more system:running-config
+!
+! Last configuration change at 08:56:55 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 200 299
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9S2KOPAUVOD
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+!
+interface Loopback10
+ no ip address
+!
+interface GigabitEthernet1
+ ip address 10.1.2.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.2.4.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet3
+ ip address 20.2.3.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+!
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp autoconfig
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR2#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR2 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+CSR2>
+CSR2>en
+CSR2#
+CSR2#wr
+Building configuration...
+[OK]
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#terminal length 0
+CSR2#more system:running-config
+!
+! Last configuration change at 08:56:55 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 200 299
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9S2KOPAUVOD
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+!
+interface Loopback10
+ no ip address
+!
+interface GigabitEthernet1
+ ip address 10.1.2.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.2.4.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet3
+ ip address 20.2.3.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+!
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp autoconfig
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR2#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR2 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+CSR2>
+CSR2>
+CSR2>en
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#ip prefix-list LABELS permit 2.2.2.2/32
+CSR2(config)#ip prefix-list LABELS permit 3.3.3.3/32
+CSR2(config)#ip prefix-list LABELS permit 4.4.4.4/32
+CSR2(config)#ip prefix-list LABELS permit 5.5.5.5/32
+CSR2(config)#ip prefix-list LABELS permit 6.6.6.6/32
+CSR2(config)#ip prefix-list LABELS permit 19.19.19.19/32
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#end
+CSR2#
+CSR2#
+CSR2#
+*Jul  4 09:29:44.444: %SYS-5-CONFIG_I: Configured from console by console
+CSR2#
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)# mpls ldp label
+CSR2(config-ldp-lbl)#      allocate global prefix-list LABELS
+CSR2(config-ldp-lbl)#
+CSR2(config-ldp-lbl)#
+CSR2(config-ldp-lbl)#
+CSR2(config-ldp-lbl)#end
+CSR2#
+CSR2#
+CSR2#
+*Jul  4 09:30:47.094: %SYS-5-CONFIG_I: Configured from console by consolesh
+CSR2#show mpl
+CSR2#show mpls fo
+CSR2#show mpls forwarding-table 
+Local      Outgoing   Prefix           Bytes Label   Outgoing   Next Hop    
+Label      Label      or Tunnel Id     Switched      interface              
+200        400        5.5.5.5/32       0             Gi2        20.2.4.2    
+201        308        6.6.6.6/32       0             Gi3        20.2.3.2    
+           401        6.6.6.6/32       0             Gi2        20.2.4.2    
+207        Pop Label  4.4.4.4/32       0             Gi2        20.2.4.2    
+209        305        19.19.19.19/32   0             Gi3        20.2.3.2    
+           406        19.19.19.19/32   0             Gi2        20.2.4.2    
+211        Pop Label  3.3.3.3/32       0             Gi3        20.2.3.2    
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#wr
+Building configuration...
+[OK]
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#terminal length 0
+CSR2#more system:running-config
+!
+! Last configuration change at 09:30:47 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 200 299
+mpls ldp label
+ allocate global prefix-list LABELS
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9S2KOPAUVOD
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+!
+interface Loopback10
+ no ip address
+!
+interface GigabitEthernet1
+ ip address 10.1.2.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.2.4.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet3
+ ip address 20.2.3.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+!
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp autoconfig
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+ip prefix-list LABELS seq 10 permit 3.3.3.3/32
+ip prefix-list LABELS seq 15 permit 4.4.4.4/32
+ip prefix-list LABELS seq 20 permit 5.5.5.5/32
+ip prefix-list LABELS seq 25 permit 6.6.6.6/32
+ip prefix-list LABELS seq 30 permit 19.19.19.19/32
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR2#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR2 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

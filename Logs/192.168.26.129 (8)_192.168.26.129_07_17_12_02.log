@@ -1,0 +1,964 @@
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh run formal router bgp 
+Tue Jul 10 16:44:52.783 UTC
+router bgp 100 
+router bgp 100 address-family ipv4 unicast 
+router bgp 100 address-family vpnv4 unicast 
+router bgp 100 neighbor 2.2.2.2 
+router bgp 100 neighbor 2.2.2.2 remote-as 100
+router bgp 100 neighbor 2.2.2.2 update-source Loopback0
+router bgp 100 neighbor 2.2.2.2 address-family ipv4 unicast 
+router bgp 100 neighbor 2.2.2.2 address-family ipv4 unicast next-hop-self
+router bgp 100 neighbor 2.2.2.2 address-family vpnv4 unicast 
+router bgp 100 vrf VPN_A 
+router bgp 100 vrf VPN_A rd 100:1
+router bgp 100 vrf VPN_A address-family ipv4 unicast 
+router bgp 100 vrf VPN_A address-family ipv4 unicast redistribute ospf 100
+router bgp 100 vrf VPN_A neighbor 10.19.20.2 
+router bgp 100 vrf VPN_A neighbor 10.19.20.2 remote-as 1
+router bgp 100 vrf VPN_A neighbor 10.19.20.2 address-family ipv4 unicast 
+router bgp 100 vrf VPN_A neighbor 10.19.20.2 address-family ipv4 unicast route-policy PASS in
+router bgp 100 vrf VPN_A neighbor 10.19.20.2 address-family ipv4 unicast route-policy PASS out
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh bgp vrf VPN_A 
+Tue Jul 10 16:45:05.352 UTC
+BGP VRF VPN_A, state: Active
+BGP Route Distinguisher: 100:1
+VRF ID: 0x60000002
+BGP router identifier 19.19.19.19, local AS number 100
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000011   RD version: 55
+BGP main routing table version 55
+BGP NSR Initial initsync version 1 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+
+Status codes: s suppressed, d damped, h history, * valid, > best
+              i - internal, r RIB-failure, S stale, N Nexthop-discard
+Origin codes: i - IGP, e - EGP, ? - incomplete
+   Network            Next Hop            Metric LocPrf Weight Path
+Route Distinguisher: 100:1 (default for vrf VPN_A)
+*>i1.1.1.1/32         2.2.2.2                  0    100      0 1 i
+*> 20.20.20.20/32     10.19.20.2               0             0 1 i
+
+Processed 2 prefixes, 2 paths
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh bgp vrf VPN_A 
+Tue Jul 10 16:49:28.464 UTC
+BGP VRF VPN_A, state: Active
+BGP Route Distinguisher: 100:1
+VRF ID: 0x60000002
+BGP router identifier 19.19.19.19, local AS number 100
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000011   RD version: 55
+BGP main routing table version 55
+BGP NSR Initial initsync version 1 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+
+Status codes: s suppressed, d damped, h history, * valid, > best
+              i - internal, r RIB-failure, S stale, N Nexthop-discard
+Origin codes: i - IGP, e - EGP, ? - incomplete
+   Network            Next Hop            Metric LocPrf Weight Path
+Route Distinguisher: 100:1 (default for vrf VPN_A)
+*>i1.1.1.1/32         2.2.2.2                  0    100      0 1 i
+*> 20.20.20.20/32     10.19.20.2               0             0 1 i
+
+Processed 2 prefixes, 2 paths
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh bgp vrf VPN_A 
+Tue Jul 10 16:49:30.824 UTC
+BGP VRF VPN_A, state: Active
+BGP Route Distinguisher: 100:1
+VRF ID: 0x60000002
+BGP router identifier 19.19.19.19, local AS number 100
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000011   RD version: 55
+BGP main routing table version 55
+BGP NSR Initial initsync version 1 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+
+Status codes: s suppressed, d damped, h history, * valid, > best
+              i - internal, r RIB-failure, S stale, N Nexthop-discard
+Origin codes: i - IGP, e - EGP, ? - incomplete
+   Network            Next Hop            Metric LocPrf Weight Path
+Route Distinguisher: 100:1 (default for vrf VPN_A)
+*>i1.1.1.1/32         2.2.2.2                  0    100      0 1 i
+*> 20.20.20.20/32     10.19.20.2               0             0 1 i
+
+Processed 2 prefixes, 2 paths
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh run router bgp 
+Tue Jul 10 16:49:56.113 UTC
+router bgp 100
+ address-family ipv4 unicast
+ !
+ address-family vpnv4 unicast
+ !
+ neighbor 2.2.2.2
+  remote-as 100
+  update-source Loopback0
+  address-family ipv4 unicast
+   next-hop-self
+  !
+  address-family vpnv4 unicast
+  !
+ !
+ vrf VPN_A
+  rd 100:1
+  address-family ipv4 unicast
+   redistribute ospf 100
+  !
+  neighbor 10.19.20.2
+   remote-as 1
+   address-family ipv4 unicast
+    route-policy PASS in
+    route-policy PASS out
+   !
+  !
+ !
+!
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#conf exclusive 
+Tue Jul 10 16:50:02.162 UTC
+
+Successfully entered exclusive mode with no retry needed.
+RP/0/0/CPU0:XR1(config)#router bgp 100
+RP/0/0/CPU0:XR1(config-bgp)# vrf VPN_A
+RP/0/0/CPU0:XR1(config-bgp-vrf)#
+RP/0/0/CPU0:XR1(config-bgp-vrf)#no address-family ipv4 unicast
+RP/0/0/CPU0:XR1(config-bgp-vrf)#commit
+Tue Jul 10 16:50:23.171 UTC
+
+% Failed to commit one or more configuration items during a pseudo-atomic operation. All changes made have been reverted. Please issue 'show configuration failed [inheritance]' from this session to view the errors
+RP/0/0/CPU0:XR1(config-bgp-vrf)#
+RP/0/0/CPU0:XR1(config-bgp-vrf)#no redistribute ospf 100
+                                    ^
+% Invalid input detected at '^' marker.
+RP/0/0/CPU0:XR1(config-bgp-vrf)#address-family ipv4 unicast
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#no  redistribute ospf 100
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#commit 
+Tue Jul 10 16:50:38.910 UTC
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#exit
+RP/0/0/CPU0:XR1(config-bgp-vrf)#exit
+RP/0/0/CPU0:XR1(config-bgp)#exit
+RP/0/0/CPU0:XR1(config)#exit
+RP/0/0/CPU0:XR1#rollback configuration last 
+% Incomplete command.
+RP/0/0/CPU0:XR1#rollback configuration last 1 
+Tue Jul 10 16:52:12.573 UTC
+
+Loading Rollback Changes.
+Loaded Rollback Changes in 1 sec 
+Committing.
+5 items committed in 1 sec (4)items/sec
+Updating.
+Updated Commit database in 1 sec 
+Configuration successfully rolled back 1 commits.
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh run router bgp             
+Tue Jul 10 16:53:34.588 UTC
+router bgp 100
+ address-family ipv4 unicast
+ !
+ address-family vpnv4 unicast
+ !
+ neighbor 2.2.2.2
+  remote-as 100
+  update-source Loopback0
+  address-family ipv4 unicast
+   next-hop-self
+  !
+  address-family vpnv4 unicast
+  !
+ !
+ vrf VPN_A
+  rd 100:1
+  address-family ipv4 unicast
+   redistribute ospf 100
+  !
+  neighbor 10.19.20.2
+   remote-as 1
+   address-family ipv4 unicast
+    route-policy PASS in
+    route-policy PASS out
+   !
+  !
+ !
+!
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#conf exclusive 
+Tue Jul 10 16:53:40.787 UTC
+
+Successfully entered exclusive mode with no retry needed.
+RP/0/0/CPU0:XR1(config)#router bgp 100
+RP/0/0/CPU0:XR1(config-bgp)#vrf VPN_A
+RP/0/0/CPU0:XR1(config-bgp-vrf)#neighbor 10.19.20.2
+RP/0/0/CPU0:XR1(config-bgp-vrf-nbr)#address-family ipv4 unicast
+RP/0/0/CPU0:XR1(config-bgp-vrf-nbr-af)#as-override ?
+  inheritance-disable  Prevent as-override from being inherited from the parent
+  <cr>                 
+RP/0/0/CPU0:XR1(config-bgp-vrf-nbr-af)#as-override 
+RP/0/0/CPU0:XR1(config-bgp-vrf-nbr-af)#commit 
+Tue Jul 10 16:54:08.325 UTC
+RP/0/0/CPU0:XR1(config-bgp-vrf-nbr-af)#end
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh run router bgp 
+Tue Jul 10 16:56:03.497 UTC
+router bgp 100
+ address-family ipv4 unicast
+ !
+ address-family vpnv4 unicast
+ !
+ neighbor 2.2.2.2
+  remote-as 100
+  update-source Loopback0
+  address-family ipv4 unicast
+   next-hop-self
+  !
+  address-family vpnv4 unicast
+  !
+ !
+ vrf VPN_A
+  rd 100:1
+  address-family ipv4 unicast
+   redistribute ospf 100
+  !
+  neighbor 10.19.20.2
+   remote-as 1
+   address-family ipv4 unicast
+    route-policy PASS in
+    route-policy PASS out
+    as-override
+   !
+  !
+ !
+!
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#conf exc
+Tue Jul 10 16:56:09.347 UTC
+
+Successfully entered exclusive mode with no retry needed.
+RP/0/0/CPU0:XR1(config)#router bgp 100 
+RP/0/0/CPU0:XR1(config-bgp)# vrf VPN_A
+RP/0/0/CPU0:XR1(config-bgp-vrf)#
+RP/0/0/CPU0:XR1(config-bgp-vrf)#  address-family ipv4 unicast
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#no    redistribute ospf 100
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#commit
+Tue Jul 10 16:56:29.596 UTC
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#end
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#terminal length 0
+Tue Jul 10 16:58:17.608 UTC
+RP/0/0/CPU0:XR1#configure terminal
+Tue Jul 10 16:58:17.768 UTC
+RP/0/0/CPU0:XR1(config)#no logging console
+RP/0/0/CPU0:XR1(config)#commit
+Tue Jul 10 16:58:18.178 UTC
+RP/0/0/CPU0:XR1(config)#exit
+RP/0/0/CPU0:XR1#show running-config
+Tue Jul 10 16:58:18.508 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Tue Jul 10 16:56:29 2018 by cisco
+!
+hostname XR1
+vrf VPN_A
+ address-family ipv4 unicast
+  import route-target
+   100:1
+  !
+  export route-target
+   100:1
+  !
+ !
+!
+ipv4 access-list LABELS
+ 10 permit ipv4 host 2.2.2.2 any
+ 20 permit ipv4 host 3.3.3.3 any
+ 30 permit ipv4 host 4.4.4.4 any
+ 40 permit ipv4 host 5.5.5.5 any
+ 50 permit ipv4 host 6.6.6.6 any
+ 60 permit ipv4 host 19.19.19.19 any
+!
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ vrf VPN_A
+ ipv4 address 10.19.20.1 255.255.255.252
+!
+route-policy PASS
+  pass
+end-policy
+!
+route-policy BGP_TO_RIP
+  if destination in (10.1.2.0/24) then
+    set rip-metric 1
+  else
+    pass
+  endif
+end-policy
+!
+router ospf 1
+ mpls ldp sync
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+ !
+!
+router bgp 100
+ address-family ipv4 unicast
+ !
+ address-family vpnv4 unicast
+ !
+ neighbor 2.2.2.2
+  remote-as 100
+  update-source Loopback0
+  address-family ipv4 unicast
+   next-hop-self
+  !
+  address-family vpnv4 unicast
+  !
+ !
+ vrf VPN_A
+  rd 100:1
+  address-family ipv4 unicast
+  !
+  neighbor 10.19.20.2
+   remote-as 1
+   address-family ipv4 unicast
+    route-policy PASS in
+    route-policy PASS out
+    as-override
+   !
+  !
+ !
+!
+mpls ldp
+ session protection
+ address-family ipv4
+  label
+   local
+    allocate for LABELS
+   !
+  !
+ !
+ interface GigabitEthernet0/0/0/0
+ !
+ interface GigabitEthernet0/0/0/1
+ !
+!
+mpls label range table 0 19000 19099
+end
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#exit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR1 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: 
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR1#terminal length 0
+Tue Jul 10 16:58:53.856 UTC
+RP/0/0/CPU0:XR1#configure terminal
+Tue Jul 10 16:58:54.026 UTC
+RP/0/0/CPU0:XR1(config)#no logging console
+RP/0/0/CPU0:XR1(config)#commit
+Tue Jul 10 16:58:54.366 UTC
+RP/0/0/CPU0:XR1(config)#exit
+RP/0/0/CPU0:XR1#show running-config
+Tue Jul 10 16:58:54.756 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Tue Jul 10 16:56:29 2018 by cisco
+!
+hostname XR1
+vrf VPN_A
+ address-family ipv4 unicast
+  import route-target
+   100:1
+  !
+  export route-target
+   100:1
+  !
+ !
+!
+ipv4 access-list LABELS
+ 10 permit ipv4 host 2.2.2.2 any
+ 20 permit ipv4 host 3.3.3.3 any
+ 30 permit ipv4 host 4.4.4.4 any
+ 40 permit ipv4 host 5.5.5.5 any
+ 50 permit ipv4 host 6.6.6.6 any
+ 60 permit ipv4 host 19.19.19.19 any
+!
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ vrf VPN_A
+ ipv4 address 10.19.20.1 255.255.255.252
+!
+route-policy PASS
+  pass
+end-policy
+!
+route-policy BGP_TO_RIP
+  if destination in (10.1.2.0/24) then
+    set rip-metric 1
+  else
+    pass
+  endif
+end-policy
+!
+router ospf 1
+ mpls ldp sync
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+ !
+!
+router bgp 100
+ address-family ipv4 unicast
+ !
+ address-family vpnv4 unicast
+ !
+ neighbor 2.2.2.2
+  remote-as 100
+  update-source Loopback0
+  address-family ipv4 unicast
+   next-hop-self
+  !
+  address-family vpnv4 unicast
+  !
+ !
+ vrf VPN_A
+  rd 100:1
+  address-family ipv4 unicast
+  !
+  neighbor 10.19.20.2
+   remote-as 1
+   address-family ipv4 unicast
+    route-policy PASS in
+    route-policy PASS out
+    as-override
+   !
+  !
+ !
+!
+mpls ldp
+ session protection
+ address-family ipv4
+  label
+   local
+    allocate for LABELS
+   !
+  !
+ !
+ interface GigabitEthernet0/0/0/0
+ !
+ interface GigabitEthernet0/0/0/1
+ !
+!
+mpls label range table 0 19000 19099
+end
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#terminal length 0
+Tue Jul 10 16:59:22.754 UTC
+RP/0/0/CPU0:XR1#configure terminal
+Tue Jul 10 16:59:22.924 UTC
+RP/0/0/CPU0:XR1(config)#no logging console
+RP/0/0/CPU0:XR1(config)#commit
+Tue Jul 10 16:59:23.404 UTC
+RP/0/0/CPU0:XR1(config)#exit
+RP/0/0/CPU0:XR1#show running-config
+Tue Jul 10 16:59:23.744 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Tue Jul 10 16:56:29 2018 by cisco
+!
+hostname XR1
+vrf VPN_A
+ address-family ipv4 unicast
+  import route-target
+   100:1
+  !
+  export route-target
+   100:1
+  !
+ !
+!
+ipv4 access-list LABELS
+ 10 permit ipv4 host 2.2.2.2 any
+ 20 permit ipv4 host 3.3.3.3 any
+ 30 permit ipv4 host 4.4.4.4 any
+ 40 permit ipv4 host 5.5.5.5 any
+ 50 permit ipv4 host 6.6.6.6 any
+ 60 permit ipv4 host 19.19.19.19 any
+!
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ vrf VPN_A
+ ipv4 address 10.19.20.1 255.255.255.252
+!
+route-policy PASS
+  pass
+end-policy
+!
+route-policy BGP_TO_RIP
+  if destination in (10.1.2.0/24) then
+    set rip-metric 1
+  else
+    pass
+  endif
+end-policy
+!
+router ospf 1
+ mpls ldp sync
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+ !
+!
+router bgp 100
+ address-family ipv4 unicast
+ !
+ address-family vpnv4 unicast
+ !
+ neighbor 2.2.2.2
+  remote-as 100
+  update-source Loopback0
+  address-family ipv4 unicast
+   next-hop-self
+  !
+  address-family vpnv4 unicast
+  !
+ !
+ vrf VPN_A
+  rd 100:1
+  address-family ipv4 unicast
+  !
+  neighbor 10.19.20.2
+   remote-as 1
+   address-family ipv4 unicast
+    route-policy PASS in
+    route-policy PASS out
+    as-override
+   !
+  !
+ !
+!
+mpls ldp
+ session protection
+ address-family ipv4
+  label
+   local
+    allocate for LABELS
+   !
+  !
+ !
+ interface GigabitEthernet0/0/0/0
+ !
+ interface GigabitEthernet0/0/0/1
+ !
+!
+mpls label range table 0 19000 19099
+end
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#exit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR1 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+

@@ -1,0 +1,334 @@
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh run router eigrp 
+Tue Jul 10 12:27:44.070 UTC
+router eigrp 1
+ vrf VPN_A
+  address-family ipv4
+   autonomous-system 1
+   redistribute bgp 100
+   interface GigabitEthernet0/0/0/2
+   !
+  !
+ !
+!
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#conf t
+Tue Jul 10 12:27:46.610 UTC
+RP/0/0/CPU0:XR1(config)#no router eigrp 1
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#router ospf 100
+RP/0/0/CPU0:XR1(config-ospf)#vrf VPN_A
+RP/0/0/CPU0:XR1(config-ospf-vrf)#?  
+  address-family        OSPF address family
+  adjacency             OSPF adjacency bring up
+  apply-group           Apply configuration from a group
+  apply-group-append    Append apply-group configuration from a group
+  apply-group-remove    Remove a group from apply-group configuration
+  area                  Enter the OSPF area configuration submode
+  authentication        Enable authentication
+  authentication-key    Authentication password (key)
+  auto-cost             Calculate OSPF interface cost according to bandwidth
+  bfd                   Configure BFD parameters
+  capability            Enable specific OSPF feature
+  clear                 Clear the uncommitted configuration
+  commit                Commit the configuration changes to running
+  cost                  Interface cost
+  database-filter       Filter OSPF LSA during synchronization and flooding
+  dead-interval         Interval after which a neighbor is declared dead
+  default-information   Control distribution of default information
+  default-metric        Set metric of redistributed routes
+  demand-circuit        Enable/Disable OSPF demand circuit
+  describe              Describe a command without taking real actions
+  disable-dn-bit-check  Disable DN bit check
+  distance              Define an administrative distance
+  distribute-list       Filter networks in routing updates
+  do                    Run an exec command
+  domain-id             Specify domain id
+  domain-tag            OSPF domain tag
+  exclude-group         Exclude apply-group configuration from a group
+  exclude-item          Negate a command or set its defaults
+  exit                  Exit from this submode
+  external-out          Enable/Disable advertisement of intra-area prefixes as external
+  fast-reroute          IP Fast Reroute
+  flood-reduction       Enable/Disable OSPF Flood Reduction
+  hello-interval        Time between HELLO packets
+  ignore                Do not complain about specific event
+  link-down             Configure interface down parameters
+  log                   Log ospf info
+  loopback              OSPF loopback configuration
+  max-lsa               Maximum number of LSAs OSPF process will receive
+  max-metric            Set maximum metric
+  maximum               Set OSPF limits
+  message-digest-key    Message digest authentication password (key)
+  microloop             Microloop configuration
+  mpls                  Configure MPLS routing protocol parameters
+  mtu-ignore            Enable/Disable ignoring of MTU in DBD packets
+  network               Network type
+  no                    Negate a command or set its defaults
+  nsf                   Enable Cisco Non Stop Forwarding
+  packet-size           Customize size of OSPF packets upto MTU
+  passive               Enable/Disable passive
+  prefix-suppression    Suppress advertisement of the prefixes
+  priority              Router priority
+  pwd                   Commands used to reach current submode
+  queue                 Adjust OSPF input queue
+  redistribute          Redistribute information from another routing protocol
+  retransmit-interval   Time between retransmitting lost link state advertisements
+  root                  Exit to the global configuration mode
+  router-id             Specify the router-id for this OSPF process
+  security              Enable security
+  show                  Show contents of configuration
+  snmp                  SNMP configuration
+  spf                   SPF configuration
+  summary-in            Enable/Disable advertisement of external prefixes as inter-area
+  summary-prefix        Configure IP address summaries
+  timers                Adjust routing timers
+  transmit-delay        Estimated time needed to send link-state update packet
+  ucmp                  Unequal Cost Load Balancing
+RP/0/0/CPU0:XR1(config-ospf-vrf)#area 0
+RP/0/0/CPU0:XR1(config-ospf-vrf-ar)#interface gigabitEthernet 0/0/0/2
+RP/0/0/CPU0:XR1(config-ospf-vrf-ar-if)#commit
+Tue Jul 10 12:28:33.057 UTC
+RP/0/0/CPU0:Jul 10 12:28:45.386 : eigrp[1001]: %ROUTING-EIGRP-3-NO_REDISTMETRIC : EIGRP-1: VPN_A-v4 1: No metric set while redistributing route 1.1.1.1/32 
+
+% Failed to commit one or more configuration items during a pseudo-atomic operation. All changes made have been reverted. Please issue 'show configuration failed [inheritance]' from this session to view the errors
+RP/0/0/CPU0:XR1(config-ospf-vrf-ar-if)#
+RP/0/0/CPU0:XR1(config-ospf-vrf-ar-if)#show configuration failed 
+Tue Jul 10 12:28:52.526 UTC
+!! SEMANTIC ERRORS: This configuration was rejected by 
+!! the system due to semantic errors. The individual 
+!! errors with each failed configuration command can be 
+!! found below.
+
+
+router ospf 100
+ vrf VPN_A
+  area 0
+   interface GigabitEthernet0/0/0/2
+!!% Error: Interface already exists in OSPF process 1
+   !
+  !
+ !
+!
+end
+
+RP/0/0/CPU0:XR1(config-ospf-vrf-ar-if)#
+RP/0/0/CPU0:XR1(config-ospf-vrf-ar-if)#
+RP/0/0/CPU0:XR1(config-ospf-vrf-ar-if)#
+RP/0/0/CPU0:XR1(config-ospf-vrf-ar-if)#    
+RP/0/0/CPU0:XR1(config-ospf-vrf-ar-if)#router ospf 1
+RP/0/0/CPU0:XR1(config-ospf)#area 0
+RP/0/0/CPU0:XR1(config-ospf-ar)#no interface gigabitEthernet 0/0/0/2
+RP/0/0/CPU0:XR1(config-ospf-ar)#commit 
+Tue Jul 10 12:31:47.784 UTC
+RP/0/0/CPU0:XR1(config-ospf-ar)#
+RP/0/0/CPU0:XR1(config-ospf-ar)#
+RP/0/0/CPU0:XR1(config-ospf-ar)#exit
+RP/0/0/CPU0:XR1(config-ospf)#exit
+RP/0/0/CPU0:XR1(config)#router ospf 100
+RP/0/0/CPU0:XR1(config-ospf)#vrf VPN_A
+RP/0/0/CPU0:XR1(config-ospf-vrf)#redistribute bgp 100 ?
+  lsa-type                   LSA type for redistributed routes
+  metric                     Metric for redistributed routes
+  metric-type                OSPF exterior metric type for redistributed routes
+  nssa-only                  Redistribute to NSSA areas only
+  preserve-bgp-default-info  Preserve metric and metric-type of BGP default route
+  preserve-med               Preserve med of BGP routes
+  route-policy               Apply route-policy to redistribution
+  tag                        Set tag for routes redistributed into OSPF
+  <cr>                       
+RP/0/0/CPU0:XR1(config-ospf-vrf)#redistribute bgp 100 ?  
+  lsa-type                   LSA type for redistributed routes
+  metric                     Metric for redistributed routes
+  metric-type                OSPF exterior metric type for redistributed routes
+  nssa-only                  Redistribute to NSSA areas only
+  preserve-bgp-default-info  Preserve metric and metric-type of BGP default route
+  preserve-med               Preserve med of BGP routes
+  route-policy               Apply route-policy to redistribution
+  tag                        Set tag for routes redistributed into OSPF
+  <cr>                       
+RP/0/0/CPU0:XR1(config-ospf-vrf)#redistribute bgp 100 
+RP/0/0/CPU0:XR1(config-ospf-vrf)#commit 
+Tue Jul 10 12:34:13.614 UTC
+RP/0/0/CPU0:XR1(config-ospf-vrf)#end
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR1 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+

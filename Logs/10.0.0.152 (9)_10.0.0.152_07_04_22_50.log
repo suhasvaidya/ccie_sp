@@ -1,0 +1,321 @@
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh run 
+Wed Jul  4 14:02:01.219 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 13:41:11 2018 by cisco
+!
+hostname XR1
+ipv4 access-list LABELS
+ 10 permit ipv4 host 2.2.2.2 any
+ 20 permit ipv4 host 3.3.3.3 any
+ 30 permit ipv4 host 4.4.4.4 any
+ 40 permit ipv4 host 5.5.5.5 any
+ 50 permit ipv4 host 6.6.6.6 any
+ 60 permit ipv4 host 19.19.19.19 any
+!
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 10.19.20.1 255.255.255.252
+!
+route-policy PASS
+  pass
+end-policy
+!
+router ospf 1
+ mpls ldp sync
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+  interface GigabitEthernet0/0/0/2
+  !
+ !
+!
+router bgp 100
+ address-family ipv4 unicast
+ !
+ neighbor 2.2.2.2
+  remote-as 100
+  update-source Loopback0
+  address-family ipv4 unicast
+   next-hop-self
+  !
+ !
+ neighbor 10.19.20.2
+  remote-as 20
+  address-family ipv4 unicast
+   route-policy PASS in
+   route-policy PASS out
+  !
+ !
+!
+mpls ldp
+ session protection
+ address-family ipv4
+  label
+   local
+    allocate for LABELS
+   !
+  !
+ !
+ interface GigabitEthernet0/0/0/0
+ !
+ interface GigabitEthernet0/0/0/1
+ !
+!
+mpls label range table 0 19000 19099
+end
+
+RP/0/0/CPU0:XR1# 
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#terminal length 0
+Wed Jul  4 14:03:04.344 UTC
+RP/0/0/CPU0:XR1#configure terminal
+Wed Jul  4 14:03:04.514 UTC
+RP/0/0/CPU0:XR1(config)#no logging console
+RP/0/0/CPU0:XR1(config)#commit
+Wed Jul  4 14:03:04.964 UTC
+RP/0/0/CPU0:XR1(config)#exit
+RP/0/0/CPU0:XR1#show running-config
+Wed Jul  4 14:03:05.304 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 13:41:11 2018 by cisco
+!
+hostname XR1
+ipv4 access-list LABELS
+ 10 permit ipv4 host 2.2.2.2 any
+ 20 permit ipv4 host 3.3.3.3 any
+ 30 permit ipv4 host 4.4.4.4 any
+ 40 permit ipv4 host 5.5.5.5 any
+ 50 permit ipv4 host 6.6.6.6 any
+ 60 permit ipv4 host 19.19.19.19 any
+!
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 10.19.20.1 255.255.255.252
+!
+route-policy PASS
+  pass
+end-policy
+!
+router ospf 1
+ mpls ldp sync
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+  interface GigabitEthernet0/0/0/2
+  !
+ !
+!
+router bgp 100
+ address-family ipv4 unicast
+ !
+ neighbor 2.2.2.2
+  remote-as 100
+  update-source Loopback0
+  address-family ipv4 unicast
+   next-hop-self
+  !
+ !
+ neighbor 10.19.20.2
+  remote-as 20
+  address-family ipv4 unicast
+   route-policy PASS in
+   route-policy PASS out
+  !
+ !
+!
+mpls ldp
+ session protection
+ address-family ipv4
+  label
+   local
+    allocate for LABELS
+   !
+  !
+ !
+ interface GigabitEthernet0/0/0/0
+ !
+ interface GigabitEthernet0/0/0/1
+ !
+!
+mpls label range table 0 19000 19099
+end
+
+RP/0/0/CPU0:XR1#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR1 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+

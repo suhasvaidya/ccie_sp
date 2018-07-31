@@ -1,0 +1,376 @@
+Connected to Dynamips VM "R1" (ID 1, type c7200) - Console port
+Press ENTER to get the prompt.
+1.1.1 ma
+R1(config-router)#network 1.1.1.1 mask 255.255.255.252 
+% BGP: Incorrect network or mask/prefix-length configured
+R1(config-router)#network 1.1.1.1 mask ?               
+  A.B.C.D  Network mask
+
+R1(config-router)#network 1.1.1.1 mask 255.255.255.255 
+R1(config-router)#
+R1(config-router)#exit
+R1(config)#
+R1(config)#
+R1(config)#exit
+R1#
+R1#
+R1#
+*Jul  4 12:21:51.810: %SYS-5-CONFIG_I: Configured from console by console
+R1#
+R1#
+R1#
+*Jul  4 12:22:37.774: %BGP-5-ADJCHANGE: neighbor 10.1.2.2 Up 
+R1#
+R1#sh
+R1#show bg
+R1#show bgp sum
+R1#show bgp sum
+BGP router identifier 1.1.1.1, local AS number 1
+BGP table version is 2, main routing table version 2
+1 network entries using 144 bytes of memory
+1 path entries using 80 bytes of memory
+1/1 BGP path/bestpath attribute entries using 136 bytes of memory
+0 BGP route-map cache entries using 0 bytes of memory
+0 BGP filter-list cache entries using 0 bytes of memory
+BGP using 360 total bytes of memory
+BGP activity 1/0 prefixes, 1/0 paths, scan interval 60 secs
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+10.1.2.2        4          100       4       5        2    0    0 00:00:11        0
+R1#
+R1#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+R1>
+R1>en
+R1#
+R1#
+R1#
+R1#s
+R1#sh
+R1#show ip ro
+R1#show ip route 
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/32 is subnetted, 1 subnets
+C        1.1.1.1 is directly connected, Loopback0
+      10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        10.1.2.0/30 is directly connected, FastEthernet0/0
+L        10.1.2.1/32 is directly connected, FastEthernet0/0
+      20.0.0.0/32 is subnetted, 1 subnets
+B        20.20.20.20 [20/0] via 10.1.2.2, 00:02:51
+R1#
+R1#
+R1#
+R1#
+R1#ping 20.20.20.20 so
+R1#ping 20.20.20.20 source lo0
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 20.20.20.20, timeout is 2 seconds:
+Packet sent with a source address of 1.1.1.1 
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 44/49/56 ms
+R1#
+R1#
+R1#
+R1#tra
+R1#traceroute 20.20.20.20 so lo0
+Type escape sequence to abort.
+Tracing the route to 20.20.20.20
+VRF info: (vrf in name/id, vrf out name/id)
+  1 10.1.2.2 48 msec 40 msec 48 msec
+  2 20.2.3.2 [MPLS: Label 305 Exp 0] 48 msec 48 msec 48 msec
+  3  *  *  * 
+  4 20.6.19.2 68 msec 112 msec 4 msec
+  5 10.19.20.2 40 msec 40 msec * 
+R1#
+R1#
+R1#terminal length 0
+R1#write
+Building configuration...
+[OK]
+R1#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1>
+R1>enable
+R1#terminal length 0
+R1#write
+Building configuration...
+[OK]
+R1#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+*Jul  4 13:21:46.618: %BGP-5-NBR_RESET: Neighbor 10.1.2.2 reset (Peer closed the session)
+*Jul  4 13:21:46.626: %BGP-5-ADJCHANGE: neighbor 10.1.2.2 Down Peer closed the session
+*Jul  4 13:21:46.630: %BGP_SESSION-5-ADJCHANGE: neighbor 10.1.2.2 IPv4 Unicast topology base removed from session  Peer closed the session
+R1>
+R1>
+R1>
+R1>
+R1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+

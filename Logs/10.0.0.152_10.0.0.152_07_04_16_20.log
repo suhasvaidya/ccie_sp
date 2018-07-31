@@ -1,0 +1,340 @@
+Connected to Dynamips VM "R1" (ID 1, type c7200) - Console port
+Press ENTER to get the prompt.
+and timed out, csr5=0x0
+*Jul  4 06:48:18.295: %DEC21140-1-INITFAIL: Unsupported PHY brand timed out, csr5=0x0
+*Jul  4 06:48:25.215: %LINK-3-UPDOWN: Interface FastEthernet0/0, changed state to up
+*Jul  4 06:48:25.251: %LINK-3-UPDOWN: Interface FastEthernet1/0, changed state to up
+*Jul  4 06:48:26.307: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+*Jul  4 06:48:26.311: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet1/0, changed state to up
+*Jul  4 06:49:11.227: %LINK-5-CHANGED: Interface FastEthernet0/0, changed state to administratively down
+*Jul  4 06:49:11.239: %LINK-5-CHANGED: Interface FastEthernet1/0, changed state to administratively down
+*Jul  4 06:49:12.227: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to down
+*Jul  4 06:49:12.239: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet1/0, changed state to down
+*Jul  4 06:49:20.403: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, 7200 Software (C7200-ADVIPSERVICESK9-M), Version 15.2(4)S5, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2014 by Cisco Systems, Inc.
+Compiled Thu 20-Feb-14 06:51 by prod_rel_team
+Router>
+*Jul  4 06:49:42.543: %SYS-3-CPUHOG: Task is running for (2056)msecs, more than (2000)msecs (0/0),process = Crypto CA.
+-Traceback= 0x61E2E770z 0x62A67340z 0x62A58724z 0x62A578DCz 0x62A57A1Cz 0x62A42BECz 0x62A681F8z 0x62A52808z 0x62A4D518z 0x62A4D598z 0x62A4CF74z 0x62A82B88z 0x62A8293Cz 0x62A8293Cz 0x62A82D40z 0x62A51DBCz 
+Router>
+Router>
+Router>
+Router>
+Router>
+Router>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+Router>
+Router>no
+Translating "no"...domain server (255.255.255.255)
+
+% Bad IP address or host name
+Translating "no"...domain server (255.255.255.255)
+ (255.255.255.255)
+Translating "no"...domain server (255.255.255.255)
+% Unknown command or computer name, or unable to find computer address
+Router>enable
+Router#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+Router>
+Router>no
+Translating "no"...domain server (255.255.255.255)
+
+% Bad IP address or host name
+Translating "no"...domain server (255.255.255.255)
+ (255.255.255.255)
+Translating "no"...domain server (255.255.255.255)
+% Unknown command or computer name, or unable to find computer address
+Router>enable
+Router#terminal length 0
+Router#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+Router>
+Router>
+Router>
+Router>
+Router>
+Router>
+Router>
+Router>en
+Router#
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#
+Router(config)#
+Router(config)#exit
+Router#
+Router#sh
+Router#show run 
+*Jul  4 09:17:51.531: %SYS-5-CONFIG_I: Configured from console by console
+Router#show run 
+Building configuration...
+
+Current configuration : 646 bytes
+!
+! Last configuration change at 09:17:51 UTC Wed Jul 4 2018
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+hostname Router
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+ip cef
+!
+!
+!
+!
+!
+!         
+no ipv6 cef
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!         
+!
+!
+interface FastEthernet0/0
+ no ip address
+ shutdown
+ duplex full
+!
+interface FastEthernet1/0
+ no ip address
+ shutdown
+ duplex full
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+control-plane
+!         
+!
+line con 0
+ stopbits 1
+line aux 0
+ stopbits 1
+line vty 0 4
+ login
+!
+!
+end
+
+Router#      
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hos
+Router(config)#hostname R1
+R1(config)#commit
+             ^
+% Invalid input detected at '^' marker.
+
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#end
+R1#wr
+Building configuration...
+
+*Jul  4 09:25:08.831: %SYS-5-CONFIG_I: Configured from console by console[OK]
+R1#
+R1#

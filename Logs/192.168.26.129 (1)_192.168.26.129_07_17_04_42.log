@@ -1,0 +1,379 @@
+
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh
+CSR2#show ip vr
+CSR2#show ip vrf ro
+CSR2#show ip vrf VPN_A ro
+CSR2#show ip vrf VPN_A rou
+CSR2#show ip vrf VPN_A route
+                       ^
+% Invalid input detected at '^' marker.
+
+CSR2#show ip ro             
+CSR2#show ip route v
+CSR2#show ip route vrf VPN_A
+
+Routing Table: VPN_A
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override, p - overrides from PfR
+
+Gateway of last resort is not set
+
+      1.0.0.0/32 is subnetted, 1 subnets
+O        1.1.1.1 [110/2] via 10.1.2.1, 02:03:55, GigabitEthernet1
+      10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        10.1.2.0/30 is directly connected, GigabitEthernet1
+L        10.1.2.2/32 is directly connected, GigabitEthernet1
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh run 
+Building configuration...
+
+Current configuration : 2579 bytes
+!
+! Last configuration change at 12:39:20 UTC Tue Jul 10 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition VPN_A
+ rd 100:1
+ route-target export 100:1
+ route-target import 100:1
+ !
+ address-family ipv4
+ exit-address-family
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!         
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 200 299
+mpls ldp session protection
+mpls ldp label
+ allocate global prefix-list LABELS
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!         
+!
+!
+license udi pid CSR1000V sn 9S2KOPAUVOD
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!         
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+!
+interface Loopback10
+ no ip address
+!
+interface GigabitEthernet1
+ vrf forwarding VPN_A
+ ip address 10.1.2.2 255.255.255.252
+ negotiation auto
+!         
+interface GigabitEthernet2
+ ip address 20.2.4.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet3
+ ip address 20.2.3.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+!
+router ospf 100 vrf VPN_A
+ redistribute bgp 100 subnets
+ network 10.1.2.0 0.0.0.3 area 0
+!
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp sync
+!
+router bgp 100
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 next-hop-self
+ exit-address-family
+ !
+ address-family vpnv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 send-community extended
+ exit-address-family
+ !
+ address-family ipv4 vrf VPN_A
+  redistribute ospf 100
+ exit-address-family
+!
+!         
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+ip prefix-list LABELS seq 10 permit 3.3.3.3/32
+ip prefix-list LABELS seq 15 permit 4.4.4.4/32
+ip prefix-list LABELS seq 20 permit 5.5.5.5/32
+ip prefix-list LABELS seq 25 permit 6.6.6.6/32
+ip prefix-list LABELS seq 30 permit 19.19.19.19/32
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+          
+CSR2#sh
+CSR2#show 
+CSR2#show ip ro
+CSR2#show ip route vr
+CSR2#show ip route vrf VPN_A
+
+Routing Table: VPN_A
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override, p - overrides from PfR
+
+Gateway of last resort is not set
+
+      1.0.0.0/32 is subnetted, 1 subnets
+O        1.1.1.1 [110/2] via 10.1.2.1, 02:10:13, GigabitEthernet1
+      10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        10.1.2.0/30 is directly connected, GigabitEthernet1
+L        10.1.2.2/32 is directly connected, GigabitEthernet1
+CSR2#
+CSR2#
+CSR2#
+CSR2#show ip route vrf VPN_A
+
+Routing Table: VPN_A
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override, p - overrides from PfR
+
+Gateway of last resort is not set
+
+      1.0.0.0/32 is subnetted, 1 subnets
+O        1.1.1.1 [110/2] via 10.1.2.1, 02:12:35, GigabitEthernet1
+      10.0.0.0/8 is variably subnetted, 3 subnets, 2 masks
+C        10.1.2.0/30 is directly connected, GigabitEthernet1
+L        10.1.2.2/32 is directly connected, GigabitEthernet1
+B        10.19.20.0/30 [200/0] via 19.19.19.19, 00:00:18
+      20.0.0.0/32 is subnetted, 1 subnets
+B        20.20.20.20 [200/2] via 19.19.19.19, 00:00:18
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#show ip route vrf VPN_A
+
+Routing Table: VPN_A
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override, p - overrides from PfR
+
+Gateway of last resort is not set
+
+      1.0.0.0/32 is subnetted, 1 subnets
+O        1.1.1.1 [110/2] via 10.1.2.1, 02:36:08, GigabitEthernet1
+      10.0.0.0/8 is variably subnetted, 3 subnets, 2 masks
+C        10.1.2.0/30 is directly connected, GigabitEthernet1
+L        10.1.2.2/32 is directly connected, GigabitEthernet1
+B        10.19.20.0/30 [200/0] via 19.19.19.19, 00:23:51
+      20.0.0.0/32 is subnetted, 1 subnets
+B        20.20.20.20 [200/2] via 19.19.19.19, 00:23:51
+CSR2#
+CSR2#
+CSR2#show bgp vpnv4 unicast all 1.1.1.1/32
+BGP routing table entry for 100:1:1.1.1.1/32, version 37
+Paths: (1 available, best #1, table VPN_A)
+  Advertised to update-groups:
+     1         
+  Refresh Epoch 1
+  Local
+    10.1.2.1 (via vrf VPN_A) from 0.0.0.0 (2.2.2.2)
+      Origin incomplete, metric 2, localpref 100, weight 32768, valid, sourced, best
+      Extended Community: RT:100:1 OSPF DOMAIN ID:0x0005:0x000000640200 
+        OSPF RT:0.0.0.0:2:0 OSPF ROUTER ID:10.1.2.2:0
+      mpls labels in/out 207/nolabel
+      rx pathid: 0, tx pathid: 0x0
+CSR2#
+CSR2#
+CSR2#show bgp vpnv4 unicast all 20.20.20.20/32
+BGP routing table entry for 100:1:20.20.20.20/32, version 52
+Paths: (1 available, best #1, table VPN_A)
+  Not advertised to any peer
+  Refresh Epoch 1
+  Local
+    19.19.19.19 (metric 4) (via default) from 19.19.19.19 (19.19.19.19)
+      Origin incomplete, metric 2, localpref 100, valid, internal, best
+      Extended Community: RT:100:1 OSPF RT:0.0.0.0:1:0 
+        OSPF ROUTER ID:19.19.19.19:0
+      mpls labels in/out nolabel/19006
+      rx pathid: 0, tx pathid: 0x0
+CSR2#
+CSR2#show bgp vpnv4 unicast all 1.1.1.1/32    
+BGP routing table entry for 100:1:1.1.1.1/32, version 37
+Paths: (1 available, best #1, table VPN_A)
+  Advertised to update-groups:
+     1         
+  Refresh Epoch 1
+  Local
+    10.1.2.1 (via vrf VPN_A) from 0.0.0.0 (2.2.2.2)
+      Origin incomplete, metric 2, localpref 100, weight 32768, valid, sourced, best
+      Extended Community: RT:100:1 OSPF DOMAIN ID:0x0005:0x000000640200 
+        OSPF RT:0.0.0.0:2:0 OSPF ROUTER ID:10.1.2.2:0
+      mpls labels in/out 207/nolabel
+      rx pathid: 0, tx pathid: 0x0
+CSR2#
+CSR2#show bgp vpnv4 unicast all 20.20.20.20/32
+BGP routing table entry for 100:1:20.20.20.20/32, version 52
+Paths: (1 available, best #1, table VPN_A)
+  Not advertised to any peer
+  Refresh Epoch 1
+  Local
+    19.19.19.19 (metric 4) (via default) from 19.19.19.19 (19.19.19.19)
+      Origin incomplete, metric 2, localpref 100, valid, internal, best
+      Extended Community: RT:100:1 OSPF RT:0.0.0.0:1:0 
+        OSPF ROUTER ID:19.19.19.19:0
+      mpls labels in/out nolabel/19006
+      rx pathid: 0, tx pathid: 0x0
+CSR2#
+CSR2#0x5:0x000000640200
+% Bad IP address or host name% Unknown command or computer name, or unable to find computer address
+CSR2#show bgp vpnv4 unicast all 20.20.20.20/32
+BGP routing table entry for 100:1:20.20.20.20/32, version 53
+Paths: (1 available, best #1, table VPN_A)
+  Not advertised to any peer
+  Refresh Epoch 1
+  Local
+    19.19.19.19 (metric 4) (via default) from 19.19.19.19 (19.19.19.19)
+      Origin incomplete, metric 2, localpref 100, valid, internal, best
+      Extended Community: RT:100:1 OSPF DOMAIN ID:0x0005:0x000000640200 
+        OSPF RT:0.0.0.0:1:0 OSPF ROUTER ID:19.19.19.19:0
+      mpls labels in/out nolabel/19006
+      rx pathid: 0, tx pathid: 0x0
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#

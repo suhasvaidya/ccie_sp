@@ -1,0 +1,20 @@
+
+CSR2>
+CSR2>en
+CSR2#
+CSR2#
+CSR2#sh
+CSR2#show  bg
+CSR2#show  bgp su
+CSR2#show  bgp sum
+CSR2#show  bgp sum
+BGP router identifier 2.2.2.2, local AS number 100
+BGP table version is 1, main routing table version 1
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+19.19.19.19     4          100       0       0        1    0    0 never    Idle
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#

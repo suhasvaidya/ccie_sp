@@ -1,0 +1,264 @@
+
+
+CSR4>
+CSR4>en
+CSR4#wr
+Building configuration...
+[OK]
+CSR4#
+CSR4#
+CSR4#
+CSR4#
+CSR4#terminal length 0
+CSR4#more system:running-config
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR4
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 400 499
+mpls ldp session protection
+mpls ldp label
+ allocate global prefix-list LABELS
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 94OWIUZYGUQ
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 4.4.4.4 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address 20.4.5.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet2
+ ip address 20.2.4.2 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet3
+ ip address 20.4.6.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet4
+ ip address 20.3.4.2 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet5
+ ip address 10.4.7.1 255.255.255.252
+ negotiation auto
+!
+router ospf 1
+ network 4.4.4.4 0.0.0.0 area 0
+ network 10.4.7.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ network 20.3.4.0 0.0.0.3 area 0
+ network 20.4.5.0 0.0.0.3 area 0
+ network 20.4.6.0 0.0.0.3 area 0
+ mpls ldp sync
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+ip prefix-list LABELS seq 10 permit 3.3.3.3/32
+ip prefix-list LABELS seq 15 permit 4.4.4.4/32
+ip prefix-list LABELS seq 20 permit 5.5.5.5/32
+ip prefix-list LABELS seq 25 permit 6.6.6.6/32
+ip prefix-list LABELS seq 30 permit 19.19.19.19/32
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR4#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR4 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+

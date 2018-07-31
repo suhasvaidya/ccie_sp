@@ -1,0 +1,231 @@
+Connected to Dynamips VM "R1" (ID 1, type c7200) - Console port
+Press ENTER to get the prompt.
+
+Codes: P - Passive, A - Active, U - Update, Q - Query, R - Reply,
+       r - reply Status, s - sia Status 
+
+P 10.19.20.0/30, 1 successors, FD is 28416
+        via 10.1.2.2 (28416/2816), FastEthernet0/0
+P 20.20.20.20/32, 1 successors, FD is 28416
+        via 10.1.2.2 (28416/2816), FastEthernet0/0
+P 10.1.2.0/30, 1 successors, FD is 28160
+        via Connected, FastEthernet0/0
+P 1.1.1.1/32, 1 successors, FD is 128256
+        via Connected, Loopback0
+
+R1#
+R1#show ip eigrp da       
+R1#show ip eigrp dat
+R1#show ip eigrp ?  
+  <1-65535>   Autonomous System
+  accounting  Prefix Accounting
+  events      Events logged
+  interfaces  interfaces
+  neighbors   Neighbors
+  timers      Timers
+  topology    Select Topology
+  traffic     Traffic Statistics
+  vrf         Select a VPN Routing/Forwarding instance
+
+R1#show ip eigrp 
+% Incomplete command.
+
+R1#
+*Jul 10 11:11:16.602: %DUAL-5-NBRCHANGE: EIGRP-IPv4 1: Neighbor 10.1.2.2 (FastEthernet0/0) is down: Interface PEER-TERMINATION received
+*Jul 10 11:11:19.810: %DUAL-5-NBRCHANGE: EIGRP-IPv4 1: Neighbor 10.1.2.2 (FastEthernet0/0) is up: new adjacency
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+R1>
+R1>en
+R1#
+R1#sh
+R1#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/32 is subnetted, 1 subnets
+C        1.1.1.1 is directly connected, Loopback0
+      10.0.0.0/8 is variably subnetted, 3 subnets, 2 masks
+C        10.1.2.0/30 is directly connected, FastEthernet0/0
+L        10.1.2.1/32 is directly connected, FastEthernet0/0
+D        10.19.20.0/30 [90/28416] via 10.1.2.2, 00:10:45, FastEthernet0/0
+      20.0.0.0/32 is subnetted, 1 subnets
+D        20.20.20.20 [90/28416] via 10.1.2.2, 00:10:45, FastEthernet0/0
+R1#
+R1#
+R1#traceroute 20.20.20.20 so lo0 
+Type escape sequence to abort.
+Tracing the route to 20.20.20.20
+VRF info: (vrf in name/id, vrf out name/id)
+  1 10.1.2.2 32 msec 44 msec 48 msec
+  2 20.2.3.2 [MPLS: Labels 303/19006 Exp 0] 48 msec 44 msec 48 msec
+  3 20.3.6.2 [MPLS: Labels 603/19006 Exp 0] 48 msec 36 msec 48 msec
+  4 20.6.19.2 [MPLS: Label 19006 Exp 0] 52 msec 52 msec 76 msec
+  5 10.19.20.2 68 msec 32 msec
+*Jul 10 11:23:13.990: %DUAL-5-NBRCHANGE: EIGRP-IPv4 1: Neighbor 10.1.2.2 (FastEthernet0/0) is down: Interface PEER-TERMINATION received * 
+R1#
+R1#
+R1#
+R1#sh run | s r e
+router eigrp 1
+ network 1.0.0.0
+ network 10.0.0.0
+R1#
+R1#
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#no router ei
+R1(config)#no router eigrp 1
+R1(config)#
+R1(config)#router ei
+R1(config)#router os    
+R1(config)#router ospf 100
+R1(config-router)#
+R1(config-router)#net
+R1(config-router)#network 10.1.2.0 0.0.0.3 are
+R1(config-router)#network 10.1.2.0 0.0.0.3 area 0
+R1(config-router)#
+R1(config-router)#
+R1(config-router)#
+*Jul 10 11:27:19.802: %OSPF-5-ADJCHG: Process 100, Nbr 10.1.2.2 on FastEthernet0/0 from LOADING to FULL, Loading Donenet
+R1(config-router)#network 
+R1(config-router)#network 1.1.1.1 0.0.0.0 are
+R1(config-router)#network 1.1.1.1 0.0.0.0 area 0
+R1(config-router)#
+R1(config-router)#exit
+R1(config)#
+R1(config)#
+R1(config)#exit
+R1#
+R1#
+R1#ah ip 
+*Jul 10 11:27:33.226: %SYS-5-CONFIG_I: Configured from console by consoler
+R1#ah ip r
+R1#       
+R1#
+R1#ping 20.20.20.20 so lo0      
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 20.20.20.20, timeout is 2 seconds:
+Packet sent with a source address of 1.1.1.1 
+.....
+Success rate is 0 percent (0/5)
+R1#sh ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/32 is subnetted, 1 subnets
+C        1.1.1.1 is directly connected, Loopback0
+      10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        10.1.2.0/30 is directly connected, FastEthernet0/0
+L        10.1.2.1/32 is directly connected, FastEthernet0/0
+R1#
+R1#
+R1#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+

@@ -1,0 +1,254 @@
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR2 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Tue Jul 10 02:54:34.056 UTC
+RP/0/0/CPU0:XR2(config)#router
+router  router-convergence  
+RP/0/0/CPU0:XR2(config)#router static ?  
+  address-family  Static route address family configuration subcommands
+  maximum         Limit the number of static paths which may be configured
+  vrf             VRF Static route configuration subcommands
+  <cr>            
+RP/0/0/CPU0:XR2(config)#router static address-family ipv4 ?
+  multicast  Multicast commands
+  unicast    Unicast commands
+RP/0/0/CPU0:XR2(config)#router static address-family ipv4 unicast ?
+  A.B.C.D/length  Destination prefix
+  topology        Topology static route configuration subcommands
+  <cr>            
+RP/0/0/CPU0:XR2(config)#router static address-family ipv4 unicast 0.0.0.0/0 10$
+RP/0/0/CPU0:XR2(config)#commit 
+Tue Jul 10 02:55:14.983 UTC
+RP/0/0/CPU0:XR2(config)#
+RP/0/0/CPU0:XR2(config)#
+RP/0/0/CPU0:XR2(config)#exit
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh run interface i
+IMA  InterflexLeft  InterflexRight  inheritance
+RP/0/0/CPU0:XR2#sh run interface gigabitEthernet 0/0/0/0 
+Tue Jul 10 02:55:28.772 UTC
+interface GigabitEthernet0/0/0/0
+ shutdown
+!
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh run interface gigabitEthernet 0/0/0/1 
+Tue Jul 10 02:55:31.572 UTC
+interface GigabitEthernet0/0/0/1
+ shutdown
+!
+
+RP/0/0/CPU0:XR2#sh run interface gigabitEthernet 0/0/0/2
+Tue Jul 10 02:55:35.622 UTC
+interface GigabitEthernet0/0/0/2
+ ipv4 address 10.19.20.2 255.255.255.252
+!
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#ping 10.19.20.2
+Tue Jul 10 02:56:00.290 UTC
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.19.20.2, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/4/19 ms
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh run interface l0 
+Tue Jul 10 02:56:18.019 UTC
+interface Loopback0
+ ipv4 address 20.20.20.20 255.255.255.255
+!
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#ping 1.1.1.1
+Tue Jul 10 03:00:27.532 UTC
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 1.1.1.1, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#ping 1.1.1.1
+Tue Jul 10 03:04:39.215 UTC
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 1.1.1.1, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#ping 1.1.1.1 source lo0
+Tue Jul 10 03:08:52.457 UTC
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 1.1.1.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 19/19/19 ms
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#traceroute 1.1.1.1 source lo0
+Tue Jul 10 03:09:03.156 UTC
+% Bad hostname or protocol not running
+RP/0/0/CPU0:XR2#traceroute 1.1.1.1 source?   
+source  
+RP/0/0/CPU0:XR2#traceroute 1.1.1.1 source ?
+  WORD  source address
+RP/0/0/CPU0:XR2#traceroute 1.1.1.1 source 20.20.20.20 
+Tue Jul 10 03:09:16.516 UTC
+
+Type escape sequence to abort.
+Tracing the route to 1.1.1.1
+
+ 1  10.19.20.1 9 msec  0 msec  0 msec 
+ 2  20.6.19.1 [MPLS: Labels 601/205 Exp 0] 19 msec  19 msec  19 msec 
+ 3  20.3.6.1 [MPLS: Labels 301/205 Exp 0] 19 msec  19 msec  19 msec 
+ 4  10.1.2.2 [MPLS: Label 205 Exp 0] 9 msec  9 msec  9 msec 
+ 5  10.1.2.1 9 msec  *  9 msec 
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show 
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR2 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+

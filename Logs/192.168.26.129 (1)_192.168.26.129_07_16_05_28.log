@@ -1,0 +1,382 @@
+
+% Bad IP address or host name% Unknown command or computer name, or unable to find computer address
+CSR2>
+CSR2>
+CSR2>
+CSR2>
+CSR2>en
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh run | sec r o
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp sync
+CSR2#
+CSR2#
+CSR2#sh run | sec r e
+router eigrp 1
+ !
+ address-family ipv4 vrf VPN_A autonomous-system 1
+  redistribute bgp 100
+  network 10.0.0.0
+  auto-summary
+ exit-address-family
+CSR2#
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#no router ei
+CSR2(config)#no router eigrp 1
+CSR2(config)#
+CSR2(config)#router ospf 100
+CSR2(config-router)#
+CSR2(config-router)#router-
+CSR2(config-router)#          
+CSR2(config-router)#net
+CSR2(config-router)#ip      
+CSR2(config-router)#ad 
+CSR2(config-router)#add
+CSR2(config-router)#address-family i
+CSR2(config-router)#address-family ipv4 v
+CSR2(config-router)#address-family ipv4 vr
+CSR2(config-router)#address-family ipv4 ? 
+  multicast  Address Family modifier
+  unicast    Address Family modifier
+  <cr>
+
+CSR2(config-router)#address-family ipv4 un
+CSR2(config-router)#address-family ipv4 unicast ?
+  <cr>
+
+CSR2(config-router)#address-family ipv4 unicast 
+CSR2(config-router-af)#?
+Router Address Family configuration commands:
+  default              Set a command to its defaults
+  exit-address-family  Exit from Address Family configuration mode
+  help                 Description of the interactive help system
+  no                   Negate a command or set its defaults
+  snmp                 Modify snmp parameters
+  topology             Associate the routing protocol to a topology instance
+
+CSR2(config-router-af)#exit
+CSR2(config-router)#vr
+CSR2(config-router)#vrr
+CSR2(config-router)#ip 
+CSR2(config-router)#ip 
+CSR2(config-router)#ip vr
+CSR2(config-router)#?    
+Router configuration commands:
+  address-family         Enter Address Family command mode
+  adjacency              Control adjacency formation
+  area                   OSPF area parameters
+  auto-cost              Calculate OSPF interface cost according to bandwidth
+  bfd                    BFD configuration commands
+  capability             Enable specific OSPF feature
+  compatible             OSPF compatibility list
+  default                Set a command to its defaults
+  default-information    Control distribution of default information
+  default-metric         Set metric of redistributed routes
+  discard-route          Enable or disable discard-route installation
+  distance               Define an administrative distance
+  distribute-list        Filter networks in routing updates
+  domain-id              OSPF domain-id 
+  domain-tag             OSPF domain-tag
+  event-log              OSPF Event Logging
+  exit                   Exit from routing protocol configuration mode
+  fast-reroute           LFA FastReroute parameters
+  help                   Description of the interactive help system
+  ignore                 Do not complain about specific event
+  interface-id           Source of the interface ID
+  ispf                   Enable incremental SPF computation
+  limit                  Limit a specific OSPF feature
+  local-rib-criteria     Enable or disable usage of local RIB as route criteria
+  log-adjacency-changes  Log changes in adjacency state
+  max-lsa                maximum number of LSAs OSPF process will receive
+  max-metric             Set maximum metric
+  maximum-paths          Forward packets over multiple paths
+  microloop              Traffic microloop control parameters
+  mpls                   Configure MPLS routing protocol parameters
+  neighbor               Specify a neighbor router
+  network                Enable routing on an IP network
+  no                     Negate a command or set its defaults
+  nsf                    Non-stop forwarding
+  nsr                    Enable non-stop routing
+  passive-interface      Suppress routing updates on an interface
+  prefix-priority        OSPF prefix priority
+  prefix-suppression     OSPF prefix suppression
+  priority               OSPF topology priority
+  queue-depth            OSPF Hello/Router process queue depth
+  redistribute           Redistribute information from another routing protocol
+  router-id              router-id for this OSPF process
+  shutdown               Shutdown the OSPF protocol under the current instance
+  snmp                   Modify snmp parameters
+  summary-address        Configure IP address summaries
+  timers                 Adjust routing timers
+  traffic-share          How to compute traffic share over alternate paths
+  ttl-security           TTL security check
+
+CSR2(config-router)#exit
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#exit
+CSR2#
+CSR2#
+CSR2#
+*Jul 10 12:22:48.440: %SYS-5-CONFIG_I: Configured from console by consolesh run | sec r e
+CSR2#sh run | sec r o
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp sync
+router ospf 100
+CSR2#
+CSR2#
+CSR2#
+CSR2#conf t 
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#router os
+CSR2(config)#router ospf 100
+CSR2(config-router)#?
+Router configuration commands:
+  address-family         Enter Address Family command mode
+  adjacency              Control adjacency formation
+  area                   OSPF area parameters
+  auto-cost              Calculate OSPF interface cost according to bandwidth
+  bfd                    BFD configuration commands
+  capability             Enable specific OSPF feature
+  compatible             OSPF compatibility list
+  default                Set a command to its defaults
+  default-information    Control distribution of default information
+  default-metric         Set metric of redistributed routes
+  discard-route          Enable or disable discard-route installation
+  distance               Define an administrative distance
+  distribute-list        Filter networks in routing updates
+  domain-id              OSPF domain-id 
+  domain-tag             OSPF domain-tag
+  event-log              OSPF Event Logging
+  exit                   Exit from routing protocol configuration mode
+  fast-reroute           LFA FastReroute parameters
+  help                   Description of the interactive help system
+  ignore                 Do not complain about specific event
+  interface-id           Source of the interface ID
+  ispf                   Enable incremental SPF computation
+  limit                  Limit a specific OSPF feature
+  local-rib-criteria     Enable or disable usage of local RIB as route criteria
+  log-adjacency-changes  Log changes in adjacency state
+  max-lsa                maximum number of LSAs OSPF process will receive
+  max-metric             Set maximum metric
+  maximum-paths          Forward packets over multiple paths
+  microloop              Traffic microloop control parameters
+  mpls                   Configure MPLS routing protocol parameters
+  neighbor               Specify a neighbor router
+  network                Enable routing on an IP network
+  no                     Negate a command or set its defaults
+  nsf                    Non-stop forwarding
+  nsr                    Enable non-stop routing
+  passive-interface      Suppress routing updates on an interface
+  prefix-priority        OSPF prefix priority
+  prefix-suppression     OSPF prefix suppression
+  priority               OSPF topology priority
+  queue-depth            OSPF Hello/Router process queue depth
+  redistribute           Redistribute information from another routing protocol
+  router-id              router-id for this OSPF process
+  shutdown               Shutdown the OSPF protocol under the current instance
+  snmp                   Modify snmp parameters
+  summary-address        Configure IP address summaries
+  timers                 Adjust routing timers
+  traffic-share          How to compute traffic share over alternate paths
+  ttl-security           TTL security check
+
+CSR2(config-router)#
+CSR2(config-router)#add
+CSR2(config-router)#address-family ip
+CSR2(config-router)#address-family ipv4 ?
+  multicast  Address Family modifier
+  unicast    Address Family modifier
+  <cr>
+
+CSR2(config-router)#address-family ipv4 un
+CSR2(config-router)#address-family ipv4 unicast ?
+  <cr>
+
+CSR2(config-router)#address-family ipv4         
+CSR2(config-router-af)#?
+Router Address Family configuration commands:
+  default              Set a command to its defaults
+  exit-address-family  Exit from Address Family configuration mode
+  help                 Description of the interactive help system
+  no                   Negate a command or set its defaults
+  snmp                 Modify snmp parameters
+  topology             Associate the routing protocol to a topology instance
+
+CSR2(config-router-af)#exit
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#? 
+Router configuration commands:
+  address-family         Enter Address Family command mode
+  adjacency              Control adjacency formation
+  area                   OSPF area parameters
+  auto-cost              Calculate OSPF interface cost according to bandwidth
+  bfd                    BFD configuration commands
+  capability             Enable specific OSPF feature
+  compatible             OSPF compatibility list
+  default                Set a command to its defaults
+  default-information    Control distribution of default information
+  default-metric         Set metric of redistributed routes
+  discard-route          Enable or disable discard-route installation
+  distance               Define an administrative distance
+  distribute-list        Filter networks in routing updates
+  domain-id              OSPF domain-id 
+  domain-tag             OSPF domain-tag
+  event-log              OSPF Event Logging
+  exit                   Exit from routing protocol configuration mode
+  fast-reroute           LFA FastReroute parameters
+  help                   Description of the interactive help system
+  ignore                 Do not complain about specific event
+  interface-id           Source of the interface ID
+  ispf                   Enable incremental SPF computation
+  limit                  Limit a specific OSPF feature
+  local-rib-criteria     Enable or disable usage of local RIB as route criteria
+  log-adjacency-changes  Log changes in adjacency state
+  max-lsa                maximum number of LSAs OSPF process will receive
+  max-metric             Set maximum metric
+  maximum-paths          Forward packets over multiple paths
+  microloop              Traffic microloop control parameters
+  mpls                   Configure MPLS routing protocol parameters
+  neighbor               Specify a neighbor router
+  network                Enable routing on an IP network
+  no                     Negate a command or set its defaults
+  nsf                    Non-stop forwarding
+  nsr                    Enable non-stop routing
+  passive-interface      Suppress routing updates on an interface
+  prefix-priority        OSPF prefix priority
+  prefix-suppression     OSPF prefix suppression
+  priority               OSPF topology priority
+  queue-depth            OSPF Hello/Router process queue depth
+  redistribute           Redistribute information from another routing protocol
+  router-id              router-id for this OSPF process
+  shutdown               Shutdown the OSPF protocol under the current instance
+  snmp                   Modify snmp parameters
+  summary-address        Configure IP address summaries
+  timers                 Adjust routing timers
+  traffic-share          How to compute traffic share over alternate paths
+  ttl-security           TTL security check
+
+CSR2(config-router)#exit
+CSR2(config)#router ospf 100 vr  
+CSR2(config)#router ospf 100 vrf ?
+  WORD  VPN Routing/Forwarding Instance (VRF) name
+
+CSR2(config)#router ospf 100 vrf VPN
+CSR2(config)#router ospf 100 vrf VPN_A
+%VRF specified does not match existing router
+CSR2(config)#
+CSR2(config)#                         
+CSR2(config)#
+CSR2(config)#exit
+CSR2#
+CSR2#ah ru
+*Jul 10 12:24:38.535: %SYS-5-CONFIG_I: Configured from console by consolen 
+CSR2#ah run 
+CSR2#sh run | i vrf
+vrf definition VPN_A
+ vrf forwarding VPN_A
+ address-family ipv4 vrf VPN_A
+CSR2#
+CSR2#sh run | i ospf
+router ospf 1
+router ospf 100
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#no router ospf 100
+CSR2(config)#
+CSR2(config)#router os
+CSR2(config)#router ospf 100
+CSR2(config-router)#exit
+CSR2(config)#no router ospf 100
+CSR2(config)#
+CSR2(config)#router ospf 100 vr
+CSR2(config)#router ospf 100 vrf VPN_A
+CSR2(config-router)#
+CSR2(config-router)#ne
+CSR2(config-router)#net
+CSR2(config-router)#network 10.1.2.0 0.0.0.3 are
+CSR2(config-router)#network 10.1.2.0 0.0.0.3 area 0
+CSR2(config-router)#
+CSR2(config-router)#red
+CSR2(config-router)#redistribute 
+CSR2(config-router)#redistribute bg
+CSR2(config-router)#redistribute bgp ?
+  <1-4294967295>  Autonomous system number
+  <1.0-XX.YY>     Autonomous system number
+
+CSR2(config-router)#redistribute bgp 100?
+<1-4294967295>  <1.0-XX.YY>  
+
+CSR2(config-router)#redistribute bgp 100
+CSR2(config-router)#
+CSR2(config-router)#redistribute bgp 100 su
+CSR2(config-router)#redistribute bgp 100 subnets 
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#exit
+CSR2(config)#
+*Jul 10 12:26:49.530: %OSPF-5-ADJCHG: Process 100, Nbr 1.1.1.1 on GigabitEthernet1 from LOADING to FULL, Loading Done
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#exit
+CSR2#
+CSR2#
+CSR2#sh run 
+*Jul 10 12:27:15.668: %SYS-5-CONFIG_I: Configured from console by console| ae
+CSR2#sh run | s r b
+router bgp 100
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 next-hop-self
+ exit-address-family
+ !
+ address-family vpnv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 send-community extended
+ exit-address-family
+ !
+ address-family ipv4 vrf VPN_A
+ exit-address-family
+CSR2#
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#router bgp 100
+CSR2(config-router)#address-family ipv4 vrf VPN_A
+CSR2(config-router-af)#
+CSR2(config-router-af)#rd
+CSR2(config-router-af)#re
+CSR2(config-router-af)#redistribute os
+CSR2(config-router-af)#redistribute ospf ?
+  <1-65535>  Process ID
+
+CSR2(config-router-af)#redistribute ospf 100 ?
+  match      Redistribution of OSPF routes
+  metric     Metric for redistributed routes
+  route-map  Route map reference
+  vrf        VPN Routing/Forwarding Instance
+  <cr>
+
+CSR2(config-router-af)#redistribute ospf 100 

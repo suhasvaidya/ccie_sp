@@ -1,0 +1,339 @@
+Connected to Dynamips VM "R8" (ID 8, type c7200) - Console port
+Press ENTER to get the prompt.
+lot 0 (Sector size 512 bytes).
+131072K bytes of ATA PCMCIA card at slot 1 (Sector size 512 bytes).
+8192K bytes of Flash internal SIMM (Sector size 256K).
+
+         --- System Configuration Dialog ---
+
+Would you like to enter the initial configuration dialog? [yes/no]: no
+% Crashinfo may not be recovered at bootflash:crashinfo
+% This file system device reports an error
+
+
+Press RETURN to get started!
+
+
+*Jul  4 06:48:21.031: %IFMGR-7-NO_IFINDEX_FILE: Unable to open nvram:/ifIndex-table No such file or directory
+*Jul  4 06:48:21.335: %DEC21140-1-INITFAIL: Unsupported PHY brand timed out, csr5=0x0
+*Jul  4 06:48:21.435: %DEC21140-1-INITFAIL: Unsupported PHY brand timed out, csr5=0x0
+*Jul  4 06:48:21.539: %DEC21140-1-INITFAIL: Unsupported PHY brand timed out, csr5=0x0
+*Jul  4 06:48:28.219: %LINK-3-UPDOWN: Interface FastEthernet0/0, changed state to up
+*Jul  4 06:48:28.255: %LINK-3-UPDOWN: Interface FastEthernet1/0, changed state to up
+*Jul  4 06:48:28.267: %LINK-3-UPDOWN: Interface FastEthernet2/0, changed state to up
+*Jul  4 06:48:29.315: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+*Jul  4 06:48:29.319: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet1/0, changed state to up
+*Jul  4 06:48:29.323: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet2/0, changed state to up
+*Jul 
+Router> 4 06:55:24.151: %LINK-5-CHANGED: Interface FastEthernet0/0, changed state to administratively down
+*Jul  4 06:55:24.163: %LINK-5-CHANGED: Interface FastEthernet1/0, changed state to administratively down
+*Jul  4 06:55:24.171: %LINK-5-CHANGED: Interface FastEthernet2/0, changed state to administratively down
+*Jul  4 06:55:25.151: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to down
+*Jul  4 06:55:25.163: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet1/0, changed state to down
+*Jul  4 06:55:25.175: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet2/0, changed state to down
+*Jul  4 06:55:28.043: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, 7200 Software (C7200-ADVIPSERVICESK9-M), Version 15.2(4)S5, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2014 by Cisco Systems, Inc.
+Compiled Thu 20-Feb-14 06:51 by prod_rel_team
+*Jul  4 06:55:50.431: %SYS-3-CPUHOG: Task is running for (2024)msecs, more than (2000)msecs (0/0),process = Crypto CA.
+-Traceback= 0x61E0E52Cz 0x61E2E6C0z 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+Router>
+Router>no
+Translating "no"...domain server (255.255.255.255)
+
+% Bad IP address or host name
+Translating "no"...domain server (255.255.255.255)
+ (255.255.255.255)
+Translating "no"...domain server (255.255.255.255)
+% Unknown command or computer name, or unable to find computer address
+Router>enable
+Router#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+Router>
+Router>
+Router>
+Router>
+Router>no
+Translating "no"...domain server (255.255.255.255)
+
+% Bad IP address or host name
+Translating "no"...domain server (255.255.255.255)
+ (255.255.255.255)
+Translating "no"...domain server (255.255.255.255)
+% Unknown command or computer name, or unable to find computer address
+Router>enable
+Router#terminal length 0
+Router#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+Router>
+Router>
+Router>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+Router>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Router con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+

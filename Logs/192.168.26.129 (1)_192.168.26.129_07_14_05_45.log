@@ -1,0 +1,649 @@
+
+CSR2#
+CSR2#sh run | s r e
+router eigrp 1
+ !
+ address-family ipv4 vrf VPN_A 
+  redistribute bgp 100 metric 6500 0 255 1 1500
+  network 10.1.2.0 0.0.0.3
+ exit-address-family
+CSR2#
+CSR2#
+CSR2#sh
+CSR2#show rou
+CSR2#show ip ei 
+CSR2#show ip eigrp in
+CSR2#show ip eigrp interfaces 
+EIGRP-IPv4 Interfaces for AS(1)
+                              Xmit Queue   PeerQ        Mean   Pacing Time   Multicast    Pending
+Interface              Peers  Un/Reliable  Un/Reliable  SRTT   Un/Reliable   Flow Timer   Routes
+CSR2#show ip eigrp vr         
+CSR2#show ip eigrp vrf VPN_A in
+CSR2#show ip eigrp vrf VPN_A interfaces 
+EIGRP-IPv4 Interfaces for AS(0) VRF(VPN_A)
+                              Xmit Queue   PeerQ        Mean   Pacing Time   Multicast    Pending
+Interface              Peers  Un/Reliable  Un/Reliable  SRTT   Un/Reliable   Flow Timer   Routes
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#show ip eigrp vrf VPN_A interfaces 
+EIGRP-IPv4 Interfaces for AS(0) VRF(VPN_A)
+                              Xmit Queue   PeerQ        Mean   Pacing Time   Multicast    Pending
+Interface              Peers  Un/Reliable  Un/Reliable  SRTT   Un/Reliable   Flow Timer   Routes
+CSR2#
+CSR2#sh run | s r e
+router eigrp 1
+ !
+ address-family ipv4 vrf VPN_A 
+  redistribute bgp 100 metric 6500 0 255 1 1500
+  network 10.1.2.0 0.0.0.3
+ exit-address-family
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#no router eigrp 1
+CSR2(config)#
+CSR2(config)#router ei
+CSR2(config)#router eigrp 1
+CSR2(config-router)#
+CSR2(config-router)#vr
+CSR2(config-router)#v 
+CSR2(config-router)#add      
+CSR2(config-router)#address-family v
+CSR2(config-router)#address-family i
+CSR2(config-router)#address-family ipv4 vr
+CSR2(config-router)#address-family ipv4 vrf VPN_A
+CSR2(config-router-af)#ne
+CSR2(config-router-af)#net
+CSR2(config-router-af)#network 10.1.2.0
+CSR2(config-router-af)#
+CSR2(config-router-af)#no au
+CSR2(config-router-af)#no auto-summary 
+CSR2(config-router-af)#end
+CSR2#
+CSR2#
+*Jul 10 11:19:40.650: %SYS-5-CONFIG_I: Configured from console by consolesh run | s r e
+CSR2#show ip eigrp vrf VPN_A interfaces 
+EIGRP-IPv4 Interfaces for AS(0) VRF(VPN_A)
+                              Xmit Queue   PeerQ        Mean   Pacing Time   Multicast    Pending
+Interface              Peers  Un/Reliable  Un/Reliable  SRTT   Un/Reliable   Flow Timer   Routes
+CSR2#
+CSR2#
+CSR2#show ip eigrp interfaces           
+EIGRP-IPv4 Interfaces for AS(1)
+                              Xmit Queue   PeerQ        Mean   Pacing Time   Multicast    Pending
+Interface              Peers  Un/Reliable  Un/Reliable  SRTT   Un/Reliable   Flow Timer   Routes
+CSR2#
+CSR2#
+CSR2#sh run | s r e                     
+router eigrp 1
+ !
+ address-family ipv4 vrf VPN_A 
+  network 10.0.0.0
+ exit-address-family
+CSR2#
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#no router ei
+CSR2(config)#no router eigrp 1
+CSR2(config)#
+CSR2(config)#router ei
+CSR2(config)#router eigrp 1
+CSR2(config-router)#add
+CSR2(config-router)#address-family i
+CSR2(config-router)#address-family ipv4 un
+CSR2(config-router)#address-family ipv4 unicast v
+CSR2(config-router)#address-family ipv4 unicast vrf VPN_A
+CSR2(config-router-af)#ne
+CSR2(config-router-af)#net
+CSR2(config-router-af)#network 10.1.2.0
+CSR2(config-router-af)#no sh
+CSR2(config-router-af)#no au       
+CSR2(config-router-af)#no auto-summary 
+CSR2(config-router-af)#
+CSR2(config-router-af)#end
+CSR2#
+CSR2#
+CSR2#sh run | s r e
+*Jul 10 11:21:08.520: %SYS-5-CONFIG_I: Configured from consolow ip eigrp interfaces 
+CSR2#show ip eigrp interfaces 
+EIGRP-IPv4 Interfaces for AS(1)
+                              Xmit Queue   PeerQ        Mean   Pacing Time   Multicast    Pending
+Interface              Peers  Un/Reliable  Un/Reliable  SRTT   Un/Reliable   Flow Timer   Routes
+CSR2#
+CSR2#
+CSR2#
+CSR2#show ip eigrp vrf VPN_A interfaces 
+EIGRP-IPv4 Interfaces for AS(0) VRF(VPN_A)
+                              Xmit Queue   PeerQ        Mean   Pacing Time   Multicast    Pending
+Interface              Peers  Un/Reliable  Un/Reliable  SRTT   Un/Reliable   Flow Timer   Routes
+CSR2#
+CSR2#
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#no router ei
+CSR2(config)#no router eigrp 1
+CSR2(config)#router ei
+CSR2(config)#router eigrp 1
+CSR2(config-router)#add
+CSR2(config-router)#address-family ip
+CSR2(config-router)#address-family ipv4 un
+CSR2(config-router)#address-family ipv4 unicast v
+CSR2(config-router)#address-family ipv4 unicast vrf VPN_A au
+CSR2(config-router)#address-family ipv4 unicast vrf VPN_A autonomous-system 1
+CSR2(config-router-af)#net
+CSR2(config-router-af)#network 10.1.2.0
+CSR2(config-router-af)#
+*Jul 10 11:22:04.901: %DUAL-5-NBRCHANGE: EIGRP-IPv4 1: Neighbor 10.1.2.1 (GigabitEthernet1) is up: new adjacency
+CSR2(config-router-af)#
+CSR2(config-router-af)#au
+CSR2(config-router-af)#auto-summary 
+CSR2(config-router-af)#red1
+*Jul 10 11:22:12.102: %DUAL-5-NBRCHANGE: EIGRP-IPv4 1: Neighbor 10.1.2.1 (GigabitEthernet1) is resync: summary configured
+CSR2(config-router-af)#red 
+CSR2(config-router-af)#top          
+CSR2(config-router-af)#topo
+CSR2(config-router-af)#?   
+Address Family configuration commands:
+  auto-summary         Enable automatic network number summarization
+  bfd                  BFD configuration commands
+  default              Set a command to its defaults
+  default-information  Control distribution of default information
+  default-metric       Set metric of redistributed routes
+  distance             Define an administrative distance
+  distribute-list      Filter entries in eigrp updates
+  eigrp                EIGRP specific commands
+  exit-address-family  Exit Address Family configuration mode
+  help                 Description of the interactive help system
+  maximum-paths        Forward packets over multiple paths
+  maximum-prefix       Maximum number of prefixes acceptable in aggregate
+  metric               Modify metrics and parameters for advertisement
+  neighbor             Specify a neighbor router
+  network              Enable routing on an IP network
+  no                   Negate a command or set its defaults
+  nsf                  Non-stop forwarding
+  offset-list          Add or subtract offset from EIGRP metrics
+  passive-interface    Suppress routing updates on an interface
+  redistribute         Redistribute IPv4 routes from another routing protocol
+  shutdown             Shutdown address family
+  summary-metric       Specify summary to apply metric/filtering
+  timers               Adjust routing timers
+  traffic-share        How to compute traffic share over alternate paths
+  variance             Control load balancing variance
+
+CSR2(config-router-af)#
+CSR2(config-router-af)#
+CSR2(config-router-af)#exit
+CSR2(config-router)#to 
+CSR2(config-router)#top
+CSR2(config-router)#topo
+CSR2(config-router)#topolo
+CSR2(config-router)#?     
+Router configuration commands:
+  address-family       Enter Address Family command mode
+  auto-summary         Enable automatic network number summarization
+  bfd                  BFD configuration commands
+  default              Set a command to its defaults
+  default-information  Control distribution of default information
+  default-metric       Set metric of redistributed routes
+  distance             Define an administrative distance
+  distribute-list      Filter entries in eigrp updates
+  eigrp                EIGRP specific commands
+  exit                 Exit from routing protocol configuration mode
+  maximum-paths        Forward packets over multiple paths
+  metric               Modify metrics and parameters for advertisement
+  neighbor             Specify a neighbor router
+  network              Enable routing on an IP network
+  no                   Negate a command or set its defaults
+  nsf                  Non-stop forwarding
+  offset-list          Add or subtract offset from EIGRP metrics
+  passive-interface    Suppress routing updates on an interface
+  redistribute         Redistribute IPv4 routes from another routing protocol
+  shutdown             Shutdown this instance of EIGRP 
+  summary-metric       Specify summary to apply metric/filtering
+  timers               Adjust routing timers
+  traffic-share        How to compute traffic share over alternate paths
+  variance             Control load balancing variance
+
+CSR2(config-router)#ad
+CSR2(config-router)#address-family ip
+CSR2(config-router)#address-family ipv4 un
+CSR2(config-router)#address-family ipv4 unicast v
+CSR2(config-router)#address-family ipv4 unicast vrf VPN_A au
+CSR2(config-router)#$ily ipv4 unicast vrf VPN_A autonomous-system 1 ?        
+  <cr>
+
+CSR2(config-router)#$ily ipv4 unicast vrf VPN_A autonomous-system 1 
+CSR2(config-router-af)#top
+CSR2(config-router-af)#topo
+CSR2(config-router-af)#topolo
+CSR2(config-router-af)#topology
+CSR2(config-router-af)#?       
+Address Family configuration commands:
+  auto-summary         Enable automatic network number summarization
+  bfd                  BFD configuration commands
+  default              Set a command to its defaults
+  default-information  Control distribution of default information
+  default-metric       Set metric of redistributed routes
+  distance             Define an administrative distance
+  distribute-list      Filter entries in eigrp updates
+  eigrp                EIGRP specific commands
+  exit-address-family  Exit Address Family configuration mode
+  help                 Description of the interactive help system
+  maximum-paths        Forward packets over multiple paths
+  maximum-prefix       Maximum number of prefixes acceptable in aggregate
+  metric               Modify metrics and parameters for advertisement
+  neighbor             Specify a neighbor router
+  network              Enable routing on an IP network
+  no                   Negate a command or set its defaults
+  nsf                  Non-stop forwarding
+  offset-list          Add or subtract offset from EIGRP metrics
+  passive-interface    Suppress routing updates on an interface
+  redistribute         Redistribute IPv4 routes from another routing protocol
+  shutdown             Shutdown address family
+  summary-metric       Specify summary to apply metric/filtering
+  timers               Adjust routing timers
+  traffic-share        How to compute traffic share over alternate paths
+  variance             Control load balancing variance
+
+CSR2(config-router-af)#
+CSR2(config-router-af)#
+CSR2(config-router-af)#red
+CSR2(config-router-af)#redistribute b
+CSR2(config-router-af)#redistribute bgp 100
+CSR2(config-router-af)#
+CSR2(config-router-af)#commi
+CSR2(config-router-af)#commi
+                       ^
+% Invalid input detected at '^' marker.
+
+CSR2(config-router-af)#end  
+CSR2#
+CSR2#
+CSR2#show ip eigrp vrf VPN_A interfaces 
+*Jul 10 11:23:54.314: %SYS-5-CONFIG_I: Configured from console by console
+EIGRP-IPv4 Interfaces for AS(1) VRF(VPN_A)
+                              Xmit Queue   PeerQ        Mean   Pacing Time   Multicast    Pending
+Interface              Peers  Un/Reliable  Un/Reliable  SRTT   Un/Reliable   Flow Timer   Routes
+Gi1                      1        0/0       0/0          16       0/0           80           0
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh run | s r b
+router bgp 100
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 next-hop-self
+ exit-address-family
+ !
+ address-family vpnv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 send-community extended
+ exit-address-family
+ !
+ address-family ipv4 vrf VPN_A
+  redistribute eigrp 1
+ exit-address-family
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#show eigrp address-family ipv4 vrf VPN_A neighbors
+EIGRP-IPv4 Neighbors for AS(1) VRF(VPN_A)
+H   Address                 Interface              Hold Uptime   SRTT   RTO  Q  Seq
+                                                   (sec)         (ms)       Cnt Num
+0   10.1.2.1                Gi1                      14 00:22:39   16   100  0  4
+CSR2#
+CSR2#show ip eigrp vrf VPN_A topology
+EIGRP-IPv4 Topology Table for AS(1)/ID(10.1.2.2) VRF(VPN_A)
+Codes: P - Passive, A - Active, U - Update, Q - Query, R - Reply,
+       r - reply Status, s - sia Status 
+
+P 10.19.20.0/30, 1 successors, FD is 2816
+        via VPNv4 Sourced (2816/0)
+P 20.20.20.20/32, 1 successors, FD is 2842
+        via VPNv4 Sourced (2842/0)
+P 10.1.2.0/30, 1 successors, FD is 2816
+        via Connected, GigabitEthernet1
+P 1.1.1.1/32, 1 successors, FD is 130816
+        via 10.1.2.1 (130816/128256), GigabitEthernet1
+
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#show ip eigrp vrf VPN_A topology
+EIGRP-IPv4 Topology Table for AS(1)/ID(10.1.2.2) VRF(VPN_A)
+Codes: P - Passive, A - Active, U - Update, Q - Query, R - Reply,
+       r - reply Status, s - sia Status 
+
+P 10.19.20.0/30, 1 successors, FD is 2816
+        via VPNv4 Sourced (2816/0)
+P 20.20.20.20/32, 1 successors, FD is 2842
+        via VPNv4 Sourced (2842/0)
+P 10.1.2.0/30, 1 successors, FD is 2816
+        via Connected, GigabitEthernet1
+P 1.1.1.1/32, 1 successors, FD is 130816
+        via 10.1.2.1 (130816/128256), GigabitEthernet1
+
+CSR2#
+CSR2#
+CSR2#wr
+Building configuration...
+[OK]
+CSR2#
+CSR2#
+CSR2#
+CSR2#terminal length 0
+CSR2#more system:running-config
+!
+! Last configuration change at 11:23:54 UTC Tue Jul 10 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition VPN_A
+ rd 100:1
+ route-target export 100:1
+ route-target import 100:1
+ !
+ address-family ipv4
+ exit-address-family
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 200 299
+mpls ldp session protection
+mpls ldp label
+ allocate global prefix-list LABELS
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9S2KOPAUVOD
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+!
+interface Loopback10
+ no ip address
+!
+interface GigabitEthernet1
+ vrf forwarding VPN_A
+ ip address 10.1.2.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.2.4.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet3
+ ip address 20.2.3.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+!
+!
+router eigrp 1
+ !
+ address-family ipv4 vrf VPN_A autonomous-system 1
+  redistribute bgp 100
+  network 10.0.0.0
+  auto-summary
+ exit-address-family
+!
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp sync
+!
+router bgp 100
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 next-hop-self
+ exit-address-family
+ !
+ address-family vpnv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 send-community extended
+ exit-address-family
+ !
+ address-family ipv4 vrf VPN_A
+  redistribute eigrp 1
+ exit-address-family
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+ip prefix-list LABELS seq 10 permit 3.3.3.3/32
+ip prefix-list LABELS seq 15 permit 4.4.4.4/32
+ip prefix-list LABELS seq 20 permit 5.5.5.5/32
+ip prefix-list LABELS seq 25 permit 6.6.6.6/32
+ip prefix-list LABELS seq 30 permit 19.19.19.19/32
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR2#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR2 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR2>
+CSR2>\
+*Jul 10 12:03:23.560: %DUAL-5-NBRCHANGE: EIGRP-IPv4 1: Neighbor 10.1.2.1 (GigabitEthernet1) is down: holding time expired

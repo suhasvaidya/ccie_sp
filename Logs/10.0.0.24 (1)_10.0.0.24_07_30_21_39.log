@@ -1,0 +1,198 @@
+                 [110/3] via 20.2.3.2, 00:01:52, GigabitEthernet3
+      7.0.0.0/32 is subnetted, 1 subnets
+          
+CSR2#
+CSR2#
+CSR2#sh run 
+Building configuration...
+
+Current configuration : 2557 bytes
+!
+! Last configuration change at 01:00:49 UTC Tue Jul 31 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition VPN_A
+ rd 100:1
+ route-target export 100:1
+ route-target import 100:1
+ !
+ address-family ipv4
+ exit-address-family
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+          
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#vrf definition VPN_B
+CSR2(config-vrf)# rd 100:2
+CSR2(config-vrf)# route-target export 100:2
+CSR2(config-vrf)# route-target import 100:2
+CSR2(config-vrf)# !
+CSR2(config-vrf)# address-family ipv4
+CSR2(config-vrf-af)# exit-address-family
+CSR2(config-vrf)#vrf definition VPN_C
+CSR2(config-vrf)# rd 100:3
+CSR2(config-vrf)# route-target export 100:3
+CSR2(config-vrf)# route-target import 100:3
+CSR2(config-vrf)# !
+CSR2(config-vrf)# address-family ipv4
+CSR2(config-vrf-af)# exit-address-family
+CSR2(config-vrf)#
+CSR2(config-vrf)#exit
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#router bgp 100
+CSR2(config-router)# no bgp default ipv4-unicast
+CSR2(config-router)# neighbor 4.4.4.4 remote-as 100
+CSR2(config-router)# neighbor 4.4.4.4 update-source Loopback0
+CSR2(config-router)# neighbor 5.5.5.5 remote-as 100
+CSR2(config-router)# neighbor 5.5.5.5 update-source Loopback0
+CSR2(config-router)# neighbor 19.19.19.19 remote-as 100
+CSR2(config-router)# neighbor 19.19.19.19 update-source Loopback0
+CSR2(config-router)# !
+CSR2(config-router)#address-family vpnv4
+CSR2(config-router-af)# neighbor 4.4.4.4 activate
+CSR2(config-router-af)# neighbor 4.4.4.4 send-community extended
+CSR2(config-router-af)# neighbor 5.5.5.5 activate
+CSR2(config-router-af)# neighbor 5.5.5.5 send-community extended
+CSR2(config-router-af)# neighbor 19.19.19.19 activate
+CSR2(config-router-af)# neighbor 19.19.19.19 send-community extended
+CSR2(config-router-af)#exit-address-family
+CSR2(config-router)#!
+CSR2(config-router)#address-family ipv4 vrf VPN_A
+CSR2(config-router-af)#network 1.1.1.20 mask 255.255.255.255
+CSR2(config-router-af)#exit-address-family
+CSR2(config-router)#!
+CSR2(config-router)#address-family ipv4 vrf VPN_B
+CSR2(config-router-af)# network 1.1.1.7 mask 255.255.255.255
+CSR2(config-router-af)#exit-address-family
+CSR2(config-router)#!
+CSR2(config-router)#address-family ipv4 vrf VPN_C
+CSR2(config-router-af)# network 1.1.1.8 mask 255.255.255.255
+CSR2(config-router-af)#exit-address-family
+CSR2(config-router)#!
+CSR2(config-router)#ip access-list standard VPN_A_SOURCES
+CSR2(config-std-nacl)# permit host 1.1.1.20
+CSR2(config-std-nacl)#ip access-list standard VPN_B_SOURCES
+CSR2(config-std-nacl)# permit host 1.1.1.7
+CSR2(config-std-nacl)#ip access-list standard VPN_C_SOURCES
+CSR2(config-std-nacl)# permit host 1.1.1.8
+CSR2(config-std-nacl)#route-map VRF_SELECTION_WITH_PBR permit 10
+CSR2(config-route-map)# match ip address VPN_A_SOURCES
+CSR2(config-route-map)# set vrf VPN_A
+CSR2(config-route-map)# !
+CSR2(config-route-map)#route-map VRF_SELECTION_WITH_PBR permit 20
+CSR2(config-route-map)# match ip address VPN_B_SOURCES
+CSR2(config-route-map)#set vrf VPN_B
+CSR2(config-route-map)#!
+CSR2(config-route-map)#route-map VRF_SELECTION_WITH_PBR permit 30
+CSR2(config-route-map)# match ip address VPN_C_SOURCES
+CSR2(config-route-map)# set vrf VPN_C
+CSR2(config-route-map)#!
+CSR2(config-route-map)#
+CSR2(config-route-map)#
+CSR2(config-route-map)#end
+CSR2#sh ru
+*Jul 31 01:57:21.542: %SYS-5-CONFIG_I: Configured from console by consolen 
+CSR2#sh run iinter
+CSR2#sh run int gi1
+Building configuration...
+
+Current configuration : 111 bytes
+!
+interface GigabitEthernet1
+ vrf forwarding VPN_A
+ ip address 10.1.2.2 255.255.255.252
+ negotiation auto
+end
+
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#inter
+CSR2(config)#interface gi
+CSR2(config)#interface gigabitEthernet 1
+CSR2(config-if)#
+CSR2(config-if)#vr
+CSR2(config-if)#vrf
+CSR2(config-if)#vrf re
+CSR2(config-if)#vrf rec
+CSR2(config-if)#ip vr  
+CSR2(config-if)#ip vrf re
+CSR2(config-if)#ip vrf ?       
+  autoclassify  Enable IP VRF Autoclassify feature
+  forwarding    Configure forwarding table
+  receive       Add interface address into VRF select database
+  select        Enable VRF selection
+  sitemap       Configure route-map for routes received from this site
+
+CSR2(config-if)#ip policy route-map VRF_SELECTION_WITH_PBR
+CSR2(config-if)# ip vrf receive VPN_A
+% Cannot configure 'ip vrf receive' if interface is under a VRF
+
+CSR2(config-if)# ip vrf receive VPN_B
+% Cannot configure 'ip vrf receive' if interface is under a VRF
+
+CSR2(config-if)# ip vrf receive VPN_C
+% Cannot configure 'ip vrf receive' if interface is under a VRF
+
+CSR2(config-if)#
+CSR2(config-if)#no vrf forwarding VPN_A
+% Interface GigabitEthernet1 IPv4 disabled and address(es) removed due to enabling VRF VPN_A
+ % IP policy route-map removed due to VRF change in interface GigabitEthernet1
+CSR2(config-if)#
+CSR2(config-if)#do sh run inter gi1    
+Building configuration...
+
+Current configuration : 67 bytes
+!
+interface GigabitEthernet1
+ no ip address
+ negotiation auto
+end
+
+CSR2(config-if)#
+CSR2(config-if)#ip policy route-map VRF_SELECTION_WITH_PBR
+CSR2(config-if)# ip vrf receive VPN_A
+CSR2(config-if)# ip vrf receive VPN_B
+CSR2(config-if)# ip vrf receive VPN_C
+CSR2(config-if)#
+CSR2(config-if)# ip address 10.1.2.2 255.255.255.252
+CSR2(config-if)#ip route vrf VPN_A 1.1.1.20 255.255.255.255 Gig1 10.1.2.1
+CSR2(config)#ip route vrf VPN_B 1.1.1.7 255.255.255.255 Gig1 10.1.2.1
+CSR2(config)#ip route vrf VPN_C 1.1.1.8 255.255.255.255 Gig1 10.1.2.1
+CSR2(config)#
+CSR2(config)#

@@ -1,0 +1,496 @@
+
+CSR3>en
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#csh 
+CSR3#sh 
+CSR3#show mpl
+CSR3#show mpls ld
+CSR3#show mpls ldp ig
+CSR3#show mpls ldp igp sy
+CSR3#show mpls ldp igp sync 
+    GigabitEthernet1:
+        LDP configured; LDP-IGP Synchronization not enabled.
+    GigabitEthernet3:
+        LDP configured; LDP-IGP Synchronization not enabled.
+    GigabitEthernet4:
+        LDP configured; LDP-IGP Synchronization not enabled.
+CSR3#
+CSR3#
+CSR3#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR3(config)#roter
+CSR3(config)#router os
+CSR3(config)#router ospf 1
+CSR3(config-router)#mpl
+CSR3(config-router)#mpls ld
+CSR3(config-router)#mpls ldp sy
+CSR3(config-router)#mpls ldp sync 
+CSR3(config-router)#end
+CSR3#
+CSR3#
+CSR3#show mpls ldp igp sync 
+    GigabitEthernet1:
+        LDP configured; LDP-IGP Synchronization enabled.
+        Sync status: sync achieved; peer reachable.
+        Sync delay time: 0 seconds (0 seconds left)
+        IGP holddown time: infinite.
+        Peer LDP Ident: 6.6.6.6:0
+        IGP enabled: OSPF 1
+    GigabitEthernet3:
+        LDP configured; LDP-IGP Synchronization enabled.
+        Sync status: sync achieved; peer reachable.
+        Sync delay time: 0 seconds (0 seconds left)
+        IGP holddown time: infinite.
+        Peer LDP Ident: 2.2.2.2:0
+        IGP enabled: OSPF 1
+    GigabitEthernet4:
+        LDP configured; LDP-IGP Synchronization enabled.
+        Sync status: sync achieved; peer reachable.
+        Sync delay time: 0 seconds (0 seconds left)
+        IGP holddown time: infinite.
+        Peer LDP Ident: 4.4.4.4:0
+        IGP enabled: OSPF 1
+CSR3#
+*Jul  4 10:27:32.799: %SYS-5-CONFIG_I: Configured from console by console
+CSR3#
+CSR3#
+CSR3#
+CSR3#wr
+Building configuration...
+[OK]
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR3 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+CSR3>
+CSR3>en
+CSR3#
+CSR3#
+CSR3#
+CSR3#sm
+CSR3#sh 
+CSR3#show 
+CSR3#show mpl
+CSR3#show mpls 
+CSR3#show mpls 
+CSR3#show mpls lds
+CSR3#show mpls ld 
+CSR3#show mpls ldp 
+CSR3#show mpls ldp ne
+CSR3#show mpls ldp neighbor 
+CSR3#show mpls ldp neighbor 4.4.4.4
+CSR3#show mpls ldp neighbor 4.4.4.4 det
+CSR3#show mpls ldp neighbor 4.4.4.4 detail 
+    Peer LDP Ident: 4.4.4.4:0; Local LDP Ident 3.3.3.3:0
+        TCP connection: 4.4.4.4.39094 - 3.3.3.3.646
+        Password: not required, none, in use
+        State: Oper; Msgs sent/rcvd: 160/159; Downstream; Last TIB rev sent 43
+        Up time: 01:45:44; UID: 7; Peer Id 1
+        LDP discovery sources:
+          GigabitEthernet4; Src IP addr: 20.3.4.2 
+            holdtime: 15000 ms, hello interval: 5000 ms
+        Addresses bound to peer LDP Ident:
+          20.2.4.2        4.4.4.4         20.3.4.2        20.4.6.1        
+          20.4.5.1        
+        Peer holdtime: 180000 ms; KA interval: 60000 ms; Peer state: estab
+        NSR: Not Ready
+        Capabilities Sent:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+        Capabilities Received:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+CSR3#   
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#comnf t
+       ^
+% Invalid input detected at '^' marker.
+
+CSR3#
+CSR3#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR3(config)#
+CSR3(config)#
+CSR3(config)#mpls
+CSR3(config)#mpls ld
+CSR3(config)#mpls ldp se
+CSR3(config)#mpls ldp session 
+CSR3(config)#mpls ldp session pr
+CSR3(config)#mpls ldp session protection 
+CSR3(config)#mpls ldp session protection 
+CSR3(config)#mpls ldp session protection 
+CSR3(config)#
+CSR3(config)#end
+CSR3#
+CSR3#comnf t
+*Jul  4 10:46:10.940: %SYS-5-CONFIG_I: Configured from console by console
+       ^
+% Invalid input detected at '^' marker.
+
+CSR3#conf t 
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR3(config)#
+CSR3(config)#
+CSR3(config)#
+CSR3(config)#
+CSR3(config)#
+CSR3(config)#exit
+CSR3#
+CSR3#
+CSR3#conf t
+*Jul  4 10:46:17.114: %SYS-5-CONFIG_I: Configured from console by conmnf t
+       ^
+% Invalid input detected at '^' marker.
+
+CSR3#conf t 
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR3(config)#
+CSR3(config)#
+CSR3(config)#
+CSR3(config)#
+CSR3(config)#exit
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+*Jul  4 10:46:24.526: %SYS-5-CONFIG_I: Configured from console by consoleconf t 
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR3(config)#
+CSR3(config)#
+CSR3(config)#
+CSR3(config)#exit
+CSR3#
+CSR3#
+CSR3#comnf t
+       ^
+% Invalid input detected at '^' marker.
+
+CSR3#
+*Jul  4 10:46:32.357: %SYS-5-CONFIG_I: Configured from console by consoleen                                    
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#sh
+CSR3#show mpl
+CSR3#show mpls ld
+CSR3#show mpls ldp ne
+CSR3#show mpls ldp neighbor 
+CSR3#show mpls ldp neighbor 4.4.4.4. det
+CSR3#show mpls ldp neighbor 4.4.4.4. det
+                                   ^
+% Invalid input detected at '^' marker.
+
+CSR3#
+CSR3#
+CSR3#
+CSR3#en                                 
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#  
+CSR3#
+CSR3#sh
+CSR3#show mpl
+CSR3#show mpls ld
+CSR3#show mpls ldp 
+CSR3#show mpls ldp ne
+CSR3#show mpls ldp neighbor 4.4.4.4 det
+CSR3#show mpls ldp neighbor 4.4.4.4 detail 
+    Peer LDP Ident: 4.4.4.4:0; Local LDP Ident 3.3.3.3:0
+        TCP connection: 4.4.4.4.39094 - 3.3.3.3.646
+        Password: not required, none, in use
+        State: Oper; Msgs sent/rcvd: 162/160; Downstream; Last TIB rev sent 43
+        Up time: 01:47:18; UID: 7; Peer Id 1
+        LDP discovery sources:
+          GigabitEthernet4; Src IP addr: 20.3.4.2 
+            holdtime: 15000 ms, hello interval: 5000 ms
+        Addresses bound to peer LDP Ident:
+          20.2.4.2        4.4.4.4         20.3.4.2        20.4.6.1        
+          20.4.5.1        
+        Peer holdtime: 180000 ms; KA interval: 60000 ms; Peer state: estab
+        Clients: Dir Adj Client
+        LDP Session Protection enabled, state: Incomplete
+            duration: 86400 seconds
+        NSR: Not Ready
+        Capabilities Sent:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+        Capabilities Received:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+CSR3# 
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#sh
+CSR3#show mpl
+CSR3#show mpls ld
+CSR3#show mpls ldp 
+CSR3#show mpls ldp 2.2.2.2.2 det
+CSR3#show mpls ldp 2.2.2.2.2 det
+                   ^
+% Invalid input detected at '^' marker.
+
+CSR3#show mpls ldp 2.2.2.       
+CSR3#show mpls ldp 2.2.2.
+CSR3#show mpls ldp 2.2.2.
+CSR3#show mpls ldp 2.2.2.2
+CSR3#show mpls ldp 2.2.2.2 det
+CSR3#show mpls ldp 2.2.2.2 det
+                   ^
+% Invalid input detected at '^' marker.
+
+CSR3#show mpls ldp 2.2.2.2 det
+CSR3#show mpls ldp 2.2.2.2 det
+CSR3#show mpls ldp 2.2.2.2 det
+CSR3#show mpls ldp 2.2        
+CSR3#show mpls ldp 2.2
+CSR3#show mpls ldp 2.2
+CSR3#show mpls ldp    
+CSR3#show mpls ldp nei
+CSR3#show mpls ldp neighbor 
+CSR3#show mpls ldp neighbor 2.2.2.2 det
+CSR3#show mpls ldp neighbor 2.2.2.2 detail 
+    Peer LDP Ident: 2.2.2.2:0; Local LDP Ident 3.3.3.3:0
+        TCP connection: 2.2.2.2.646 - 3.3.3.3.37494
+        Password: not required, none, in use
+        State: Oper; Msgs sent/rcvd: 162/165; Downstream; Last TIB rev sent 43
+        Up time: 01:48:01; UID: 6; Peer Id 0
+        LDP discovery sources:
+          GigabitEthernet3; Src IP addr: 20.2.3.1 
+            holdtime: 15000 ms, hello interval: 5000 ms
+          Targeted Hello 3.3.3.3 -> 2.2.2.2, active, passive;
+            holdtime: infinite, hello interval: 10000 ms
+        Addresses bound to peer LDP Ident:
+          10.1.2.2        20.2.4.1        20.2.3.1        2.2.2.2         
+        Peer holdtime: 180000 ms; KA interval: 60000 ms; Peer state: estab
+        Clients: Dir Adj Client
+        LDP Session Protection enabled, state: Ready
+            duration: 86400 seconds
+        NSR: Not Ready
+        Capabilities Sent:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+        Capabilities Received:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+CSR3# 
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#show mpls ldp 2.2.2.2.2 det           
+                   ^
+% Invalid input detected at '^' marker.
+
+CSR3#show mpls ldp 2.2.2.2.2 det           
+                   ^
+% Invalid input detected at '^' marker.
+
+CSR3#en                                    
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#sh
+CSR3#show mpl
+CSR3#show mpls ld
+CSR3#show mpls ldp ne
+CSR3#show mpls ldp neighbor i
+CSR3#show mpls ldp neighbor iMA-ACR4.4.4.4
+CSR3#show mpls ldp neighbor iMA-AC        
+CSR3#show mpls ldp neighbor iMA-ACR 
+CSR3#show mpls ldp neighbor iMA     
+CSR3#show mpls ldp neighbor iMA-A   
+CSR3#show mpls ldp neighbor         
+CSR3#show mpls ldp neighbor 
+CSR3#show mpls ldp neighbor  4.4.4.4
+CSR3#show mpls ldp neighbor  4.4.4.4 det
+CSR3#show mpls ldp neighbor  4.4.4.4 detail 
+    Peer LDP Ident: 4.4.4.4:0; Local LDP Ident 3.3.3.3:0
+        TCP connection: 4.4.4.4.39094 - 3.3.3.3.646
+        Password: not required, none, in use
+        State: Oper; Msgs sent/rcvd: 164/162; Downstream; Last TIB rev sent 43
+        Up time: 01:48:52; UID: 7; Peer Id 1
+        LDP discovery sources:
+          GigabitEthernet4; Src IP addr: 20.3.4.2 
+            holdtime: 15000 ms, hello interval: 5000 ms
+          Targeted Hello 3.3.3.3 -> 4.4.4.4, active, passive;
+            holdtime: infinite, hello interval: 10000 ms
+        Addresses bound to peer LDP Ident:
+          20.2.4.2        4.4.4.4         20.3.4.2        20.4.6.1        
+          20.4.5.1        
+        Peer holdtime: 180000 ms; KA interval: 60000 ms; Peer state: estab
+        Clients: Dir Adj Client
+        LDP Session Protection enabled, state: Ready
+            duration: 86400 seconds
+        NSR: Not Ready
+        Capabilities Sent:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+        Capabilities Received:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#
+CSR3#wr
+Building configuration...
+[OK]
+CSR3#
+CSR3#
+CSR3#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR3 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,2408 @@
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#terminal length 0
+Wed Jul  4 12:28:35.743 UTC
+RP/0/0/CPU0:XR2#configure terminal
+Wed Jul  4 12:28:35.913 UTC
+RP/0/0/CPU0:XR2(config)#no logging console
+RP/0/0/CPU0:XR2(config)#commit
+Wed Jul  4 12:28:36.282 UTC
+RP/0/0/CPU0:XR2(config)#exit
+RP/0/0/CPU0:XR2#show running-config
+Wed Jul  4 12:28:36.602 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 11:50:45 2018 by cisco
+!
+hostname XR2
+ipv4 access-list LABELS
+ 10 permit ipv4 host 2.2.2.2 any
+ 20 permit ipv4 host 3.3.3.3 any
+ 30 permit ipv4 host 4.4.4.4 any
+ 40 permit ipv4 host 5.5.5.5 any
+ 50 permit ipv4 host 6.6.6.6 any
+ 60 permit ipv4 host 19.19.19.19 any
+!
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 10.19.20.1 255.255.255.252
+!
+router ospf 1
+ mpls ldp sync
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+  interface GigabitEthernet0/0/0/2
+  !
+ !
+!
+mpls ldp
+ session protection
+ address-family ipv4
+  label
+   local
+    allocate for LABELS
+   !
+  !
+ !
+ interface GigabitEthernet0/0/0/0
+ !
+ interface GigabitEthernet0/0/0/1
+ !
+!
+mpls label range table 0 19000 19099
+end
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#terminal length 0
+Wed Jul  4 12:29:08.510 UTC
+RP/0/0/CPU0:XR2#configure terminal
+Wed Jul  4 12:29:08.710 UTC
+RP/0/0/CPU0:XR2(config)#no logging console
+RP/0/0/CPU0:XR2(config)#commit
+Wed Jul  4 12:29:09.110 UTC
+RP/0/0/CPU0:XR2(config)#exit
+RP/0/0/CPU0:XR2#show running-config
+Wed Jul  4 12:29:09.450 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 11:50:45 2018 by cisco
+!
+hostname XR2
+ipv4 access-list LABELS
+ 10 permit ipv4 host 2.2.2.2 any
+ 20 permit ipv4 host 3.3.3.3 any
+ 30 permit ipv4 host 4.4.4.4 any
+ 40 permit ipv4 host 5.5.5.5 any
+ 50 permit ipv4 host 6.6.6.6 any
+ 60 permit ipv4 host 19.19.19.19 any
+!
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 10.19.20.1 255.255.255.252
+!
+router ospf 1
+ mpls ldp sync
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+  interface GigabitEthernet0/0/0/2
+  !
+ !
+!
+mpls ldp
+ session protection
+ address-family ipv4
+  label
+   local
+    allocate for LABELS
+   !
+  !
+ !
+ interface GigabitEthernet0/0/0/0
+ !
+ interface GigabitEthernet0/0/0/1
+ !
+!
+mpls label range table 0 19000 19099
+end
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#terminal length 0
+Wed Jul  4 12:30:40.564 UTC
+RP/0/0/CPU0:XR2#configure terminal
+Wed Jul  4 12:30:40.734 UTC
+RP/0/0/CPU0:XR2(config)#no logging console
+RP/0/0/CPU0:XR2(config)#commit
+Wed Jul  4 12:30:41.184 UTC
+RP/0/0/CPU0:XR2(config)#exit
+RP/0/0/CPU0:XR2#show running-config
+Wed Jul  4 12:30:41.544 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 11:50:45 2018 by cisco
+!
+hostname XR2
+ipv4 access-list LABELS
+ 10 permit ipv4 host 2.2.2.2 any
+ 20 permit ipv4 host 3.3.3.3 any
+ 30 permit ipv4 host 4.4.4.4 any
+ 40 permit ipv4 host 5.5.5.5 any
+ 50 permit ipv4 host 6.6.6.6 any
+ 60 permit ipv4 host 19.19.19.19 any
+!
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 10.19.20.1 255.255.255.252
+!
+router ospf 1
+ mpls ldp sync
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+  interface GigabitEthernet0/0/0/2
+  !
+ !
+!
+mpls ldp
+ session protection
+ address-family ipv4
+  label
+   local
+    allocate for LABELS
+   !
+  !
+ !
+ interface GigabitEthernet0/0/0/0
+ !
+ interface GigabitEthernet0/0/0/1
+ !
+!
+mpls label range table 0 19000 19099
+end
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#terminal length 0
+Wed Jul  4 12:31:10.302 UTC
+RP/0/0/CPU0:XR2#configure terminal
+Wed Jul  4 12:31:10.492 UTC
+RP/0/0/CPU0:XR2(config)#no logging console
+RP/0/0/CPU0:XR2(config)#commit
+Wed Jul  4 12:31:10.922 UTC
+RP/0/0/CPU0:XR2(config)#exit
+RP/0/0/CPU0:XR2#show running-config
+Wed Jul  4 12:31:11.242 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 11:50:45 2018 by cisco
+!
+hostname XR2
+ipv4 access-list LABELS
+ 10 permit ipv4 host 2.2.2.2 any
+ 20 permit ipv4 host 3.3.3.3 any
+ 30 permit ipv4 host 4.4.4.4 any
+ 40 permit ipv4 host 5.5.5.5 any
+ 50 permit ipv4 host 6.6.6.6 any
+ 60 permit ipv4 host 19.19.19.19 any
+!
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 10.19.20.1 255.255.255.252
+!
+router ospf 1
+ mpls ldp sync
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+  interface GigabitEthernet0/0/0/2
+  !
+ !
+!
+mpls ldp
+ session protection
+ address-family ipv4
+  label
+   local
+    allocate for LABELS
+   !
+  !
+ !
+ interface GigabitEthernet0/0/0/0
+ !
+ interface GigabitEthernet0/0/0/1
+ !
+!
+mpls label range table 0 19000 19099
+end
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#exit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR2 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: 
+Username: 
+
+
+User Access Verification
+
+Username: 
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR2#terminal length 0
+Wed Jul  4 12:31:27.831 UTC
+RP/0/0/CPU0:XR2#configure terminal
+Wed Jul  4 12:31:27.991 UTC
+RP/0/0/CPU0:XR2(config)#no logging console
+RP/0/0/CPU0:XR2(config)#commit
+Wed Jul  4 12:31:28.471 UTC
+RP/0/0/CPU0:XR2(config)#exit
+RP/0/0/CPU0:XR2#show running-config
+Wed Jul  4 12:31:28.801 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 11:50:45 2018 by cisco
+!
+hostname XR2
+ipv4 access-list LABELS
+ 10 permit ipv4 host 2.2.2.2 any
+ 20 permit ipv4 host 3.3.3.3 any
+ 30 permit ipv4 host 4.4.4.4 any
+ 40 permit ipv4 host 5.5.5.5 any
+ 50 permit ipv4 host 6.6.6.6 any
+ 60 permit ipv4 host 19.19.19.19 any
+!
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 10.19.20.1 255.255.255.252
+!
+router ospf 1
+ mpls ldp sync
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+  interface GigabitEthernet0/0/0/2
+  !
+ !
+!
+mpls ldp
+ session protection
+ address-family ipv4
+  label
+   local
+    allocate for LABELS
+   !
+  !
+ !
+ interface GigabitEthernet0/0/0/0
+ !
+ interface GigabitEthernet0/0/0/1
+ !
+!
+mpls label range table 0 19000 19099
+end
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#terminal length 0
+Wed Jul  4 12:32:11.308 UTC
+RP/0/0/CPU0:XR2#configure terminal
+Wed Jul  4 12:32:11.478 UTC
+RP/0/0/CPU0:XR2(config)#no logging console
+RP/0/0/CPU0:XR2(config)#commit
+Wed Jul  4 12:32:11.908 UTC
+RP/0/0/CPU0:XR2(config)#exit
+RP/0/0/CPU0:XR2#show running-config
+Wed Jul  4 12:32:12.228 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 11:50:45 2018 by cisco
+!
+hostname XR2
+ipv4 access-list LABELS
+ 10 permit ipv4 host 2.2.2.2 any
+ 20 permit ipv4 host 3.3.3.3 any
+ 30 permit ipv4 host 4.4.4.4 any
+ 40 permit ipv4 host 5.5.5.5 any
+ 50 permit ipv4 host 6.6.6.6 any
+ 60 permit ipv4 host 19.19.19.19 any
+!
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 10.19.20.1 255.255.255.252
+!
+router ospf 1
+ mpls ldp sync
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+  interface GigabitEthernet0/0/0/2
+  !
+ !
+!
+mpls ldp
+ session protection
+ address-family ipv4
+  label
+   local
+    allocate for LABELS
+   !
+  !
+ !
+ interface GigabitEthernet0/0/0/0
+ !
+ interface GigabitEthernet0/0/0/1
+ !
+!
+mpls label range table 0 19000 19099
+end
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#terminal length 0
+Wed Jul  4 12:38:29.662 UTC
+RP/0/0/CPU0:XR2#configure terminal
+Wed Jul  4 12:38:29.842 UTC
+RP/0/0/CPU0:XR2(config)#no logging console
+RP/0/0/CPU0:XR2(config)#commit
+Wed Jul  4 12:38:30.302 UTC
+RP/0/0/CPU0:XR2(config)#exit
+RP/0/0/CPU0:XR2#show running-config
+Wed Jul  4 12:38:30.662 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 11:50:45 2018 by cisco
+!
+hostname XR2
+ipv4 access-list LABELS
+ 10 permit ipv4 host 2.2.2.2 any
+ 20 permit ipv4 host 3.3.3.3 any
+ 30 permit ipv4 host 4.4.4.4 any
+ 40 permit ipv4 host 5.5.5.5 any
+ 50 permit ipv4 host 6.6.6.6 any
+ 60 permit ipv4 host 19.19.19.19 any
+!
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 10.19.20.1 255.255.255.252
+!
+router ospf 1
+ mpls ldp sync
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+  interface GigabitEthernet0/0/0/2
+  !
+ !
+!
+mpls ldp
+ session protection
+ address-family ipv4
+  label
+   local
+    allocate for LABELS
+   !
+  !
+ !
+ interface GigabitEthernet0/0/0/0
+ !
+ interface GigabitEthernet0/0/0/1
+ !
+!
+mpls label range table 0 19000 19099
+end
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh run 
+Wed Jul  4 12:41:01.541 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 11:50:45 2018 by cisco
+!
+hostname XR2
+ipv4 access-list LABELS
+ 10 permit ipv4 host 2.2.2.2 any
+ 20 permit ipv4 host 3.3.3.3 any
+ 30 permit ipv4 host 4.4.4.4 any
+ 40 permit ipv4 host 5.5.5.5 any
+ 50 permit ipv4 host 6.6.6.6 any
+ 60 permit ipv4 host 19.19.19.19 any
+!
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 10.19.20.1 255.255.255.252
+!
+router ospf 1
+ mpls ldp sync
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+  interface GigabitEthernet0/0/0/2
+  !
+ !
+!
+mpls ldp
+ session protection
+ address-family ipv4
+  label
+   local
+    allocate for LABELS
+   !
+  !
+ !
+ interface GigabitEthernet0/0/0/0
+ !
+ interface GigabitEthernet0/0/0/1
+ !
+!
+mpls label range table 0 19000 19099
+end
+
+RP/0/0/CPU0:XR2# 
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show ospf neighbor 
+Wed Jul  4 12:43:07.953 UTC
+
+* Indicates MADJ interface
+# Indicates Neighbor awaiting BFD session up
+
+Neighbors for OSPF 1
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+6.6.6.6         1     FULL/DR         00:00:31    20.6.19.1       GigabitEthernet0/0/0/0
+    Neighbor is up for 04:58:09
+5.5.5.5         1     FULL/BDR        00:00:35    20.5.19.1       GigabitEthernet0/0/0/1
+    Neighbor is up for 00:36:50
+10.19.20.2      1     FULL/BDR        00:00:39    10.19.20.2      GigabitEthernet0/0/0/2
+    Neighbor is up for 00:52:33
+
+Total neighbor count: 3
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#terminal length 0
+Wed Jul  4 12:43:53.880 UTC
+RP/0/0/CPU0:XR2#configure terminal
+Wed Jul  4 12:43:54.050 UTC
+RP/0/0/CPU0:XR2(config)#no logging console
+RP/0/0/CPU0:XR2(config)#commit
+Wed Jul  4 12:43:54.510 UTC
+RP/0/0/CPU0:XR2(config)#exit
+RP/0/0/CPU0:XR2#show running-config
+Wed Jul  4 12:43:54.860 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 11:50:45 2018 by cisco
+!
+hostname XR2
+ipv4 access-list LABELS
+ 10 permit ipv4 host 2.2.2.2 any
+ 20 permit ipv4 host 3.3.3.3 any
+ 30 permit ipv4 host 4.4.4.4 any
+ 40 permit ipv4 host 5.5.5.5 any
+ 50 permit ipv4 host 6.6.6.6 any
+ 60 permit ipv4 host 19.19.19.19 any
+!
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 10.19.20.1 255.255.255.252
+!
+router ospf 1
+ mpls ldp sync
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+  interface GigabitEthernet0/0/0/2
+  !
+ !
+!
+mpls ldp
+ session protection
+ address-family ipv4
+  label
+   local
+    allocate for LABELS
+   !
+  !
+ !
+ interface GigabitEthernet0/0/0/0
+ !
+ interface GigabitEthernet0/0/0/1
+ !
+!
+mpls label range table 0 19000 19099
+end
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show ospf neighbor 
+Wed Jul  4 12:45:51.042 UTC
+
+* Indicates MADJ interface
+# Indicates Neighbor awaiting BFD session up
+
+Neighbors for OSPF 1
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+6.6.6.6         1     FULL/DR         00:00:30    20.6.19.1       GigabitEthernet0/0/0/0
+    Neighbor is up for 05:00:52
+5.5.5.5         1     FULL/BDR        00:00:35    20.5.19.1       GigabitEthernet0/0/0/1
+    Neighbor is up for 00:39:33
+10.19.20.2      1     FULL/BDR        00:00:36    10.19.20.2      GigabitEthernet0/0/0/2
+    Neighbor is up for 00:55:16
+
+Total neighbor count: 3
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#clear o
+onep  ospf  ospfv3  
+RP/0/0/CPU0:XR2#clear ospf process 
+Wed Jul  4 12:46:03.171 UTC
+Reset ALL OSPF processes? [no]: yes
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#mo 
+monitor  more  
+RP/0/0/CPU0:XR2#monitor ?
+  controller  Display controller statistics
+  interface   Display interface statistics and errors
+  processes   Show process statistics
+  threads     Show thread statistics
+RP/0/0/CPU0:XR2#monitor processes ?
+  dumbtty   Disable screen management
+  location  Location
+  <cr>      
+RP/0/0/CPU0:XR2#monitor processes 
+Wed Jul  4 12:46:22.599 UTC
+279 processes; 1373 threads; 1436 timers, 7237 channels, 12147 fds
+CPU states: 97.1% idle, 0.9% user, 1.9% kernel
+Memory: 3071M total, 1490M avail, page size 4K
+
+      JID TIDS Chans  FDs Tmrs   MEM   HH:MM:SS   CPU  NAME
+        1   12  281  219    1      0    8:54:54  1.92% procnto-smp-instr
+    65540    8   28    4    4     1M    0:01:04  0.96% devb-eide
+    65723    1    1    6    0   820K    0:00:00  0.00% ptop
+      223   15  146  135    3     4M    0:00:03  0.00% gsp
+      314    9  106   96    5     2M    0:00:01  0.00% netio
+     1163   19   60  130   35    13M    0:00:00  0.00% pim
+     1164   17   56  128   35    15M    0:00:00  0.00% pim6
+     1151   10   37   86   19     7M    0:00:00  0.00% mrib
+       66   10   33   14    4   464K    0:00:00  0.00% qnet
+     1017   19   80  149   31     7M    0:00:00  0.00% ospf
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show ospf neighbor 
+Wed Jul  4 12:46:32.069 UTC
+
+* Indicates MADJ interface
+# Indicates Neighbor awaiting BFD session up
+
+Neighbors for OSPF 1
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+6.6.6.6         1     FULL/DR         00:00:38    20.6.19.1       GigabitEthernet0/0/0/0
+    Neighbor is up for 00:00:27
+5.5.5.5         1     FULL/DR         00:00:32    20.5.19.1       GigabitEthernet0/0/0/1
+    Neighbor is up for 00:00:27
+10.19.20.2      1     FULL/DR         00:00:33    10.19.20.2      GigabitEthernet0/0/0/2
+    Neighbor is up for 00:00:25
+
+Total neighbor count: 3
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show ospf neighbor 
+Wed Jul  4 12:47:06.386 UTC
+
+* Indicates MADJ interface
+# Indicates Neighbor awaiting BFD session up
+
+Neighbors for OSPF 1
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+6.6.6.6         1     FULL/DR         00:00:38    20.6.19.1       GigabitEthernet0/0/0/0
+    Neighbor is up for 00:01:01
+5.5.5.5         1     FULL/DR         00:00:38    20.5.19.1       GigabitEthernet0/0/0/1
+    Neighbor is up for 00:01:01
+20.20.20.20     1     FULL/BDR        00:00:37    10.19.20.2      GigabitEthernet0/0/0/2
+    Neighbor is up for 00:00:04
+
+Total neighbor count: 3
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#terminal length 0
+Wed Jul  4 12:50:13.104 UTC
+RP/0/0/CPU0:XR2#configure terminal
+Wed Jul  4 12:50:13.264 UTC
+RP/0/0/CPU0:XR2(config)#no logging console
+RP/0/0/CPU0:XR2(config)#commit
+Wed Jul  4 12:50:13.694 UTC
+RP/0/0/CPU0:XR2(config)#exit
+RP/0/0/CPU0:XR2#show running-config
+Wed Jul  4 12:50:14.024 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 11:50:45 2018 by cisco
+!
+hostname XR2
+ipv4 access-list LABELS
+ 10 permit ipv4 host 2.2.2.2 any
+ 20 permit ipv4 host 3.3.3.3 any
+ 30 permit ipv4 host 4.4.4.4 any
+ 40 permit ipv4 host 5.5.5.5 any
+ 50 permit ipv4 host 6.6.6.6 any
+ 60 permit ipv4 host 19.19.19.19 any
+!
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 10.19.20.1 255.255.255.252
+!
+router ospf 1
+ mpls ldp sync
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+  interface GigabitEthernet0/0/0/2
+  !
+ !
+!
+mpls ldp
+ session protection
+ address-family ipv4
+  label
+   local
+    allocate for LABELS
+   !
+  !
+ !
+ interface GigabitEthernet0/0/0/0
+ !
+ interface GigabitEthernet0/0/0/1
+ !
+!
+mpls label range table 0 19000 19099
+end
+
+RP/0/0/CPU0:XR2#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR2 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisci
+Password: 
+RP/0/0/CPU0:Jul  4 13:08:06.840 : exec[65700]: %SECURITY-LOGIN-4-AUTHEN_FAILED : Failed authentication attempt by user '<unknown>' from 'console' on 'con0_0_CPU0' 
+
+User Access Verification
+
+Username: 
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh run for
+formal  forward-protocol  
+RP/0/0/CPU0:XR2#sh run formal bgp  
+                               ^
+% Invalid input detected at '^' marker.
+RP/0/0/CPU0:XR2#sh run formal router bgo
+                                       ^
+% Invalid input detected at '^' marker.
+RP/0/0/CPU0:XR2#sh run formal router bgp
+Wed Jul  4 13:08:25.549 UTC
+% No such configuration item(s)
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Wed Jul  4 13:08:28.529 UTC
+RP/0/0/CPU0:XR2(config)#router bgp 100
+RP/0/0/CPU0:XR2(config-bgp)#neighbor 2.2.2.2 re
+receive-buffer-size  remote-as  
+RP/0/0/CPU0:XR2(config-bgp)#neighbor 2.2.2.2 remote-as 100
+RP/0/0/CPU0:XR2(config-bgp)#commit 
+Wed Jul  4 13:08:55.057 UTC
+RP/0/0/CPU0:XR2(config-bgp)#
+RP/0/0/CPU0:XR2(config-bgp)#
+RP/0/0/CPU0:XR2(config-bgp)#end
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#ping 2.2.2.2
+Wed Jul  4 13:09:18.505 UTC
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 2.2.2.2, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 9/11/19 ms
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh run formal router bgp
+Wed Jul  4 13:11:22.157 UTC
+router bgp 100 
+router bgp 100 neighbor 2.2.2.2 
+router bgp 100 neighbor 2.2.2.2 remote-as 100
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Wed Jul  4 13:11:42.375 UTC
+RP/0/0/CPU0:XR2(config)#router bgp 100
+RP/0/0/CPU0:XR2(config-bgp)#router bgp 100 neighbor 2.2.2.2 
+RP/0/0/CPU0:XR2(config-bgp-nbr)#router bgp 100 neighbor 2.2.2.2 ?  
+                                  ^
+% Invalid input detected at '^' marker.
+RP/0/0/CPU0:XR2(config-bgp-nbr)#router bgp 100 neighbor 2.2.2.2 ?
+                                  ^
+% Invalid input detected at '^' marker.
+RP/0/0/CPU0:XR2(config-bgp-nbr)#router bgp 100 neighbor 2.2.2.2 
+RP/0/0/CPU0:XR2(config-bgp-nbr)#?
+  address-family          Enter Address Family command mode
+  advertisement-interval  Minimum interval between sending BGP routing updates
+  apply-group             Apply configuration from a group
+  apply-group-append      Append apply-group configuration from a group
+  apply-group-remove      Remove a group from apply-group configuration
+  bestpath                Change default route selection criteria
+  bfd                     Configure BFD parameters
+  bmp-activate            Enable BMP logging for this neighbor
+  capability              Advertise capability to the peer
+  clear                   Clear the uncommitted configuration
+  cluster-id              Enter cluster id for this neighbor
+  commit                  Commit the configuration changes to running
+  describe                Describe a command without taking real actions
+  description             Neighbor specific description
+  dmz-link-bandwidth      Propagate the DMZ link bandwidth
+  do                      Run an exec command
+  dscp                    Set IP DSCP (DiffServ CodePoint)
+  ebgp-multihop           Allow EBGP neighbors not on directly connected networks
+  egress-engineering      Enable egress peer engineering for this neighbor
+  enforce-first-as        Enforce the first AS for EBGP routes
+  exclude-group           Exclude apply-group configuration from a group
+  exclude-item            Negate a command or set its defaults
+  exit                    Exit from this submode
+  graceful-maintenance    Attributes for Graceful Maintenance. This will cause
+                          neighbors to de-prefer routes from this router and
+                          choose alternates. This allows the router to be
+                          brought in or out of service gracefully.
+  graceful-restart        Enable graceful restart support for this neighbor
+  ignore-connected-check  Bypass the directly connected nexthop check for single-hop eBGP peering
+  keychain                Set keychain based authentication
+  local                   Configure local parameter
+  local-as                Specify local AS number
+  log                     Logging update messages per neighbor
+  no                      Negate a command or set its defaults
+  origin-as               BGP origin-AS knobs
+  password                Set a password
+  precedence              Set precedence
+  pwd                     Commands used to reach current submode
+  receive-buffer-size     Set socket and BGP receive buffer size
+  remote-as               Set remote AS
+  root                    Exit to the global configuration mode
+  send-buffer-size        Set socket and BGP send buffer size
+  session-open-mode       Establish BGP session using this TCP open mode
+  show                    Show contents of configuration
+  shutdown                Administratively shut down this neighbor
+  tcp                     TCP session configuration commands
+  timers                  BGP per neighbor timers
+  ttl-security            Enable EBGP TTL security
+  update                  BGP Update configuration
+  update-source           Source of routing updates
+  use                     Inherit configuration from a group
+RP/0/0/CPU0:XR2(config-bgp-nbr)#u
+update  update-source  use  
+RP/0/0/CPU0:XR2(config-bgp-nbr)#update-source lo0
+RP/0/0/CPU0:XR2(config-bgp-nbr)#commit 
+Wed Jul  4 13:12:42.221 UTC
+RP/0/0/CPU0:XR2(config-bgp-nbr)#end
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh run router bgp       
+Wed Jul  4 13:17:32.101 UTC
+router bgp 100
+ neighbor 2.2.2.2
+  remote-as 100
+  update-source Loopback0
+ !
+!
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#ping 2.2.2.2 source lo0
+Wed Jul  4 13:17:43.331 UTC
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 2.2.2.2, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 9/11/19 ms
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Wed Jul  4 13:17:48.090 UTC
+RP/0/0/CPU0:XR2(config)#no router bgp 
+RP/0/0/CPU0:XR2(config)#commit 
+Wed Jul  4 13:17:58.100 UTC
+RP/0/0/CPU0:XR2(config)#
+RP/0/0/CPU0:XR2(config)#
+RP/0/0/CPU0:XR2(config)#router bgp 100
+RP/0/0/CPU0:XR2(config-bgp)#
+RP/0/0/CPU0:XR2(config-bgp)#?              
+  address-family        Enter Address Family command mode
+  af-group              Specify a AF group
+  apply-group           Apply configuration from a group
+  apply-group-append    Append apply-group configuration from a group
+  apply-group-remove    Remove a group from apply-group configuration
+  as-league             AS League command mode
+  attribute-filter      Attribute-filter configuration
+  bfd                   Configure BFD parameters
+  bgp                   BGP commands
+  clear                 Clear the uncommitted configuration
+  commit                Commit the configuration changes to running
+  default-information   Control distribution of default information
+  default-metric        default redistributed metric
+  describe              Describe a command without taking real actions
+  do                    Run an exec command
+  exclude-group         Exclude apply-group configuration from a group
+  exclude-item          Negate a command or set its defaults
+  exit                  Exit from this submode
+  graceful-maintenance  Announce routes with the g-shut community and other
+                        attributes as configured under the neighbors. This
+                        will cause neighbors to de-prefer routes from this
+                        router and choose alternates. This allows the router
+                        to be brought in or out of service gracefully.
+  ibgp                  Set options for iBGP peers
+  mpls                  Enable mpls parameters
+  mvpn                  Connect to PIM/PIM6
+  neighbor              Specify a neighbor router
+  neighbor-group        Specify a Neighbor-group
+  no                    Negate a command or set its defaults
+  nsr                   Enable non-stop-routing support for all neighbors
+  pwd                   Commands used to reach current submode
+  root                  Exit to the global configuration mode
+  rpki                  Configure RPKI
+  session-group         Specify a Session group
+  show                  Show contents of configuration
+  socket                set socket parameters
+  timers                Adjust routing timers
+  update                BGP Update configuration
+  vrf                   Specify a vrf name
+RP/0/0/CPU0:XR2(config-bgp)# 
+RP/0/0/CPU0:XR2(config-bgp)#
+RP/0/0/CPU0:XR2(config-bgp)#
+RP/0/0/CPU0:XR2(config-bgp)#
+RP/0/0/CPU0:XR2(config-bgp)#route-policy PASS
+RP/0/0/CPU0:XR2(config-rpl)#  pass
+RP/0/0/CPU0:XR2(config-rpl)#end-policy
+RP/0/0/CPU0:XR2(config)#!
+RP/0/0/CPU0:XR2(config)#router bgp 100
+RP/0/0/CPU0:XR2(config-bgp)# address-family ipv4 unicast
+RP/0/0/CPU0:XR2(config-bgp-af)# !
+RP/0/0/CPU0:XR2(config-bgp-af)# neighbor 2.2.2.2
+RP/0/0/CPU0:XR2(config-bgp-nbr)#  remote-as 100
+RP/0/0/CPU0:XR2(config-bgp-nbr)#  update-source Loopback0
+RP/0/0/CPU0:XR2(config-bgp-nbr)#  address-family ipv4 unicast
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#   next-hop-self
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#  !
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)# !
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)# neighbor 10.19.20.20
+RP/0/0/CPU0:XR2(config-bgp-nbr)#  remote-as 20
+RP/0/0/CPU0:XR2(config-bgp-nbr)#  address-family ipv4 unicast
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#commit 
+Wed Jul  4 13:19:26.054 UTC
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#end
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show bgp summary 
+Wed Jul  4 13:19:31.503 UTC
+BGP router identifier 19.19.19.19, local AS number 100
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 2
+BGP main routing table version 2
+BGP NSR Initial initsync version 4294967295 (Not Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               2          1          2          0           1           0
+
+Some configured eBGP neighbors (under default or non-default vrfs)
+do not have both inbound and outbound policies configured for IPv4 Unicast
+address family. These neighbors will default to sending and/or
+receiving no routes and are marked with '!' in the output below.
+Use the 'show bgp neighbor <nbr_address>' command for details.
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+2.2.2.2           0   100       0       0        0    0    0 00:00:00 Idle
+10.19.20.20       0    20       0       0        0    0    0 00:00:00 Idle!
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show bgp summary 
+Wed Jul  4 13:19:56.041 UTC
+BGP router identifier 19.19.19.19, local AS number 100
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 2
+BGP main routing table version 2
+BGP NSR Initial initsync version 4294967295 (Not Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               2          1          2          0           1           0
+
+Some configured eBGP neighbors (under default or non-default vrfs)
+do not have both inbound and outbound policies configured for IPv4 Unicast
+address family. These neighbors will default to sending and/or
+receiving no routes and are marked with '!' in the output below.
+Use the 'show bgp neighbor <nbr_address>' command for details.
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+2.2.2.2           0   100       5       2        0    0    0 00:00:23          1
+10.19.20.20       0    20       0       0        0    0    0 00:00:00 Idle!
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh run router bgp      
+Wed Jul  4 13:20:46.828 UTC
+router bgp 100
+ address-family ipv4 unicast
+ !
+ neighbor 2.2.2.2
+  remote-as 100
+  update-source Loopback0
+  address-family ipv4 unicast
+   next-hop-self
+  !
+ !
+ neighbor 10.19.20.20
+  remote-as 20
+  address-family ipv4 unicast
+  !
+ !
+!
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show con  
+configuration  connected  context  controllers
+RP/0/0/CPU0:XR2#show configuration rollback ?
+  changes  Show configuration changes to be made during a rollback operation
+RP/0/0/CPU0:XR2#show configuration rollback changes ?
+  last        Changes for rolling back last <n> commits
+  to          Changes up to (and including) a specific commit
+  to-exclude  Changes up to (and excluding) a specific commit
+  1000000023  Commit ID
+  1000000022  Commit ID
+  1000000021  Commit ID
+  1000000020  Commit ID
+  1000000019  Commit ID
+  1000000018  Commit ID
+  1000000017  Commit ID
+  1000000016  Commit ID
+  1000000015  Commit ID
+  1000000014  Commit ID
+  1000000013  Commit ID
+  1000000012  Commit ID
+  1000000011  Commit ID
+  1000000010  Commit ID
+  1000000009  Commit ID
+  1000000008  Commit ID
+  1000000007  Commit ID
+  1000000006  Commit ID
+  1000000005  Commit ID
+  1000000004  Commit ID
+  1000000003  Commit ID
+  1000000002  Commit ID
+  1000000001  Commit ID
+RP/0/0/CPU0:XR2#show configuration rollback changes last 
+% Incomplete command.
+RP/0/0/CPU0:XR2#show configuration rollback changes last ?
+  <1-23>  Number of commits
+RP/0/0/CPU0:XR2#show configuration rollback changes last 1
+Wed Jul  4 13:21:26.675 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!
+no route-policy PASS
+no router bgp 100
+end
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#configure ?
+  exclusive  Configure exclusively from this terminal
+  terminal   Configure from the terminal
+  <cr>       
+RP/0/0/CPU0:XR2#configure terminal 
+Wed Jul  4 13:21:40.694 UTC
+RP/0/0/CPU0:XR2(config)#
+RP/0/0/CPU0:XR2(config)#con  
+configuration  control-plane  controller  
+RP/0/0/CPU0:XR2(config)#configuration ? 
+  commit   auto-save the running configuration
+  display  Display mode
+RP/0/0/CPU0:XR2(config)#configuration commit ?
+  auto-save  auto-save the running configuration
+RP/0/0/CPU0:XR2(config)#exit                 
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#rollback ?
+  configuration  Running configuration
+RP/0/0/CPU0:XR2#rollback configuration ?
+  last        Rollback last <n> commits made
+  to          Rollback up to (and including) a specific commit
+  to-exclude  Rollback up to (and excluding) a specific commit
+  1000000023  Commit ID
+  1000000022  Commit ID
+  1000000021  Commit ID
+  1000000020  Commit ID
+  1000000019  Commit ID
+  1000000018  Commit ID
+  1000000017  Commit ID
+  1000000016  Commit ID
+  1000000015  Commit ID
+  1000000014  Commit ID
+  1000000013  Commit ID
+  1000000012  Commit ID
+  1000000011  Commit ID
+  1000000010  Commit ID
+  1000000009  Commit ID
+  1000000008  Commit ID
+  1000000007  Commit ID
+  1000000006  Commit ID
+  1000000005  Commit ID
+  1000000004  Commit ID
+  1000000003  Commit ID
+  1000000002  Commit ID
+  1000000001  Commit ID
+RP/0/0/CPU0:XR2#rollback configuration last ?
+  <1-23>  Number of commits to rollback
+RP/0/0/CPU0:XR2#rollback configuration last 1
+Wed Jul  4 13:22:15.872 UTC
+
+Loading Rollback Changes.
+Loaded Rollback Changes in 1 sec 
+Committing.
+15 items committed in 1 sec (14)items/sec
+Updating.
+Updated Commit database in 1 sec 
+Configuration successfully rolled back 1 commits.
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show bgp summary                          
+Wed Jul  4 13:22:29.221 UTC
+% BGP instance 'default' not active
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Wed Jul  4 13:22:41.230 UTC
+RP/0/0/CPU0:XR2(config)#router
+router  router-convergence  
+RP/0/0/CPU0:XR2(config)#exit  
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh run 
+Wed Jul  4 13:22:47.060 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 13:22:16 2018 by cisco
+!
+hostname XR2
+ipv4 access-list LABELS
+ 10 permit ipv4 host 2.2.2.2 any
+ 20 permit ipv4 host 3.3.3.3 any
+ 30 permit ipv4 host 4.4.4.4 any
+ 40 permit ipv4 host 5.5.5.5 any
+ 50 permit ipv4 host 6.6.6.6 any
+ 60 permit ipv4 host 19.19.19.19 any
+!
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 10.19.20.1 255.255.255.252
+!
+router ospf 1
+ mpls ldp sync
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+  interface GigabitEthernet0/0/0/2
+  !
+ !
+!
+mpls ldp
+ session protection
+ address-family ipv4
+  label
+   local
+    allocate for LABELS
+   !
+  !
+ !
+ interface GigabitEthernet0/0/0/0
+ !
+ interface GigabitEthernet0/0/0/1
+ !
+!
+mpls label range table 0 19000 19099
+end
+
+RP/0/0/CPU0:XR2# 
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show ospf neighbor 
+Wed Jul  4 13:22:56.169 UTC
+
+* Indicates MADJ interface
+# Indicates Neighbor awaiting BFD session up
+
+Neighbors for OSPF 1
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+6.6.6.6         1     FULL/DR         00:00:36    20.6.19.1       GigabitEthernet0/0/0/0
+    Neighbor is up for 00:36:51
+5.5.5.5         1     FULL/DR         00:00:34    20.5.19.1       GigabitEthernet0/0/0/1
+    Neighbor is up for 00:36:51
+
+Total neighbor count: 2
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Wed Jul  4 13:22:59.719 UTC
+RP/0/0/CPU0:XR2(config)#router bgp 100
+RP/0/0/CPU0:XR2(config-bgp)#
+RP/0/0/CPU0:XR2(config-bgp)#neighbor 2.2.2.2 remote-as 100
+RP/0/0/CPU0:XR2(config-bgp)#neighbor 2.2.2.2 update-source lo0
+RP/0/0/CPU0:XR2(config-bgp)#commit 
+Wed Jul  4 13:23:23.257 UTC
+RP/0/0/CPU0:XR2(config-bgp)#
+RP/0/0/CPU0:XR2(config-bgp)#
+RP/0/0/CPU0:XR2(config-bgp)#address-family ipv4 unicast ?
+  additional-paths          Additional paths configuration
+  advertise                 Advertise BGP path
+  aggregate-address         Configure BGP aggregate entries
+  allocate-label            Allocate label for selected prefixes
+  as-path-loopcheck         Configure AS Path loop checking
+  bgp                       BGP Commands
+  default-martian-check     Martian check default
+  distance                  Define an administrative distance
+  dynamic-med               Dynamic MED Interval
+  maximum-paths             Forward packets over multiple paths
+  network                   Specify a network to announce via BGP
+  nexthop                   Nexthop
+  optimal-route-reflection  Configure optimal-route-reflection group
+  permanent-network         Permanent network configuration
+  redistribute              Redistribute information from another routing protocol
+  retain                    Accept/Retain specified bgp parameters
+  table-policy              Configure policy for installation of routes to RIB
+  update                    BGP Update generation configuration
+  <cr>                      
+RP/0/0/CPU0:XR2(config-bgp)#address-family ipv4 unicast 
+RP/0/0/CPU0:XR2(config-bgp-af)#commiu
+                                    ^
+% Invalid input detected at '^' marker.
+RP/0/0/CPU0:XR2(config-bgp-af)#commit 
+Wed Jul  4 13:23:46.236 UTC
+RP/0/0/CPU0:XR2(config-bgp-af)#
+RP/0/0/CPU0:XR2(config-bgp-af)#
+RP/0/0/CPU0:XR2(config-bgp-af)#
+RP/0/0/CPU0:XR2(config-bgp-af)#address-family ipv4 unicast ?
+                                  ^
+% Invalid input detected at '^' marker.
+RP/0/0/CPU0:XR2(config-bgp-af)#ne                          
+network  nexthop  
+RP/0/0/CPU0:XR2(config-bgp-af)#?  
+  additional-paths          Additional paths configuration
+  advertise                 Advertise BGP path
+  aggregate-address         Configure BGP aggregate entries
+  allocate-label            Allocate label for selected prefixes
+  apply-group               Apply configuration from a group
+  apply-group-append        Append apply-group configuration from a group
+  apply-group-remove        Remove a group from apply-group configuration
+  as-path-loopcheck         Configure AS Path loop checking
+  bgp                       BGP Commands
+  clear                     Clear the uncommitted configuration
+  commit                    Commit the configuration changes to running
+  default-martian-check     Martian check default
+  describe                  Describe a command without taking real actions
+  distance                  Define an administrative distance
+  do                        Run an exec command
+  dynamic-med               Dynamic MED Interval
+  exclude-group             Exclude apply-group configuration from a group
+  exclude-item              Negate a command or set its defaults
+  exit                      Exit from this submode
+  maximum-paths             Forward packets over multiple paths
+  network                   Specify a network to announce via BGP
+  nexthop                   Nexthop
+  no                        Negate a command or set its defaults
+  optimal-route-reflection  Configure optimal-route-reflection group
+  permanent-network         Permanent network configuration
+  pwd                       Commands used to reach current submode
+  redistribute              Redistribute information from another routing protocol
+  retain                    Accept/Retain specified bgp parameters
+  root                      Exit to the global configuration mode
+  show                      Show contents of configuration
+  table-policy              Configure policy for installation of routes to RIB
+  update                    BGP Update generation configuration
+RP/0/0/CPU0:XR2(config-bgp-af)#
+RP/0/0/CPU0:XR2(config-bgp-af)#
+RP/0/0/CPU0:XR2(config-bgp-af)#exit 
+RP/0/0/CPU0:XR2(config-bgp)#
+RP/0/0/CPU0:XR2(config-bgp)#show 
+Wed Jul  4 13:24:14.824 UTC
+% No such configuration item(s)
+
+RP/0/0/CPU0:XR2(config-bgp)#
+RP/0/0/CPU0:XR2(config-bgp)#
+RP/0/0/CPU0:XR2(config-bgp)#exit
+RP/0/0/CPU0:XR2(config)#exit
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh run router bgp                         
+Wed Jul  4 13:24:23.253 UTC
+router bgp 100
+ address-family ipv4 unicast
+ !
+ neighbor 2.2.2.2
+  remote-as 100
+  update-source Loopback0
+ !
+!
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Wed Jul  4 13:24:42.882 UTC
+RP/0/0/CPU0:XR2(config)#router bgp 100
+RP/0/0/CPU0:XR2(config-bgp)#neighbor 2.2.2.2
+RP/0/0/CPU0:XR2(config-bgp-nbr)#
+RP/0/0/CPU0:XR2(config-bgp-nbr)#address-family ipv4 unicast
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#   next-hop-self
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#commit 
+Wed Jul  4 13:24:55.501 UTC
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#end
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show bgp summary 
+Wed Jul  4 13:27:47.369 UTC
+BGP router identifier 19.19.19.19, local AS number 100
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 0
+BGP main routing table version 1
+BGP NSR Initial initsync version 1 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               1          1          1          1           1           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+2.2.2.2           0   100       8       5        1    0    0 00:02:41          1
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show route 
+Wed Jul  4 13:27:59.998 UTC
+
+Codes: C - connected, S - static, R - RIP, B - BGP, (>) - Diversion path
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - ISIS, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, su - IS-IS summary null, * - candidate default
+       U - per-user static route, o - ODR, L - local, G  - DAGR, l - LISP
+       A - access/subscriber, a - Application route
+       M - mobile route, r - RPL, (!) - FRR Backup path
+
+Gateway of last resort is not set
+
+O    2.2.2.2/32 [110/4] via 20.6.19.1, 00:41:54, GigabitEthernet0/0/0/0
+                [110/4] via 20.5.19.1, 00:41:54, GigabitEthernet0/0/0/1
+O    3.3.3.3/32 [110/3] via 20.6.19.1, 00:41:55, GigabitEthernet0/0/0/0
+O    4.4.4.4/32 [110/3] via 20.6.19.1, 00:41:54, GigabitEthernet0/0/0/0
+                [110/3] via 20.5.19.1, 00:41:54, GigabitEthernet0/0/0/1
+O    5.5.5.5/32 [110/2] via 20.5.19.1, 00:41:54, GigabitEthernet0/0/0/1
+O    6.6.6.6/32 [110/2] via 20.6.19.1, 00:41:55, GigabitEthernet0/0/0/0
+O    7.7.7.7/32 [110/4] via 20.6.19.1, 00:41:54, GigabitEthernet0/0/0/0
+                [110/4] via 20.5.19.1, 00:41:54, GigabitEthernet0/0/0/1
+O    8.8.8.8/32 [110/3] via 20.5.19.1, 00:41:54, GigabitEthernet0/0/0/1
+O    10.4.7.0/30 [110/3] via 20.6.19.1, 00:41:54, GigabitEthernet0/0/0/0
+                 [110/3] via 20.5.19.1, 00:41:54, GigabitEthernet0/0/0/1
+O    10.5.8.0/30 [110/2] via 20.5.19.1, 00:41:54, GigabitEthernet0/0/0/1
+C    10.19.20.0/30 is directly connected, 01:38:12, GigabitEthernet0/0/0/2
+L    10.19.20.1/32 is directly connected, 01:38:12, GigabitEthernet0/0/0/2
+L    19.19.19.19/32 is directly connected, 05:47:35, Loopback0
+O    20.2.3.0/30 [110/3] via 20.6.19.1, 00:41:55, GigabitEthernet0/0/0/0
+O    20.2.4.0/30 [110/3] via 20.6.19.1, 00:41:54, GigabitEthernet0/0/0/0
+                 [110/3] via 20.5.19.1, 00:41:54, GigabitEthernet0/0/0/1
+O    20.3.4.0/30 [110/3] via 20.6.19.1, 00:41:54, GigabitEthernet0/0/0/0
+                 [110/3] via 20.5.19.1, 00:41:54, GigabitEthernet0/0/0/1
+O    20.3.6.0/30 [110/2] via 20.6.19.1, 00:41:55, GigabitEthernet0/0/0/0
+O    20.4.5.0/30 [110/2] via 20.5.19.1, 00:41:54, GigabitEthernet0/0/0/1
+O    20.4.6.0/30 [110/2] via 20.6.19.1, 00:41:55, GigabitEthernet0/0/0/0
+O    20.5.6.0/30 [110/2] via 20.6.19.1, 00:41:54, GigabitEthernet0/0/0/0
+                 [110/2] via 20.5.19.1, 00:41:54, GigabitEthernet0/0/0/1
+C    20.5.19.0/30 is directly connected, 05:46:24, GigabitEthernet0/0/0/1
+L    20.5.19.2/32 is directly connected, 05:46:24, GigabitEthernet0/0/0/1
+C    20.6.19.0/30 is directly connected, 05:46:50, GigabitEthernet0/0/0/0
+L    20.6.19.2/32 is directly connected, 05:46:50, GigabitEthernet0/0/0/0
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show bgp 
+Wed Jul  4 13:28:16.217 UTC
+BGP router identifier 19.19.19.19, local AS number 100
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 2
+BGP main routing table version 2
+BGP NSR Initial initsync version 1 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+Status codes: s suppressed, d damped, h history, * valid, > best
+              i - internal, r RIB-failure, S stale, N Nexthop-discard
+Origin codes: i - IGP, e - EGP, ? - incomplete
+   Network            Next Hop            Metric LocPrf Weight Path
+*>i1.1.1.1/32         2.2.2.2                  0    100      0 1 i
+
+Processed 1 prefixes, 1 paths
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#ping 1.1.1.1
+Wed Jul  4 13:28:32.676 UTC
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 1.1.1.1, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Wed Jul  4 13:29:01.364 UTC
+RP/0/0/CPU0:XR2(config)#router bgp 100
+RP/0/0/CPU0:XR2(config-bgp)#
+RP/0/0/CPU0:XR2(config-bgp)#neighbor 10.19.20.20
+RP/0/0/CPU0:XR2(config-bgp-nbr)#  remote-as 20
+RP/0/0/CPU0:XR2(config-bgp-nbr)#  address-family ipv4 unicast
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#exit
+RP/0/0/CPU0:XR2(config-bgp-nbr)#exit
+RP/0/0/CPU0:XR2(config-bgp)#exit
+RP/0/0/CPU0:XR2(config)#exit
+Uncommitted changes found, commit them before exiting(yes/no/cancel)? [cancel]:no
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Wed Jul  4 13:29:35.272 UTC
+RP/0/0/CPU0:XR2(config)#router bgp 100
+RP/0/0/CPU0:XR2(config-bgp)#neighbor 10.19.20.2 remote-as 20
+RP/0/0/CPU0:XR2(config-bgp)#address-family ipv4 unicast 
+RP/0/0/CPU0:XR2(config-bgp-af)#commit 
+Wed Jul  4 13:30:03.420 UTC
+RP/0/0/CPU0:XR2(config-bgp-af)#
+RP/0/0/CPU0:XR2(config-bgp-af)#end
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show bgp s  
+scale    session-group  sessions  standby
+summary  
+RP/0/0/CPU0:XR2#show bgp summary 
+Wed Jul  4 13:30:10.429 UTC
+BGP router identifier 19.19.19.19, local AS number 100
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 2
+BGP main routing table version 2
+BGP NSR Initial initsync version 1 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               2          2          2          2           2           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+2.2.2.2           0   100      11       7        2    0    0 00:05:04          1
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show bgp summary 
+Wed Jul  4 13:30:15.359 UTC
+BGP router identifier 19.19.19.19, local AS number 100
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 2
+BGP main routing table version 2
+BGP NSR Initial initsync version 1 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               2          2          2          2           2           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+2.2.2.2           0   100      11       8        2    0    0 00:05:09          1
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show bgp summary 
+Wed Jul  4 13:30:23.489 UTC
+BGP router identifier 19.19.19.19, local AS number 100
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 2
+BGP main routing table version 2
+BGP NSR Initial initsync version 1 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               2          2          2          2           2           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+2.2.2.2           0   100      11       8        2    0    0 00:05:17          1
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh run router bgp 
+Wed Jul  4 13:30:32.288 UTC
+router bgp 100
+ address-family ipv4 unicast
+ !
+ neighbor 2.2.2.2
+  remote-as 100
+  update-source Loopback0
+  address-family ipv4 unicast
+   next-hop-self
+  !
+ !
+ neighbor 10.19.20.2
+  remote-as 20
+ !
+!
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Wed Jul  4 13:30:38.927 UTC
+RP/0/0/CPU0:XR2(config)#router bgp 100
+RP/0/0/CPU0:XR2(config-bgp)# neighbor 10.19.20.2
+RP/0/0/CPU0:XR2(config-bgp-nbr)#
+RP/0/0/CPU0:XR2(config-bgp-nbr)#address-family ipv4 unicast
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#commit 
+Wed Jul  4 13:30:53.086 UTC
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#end
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh run router bgp 
+Wed Jul  4 13:30:58.196 UTC
+router bgp 100
+ address-family ipv4 unicast
+ !
+ neighbor 2.2.2.2
+  remote-as 100
+  update-source Loopback0
+  address-family ipv4 unicast
+   next-hop-self
+  !
+ !
+ neighbor 10.19.20.2
+  remote-as 20
+  address-family ipv4 unicast
+  !
+ !
+!
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show bgp summary 
+Wed Jul  4 13:33:54.174 UTC
+BGP router identifier 19.19.19.19, local AS number 100
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 2
+BGP main routing table version 2
+BGP NSR Initial initsync version 1 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               2          2          2          2           2           0
+
+Some configured eBGP neighbors (under default or non-default vrfs)
+do not have both inbound and outbound policies configured for IPv4 Unicast
+address family. These neighbors will default to sending and/or
+receiving no routes and are marked with '!' in the output below.
+Use the 'show bgp neighbor <nbr_address>' command for details.
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+2.2.2.2           0   100      15      11        2    0    0 00:08:48          1
+10.19.20.2        0    20       2       2        2    0    0 00:00:06          0!
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show bgp summary 
+Wed Jul  4 13:34:01.714 UTC
+BGP router identifier 19.19.19.19, local AS number 100
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 2
+BGP main routing table version 2
+BGP NSR Initial initsync version 1 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               2          2          2          2           2           0
+
+Some configured eBGP neighbors (under default or non-default vrfs)
+do not have both inbound and outbound policies configured for IPv4 Unicast
+address family. These neighbors will default to sending and/or
+receiving no routes and are marked with '!' in the output below.
+Use the 'show bgp neighbor <nbr_address>' command for details.
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+2.2.2.2           0   100      15      11        2    0    0 00:08:56          1
+10.19.20.2        0    20       2       2        2    0    0 00:00:14          0!
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show bgp summary 
+Wed Jul  4 13:38:11.426 UTC
+BGP router identifier 19.19.19.19, local AS number 100
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 2
+BGP main routing table version 2
+BGP NSR Initial initsync version 1 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               2          2          2          2           2           0
+
+Some configured eBGP neighbors (under default or non-default vrfs)
+do not have both inbound and outbound policies configured for IPv4 Unicast
+address family. These neighbors will default to sending and/or
+receiving no routes and are marked with '!' in the output below.
+Use the 'show bgp neighbor <nbr_address>' command for details.
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+2.2.2.2           0   100      20      16        2    0    0 00:13:05          1
+10.19.20.2        0    20       9       6        2    0    0 00:04:23          0!
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Wed Jul  4 13:38:20.636 UTC
+RP/0/0/CPU0:XR2(config)#
+RP/0/0/CPU0:XR2(config)#router
+router  router-convergence  
+RP/0/0/CPU0:XR2(config)#router bgp 100
+RP/0/0/CPU0:XR2(config-bgp)#neighbor 10.19.20.2
+RP/0/0/CPU0:XR2(config-bgp-nbr)#address-family ipv4 unicast 
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#ro
+root  route-policy  route-reflector-client  
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#route-policy P?
+WORD  
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#route-policy ?
+  WORD  Name of the policy
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#route-policy PASS in 
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#route-policy PASS out
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#commit 
+Wed Jul  4 13:39:06.673 UTC
+
+% Failed to commit one or more configuration items during a pseudo-atomic operation. All changes made have been reverted. Please issue 'show configuration failed [inheritance]' from this session to view the errors
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#exit  
+RP/0/0/CPU0:XR2(config-bgp-nbr)#exit
+RP/0/0/CPU0:XR2(config-bgp)#exit
+RP/0/0/CPU0:XR2(config)#route-policy PASS
+RP/0/0/CPU0:XR2(config-rpl)#pass 
+RP/0/0/CPU0:XR2(config-rpl)#commit
+                            ^
+% Invalid input detected at '^' marker.
+RP/0/0/CPU0:XR2(config-rpl)#exit
+RP/0/0/CPU0:XR2(config)#commit 
+Wed Jul  4 13:39:32.051 UTC
+RP/0/0/CPU0:XR2(config)#
+RP/0/0/CPU0:XR2(config)#end
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show bgp summary 
+Wed Jul  4 13:39:34.891 UTC
+BGP router identifier 19.19.19.19, local AS number 100
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 2
+BGP main routing table version 2
+BGP NSR Initial initsync version 1 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               2          2          2          2           2           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+2.2.2.2           0   100      21      17        2    0    0 00:14:29          1
+10.19.20.2        0    20      10       8        2    0    0 00:05:47          0
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Wed Jul  4 13:41:06.504 UTC
+RP/0/0/CPU0:XR2(config)#hostname XR1
+RP/0/0/CPU0:XR2(config)#commit 
+Wed Jul  4 13:41:11.404 UTC
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#end
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show bgp summary 
+Wed Jul  4 13:41:16.814 UTC
+BGP router identifier 19.19.19.19, local AS number 100
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 2
+BGP main routing table version 2
+BGP NSR Initial initsync version 1 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               2          2          2          2           2           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+2.2.2.2           0   100      23      19        2    0    0 00:16:11          1
+10.19.20.2        0    20      12      10        2    0    0 00:07:29          0
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show bgp summary 
+Wed Jul  4 13:41:18.644 UTC
+BGP router identifier 19.19.19.19, local AS number 100
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 2
+BGP main routing table version 2
+BGP NSR Initial initsync version 1 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               2          2          2          2           2           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+2.2.2.2           0   100      23      19        2    0    0 00:16:13          1
+10.19.20.2        0    20      12      10        2    0    0 00:07:31          0
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show bgp summary 
+Wed Jul  4 13:41:39.462 UTC
+BGP router identifier 19.19.19.19, local AS number 100
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 2
+BGP main routing table version 2
+BGP NSR Initial initsync version 1 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               2          2          2          2           2           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+2.2.2.2           0   100      24      19        2    0    0 00:16:33          1
+10.19.20.2        0    20      12      11        2    0    0 00:07:51          0
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show bgp summary 
+Wed Jul  4 13:41:52.531 UTC
+BGP router identifier 19.19.19.19, local AS number 100
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 3
+BGP main routing table version 3
+BGP NSR Initial initsync version 1 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               3          3          3          3           3           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+2.2.2.2           0   100      24      20        3    0    0 00:16:47          1
+10.19.20.2        0    20      13      11        3    0    0 00:08:05          1
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show bgp summary 
+Wed Jul  4 13:41:54.641 UTC
+BGP router identifier 19.19.19.19, local AS number 100
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 3
+BGP main routing table version 3
+BGP NSR Initial initsync version 1 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               3          3          3          3           3           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+2.2.2.2           0   100      24      20        3    0    0 00:16:49          1
+10.19.20.2        0    20      13      11        3    0    0 00:08:07          1
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show mpls forwarding 
+Wed Jul  4 13:43:17.495 UTC
+Local  Outgoing    Prefix             Outgoing     Next Hop        Bytes       
+Label  Label       or ID              Interface                    Switched    
+------ ----------- ------------------ ------------ --------------- ------------
+19000  602         2.2.2.2/32         Gi0/0/0/0    20.6.19.1       9865        
+       502         2.2.2.2/32         Gi0/0/0/1    20.5.19.1       520         
+19001  601         3.3.3.3/32         Gi0/0/0/0    20.6.19.1       0           
+19002  600         4.4.4.4/32         Gi0/0/0/0    20.6.19.1       0           
+       501         4.4.4.4/32         Gi0/0/0/1    20.5.19.1       0           
+19003  Pop         5.5.5.5/32         Gi0/0/0/1    20.5.19.1       30790       
+19004  Pop         6.6.6.6/32         Gi0/0/0/0    20.6.19.1       2986630     
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#

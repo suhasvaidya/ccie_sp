@@ -1,0 +1,177 @@
+Connected to Dynamips VM "R1" (ID 1, type c7200) - Console port
+Press ENTER to get the prompt.
+This configuration is within the PCI bus capacity and is supported. 
+
+Please refer to the following document "Cisco 7200 Series Port Adaptor
+Hardware Configuration Guidelines" on Cisco.com <http://www.cisco.com>
+for c7200 bandwidth points oversubscription and usage guidelines.
+
+
+2 FastEthernet interfaces
+125K bytes of NVRAM.
+
+131072K bytes of ATA PCMCIA card at slot 0 (Sector size 512 bytes).
+131072K bytes of ATA PCMCIA card at slot 1 (Sector size 512 bytes).
+8192K bytes of Flash internal SIMM (Sector size 256K).
+% Crashinfo may not be recovered at bootflash:crashinfo
+% This file system device reports an error
+
+
+Press RETURN to get started!
+
+
+*Jul 28 00:45:28.015: %IFMGR-7-NO_IFINDEX_FILE: Unable to open nvram:/ifIndex-table No such file or directory
+*Jul 28 00:45:28.199: %DEC21140-1-INITFAIL: Unsupported PHY brand timed out, csr5=0x0
+*Jul 28 00:45:28.299: %DEC21140-1-INITFAIL: Unsupported PHY brand timed out, csr5=0x0
+*Jul 28 00:45:33.191: %LINK-3-UPDOWN: Interface FastEthernet0/0, changed state to up
+*Jul 28 00:45:33.227: %LINK-3-UPDOWN: Interface FastEthernet1/0, changed state to up
+*Jul 28 00:45:33.539: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback0, changed state to up
+*Jul 28 00:45:34.055: %SYS-5-CONFIG_I: Configured from memory by console
+*Jul 28 00:45:34.347: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+*Jul 28 00:45:34.351: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet1/0, changed state to down
+*Jul 28 00:45:34.459: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, 7200 Software (C7200-ADVIPSERVICESK9-M), Version 15.2(4)S5, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2014 by Cisco Systems, Inc.
+Compiled Thu 20-Feb-14 06:51 by prod_rel_team
+*Jul 28 00:45:35.843: %LINK-5-CHANGED: Interface FastEthernet1/0, changed state to administratively down
+*Jul 28 00:47:18.303: %BGP-5-NBR_RESET: Neighbor 10.1.2.2 active reset (BGP Notification sent)
+*Jul 28 00:47:18.307: %BGP-5-ADJCHANGE: neighbor 10.1.2.2 Up 
+R1>
+R1>
+R1>
+R1>
+R1>sh ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/32 is subnetted, 1 subnets
+C        1.1.1.1 is directly connected, Loopback0
+      10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        10.1.2.0/30 is directly connected, FastEthernet0/0
+L        10.1.2.1/32 is directly connected, FastEthernet0/0
+R1>
+R1>
+R1>sh ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/32 is subnetted, 1 subnets
+C        1.1.1.1 is directly connected, Loopback0
+      10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        10.1.2.0/30 is directly connected, FastEthernet0/0
+L        10.1.2.1/32 is directly connected, FastEthernet0/0
+R1>
+R1>
+R1>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1>en
+R1#
+R1#
+R1#sh
+R1#show  ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/32 is subnetted, 1 subnets
+C        1.1.1.1 is directly connected, Loopback0
+      10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        10.1.2.0/30 is directly connected, FastEthernet0/0
+L        10.1.2.1/32 is directly connected, FastEthernet0/0
+R1#
+R1#
+R1#sh
+R1#show bg
+R1#show bgp sum
+R1#show bgp sum
+BGP router identifier 1.1.1.1, local AS number 1
+BGP table version is 2, main routing table version 2
+1 network entries using 144 bytes of memory
+1 path entries using 80 bytes of memory
+1/1 BGP path/bestpath attribute entries using 136 bytes of memory
+0 BGP route-map cache entries using 0 bytes of memory
+0 BGP filter-list cache entries using 0 bytes of memory
+BGP using 360 total bytes of memory
+BGP activity 1/0 prefixes, 1/0 paths, scan interval 60 secs
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+10.1.2.2        4          100     646     368        2    0    0 05:32:06        0
+R1#

@@ -1,0 +1,1007 @@
+
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#inter
+CSR2(config)#interface gi1
+CSR2(config-if)#ip add
+CSR2(config-if)#ip address 10.1.2.2 255.255.255.252
+CSR2(config-if)#no shut
+CSR2(config-if)#end
+CSR2#
+CSR2#router o
+*Jul  4 11:07:53.790: %SYS-5-CONFIG_I: Configured from console by consoles
+CSR2#conf t   
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#router ospf 1
+CSR2(config-router)#net
+CSR2(config-router)#network 10.1.2.0 0.0.0.3 are
+CSR2(config-router)#network 10.1.2.0 0.0.0.3 area 0
+CSR2(config-router)#end
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+*Jul  4 11:08:19.225: %SYS-5-CONFIG_I: Configured from console by console
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh
+CSR2#show ip os
+CSR2#show ip ospf ne
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+4.4.4.4           1   FULL/BDR        00:00:35    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/BDR        00:00:31    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#sh
+CSR2#show run | s r o
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 10.1.2.0 0.0.0.3 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp sync
+ mpls ldp autoconfig
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#ping 10.1.2.1
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.1.2.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 9/11/15 ms
+CSR2#
+CSR2#
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+4.4.4.4           1   FULL/BDR        00:00:37    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/BDR        00:00:32    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh run 
+Building configuration...
+
+Current configuration : 1897 bytes
+!
+! Last configuration change at 11:08:19 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!         
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 200 299
+mpls ldp session protection
+mpls ldp label
+ allocate global prefix-list LABELS
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9S2KOPAUVOD
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+!         
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+!
+interface Loopback10
+ no ip address
+!
+interface GigabitEthernet1
+ ip address 10.1.2.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.2.4.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet3
+ ip address 20.2.3.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+!
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 10.1.2.0 0.0.0.3 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp sync
+ mpls ldp autoconfig
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+          
+CSR2#ping 10.1.2.2
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.1.2.2, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 2/2/5 ms
+CSR2#ping 10.1.2.1
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.1.2.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 10/12/20 ms
+CSR2#
+CSR2#clear
+CSR2#clear ip os
+CSR2#clear ip ospf 1
+CSR2#clear ip ospf 1 ?
+  counters        Clear neighbor counters
+  events          Clear the event log
+  force-spf       Run a full SPF
+  nsr             Reset non-stop routing
+  process         Reset OSPF process
+  redistribution  Clear route redistribution
+  rib             Clear local and global RIBs
+  traffic         Clear traffic statistics
+
+CSR2#clear ip ospf ? 
+  <1-65535>       Process ID number
+  counters        Clear neighbor counters
+  events          Clear the event log
+  force-spf       Run a full SPF
+  nsr             Reset non-stop routing
+  process         Reset OSPF process
+  redistribution  Clear route redistribution
+  rib             Clear local and global RIBs
+  traffic         Clear traffic statistics
+
+CSR2#clear ip ospf 1 ?
+  counters        Clear neighbor counters
+  events          Clear the event log
+  force-spf       Run a full SPF
+  nsr             Reset non-stop routing
+  process         Reset OSPF process
+  redistribution  Clear route redistribution
+  rib             Clear local and global RIBs
+  traffic         Clear traffic statistics
+
+CSR2#clear ip ospf 1 pr
+CSR2#clear ip ospf 1 process ?
+  <cr>
+
+CSR2#clear ip ospf 1 process 
+Reset OSPF process 1? [no]: 
+CSR2#clear ip ospf 1 process 
+Reset OSPF process 1? [no]: yes
+CSR2#
+*Jul  4 11:18:46.191: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet2 from FULL to DOWN, Neighbor Down: Interface down or detached
+*Jul  4 11:18:46.191: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet3 from FULL to DOWN, Neighbor Down: Interface down or detached
+*Jul  4 11:18:46.220: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet2 from LOADING to FULL, Loading Done
+*Jul  4 11:18:46.220: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet3 from LOADING to FULL, Loading Done
+CSR2#
+CSR2#
+CSR2#show ip ospf neighbor   
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+4.4.4.4           1   FULL/DR         00:00:35    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:37    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh run | s r o
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 10.1.2.0 0.0.0.3 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp sync
+ mpls ldp autoconfig
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#router os
+CSR2(config)#router ospf 1
+CSR2(config-router)#no mpl
+CSR2(config-router)#no mpls ld
+CSR2(config-router)#no mpls ldp sy
+CSR2(config-router)#no mpls ldp sync 
+CSR2(config-router)#mpl
+CSR2(config-router)#mpls ld
+CSR2(config-router)#mpls ldp 
+% Incomplete command.
+
+CSR2(config-router)#mpls ldp au
+CSR2(config-router)#mpls ldp autoconfig 
+CSR2(config-router)#end
+CSR2#
+CSR2#
+CSR2#
+*Jul  4 11:21:44.530: %SYS-5-CONFIG_I: Configured from console by console
+CSR2#
+CSR2#
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+10.1.2.1          1   FULL/DR         00:00:39    10.1.2.1        GigabitEthernet1
+4.4.4.4           1   FULL/DR         00:00:36    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:38    20.2.3.2        GigabitEthernet3
+CSR2#
+*Jul  4 11:21:48.843: %OSPF-5-ADJCHG: Process 1, Nbr 10.1.2.1 on GigabitEthernet1 from LOADING to FULL, Loading Done
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+10.1.2.1          1   FULL/DR         00:00:39    10.1.2.1        GigabitEthernet1
+4.4.4.4           1   FULL/DR         00:00:30    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:36    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+10.1.2.1          1   FULL/DR         00:00:36    10.1.2.1        GigabitEthernet1
+4.4.4.4           1   FULL/DR         00:00:33    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:38    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#
+CSR2#
+*Jul  4 11:23:18.523: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet1 from LOADING to FULL, Loading Done
+CSR2#
+CSR2#
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   FULL/DROTHER    00:00:39    10.1.2.1        GigabitEthernet1
+10.1.2.1          1   FULL/DR         00:00:34    10.1.2.1        GigabitEthernet1
+4.4.4.4           1   FULL/DR         00:00:37    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:37    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   FULL/DROTHER    00:00:37    10.1.2.1        GigabitEthernet1
+10.1.2.1          1   FULL/DR         00:00:32    10.1.2.1        GigabitEthernet1
+4.4.4.4           1   FULL/DR         00:00:35    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:35    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   FULL/DROTHER    00:00:39    10.1.2.1        GigabitEthernet1
+10.1.2.1          1   FULL/DR         00:00:29    10.1.2.1        GigabitEthernet1
+4.4.4.4           1   FULL/DR         00:00:32    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:37    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   FULL/DROTHER    00:00:38    10.1.2.1        GigabitEthernet1
+10.1.2.1          1   FULL/DR         00:00:26    10.1.2.1        GigabitEthernet1
+4.4.4.4           1   FULL/DR         00:00:39    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:34    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   FULL/BDR        00:00:36    10.1.2.1        GigabitEthernet1
+4.4.4.4           1   FULL/DR         00:00:30    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:35    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#
+*Jul  4 11:23:58.418: %OSPF-5-ADJCHG: Process 1, Nbr 10.1.2.1 on GigabitEthernet1 from FULL to DOWN, Neighbor Down: Dead timer expired
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   FULL/BDR        00:00:34    10.1.2.1        GigabitEthernet1
+4.4.4.4           1   FULL/DR         00:00:39    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:39    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#
+CSR2#
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   FULL/BDR        00:00:37    10.1.2.1        GigabitEthernet1
+4.4.4.4           1   FULL/DR         00:00:37    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:37    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   FULL/BDR        00:00:39    10.1.2.1        GigabitEthernet1
+4.4.4.4           1   FULL/DR         00:00:34    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:37    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#conf
+CSR2#configure   
+Configuring from terminal, memory, or network [terminal]? t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#
+CSR2(config)#router os
+CSR2(config)#router ospf 1
+CSR2(config-router)#mpl
+CSR2(config-router)#mpls ld
+CSR2(config-router)#mpls ldp sy
+CSR2(config-router)#mpls ldp sync 
+CSR2(config-router)#end
+CSR2#
+CSR2#
+CSR2#
+*Jul  4 11:35:11.226: %SYS-5-CONFIG_I: Configured from console by console
+CSR2#
+CSR2#
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   FULL/BDR        00:00:36    10.1.2.1        GigabitEthernet1
+4.4.4.4           1   FULL/DR         00:00:36    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:39    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   FULL/BDR        00:00:34    10.1.2.1        GigabitEthernet1
+4.4.4.4           1   FULL/DR         00:00:37    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:36    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#
+CSR2# 
+CSR2#
+CSR2#
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   FULL/BDR        00:00:28    10.1.2.1        GigabitEthernet1
+4.4.4.4           1   FULL/DR         00:00:34    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:33    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#
+CSR2#configure             
+Configuring from terminal, memory, or network [terminal]? t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#router os
+CSR2(config)#router ospf 1
+CSR2(config-router)#mpl
+CSR2(config-router)#mpls ld
+CSR2(config-router)#mpls ldp au
+CSR2(config-router)#mpls ldp autoconfig 
+CSR2(config-router)#end
+CSR2#
+CSR2#
+CSR2#
+*Jul  4 11:37:41.524: %SYS-5-CONFIG_I: Configured from console by console
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#t
+% Ambiguous command:  "t"
+CSR2#
+CSR2#
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   FULL/BDR        00:00:33    10.1.2.1        GigabitEthernet1
+4.4.4.4           1   FULL/DR         00:00:38    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:38    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   FULL/BDR        00:00:29    10.1.2.1        GigabitEthernet1
+4.4.4.4           1   FULL/DR         00:00:32    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:31    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   FULL/BDR        00:00:37    10.1.2.1        GigabitEthernet1
+4.4.4.4           1   FULL/DR         00:00:37    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:37    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   FULL/BDR        00:00:30    10.1.2.1        GigabitEthernet1
+4.4.4.4           1   FULL/DR         00:00:39    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:39    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#
+CSR2#
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   FULL/BDR        00:00:37    10.1.2.1        GigabitEthernet1
+4.4.4.4           1   FULL/DR         00:00:35    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:35    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+1.1.1.1           1   FULL/BDR        00:00:39    10.1.2.1        GigabitEthernet1
+4.4.4.4           1   FULL/DR         00:00:33    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:34    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#
+CSR2#clear ip os           
+CSR2#clear ip ospf pr
+CSR2#clear ip ospf process 1
+                           ^
+% Invalid input detected at '^' marker.
+
+CSR2#clear ip ospf process  
+Reset ALL OSPF processes? [no]: yes
+CSR2#
+CSR2#
+*Jul  4 11:39:09.579: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet1 from FULL to DOWN, Neighbor Down: Interface down or detached
+*Jul  4 11:39:09.579: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet2 from FULL to DOWN, Neighbor Down: Interface down or detached
+*Jul  4 11:39:09.579: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet3 from FULL to DOWN, Neighbor Down: Interface down or detached
+*Jul  4 11:39:09.617: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet2
+CSR2#
+CSR2#
+CSR2#
+CSR2# from LOADING to FULL, Loading Done
+*Jul  4 11:39:09.617: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet3 from LOADING to FULL, Loading Done
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#show ip ospf neighbor  
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+4.4.4.4           1   FULL/DR         00:00:36    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:34    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+4.4.4.4           1   FULL/DR         00:00:38    20.2.4.2        GigabitEthernet2
+3.3.3.3           1   FULL/DR         00:00:31    20.2.3.2        GigabitEthernet3
+CSR2#
+CSR2#
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#router ospf 1       
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#no 
+CSR2(config-router)#no mpl
+CSR2(config-router)#no mpls ld
+CSR2(config-router)#no mpls ldp au
+CSR2(config-router)#no mpls ldp autoconfig 
+CSR2(config-router)#end
+CSR2#
+CSR2#
+CSR2#
+*Jul  4 11:39:46.249: %LDP-5-SP: 4.4.4.4:0: session hold up initiated
+*Jul  4 11:39:46.249: %LDP-5-SP: 3.3.3.3:0: session hold up initiated
+*Jul  4 11:39:46.274: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet1 from LOADING to FULL, Loading Done
+*Jul  4 11:39:47.285: %SYS-5-CONFIG_I: Configured from console by console
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#inter
+CSR2(config)#interface gi
+CSR2(config)#interface gigabitEthernet 1
+CSR2(config-if)#mp
+CSR2(config-if)#mpls ip
+CSR2(config-if)#
+*Jul  4 11:40:36.257: LDP Peer 4.4.4.4:0 re-announced
+*Jul  4 11:40:36.257: LDP Peer 3.3.3.3:0 re-announcedmpls ip
+CSR2(config-if)#interface gigabitEthernet 2
+CSR2(config-if)#mpls ip                    
+CSR2(config-if)#
+CSR2(config-if)#
+*Jul  4 11:40:42.629: %LDP-5-SP: 4.4.4.4:0: session recovery succeededinterface gigabitEthernet 2
+CSR2(config-if)#interface gigabitEthernet 3
+CSR2(config-if)#mpls ip                    
+CSR2(config-if)#
+CSR2(config-if)#end
+*Jul  4 11:40:48.623: %LDP-5-SP: 3.3.3.3:0: session recovery succeeded
+CSR2#
+CSR2#
+CSR2#
+*Jul  4 11:40:49.808: %SYS-5-CONFIG_I: Configured from console by console
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#wr
+Building configuration...
+[OK]
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh
+CSR2#show mpl
+CSR2#show mpls ld
+CSR2#show mpls ldp ne
+CSR2#show mpls ldp neighbor 
+    Peer LDP Ident: 4.4.4.4:0; Local LDP Ident 2.2.2.2:0
+        TCP connection: 4.4.4.4.18788 - 2.2.2.2.646
+        State: Oper; Msgs sent/rcvd: 230/227; Downstream
+        Up time: 02:44:16
+        LDP discovery sources:
+          Targeted Hello 2.2.2.2 -> 4.4.4.4, active, passive
+          GigabitEthernet2, Src IP addr: 20.2.4.2
+        Addresses bound to peer LDP Ident:
+          20.2.4.2        4.4.4.4         20.3.4.2        20.4.6.1        
+          20.4.5.1        
+    Peer LDP Ident: 3.3.3.3:0; Local LDP Ident 2.2.2.2:0
+        TCP connection: 3.3.3.3.37494 - 2.2.2.2.646
+        State: Oper; Msgs sent/rcvd: 228/223; Downstream
+        Up time: 02:41:21
+        LDP discovery sources:
+          Targeted Hello 2.2.2.2 -> 3.3.3.3, active, passive
+          GigabitEthernet3, Src IP addr: 20.2.3.2
+        Addresses bound to peer LDP Ident:
+          20.3.6.1        20.2.3.2        20.3.4.1        3.3.3.3         
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#show mpls ldp neighbor det
+CSR2#show mpls ldp neighbor detail 
+    Peer LDP Ident: 4.4.4.4:0; Local LDP Ident 2.2.2.2:0
+        TCP connection: 4.4.4.4.18788 - 2.2.2.2.646
+        Password: not required, none, in use
+        State: Oper; Msgs sent/rcvd: 230/227; Downstream; Last TIB rev sent 45
+        Up time: 02:44:25; UID: 5; Peer Id 1
+        LDP discovery sources:
+          Targeted Hello 2.2.2.2 -> 4.4.4.4, active, passive;
+            holdtime: infinite, hello interval: 10000 ms
+          GigabitEthernet2; Src IP addr: 20.2.4.2 
+            holdtime: 15000 ms, hello interval: 5000 ms
+        Addresses bound to peer LDP Ident:
+          20.2.4.2        4.4.4.4         20.3.4.2        20.4.6.1        
+          20.4.5.1        
+        Peer holdtime: 180000 ms; KA interval: 60000 ms; Peer state: estab
+        Clients: Dir Adj Client
+        LDP Session Protection enabled, state: Ready
+            duration: 86400 seconds
+        NSR: Not Ready
+        Capabilities Sent:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+        Capabilities Received:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+    Peer LDP Ident: 3.3.3.3:0; Local LDP Ident 2.2.2.2:0
+        TCP connection: 3.3.3.3.37494 - 2.2.2.2.646
+        Password: not required, none, in use
+        State: Oper; Msgs sent/rcvd: 229/223; Downstream; Last TIB rev sent 45
+        Up time: 02:41:30; UID: 6; Peer Id 0
+        LDP discovery sources:
+          Targeted Hello 2.2.2.2 -> 3.3.3.3, active, passive;
+            holdtime: infinite, hello interval: 10000 ms
+          GigabitEthernet3; Src IP addr: 20.2.3.2 
+            holdtime: 15000 ms, hello interval: 5000 ms
+        Addresses bound to peer LDP Ident:
+          20.3.6.1        20.2.3.2        20.3.4.1        3.3.3.3         
+        Peer holdtime: 180000 ms; KA interval: 60000 ms; Peer state: estab
+        Clients: Dir Adj Client
+        LDP Session Protection enabled, state: Ready
+            duration: 86400 seconds
+        NSR: Not Ready
+        Capabilities Sent:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+        Capabilities Received:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+CSR2# 
+*Jul  4 11:42:51.409: %LDP-5-SP: 4.4.4.4:0: session hold up initiated
+*Jul  4 11:43:16.788: %LDP-5-SP: 4.4.4.4:0: session recovery succeeded
+CSR2#
+CSR2#
+CSR2#wr
+Building configuration...
+[OK]
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#wr
+Building configuration...
+[OK]
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#terminal length 0
+CSR2#more system:running-config
+!
+! Last configuration change at 11:40:49 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 200 299
+mpls ldp session protection
+mpls ldp label
+ allocate global prefix-list LABELS
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9S2KOPAUVOD
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+!
+interface Loopback10
+ no ip address
+!
+interface GigabitEthernet1
+ ip address 10.1.2.2 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet2
+ ip address 20.2.4.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet3
+ ip address 20.2.3.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+!
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 10.1.2.0 0.0.0.3 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp sync
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+ip prefix-list LABELS seq 10 permit 3.3.3.3/32
+ip prefix-list LABELS seq 15 permit 4.4.4.4/32
+ip prefix-list LABELS seq 20 permit 5.5.5.5/32
+ip prefix-list LABELS seq 25 permit 6.6.6.6/32
+ip prefix-list LABELS seq 30 permit 19.19.19.19/32
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR2#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR2 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+

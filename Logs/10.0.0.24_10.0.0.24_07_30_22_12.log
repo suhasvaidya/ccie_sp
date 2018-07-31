@@ -1,0 +1,289 @@
+Connected to Dynamips VM "R1" (ID 1, type c7200) - Console port
+Press ENTER to get the prompt.
+t)
+*Jul 30 20:59:56.887: %BGP-5-ADJCHANGE: neighbor 10.1.2.2 Up 
+R1>
+R1>en
+R1#sh ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/32 is subnetted, 1 subnets
+C        1.1.1.1 is directly connected, Loopback0
+      10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        10.1.2.0/30 is directly connected, FastEthernet0/0
+L        10.1.2.1/32 is directly connected, FastEthernet0/0
+      20.0.0.0/32 is subnetted, 1 subnets
+B        20.20.20.20 [20/0] via 10.1.2.2, 00:00:03
+R1#
+R1#
+R1#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+R1>en
+R1#
+R1#
+R1#sh run 
+Building configuration...
+
+Current configuration : 838 bytes
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+hostname R1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+ip cef
+!
+!
+!
+!
+!
+!
+no ipv6 cef
+!         
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!         
+interface Loopback0
+ ip address 1.1.1.1 255.255.255.255
+!
+interface FastEthernet0/0
+ ip address 10.1.2.1 255.255.255.252
+ duplex full
+!
+interface FastEthernet1/0
+ no ip address
+ shutdown
+ duplex full
+!
+router bgp 1
+ bgp log-neighbor-changes
+ neighbor 10.1.2.2 remote-as 100
+ !
+ address-family ipv4
+  network 1.1.1.1 mask 255.255.255.255
+  neighbor 10.1.2.2 activate
+ exit-address-family
+!
+ip forward-protocol nd
+!         
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ stopbits 1
+line aux 0
+ stopbits 1
+line vty 0 4
+ login
+!
+!
+end
+
+R1#
+R1#
+R1#
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#no router bgp 1
+R1(config)#
+*Jul 30 21:19:40.363: %BGP-5-ADJCHANGE: neighbor 10.1.2.2 Down Neighbor deleted
+*Jul 30 21:19:40.363: %BGP_SESSION-5-ADJCHANGE: neighbor 10.1.2.2 IPv4 Unicast topology base removed from session  Neighbor deleted
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)#
+R1(config)# 
+R1#
+*Jul 30 21:25:38.803: %SYS-5-CONFIG_I: Configured from console by console
+R1#
+R1#
+R1#
+R1#
+R1#linux
+     ^
+% Invalid input detected at '^' marker.
+
+R1#
+R1#
+R1#
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#interface Loopback1117
+R1(config-if)#      ip address 1.1.1.7 255.255.255.255
+R1(config-if)#     !
+R1(config-if)#     interface Loopback1118
+R1(config-if)#      ip address 1.1.1.8 255.255.255.255
+R1(config-if)#     !
+R1(config-if)#     interface Loopback11120
+R1(config-if)#      ip address 1.1.1.20 255.255.255.255
+R1(config-if)#     !
+R1(config-if)#                        
+R1(config-if)#
+R1(config-if)#
+*Jul 30 21:26:36.939: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback1117, changed state to up
+*Jul 30 21:26:37.367: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback1118, changed state to up
+*Jul 30 21:26:37.731: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback11120, changed state to up
+R1(config-if)#
+R1(config-if)#
+R1(config-if)#ip route 0.0.0.0 0.0.0.0 10.1.2.2
+R1(config)#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+*Jul 30 21:36:46.615: %SYS-5-CONFIG_I: Configured from console by console
+R1>
+R1>
+R1>
+R1>en
+R1#wr
+Warning: Attempting to overwrite an NVRAM configuration previously written
+by a different version of the system image.
+Overwrite the previous NVRAM configuration?[confirm]
+Building configuration...
+[OK]
+R1#
+R1#
+R1#
+R1#ping 7.7.7.7 so
+R1#ping 7.7.7.7 source 1.1.1.7
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 7.7.7.7, timeout is 2 seconds:
+Packet sent with a source address of 1.1.1.7 
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 44/48/52 ms
+R1#
+R1#
+R1#trace
+R1#traceroute 7.7.7.7 source 1.1.1.7
+Type escape sequence to abort.
+Tracing the route to 7.7.7.7
+VRF info: (vrf in name/id, vrf out name/id)
+  1  *  *  * 
+  2 10.4.7.1 [MPLS: Label 405 Exp 0] 48 msec 36 msec 52 msec
+  3 10.4.7.2 52 msec 52 msec * 

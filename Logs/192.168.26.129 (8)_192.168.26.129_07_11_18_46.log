@@ -1,0 +1,1306 @@
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show vrf
+vrf  vrf-group  
+RP/0/0/CPU0:XR1#show v        
+vaccesslib       variables       version  vicr
+virtual-service  vlan            vrf      vrf-group
+vrrp             vtxp-monitored  
+RP/0/0/CPU0:XR1#show vr
+vrf  vrf-group  vrrp  
+RP/0/0/CPU0:XR1#show vrf
+vrf  vrf-group  
+RP/0/0/CPU0:XR1#show vrf ?
+  all    All VRFs
+  VPN_A  VRF Name
+  WORD   VRF Name
+RP/0/0/CPU0:XR1#show vrf all detail 
+Tue Jul 10 08:07:20.011 UTC
+
+VRF VPN_A; RD 100:1; VPN ID not set
+VRF mode: Regular
+Description not set
+Interfaces:
+  GigabitEthernet0/0/0/2
+Address family IPV4 Unicast
+  Import VPN route-target communities:
+    RT:100:1
+  Export VPN route-target communities:
+    RT:100:1
+  No import route policy
+  No export route policy
+Address family IPV6 Unicast
+  No import VPN route-target communities
+  No export VPN route-target communities
+  No import route policy
+  No export route policy
+RP/0/0/CPU0:XR1#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR1 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh mpls forwarding         
+Tue Jul 10 08:19:24.081 UTC
+Local  Outgoing    Prefix             Outgoing     Next Hop        Bytes       
+Label  Label       or ID              Interface                    Switched    
+------ ----------- ------------------ ------------ --------------- ------------
+19000  601         2.2.2.2/32         Gi0/0/0/0    20.6.19.1       11708       
+       504         2.2.2.2/32         Gi0/0/0/1    20.5.19.1       0           
+19001  600         3.3.3.3/32         Gi0/0/0/0    20.6.19.1       0           
+19002  602         4.4.4.4/32         Gi0/0/0/0    20.6.19.1       0           
+       502         4.4.4.4/32         Gi0/0/0/1    20.5.19.1       0           
+19003  Pop         6.6.6.6/32         Gi0/0/0/0    20.6.19.1       88088       
+19004  Pop         5.5.5.5/32         Gi0/0/0/1    20.5.19.1       9829890     
+19005  Aggregate   VPN_A: Per-VRF Aggr[V]   \
+                                      VPN_A                        325056      
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh mpls forwarding 
+Tue Jul 10 08:27:36.577 UTC
+Local  Outgoing    Prefix             Outgoing     Next Hop        Bytes       
+Label  Label       or ID              Interface                    Switched    
+------ ----------- ------------------ ------------ --------------- ------------
+19000  601         2.2.2.2/32         Gi0/0/0/0    20.6.19.1       13732       
+       504         2.2.2.2/32         Gi0/0/0/1    20.5.19.1       520         
+19001  600         3.3.3.3/32         Gi0/0/0/0    20.6.19.1       0           
+       503         3.3.3.3/32         Gi0/0/0/1    20.5.19.1       0           
+19002  602         4.4.4.4/32         Gi0/0/0/0    20.6.19.1       0           
+       502         4.4.4.4/32         Gi0/0/0/1    20.5.19.1       0           
+19003  Pop         6.6.6.6/32         Gi0/0/0/0    20.6.19.1       96130       
+19004  Pop         5.5.5.5/32         Gi0/0/0/1    20.5.19.1       10047352    
+19005  Aggregate   VPN_A: Per-VRF Aggr[V]   \
+                                      VPN_A                        387840      
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh mpls forwarding 
+Tue Jul 10 08:27:41.507 UTC
+Local  Outgoing    Prefix             Outgoing     Next Hop        Bytes       
+Label  Label       or ID              Interface                    Switched    
+------ ----------- ------------------ ------------ --------------- ------------
+19000  601         2.2.2.2/32         Gi0/0/0/0    20.6.19.1       13732       
+       504         2.2.2.2/32         Gi0/0/0/1    20.5.19.1       520         
+19001  600         3.3.3.3/32         Gi0/0/0/0    20.6.19.1       0           
+       503         3.3.3.3/32         Gi0/0/0/1    20.5.19.1       0           
+19002  602         4.4.4.4/32         Gi0/0/0/0    20.6.19.1       0           
+       502         4.4.4.4/32         Gi0/0/0/1    20.5.19.1       0           
+19003  Pop         6.6.6.6/32         Gi0/0/0/0    20.6.19.1       96196       
+19004  Pop         5.5.5.5/32         Gi0/0/0/1    20.5.19.1       10047352    
+19005  Aggregate   VPN_A: Per-VRF Aggr[V]   \
+                                      VPN_A                        387840      
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh mpls forwarding 
+Tue Jul 10 08:27:44.957 UTC
+Local  Outgoing    Prefix             Outgoing     Next Hop        Bytes       
+Label  Label       or ID              Interface                    Switched    
+------ ----------- ------------------ ------------ --------------- ------------
+19000  601         2.2.2.2/32         Gi0/0/0/0    20.6.19.1       13732       
+       504         2.2.2.2/32         Gi0/0/0/1    20.5.19.1       520         
+19001  600         3.3.3.3/32         Gi0/0/0/0    20.6.19.1       0           
+       503         3.3.3.3/32         Gi0/0/0/1    20.5.19.1       0           
+19002  602         4.4.4.4/32         Gi0/0/0/0    20.6.19.1       0           
+       502         4.4.4.4/32         Gi0/0/0/1    20.5.19.1       0           
+19003  Pop         6.6.6.6/32         Gi0/0/0/0    20.6.19.1       96262       
+19004  Pop         5.5.5.5/32         Gi0/0/0/1    20.5.19.1       10050586    
+19005  Aggregate   VPN_A: Per-VRF Aggr[V]   \
+                                      VPN_A                        387840      
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh mpls forwarding 
+Tue Jul 10 08:27:49.666 UTC
+Local  Outgoing    Prefix             Outgoing     Next Hop        Bytes       
+Label  Label       or ID              Interface                    Switched    
+------ ----------- ------------------ ------------ --------------- ------------
+19000  601         2.2.2.2/32         Gi0/0/0/0    20.6.19.1       13732       
+       504         2.2.2.2/32         Gi0/0/0/1    20.5.19.1       520         
+19001  600         3.3.3.3/32         Gi0/0/0/0    20.6.19.1       0           
+       503         3.3.3.3/32         Gi0/0/0/1    20.5.19.1       0           
+19002  602         4.4.4.4/32         Gi0/0/0/0    20.6.19.1       0           
+       502         4.4.4.4/32         Gi0/0/0/1    20.5.19.1       0           
+19003  Pop         6.6.6.6/32         Gi0/0/0/0    20.6.19.1       96328       
+19004  Pop         5.5.5.5/32         Gi0/0/0/1    20.5.19.1       10050586    
+19005  Aggregate   VPN_A: Per-VRF Aggr[V]   \
+                                      VPN_A                        387840      
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh mpls forwarding 
+Tue Jul 10 08:27:53.316 UTC
+Local  Outgoing    Prefix             Outgoing     Next Hop        Bytes       
+Label  Label       or ID              Interface                    Switched    
+------ ----------- ------------------ ------------ --------------- ------------
+19000  601         2.2.2.2/32         Gi0/0/0/0    20.6.19.1       13732       
+       504         2.2.2.2/32         Gi0/0/0/1    20.5.19.1       520         
+19001  600         3.3.3.3/32         Gi0/0/0/0    20.6.19.1       0           
+       503         3.3.3.3/32         Gi0/0/0/1    20.5.19.1       0           
+19002  602         4.4.4.4/32         Gi0/0/0/0    20.6.19.1       0           
+       502         4.4.4.4/32         Gi0/0/0/1    20.5.19.1       0           
+19003  Pop         6.6.6.6/32         Gi0/0/0/0    20.6.19.1       96328       
+19004  Pop         5.5.5.5/32         Gi0/0/0/1    20.5.19.1       10050586    
+19005  Aggregate   VPN_A: Per-VRF Aggr[V]   \
+                                      VPN_A                        387840      
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh mpls forwarding 
+Tue Jul 10 08:27:56.536 UTC
+Local  Outgoing    Prefix             Outgoing     Next Hop        Bytes       
+Label  Label       or ID              Interface                    Switched    
+------ ----------- ------------------ ------------ --------------- ------------
+19000  601         2.2.2.2/32         Gi0/0/0/0    20.6.19.1       13732       
+       504         2.2.2.2/32         Gi0/0/0/1    20.5.19.1       520         
+19001  600         3.3.3.3/32         Gi0/0/0/0    20.6.19.1       0           
+       503         3.3.3.3/32         Gi0/0/0/1    20.5.19.1       0           
+19002  602         4.4.4.4/32         Gi0/0/0/0    20.6.19.1       0           
+       502         4.4.4.4/32         Gi0/0/0/1    20.5.19.1       0           
+19003  Pop         6.6.6.6/32         Gi0/0/0/0    20.6.19.1       96394       
+19004  Pop         5.5.5.5/32         Gi0/0/0/1    20.5.19.1       10053820    
+19005  Aggregate   VPN_A: Per-VRF Aggr[V]   \
+                                      VPN_A                        387840      
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh mpls forwarding 
+Tue Jul 10 08:28:10.155 UTC
+Local  Outgoing    Prefix             Outgoing     Next Hop        Bytes       
+Label  Label       or ID              Interface                    Switched    
+------ ----------- ------------------ ------------ --------------- ------------
+19000  601         2.2.2.2/32         Gi0/0/0/0    20.6.19.1       13732       
+       504         2.2.2.2/32         Gi0/0/0/1    20.5.19.1       520         
+19001  600         3.3.3.3/32         Gi0/0/0/0    20.6.19.1       0           
+       503         3.3.3.3/32         Gi0/0/0/1    20.5.19.1       0           
+19002  602         4.4.4.4/32         Gi0/0/0/0    20.6.19.1       0           
+       502         4.4.4.4/32         Gi0/0/0/1    20.5.19.1       0           
+19003  Pop         6.6.6.6/32         Gi0/0/0/0    20.6.19.1       96690       
+19004  Pop         5.5.5.5/32         Gi0/0/0/1    20.5.19.1       10059896    
+19005  Aggregate   VPN_A: Per-VRF Aggr[V]   \
+                                      VPN_A                        387840      
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh mpls forwarding 
+Tue Jul 10 08:28:18.794 UTC
+Local  Outgoing    Prefix             Outgoing     Next Hop        Bytes       
+Label  Label       or ID              Interface                    Switched    
+------ ----------- ------------------ ------------ --------------- ------------
+19000  601         2.2.2.2/32         Gi0/0/0/0    20.6.19.1       13839       
+       504         2.2.2.2/32         Gi0/0/0/1    20.5.19.1       520         
+19001  600         3.3.3.3/32         Gi0/0/0/0    20.6.19.1       0           
+       503         3.3.3.3/32         Gi0/0/0/1    20.5.19.1       0           
+19002  602         4.4.4.4/32         Gi0/0/0/0    20.6.19.1       0           
+       502         4.4.4.4/32         Gi0/0/0/1    20.5.19.1       0           
+19003  Pop         6.6.6.6/32         Gi0/0/0/0    20.6.19.1       96822       
+19004  Pop         5.5.5.5/32         Gi0/0/0/1    20.5.19.1       10065090    
+19005  Aggregate   VPN_A: Per-VRF Aggr[V]   \
+                                      VPN_A                        387840      
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh mpls forwarding 
+Tue Jul 10 08:28:21.114 UTC
+Local  Outgoing    Prefix             Outgoing     Next Hop        Bytes       
+Label  Label       or ID              Interface                    Switched    
+------ ----------- ------------------ ------------ --------------- ------------
+19000  601         2.2.2.2/32         Gi0/0/0/0    20.6.19.1       13839       
+       504         2.2.2.2/32         Gi0/0/0/1    20.5.19.1       520         
+19001  600         3.3.3.3/32         Gi0/0/0/0    20.6.19.1       0           
+       503         3.3.3.3/32         Gi0/0/0/1    20.5.19.1       0           
+19002  602         4.4.4.4/32         Gi0/0/0/0    20.6.19.1       0           
+       502         4.4.4.4/32         Gi0/0/0/1    20.5.19.1       0           
+19003  Pop         6.6.6.6/32         Gi0/0/0/0    20.6.19.1       96888       
+19004  Pop         5.5.5.5/32         Gi0/0/0/1    20.5.19.1       10065090    
+19005  Aggregate   VPN_A: Per-VRF Aggr[V]   \
+                                      VPN_A                        387840      
+RP/0/0/CPU0:XR1#sh mpls forwarding 
+Tue Jul 10 08:28:23.114 UTC
+Local  Outgoing    Prefix             Outgoing     Next Hop        Bytes       
+Label  Label       or ID              Interface                    Switched    
+------ ----------- ------------------ ------------ --------------- ------------
+19000  601         2.2.2.2/32         Gi0/0/0/0    20.6.19.1       13839       
+       504         2.2.2.2/32         Gi0/0/0/1    20.5.19.1       520         
+19001  600         3.3.3.3/32         Gi0/0/0/0    20.6.19.1       0           
+       503         3.3.3.3/32         Gi0/0/0/1    20.5.19.1       0           
+19002  602         4.4.4.4/32         Gi0/0/0/0    20.6.19.1       0           
+       502         4.4.4.4/32         Gi0/0/0/1    20.5.19.1       0           
+19003  Pop         6.6.6.6/32         Gi0/0/0/0    20.6.19.1       96928       
+19004  Pop         5.5.5.5/32         Gi0/0/0/1    20.5.19.1       10068324    
+19005  Aggregate   VPN_A: Per-VRF Aggr[V]   \
+                                      VPN_A                        387840      
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh mpls forwarding 
+Tue Jul 10 08:28:32.203 UTC
+Local  Outgoing    Prefix             Outgoing     Next Hop        Bytes       
+Label  Label       or ID              Interface                    Switched    
+------ ----------- ------------------ ------------ --------------- ------------
+19000  601         2.2.2.2/32         Gi0/0/0/0    20.6.19.1       13839       
+       504         2.2.2.2/32         Gi0/0/0/1    20.5.19.1       520         
+19001  600         3.3.3.3/32         Gi0/0/0/0    20.6.19.1       0           
+       503         3.3.3.3/32         Gi0/0/0/1    20.5.19.1       0           
+19002  602         4.4.4.4/32         Gi0/0/0/0    20.6.19.1       0           
+       502         4.4.4.4/32         Gi0/0/0/1    20.5.19.1       0           
+19003  Pop         6.6.6.6/32         Gi0/0/0/0    20.6.19.1       97060       
+19004  Pop         5.5.5.5/32         Gi0/0/0/1    20.5.19.1       10071558    
+19005  Aggregate   VPN_A: Per-VRF Aggr[V]   \
+                                      VPN_A                        387840      
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show bgp vrf VPN_A ipv4 unicast labels
+Tue Jul 10 08:30:05.347 UTC
+BGP VRF VPN_A, state: Active
+BGP Route Distinguisher: 100:1
+VRF ID: 0x60000002
+BGP router identifier 19.19.19.19, local AS number 100
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000011   RD version: 6
+BGP main routing table version 6
+BGP NSR Initial initsync version 1 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+
+Status codes: s suppressed, d damped, h history, * valid, > best
+              i - internal, r RIB-failure, S stale, N Nexthop-discard
+Origin codes: i - IGP, e - EGP, ? - incomplete
+   Network            Next Hop        Rcvd Label      Local Label
+Route Distinguisher: 100:1 (default for vrf VPN_A)
+*>i1.1.1.1/32         2.2.2.2         205             nolabel         
+*> 20.20.20.20/32     10.19.20.2      nolabel         19005           
+
+Processed 2 prefixes, 2 paths
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show bgp vpnv4 unicast ?  
+  A.B.C.D                IPv4 network
+  A.B.C.D/length         IPv4 network and masklength
+  advertised             Show advertised routes
+  attribute-key          Display networks with their associated attribute key in
+dexes
+  cidr-only              Display only routes with non-natural netmasks
+  community              Display routes matching the communities
+  convergence            Test an address family for convergence
+  dampened-paths         Display paths suppressed due to dampening
+  dependency             The Dependency information for the address family
+  dfa-regex              Display routes matching the AS path dfa regular express
+ion
+  dfa-regex              Enter a dfa regular expression to match the BGP AS path
+s
+  egress-engineering     Display Egress Engineering sets
+  export                 Show BGP export information
+  flap-statistics        Display flap statistics of routes
+  import                 Show BGP import information
+  imported-routes        Display all routes imported into specified VRF
+  inconsistent-as        Display networks with inconsistent origin AS
+  labels                 Display routes and their incoming/outgoing labels
+  neighbors              Detailed information on TCP and BGP neighbor connection
+s
+RP/0/0/CPU0:XR1#show bgp vpnv4 unicast labels 
+Tue Jul 10 08:33:26.343 UTC
+BGP router identifier 19.19.19.19, local AS number 100
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0x0   RD version: 0
+BGP main routing table version 6
+BGP NSR Initial initsync version 1 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+Status codes: s suppressed, d damped, h history, * valid, > best
+              i - internal, r RIB-failure, S stale, N Nexthop-discard
+Origin codes: i - IGP, e - EGP, ? - incomplete
+   Network            Next Hop        Rcvd Label      Local Label
+Route Distinguisher: 100:1 (default for vrf VPN_A)
+*>i1.1.1.1/32         2.2.2.2         205             nolabel         
+*> 20.20.20.20/32     10.19.20.2      nolabel         19005           
+
+Processed 2 prefixes, 2 paths
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#     
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show cef vrf VPN_A 1.1.1.1/32 detail
+Tue Jul 10 08:36:20.751 UTC
+1.1.1.1/32, version 6, internal 0x5000001 0x0 (ptr 0xa14265f4) [1], 0x0 (0x0), 0x208 (0xa14c1140)
+ Updated Jul 10 03:04:07.326
+ Prefix Len 32, traffic index 0, precedence n/a, priority 3
+  gateway array (0xa137061c) reference count 1, flags 0x4038, source rib (7), 0 backups
+                [1 type 1 flags 0x48441 (0xa14db410) ext 0x0 (0x0)]
+  LW-LDI[type=0, refc=0, ptr=0x0, sh-ldi=0x0]
+  gateway array update type-time 1 Jul 10 03:04:07.326
+ LDI Update time Jul 10 03:04:07.326
+   via 2.2.2.2/32, 3 dependencies, recursive [flags 0x6000]
+    path-idx 0 NHID 0x0 [0xa15294f4 0x0]
+    recursion-via-/32
+    next hop VRF - 'default', table - 0xe0000000
+    next hop 2.2.2.2/32 via 19000/0/21
+     next hop 20.6.19.1/32 Gi0/0/0/0    labels imposed {601 205}
+     next hop 20.5.19.1/32 Gi0/0/0/1    labels imposed {504 205}
+
+
+    Load distribution: 0 (refcount 1)
+
+    Hash  OK  Interface                 Address
+    0     Y   Unknown                   19000/0        
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR1 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: 
+Username: 
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#conf t
+Tue Jul 10 08:47:46.014 UTC
+RP/0/0/CPU0:XR1(config)#exit
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh run router bgp 100
+Tue Jul 10 08:47:56.394 UTC
+router bgp 100
+ address-family ipv4 unicast
+ !
+ address-family vpnv4 unicast
+ !
+ neighbor 2.2.2.2
+  remote-as 100
+  update-source Loopback0
+  address-family ipv4 unicast
+   next-hop-self
+  !
+  address-family vpnv4 unicast
+  !
+ !
+ vrf VPN_A
+  rd 100:1
+  address-family ipv4 unicast
+   network 20.20.20.20/32
+  !
+ !
+!
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#conf t
+Tue Jul 10 08:48:00.083 UTC
+RP/0/0/CPU0:XR1(config)#router bgp 100
+RP/0/0/CPU0:XR1(config-bgp)#vrf VPN_A 
+RP/0/0/CPU0:XR1(config-bgp-vrf)#address-family ipv4 unicast ne
+network  nexthop  
+RP/0/0/CPU0:XR1(config-bgp-vrf)#address-family ipv4 unicast         
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#no network 20.20.20.20/32
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#exit 
+RP/0/0/CPU0:XR1(config-bgp-vrf)#exit
+RP/0/0/CPU0:XR1(config-bgp)#exi
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#router ri
+rib  rip  
+RP/0/0/CPU0:XR1(config)#router rip 
+RP/0/0/CPU0:XR1(config-rip)#?   
+  apply-group             Apply configuration from a group
+  apply-group-append      Append apply-group configuration from a group
+  apply-group-remove      Remove a group from apply-group configuration
+  auto-summary            Enable automatic network number summarization
+  broadcast-for-v2        Send RIP v2 output packets to broadcast address
+  clear                   Clear the uncommitted configuration
+  commit                  Commit the configuration changes to running
+  default-information     Control distribution of default information
+  default-metric          Set metric of redistributed routes
+  describe                Describe a command without taking real actions
+  distance                Define an administrative distance
+  do                      Run an exec command
+  exclude-group           Exclude apply-group configuration from a group
+  exclude-item            Negate a command or set its defaults
+  exit                    Exit from this submode
+  interface               Enter the RIP interface configuration submode
+  maximum-paths           Maximum number of paths allowed per route
+  neighbor                Specify a neighbor router
+  no                      Negate a command or set its defaults
+  nsf                     Enable Cisco Non Stop Forwarding
+  output-delay            Interpacket delay for RIP updates
+  pwd                     Commands used to reach current submode
+  redistribute            Redistribute information from another routing protocol
+  root                    Exit to the global configuration mode
+  route-policy            Apply route policy to routing updates
+  show                    Show contents of configuration
+  timers                  Adjust routing timers
+  validate-update-source  Validate source address of routing updates
+  vrf                     Enter the RIP vrf configuration submode
+RP/0/0/CPU0:XR1(config-rip)#exit
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#vrf
+vrf  vrf-group  
+RP/0/0/CPU0:XR1(config)#vrf VPN_A 
+RP/0/0/CPU0:XR1(config-vrf)#exit 
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#router rip ?
+  auto-summary            Enable automatic network number summarization
+  broadcast-for-v2        Send RIP v2 output packets to broadcast address
+  default-information     Control distribution of default information
+  default-metric          Set metric of redistributed routes
+  distance                Define an administrative distance
+  interface               Enter the RIP interface configuration submode
+  maximum-paths           Maximum number of paths allowed per route
+  neighbor                Specify a neighbor router
+  nsf                     Enable Cisco Non Stop Forwarding
+  output-delay            Interpacket delay for RIP updates
+  redistribute            Redistribute information from another routing protocol
+  route-policy            Apply route policy to routing updates
+  timers                  Adjust routing timers
+  validate-update-source  Validate source address of routing updates
+  vrf                     Enter the RIP vrf configuration submode
+  <cr>                    
+RP/0/0/CPU0:XR1(config)#router rip 
+RP/0/0/CPU0:XR1(config-rip)#?
+  apply-group             Apply configuration from a group
+  apply-group-append      Append apply-group configuration from a group
+  apply-group-remove      Remove a group from apply-group configuration
+  auto-summary            Enable automatic network number summarization
+  broadcast-for-v2        Send RIP v2 output packets to broadcast address
+  clear                   Clear the uncommitted configuration
+  commit                  Commit the configuration changes to running
+  default-information     Control distribution of default information
+  default-metric          Set metric of redistributed routes
+  describe                Describe a command without taking real actions
+  distance                Define an administrative distance
+  do                      Run an exec command
+  exclude-group           Exclude apply-group configuration from a group
+  exclude-item            Negate a command or set its defaults
+  exit                    Exit from this submode
+  interface               Enter the RIP interface configuration submode
+  maximum-paths           Maximum number of paths allowed per route
+  neighbor                Specify a neighbor router
+  no                      Negate a command or set its defaults
+  nsf                     Enable Cisco Non Stop Forwarding
+  output-delay            Interpacket delay for RIP updates
+  pwd                     Commands used to reach current submode
+  redistribute            Redistribute information from another routing protocol
+  root                    Exit to the global configuration mode
+  route-policy            Apply route policy to routing updates
+  show                    Show contents of configuration
+  timers                  Adjust routing timers
+  validate-update-source  Validate source address of routing updates
+  vrf                     Enter the RIP vrf configuration submode
+RP/0/0/CPU0:XR1(config-rip)#vrf VPN_A
+RP/0/0/CPU0:XR1(config-rip-vrf)#?
+  apply-group             Apply configuration from a group
+  apply-group-append      Append apply-group configuration from a group
+  apply-group-remove      Remove a group from apply-group configuration
+  auto-summary            Enable automatic network number summarization
+  broadcast-for-v2        Send RIP v2 output packets to broadcast address
+  clear                   Clear the uncommitted configuration
+  commit                  Commit the configuration changes to running
+  default-information     Control distribution of default information
+  default-metric          Set metric of redistributed routes
+  describe                Describe a command without taking real actions
+  distance                Define an administrative distance
+  do                      Run an exec command
+  exclude-group           Exclude apply-group configuration from a group
+  exclude-item            Negate a command or set its defaults
+  exit                    Exit from this submode
+  interface               Enter the RIP interface configuration submode
+  maximum-paths           Maximum number of paths allowed per route
+  neighbor                Specify a neighbor router
+  no                      Negate a command or set its defaults
+  nsf                     Enable Cisco Non Stop Forwarding
+  output-delay            Interpacket delay for RIP updates
+  pwd                     Commands used to reach current submode
+  redistribute            Redistribute information from another routing protocol
+  root                    Exit to the global configuration mode
+  route-policy            Apply route policy to routing updates
+  show                    Show contents of configuration
+  timers                  Adjust routing timers
+  validate-update-source  Validate source address of routing updates
+RP/0/0/CPU0:XR1(config-rip-vrf)#    
+RP/0/0/CPU0:XR1(config-rip-vrf)#
+RP/0/0/CPU0:XR1(config-rip-vrf)#neighbor 10.19.20.2 ?
+  <cr>  
+RP/0/0/CPU0:XR1(config-rip-vrf)#neighbor 10.19.20.2 
+RP/0/0/CPU0:XR1(config-rip-vrf)#
+RP/0/0/CPU0:XR1(config-rip-vrf)#?
+  apply-group             Apply configuration from a group
+  apply-group-append      Append apply-group configuration from a group
+  apply-group-remove      Remove a group from apply-group configuration
+  auto-summary            Enable automatic network number summarization
+  broadcast-for-v2        Send RIP v2 output packets to broadcast address
+  clear                   Clear the uncommitted configuration
+  commit                  Commit the configuration changes to running
+  default-information     Control distribution of default information
+  default-metric          Set metric of redistributed routes
+  describe                Describe a command without taking real actions
+  distance                Define an administrative distance
+  do                      Run an exec command
+  exclude-group           Exclude apply-group configuration from a group
+  exclude-item            Negate a command or set its defaults
+  exit                    Exit from this submode
+  interface               Enter the RIP interface configuration submode
+  maximum-paths           Maximum number of paths allowed per route
+  neighbor                Specify a neighbor router
+  no                      Negate a command or set its defaults
+  nsf                     Enable Cisco Non Stop Forwarding
+  output-delay            Interpacket delay for RIP updates
+  pwd                     Commands used to reach current submode
+  redistribute            Redistribute information from another routing protocol
+  root                    Exit to the global configuration mode
+  route-policy            Apply route policy to routing updates
+  show                    Show contents of configuration
+  timers                  Adjust routing timers
+  validate-update-source  Validate source address of routing updates
+RP/0/0/CPU0:XR1(config-rip-vrf)#commit 
+Tue Jul 10 08:50:38.943 UTC
+RP/0/0/CPU0:XR1(config-rip-vrf)#exit
+RP/0/0/CPU0:XR1(config-rip)#exit
+RP/0/0/CPU0:XR1(config)#exit
+RP/0/0/CPU0:XR1#rollback configuration ?
+  last        Rollback last <n> commits made
+  to          Rollback up to (and including) a specific commit
+  to-exclude  Rollback up to (and excluding) a specific commit
+  1000000039  Commit ID
+  1000000038  Commit ID
+  1000000037  Commit ID
+  1000000036  Commit ID
+  1000000035  Commit ID
+  1000000034  Commit ID
+  1000000033  Commit ID
+  1000000032  Commit ID
+  1000000031  Commit ID
+  1000000030  Commit ID
+  1000000029  Commit ID
+  1000000028  Commit ID
+  1000000027  Commit ID
+  1000000026  Commit ID
+  1000000025  Commit ID
+  1000000024  Commit ID
+  1000000023  Commit ID
+  1000000022  Commit ID
+  1000000021  Commit ID
+  1000000020  Commit ID
+RP/0/0/CPU0:XR1#rollback configuration last ?
+  <1-39>  Number of commits to rollback
+RP/0/0/CPU0:XR1#rollback configuration last 1 ?
+  best-effort  Rollback via best-effort operation
+  comment      Assign a comment to this rollback
+  force        Override commit blocks
+  interactive  User confirmation before rollback
+  label        Assign a label to this rollback
+  <cr>         
+RP/0/0/CPU0:XR1#rollback configuration last 1 
+Tue Jul 10 08:51:52.757 UTC
+
+Loading Rollback Changes.
+Loaded Rollback Changes in 1 sec 
+Committing.
+14 items committed in 1 sec (13)items/sec
+Updating.
+Updated Commit database in 1 sec 
+Configuration successfully rolled back 1 commits.
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show cef vrf VPN_A 1.1.1.1/32 detail
+Tue Jul 10 08:52:20.366 UTC
+1.1.1.1/32, version 10, internal 0x5000001 0x0 (ptr 0xa14265f4) [1], 0x0 (0x0), 0x208 (0xa14c1140)
+ Updated Jul 10 08:46:49.409
+ Prefix Len 32, traffic index 0, precedence n/a, priority 3
+  gateway array (0xa137061c) reference count 2, flags 0x4038, source rib (7), 0 backups
+                [1 type 1 flags 0x48441 (0xa14db410) ext 0x0 (0x0)]
+  LW-LDI[type=0, refc=0, ptr=0x0, sh-ldi=0x0]
+  gateway array update type-time 1 Jul 10 08:46:49.409
+ LDI Update time Jul 10 08:46:49.409
+   via 2.2.2.2/32, 3 dependencies, recursive [flags 0x6000]
+    path-idx 0 NHID 0x0 [0xa15294f4 0x0]
+    recursion-via-/32
+    next hop VRF - 'default', table - 0xe0000000
+    next hop 2.2.2.2/32 via 19000/0/21
+     next hop 20.6.19.1/32 Gi0/0/0/0    labels imposed {601 207}
+     next hop 20.5.19.1/32 Gi0/0/0/1    labels imposed {504 207}
+
+
+    Load distribution: 0 (refcount 1)
+
+    Hash  OK  Interface                 Address
+    0     Y   Unknown                   19000/0        
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#conf t
+Tue Jul 10 08:53:23.081 UTC
+RP/0/0/CPU0:XR1(config)#     
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#exit
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh run formal router static
+Tue Jul 10 08:53:44.290 UTC
+router static vrf VPN_A 
+router static vrf VPN_A address-family ipv4 unicast 20.20.20.20/32 10.19.20.2
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#conf t
+Tue Jul 10 08:53:46.900 UTC
+RP/0/0/CPU0:XR1(config)#no router static vrf VPN_A
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#do sh run formal router bgp 100
+Tue Jul 10 08:54:10.688 UTC
+router bgp 100 
+router bgp 100 address-family ipv4 unicast 
+router bgp 100 address-family vpnv4 unicast 
+router bgp 100 neighbor 2.2.2.2 
+router bgp 100 neighbor 2.2.2.2 remote-as 100
+router bgp 100 neighbor 2.2.2.2 update-source Loopback0
+router bgp 100 neighbor 2.2.2.2 address-family ipv4 unicast 
+router bgp 100 neighbor 2.2.2.2 address-family ipv4 unicast next-hop-self
+router bgp 100 neighbor 2.2.2.2 address-family vpnv4 unicast 
+router bgp 100 vrf VPN_A 
+router bgp 100 vrf VPN_A rd 100:1
+router bgp 100 vrf VPN_A address-family ipv4 unicast 
+router bgp 100 vrf VPN_A address-family ipv4 unicast network 20.20.20.20/32
+
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#no router bgp 100 vrf VPN_A address-family ipv4 unicas$
+RP/0/0/CPU0:XR1(config)#commit
+Tue Jul 10 08:54:21.577 UTC
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#router ri
+rib  rip  
+RP/0/0/CPU0:XR1(config)#router rip 
+RP/0/0/CPU0:XR1(config-rip)#vrf VPN_A
+RP/0/0/CPU0:XR1(config-rip-vrf)#interface gigabitEthernet 0/0/0/2 ?
+  authentication      Authentication control
+  broadcast-for-v2    Specify broadcast address for RIP v2 output packet
+  metric-zero-accept  Accept rip update with metric 0
+  passive-interface   Suppress routing updates on this interface
+  poison-reverse      Enable poison reverse
+  receive             Advertisement reception
+  route-policy        Apply route policy to routing updates
+  send                Advertisement transmission
+  site-of-origin      SOO community for prefixes learned over this interface
+  split-horizon       Disable split horizon
+  <cr>                
+RP/0/0/CPU0:XR1(config-rip-vrf)#interface gigabitEthernet 0/0/0/2 
+RP/0/0/CPU0:XR1(config-rip-vrf-if)#
+RP/0/0/CPU0:XR1(config-rip-vrf-if)#
+RP/0/0/CPU0:XR1(config-rip-vrf-if)#
+RP/0/0/CPU0:XR1(config-rip-vrf-if)#                  
+RP/0/0/CPU0:XR1(config-rip-vrf-if)#
+RP/0/0/CPU0:XR1(config-rip-vrf-if)#
+RP/0/0/CPU0:XR1(config-rip-vrf-if)#
+RP/0/0/CPU0:XR1(config-rip-vrf-if)#
+RP/0/0/CPU0:XR1(config-rip-vrf-if)#route-policy BGP_TO_RIP
+RP/0/0/CPU0:XR1(config-rpl)#  if destination in (10.1.2.0/24) then
+RP/0/0/CPU0:XR1(config-rpl-if)#    set rip-metric 1
+RP/0/0/CPU0:XR1(config-rpl-if)#  else
+RP/0/0/CPU0:XR1(config-rpl-else)#pass endif
+                                      ^
+% Invalid input detected at '^' marker.
+RP/0/0/CPU0:XR1(config-rpl-else)#end-policy
+                                 ^
+% Invalid input detected at '^' marker.
+RP/0/0/CPU0:XR1(config-rpl-else)#
+RP/0/0/CPU0:XR1(config-rpl-else)#          
+RP/0/0/CPU0:XR1(config-rpl-else)#commi
+                                 ^
+% Invalid input detected at '^' marker.
+RP/0/0/CPU0:XR1(config-rpl-else)#pass ?
+  <cr>  
+RP/0/0/CPU0:XR1(config-rpl-else)#pass 
+RP/0/0/CPU0:XR1(config-rpl-else)#?
+  #-remark          Remark beginning with '#'
+  abort             Discard RPL definition and return to top level config
+  add               Add offset to the existing value
+  apply             Apply a route policy
+  delete            Delete route attributes
+  done              Accept this route with no further processing
+  drop              Reject this route with no further processing
+  endif             End of if-statement
+  exit              Exit from this submode
+  if                Begin if-statement
+  pass              Pass this route for further processing
+  prepend           Prepend to BGP AS-path
+  remove            Remove all private-as entries
+  replace           Replace a sequence of AS numbers with local AS
+  set               Set a route attribute
+  show              Show partial RPL configuration
+  suppress-route    Suppress specific routes when aggregating
+  unsuppress-route  Unsuppress specific aggregated routes
+  var               Set a var attribute
+RP/0/0/CPU0:XR1(config-rpl-else)#endif 
+RP/0/0/CPU0:XR1(config-rpl)#commit
+                            ^
+% Invalid input detected at '^' marker.
+RP/0/0/CPU0:XR1(config-rpl)#exit  
+RP/0/0/CPU0:XR1(config)#commit 
+Tue Jul 10 08:56:28.609 UTC
+RP/0/0/CPU0:XR1(config)#router bgp 100
+RP/0/0/CPU0:XR1(config-bgp)#vrf VPN_A                   
+RP/0/0/CPU0:XR1(config-bgp-vrf)#?
+  address-family       Enter Address Family command mode
+  apply-group          Apply configuration from a group
+  apply-group-append   Append apply-group configuration from a group
+  apply-group-remove   Remove a group from apply-group configuration
+  bfd                  Configure BFD parameters
+  bgp                  BGP commands
+  clear                Clear the uncommitted configuration
+  commit               Commit the configuration changes to running
+  default-information  Control distribution of default information
+  default-metric       default redistributed metric
+  describe             Describe a command without taking real actions
+  do                   Run an exec command
+  exclude-group        Exclude apply-group configuration from a group
+  exclude-item         Negate a command or set its defaults
+  exit                 Exit from this submode
+  mpls                 Enable mpls parameters
+  neighbor             Specify a neighbor router
+  no                   Negate a command or set its defaults
+  pwd                  Commands used to reach current submode
+  rd                   route distinguisher
+  root                 Exit to the global configuration mode
+  show                 Show contents of configuration
+  socket               set socket parameters
+  timers               Adjust routing timers
+RP/0/0/CPU0:XR1(config-bgp-vrf)# 
+RP/0/0/CPU0:XR1(config-bgp-vrf)#
+RP/0/0/CPU0:XR1(config-bgp-vrf)#
+RP/0/0/CPU0:XR1(config-bgp-vrf)#
+RP/0/0/CPU0:XR1(config-bgp-vrf)#do sh run router bgp 100
+Tue Jul 10 08:58:01.942 UTC
+router bgp 100
+ address-family ipv4 unicast
+ !
+ address-family vpnv4 unicast
+ !
+ neighbor 2.2.2.2
+  remote-as 100
+  update-source Loopback0
+  address-family ipv4 unicast
+   next-hop-self
+  !
+  address-family vpnv4 unicast
+  !
+ !
+ vrf VPN_A
+  rd 100:1
+  address-family ipv4 unicast
+  !
+ !
+!
+
+RP/0/0/CPU0:XR1(config-bgp-vrf)#
+RP/0/0/CPU0:XR1(config-bgp-vrf)#
+RP/0/0/CPU0:XR1(config-bgp-vrf)#address-family ipv4 unicast 
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#redistribute rip ?
+  metric        Metric for redistributed routes
+  route-policy  Route policy reference
+  <cr>          
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#redistribute rip 
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#commit 
+Tue Jul 10 08:58:45.229 UTC
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#end
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show rip   
+Tue Jul 10 08:58:54.559 UTC
+
+RIP config:
+Active:                    Yes
+Added to socket:           Yes
+Out-of-memory state:        Normal
+Version:                    2
+Default metric:             Not set
+Maximum paths:              4
+Auto summarize:            No
+Broadcast for V2:          No
+Packet source validation:  Yes
+NSF:                        Disabled
+Timers: Update:             30 seconds (1 seconds until next update)
+        Invalid:            180 seconds
+        Holddown:           180 seconds
+        Flush:              240 seconds
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show rip ?
+  database    IP RIP database
+  interface   Interface information
+  internal    RIP internal data(cisco-support)
+  standby     Show information from standby process
+  statistics  RIP statistics info
+  trace       Show trace data for the rip component(cisco-support)
+  vrf         Specify a VRF
+  |           Output Modifiers
+  <cr>        
+RP/0/0/CPU0:XR1#show rip database 
+Tue Jul 10 08:59:02.518 UTC
+
+No routes in the RIP database to show
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#conf t
+Tue Jul 10 09:02:30.844 UTC
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#router
+router  router-convergence  
+RP/0/0/CPU0:XR1(config)#router rip 
+RP/0/0/CPU0:XR1(config-rip)#vrf VPN_A        
+RP/0/0/CPU0:XR1(config-rip-vrf)#redistribute bgp 100 route-policy BGP_TO_RIP
+RP/0/0/CPU0:XR1(config-rip-vrf)#commit 
+Tue Jul 10 09:02:55.522 UTC
+RP/0/0/CPU0:XR1(config-rip-vrf)#end
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#terminal length 0
+Tue Jul 10 09:03:51.768 UTC
+RP/0/0/CPU0:XR1#configure terminal
+Tue Jul 10 09:03:51.948 UTC
+RP/0/0/CPU0:XR1(config)#no logging console
+RP/0/0/CPU0:XR1(config)#commit
+Tue Jul 10 09:03:52.378 UTC
+RP/0/0/CPU0:XR1(config)#exit
+RP/0/0/CPU0:XR1#show running-config
+Tue Jul 10 09:03:52.718 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Tue Jul 10 09:02:55 2018 by cisco
+!
+hostname XR1
+vrf VPN_A
+ address-family ipv4 unicast
+  import route-target
+   100:1
+  !
+  export route-target
+   100:1
+  !
+ !
+!
+ipv4 access-list LABELS
+ 10 permit ipv4 host 2.2.2.2 any
+ 20 permit ipv4 host 3.3.3.3 any
+ 30 permit ipv4 host 4.4.4.4 any
+ 40 permit ipv4 host 5.5.5.5 any
+ 50 permit ipv4 host 6.6.6.6 any
+ 60 permit ipv4 host 19.19.19.19 any
+!
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ vrf VPN_A
+ ipv4 address 10.19.20.1 255.255.255.252
+!
+route-policy PASS
+  pass
+end-policy
+!
+route-policy BGP_TO_RIP
+  if destination in (10.1.2.0/24) then
+    set rip-metric 1
+  else
+    pass
+  endif
+end-policy
+!
+router ospf 1
+ mpls ldp sync
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+  interface GigabitEthernet0/0/0/2
+  !
+ !
+!
+router bgp 100
+ address-family ipv4 unicast
+ !
+ address-family vpnv4 unicast
+ !
+ neighbor 2.2.2.2
+  remote-as 100
+  update-source Loopback0
+  address-family ipv4 unicast
+   next-hop-self
+  !
+  address-family vpnv4 unicast
+  !
+ !
+ vrf VPN_A
+  rd 100:1
+  address-family ipv4 unicast
+   redistribute rip
+  !
+ !
+!
+mpls ldp
+ session protection
+ address-family ipv4
+  label
+   local
+    allocate for LABELS
+   !
+  !
+ !
+ interface GigabitEthernet0/0/0/0
+ !
+ interface GigabitEthernet0/0/0/1
+ !
+!
+mpls label range table 0 19000 19099
+router rip
+ vrf VPN_A
+  interface GigabitEthernet0/0/0/2
+  !
+  redistribute bgp 100 route-policy BGP_TO_RIP
+ !
+!
+end
+
+RP/0/0/CPU0:XR1#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR1 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+

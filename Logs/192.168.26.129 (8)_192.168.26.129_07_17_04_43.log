@@ -1,0 +1,709 @@
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: 
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#s
+sam         schema-describe  scp          send
+service     set              setpriority  sftp
+show        snmp             srp          ssh
+subscriber  system           
+RP/0/0/CPU0:XR1#show ip route
+Tue Jul 10 14:29:14.211 UTC
+
+Codes: C - connected, S - static, R - RIP, B - BGP, (>) - Diversion path
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - ISIS, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, su - IS-IS summary null, * - candidate default
+       U - per-user static route, o - ODR, L - local, G  - DAGR, l - LISP
+       A - access/subscriber, a - Application route
+       M - mobile route, r - RPL, (!) - FRR Backup path
+
+Gateway of last resort is not set
+
+O    2.2.2.2/32 [110/4] via 20.6.19.1, 00:13:46, GigabitEthernet0/0/0/0
+                [110/4] via 20.5.19.1, 00:13:46, GigabitEthernet0/0/0/1
+O    3.3.3.3/32 [110/3] via 20.6.19.1, 00:13:46, GigabitEthernet0/0/0/0
+O    4.4.4.4/32 [110/3] via 20.6.19.1, 00:13:46, GigabitEthernet0/0/0/0
+                [110/3] via 20.5.19.1, 00:13:46, GigabitEthernet0/0/0/1
+O    5.5.5.5/32 [110/2] via 20.5.19.1, 12:21:26, GigabitEthernet0/0/0/1
+O    6.6.6.6/32 [110/2] via 20.6.19.1, 00:13:46, GigabitEthernet0/0/0/0
+O    7.7.7.7/32 [110/4] via 20.6.19.1, 00:13:46, GigabitEthernet0/0/0/0
+                [110/4] via 20.5.19.1, 00:13:46, GigabitEthernet0/0/0/1
+O    8.8.8.8/32 [110/3] via 20.5.19.1, 00:00:57, GigabitEthernet0/0/0/1
+O    10.4.7.0/30 [110/3] via 20.6.19.1, 00:13:46, GigabitEthernet0/0/0/0
+                 [110/3] via 20.5.19.1, 00:13:46, GigabitEthernet0/0/0/1
+O    10.5.8.0/30 [110/2] via 20.5.19.1, 00:00:57, GigabitEthernet0/0/0/1
+L    19.19.19.19/32 is directly connected, 12:29:07, Loopback0
+O    20.2.3.0/30 [110/3] via 20.6.19.1, 00:13:46, GigabitEthernet0/0/0/0
+O    20.2.4.0/30 [110/3] via 20.6.19.1, 00:13:46, GigabitEthernet0/0/0/0
+                 [110/3] via 20.5.19.1, 00:13:46, GigabitEthernet0/0/0/1
+O    20.3.4.0/30 [110/3] via 20.6.19.1, 00:13:46, GigabitEthernet0/0/0/0
+                 [110/3] via 20.5.19.1, 00:13:46, GigabitEthernet0/0/0/1
+O    20.3.6.0/30 [110/2] via 20.6.19.1, 00:13:46, GigabitEthernet0/0/0/0
+O    20.4.5.0/30 [110/2] via 20.5.19.1, 07:41:25, GigabitEthernet0/0/0/1
+O    20.4.6.0/30 [110/2] via 20.6.19.1, 00:13:46, GigabitEthernet0/0/0/0
+O    20.5.6.0/30 [110/2] via 20.6.19.1, 00:13:46, GigabitEthernet0/0/0/0
+                 [110/2] via 20.5.19.1, 00:13:46, GigabitEthernet0/0/0/1
+C    20.5.19.0/30 is directly connected, 12:29:06, GigabitEthernet0/0/0/1
+L    20.5.19.2/32 is directly connected, 12:29:06, GigabitEthernet0/0/0/1
+C    20.6.19.0/30 is directly connected, 12:29:07, GigabitEthernet0/0/0/0
+L    20.6.19.2/32 is directly connected, 12:29:07, GigabitEthernet0/0/0/0
+RP/0/0/CPU0:XR1# 
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show vr
+vrf  vrf-group  vrrp  
+RP/0/0/CPU0:XR1#show vrf
+vrf  vrf-group  
+RP/0/0/CPU0:XR1#show vrf VPN_A 
+Tue Jul 10 14:29:27.370 UTC
+VRF                  RD                  RT                         AFI   SAFI     
+VPN_A                100:1              
+                                         import  100:1               IPV4  Unicast  
+                                         export  100:1               IPV4  Unicast  
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show vrf VPN_A ?
+  afi-all     Information for all address families
+  detail      Detailed information
+  ipv4        IPv4 information
+  ipv6        IPv6 information
+  unresolved  Unresolved VRFs
+  |           Output Modifiers
+  <cr>        
+RP/0/0/CPU0:XR1#show vrf VPN_A ipv4 ?
+  detail      Detailed information
+  multicast   Multicast information
+  safi-all    Information for all sub-address families
+  unicast     Unicast information
+  unresolved  Unresolved VRFs
+  |           Output Modifiers
+  <cr>        
+RP/0/0/CPU0:XR1#show vrf VPN_A ipv4 un
+unicast  unresolved  
+RP/0/0/CPU0:XR1#show vrf VPN_A ipv4 unicast ?
+  detail      Detailed information
+  unresolved  Unresolved VRFs
+  |           Output Modifiers
+  <cr>        
+RP/0/0/CPU0:XR1#show vrf VPN_A ipv4 unicast 
+Tue Jul 10 14:29:37.969 UTC
+VRF                  RD                  RT                         AFI   SAFI     
+VPN_A                100:1              
+                                         import  100:1               IPV4  Unicast  
+                                         export  100:1               IPV4  Unicast  
+RP/0/0/CPU0:XR1#show route vrf VPN_A ?
+  A.B.C.D             Network to display information about
+  A.B.C.D/length      Network to display information about
+  afi-all             IPv4 and IPv6 commands
+  application         Application routes
+  backup              Backup paths
+  best-local          Best Local
+  bgp                 Border Gateway Protocol (BGP)
+  connected           Connected
+  dagr                Direct-Attached Gateway Redundancy (DAGR)
+  deleted             Deleted routes(cisco-support)
+  eigrp               Enhanced IGRP
+  ipv4                IPv4 commands
+  ipv6                IPv6 commands
+  isis                ISO IS-IS
+  lisp                LISP routes
+  local               Local
+  longer-prefixes     Show routes matching the specified Network/Mask pair only
+  mobile              Mobile IP routes
+  next-hop            Route next-hop
+  ospf                Open Shortest Path First (OSPF)
+  quarantined         looping routes
+  resolving-next-hop  Next Hop
+  rip                 Routing Information Protocol (RIP)
+  rpl                 IPv6 Routing Protocol for Low-Power and Lossy Networks
+  standby             Display standby information
+  static              Static routes
+  subscriber          Subscriber routes
+  summary             Summary of all routes
+  |                   Output Modifiers
+  <cr>                
+RP/0/0/CPU0:XR1#show route vrf VPN_A 
+Tue Jul 10 14:29:48.078 UTC
+
+Codes: C - connected, S - static, R - RIP, B - BGP, (>) - Diversion path
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - ISIS, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, su - IS-IS summary null, * - candidate default
+       U - per-user static route, o - ODR, L - local, G  - DAGR, l - LISP
+       A - access/subscriber, a - Application route
+       M - mobile route, r - RPL, (!) - FRR Backup path
+
+Gateway of last resort is not set
+
+B    1.1.1.1/32 [200/2] via 2.2.2.2 (nexthop in vrf default), 02:06:20
+B    10.1.2.0/30 [200/0] via 2.2.2.2 (nexthop in vrf default), 02:06:20
+C    10.19.20.0/30 is directly connected, 11:42:09, GigabitEthernet0/0/0/2
+L    10.19.20.1/32 is directly connected, 11:42:09, GigabitEthernet0/0/0/2
+O    20.20.20.20/32 [110/2] via 10.19.20.2, 01:56:57, GigabitEthernet0/0/0/2
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh run router bgp 
+Tue Jul 10 14:31:48.110 UTC
+router bgp 100
+ address-family ipv4 unicast
+ !
+ address-family vpnv4 unicast
+ !
+ neighbor 2.2.2.2
+  remote-as 100
+  update-source Loopback0
+  address-family ipv4 unicast
+   next-hop-self
+  !
+  address-family vpnv4 unicast
+  !
+ !
+ vrf VPN_A
+  rd 100:1
+  address-family ipv4 unicast
+   redistribute eigrp 1
+  !
+ !
+!
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#conf exclusive 
+Tue Jul 10 14:31:57.810 UTC
+
+Successfully entered exclusive mode with no retry needed.
+RP/0/0/CPU0:XR1(config)#router bgp 100
+RP/0/0/CPU0:XR1(config-bgp)#vrf VPN_A 
+RP/0/0/CPU0:XR1(config-bgp-vrf)#address-family ipv4 unicast 
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#no redistribute eigrp 1
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#redistribute ospf 100 ?
+  match         Redistribution of OSPF routes
+  metric        Metric for redistributed routes
+  route-policy  Route policy reference
+  <cr>          
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#redistribute ospf 100 metric ?
+  <0-4294967295>  Default metric
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#redistribute ospf 100        
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#commit 
+Tue Jul 10 14:32:32.757 UTC
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#end
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh run router ospf
+Tue Jul 10 14:32:39.227 UTC
+router ospf 1
+ mpls ldp sync
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+ !
+!
+router ospf 100
+ vrf VPN_A
+  redistribute bgp 100
+  area 0
+   interface GigabitEthernet0/0/0/2
+   !
+  !
+ !
+!
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show route vrf VPN_A 
+Tue Jul 10 14:32:50.756 UTC
+
+Codes: C - connected, S - static, R - RIP, B - BGP, (>) - Diversion path
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - ISIS, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, su - IS-IS summary null, * - candidate default
+       U - per-user static route, o - ODR, L - local, G  - DAGR, l - LISP
+       A - access/subscriber, a - Application route
+       M - mobile route, r - RPL, (!) - FRR Backup path
+
+Gateway of last resort is not set
+
+B    1.1.1.1/32 [200/2] via 2.2.2.2 (nexthop in vrf default), 02:09:23
+B    10.1.2.0/30 [200/0] via 2.2.2.2 (nexthop in vrf default), 02:09:23
+C    10.19.20.0/30 is directly connected, 11:45:12, GigabitEthernet0/0/0/2
+L    10.19.20.1/32 is directly connected, 11:45:12, GigabitEthernet0/0/0/2
+O    20.20.20.20/32 [110/2] via 10.19.20.2, 02:00:00, GigabitEthernet0/0/0/2
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR1 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show bgp vpnv4 unicast vrf VPN_A 20.20.20.20/32
+Tue Jul 10 15:02:38.803 UTC
+BGP routing table entry for 20.20.20.20/32, Route Distinguisher: 100:1
+Versions:
+  Process           bRIB/RIB  SendTblVer
+  Speaker                 46          46
+    Local Label: 19006
+Last Modified: Jul 10 14:32:35.260 for 00:30:03
+Paths: (1 available, best #1)
+  Advertised to peers (in unique update groups):
+    2.2.2.2         
+  Path #1: Received by speaker 0
+  Advertised to peers (in unique update groups):
+    2.2.2.2         
+  Local
+    10.19.20.2 from 0.0.0.0 (19.19.19.19)
+      Origin incomplete, metric 2, localpref 100, weight 32768, valid, redistributed, best, group-best, import-candidate
+      Received Path ID 0, Local Path ID 1, version 46
+      Extended community: OSPF route-type:0:1:0x0 OSPF router-id:19.19.19.19 RT:100:1 
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show bgp vpnv4 unicast vrf VPN_A 20.20.20.20/32 detail 
+Tue Jul 10 15:02:58.592 UTC
+BGP routing table entry for 20.20.20.20/32, Route Distinguisher: 100:1
+Versions:
+  Process           bRIB/RIB  SendTblVer
+  Speaker                 46          46
+    Local Label: 19006 (no rewrite); 
+    Flags: 0x05041001+0x00000000; 
+Last Modified: Jul 10 14:32:35.260 for 00:30:23
+Paths: (1 available, best #1)
+  Advertised to peers (in unique update groups):
+    2.2.2.2         
+  Path #1: Received by speaker 0
+  Flags: 0x400000000d04000b, import: 0x1f
+  Advertised to peers (in unique update groups):
+    2.2.2.2         
+  Local
+    10.19.20.2 from 0.0.0.0 (19.19.19.19)
+      Origin incomplete, metric 2, localpref 100, weight 32768, valid, redistributed, best, group-best, import-candidate
+      Received Path ID 0, Local Path ID 1, version 46
+      Extended community: OSPF route-type:0:1:0x0 OSPF router-id:19.19.19.19 RT:100:1 
+RP/0/0/CPU0:XR1# 
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show bgp vpnv4 unicast vrf VPN_A 1.1.1.1/32
+Tue Jul 10 15:03:25.920 UTC
+BGP routing table entry for 1.1.1.1/32, Route Distinguisher: 100:1
+Versions:
+  Process           bRIB/RIB  SendTblVer
+  Speaker                 37          37
+Last Modified: Jul 10 12:23:27.260 for 02:39:58
+Paths: (1 available, best #1)
+  Not advertised to any peer
+  Path #1: Received by speaker 0
+  Not advertised to any peer
+  Local
+    2.2.2.2 (metric 4) from 2.2.2.2 (2.2.2.2)
+      Received Label 207
+      Origin incomplete, metric 2, localpref 100, valid, internal, best, group-best, import-candidate, imported
+      Received Path ID 0, Local Path ID 1, version 37
+      Extended community: OSPF domain-id:0x5:0x000000640200 OSPF route-type:0:2:0x0 OSPF router-id:10.1.2.2 RT:100:1 
+      Source AFI: VPNv4 Unicast, Source VRF: VPN_A, Source Route Distinguisher: 100:1
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show bgp vpnv4 unicast vrf VPN_A 20.20.20.20/32 detail 
+Tue Jul 10 15:09:47.424 UTC
+BGP routing table entry for 20.20.20.20/32, Route Distinguisher: 100:1
+Versions:
+  Process           bRIB/RIB  SendTblVer
+  Speaker                 46          46
+    Local Label: 19006 (no rewrite); 
+    Flags: 0x05041001+0x00000000; 
+Last Modified: Jul 10 14:32:35.260 for 00:37:12
+Paths: (1 available, best #1)
+  Advertised to peers (in unique update groups):
+    2.2.2.2         
+  Path #1: Received by speaker 0
+  Flags: 0x400000000d04000b, import: 0x1f
+  Advertised to peers (in unique update groups):
+    2.2.2.2         
+  Local
+    10.19.20.2 from 0.0.0.0 (19.19.19.19)
+      Origin incomplete, metric 2, localpref 100, weight 32768, valid, redistributed, best, group-best, import-candidate
+      Received Path ID 0, Local Path ID 1, version 46
+      Extended community: OSPF route-type:0:1:0x0 OSPF router-id:19.19.19.19 RT:100:1 
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#conf exclusive 
+Tue Jul 10 15:09:57.363 UTC
+
+Successfully entered exclusive mode with no retry needed.
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#router bgp 100
+RP/0/0/CPU0:XR1(config-bgp)#vrf VPN_A 
+RP/0/0/CPU0:XR1(config-bgp-vrf)#exit
+RP/0/0/CPU0:XR1(config-bgp)#exit
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#router ospf 100
+RP/0/0/CPU0:XR1(config-ospf)#vrf VPN_A
+RP/0/0/CPU0:XR1(config-ospf-vrf)#do
+do  domain-id  domain-tag  
+RP/0/0/CPU0:XR1(config-ospf-vrf)#domain-id type 0005 value 000000640200
+RP/0/0/CPU0:XR1(config-ospf-vrf)#commit 
+Tue Jul 10 15:11:09.039 UTC
+RP/0/0/CPU0:XR1(config-ospf-vrf)#
+RP/0/0/CPU0:XR1(config-ospf-vrf)#end
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR1 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+

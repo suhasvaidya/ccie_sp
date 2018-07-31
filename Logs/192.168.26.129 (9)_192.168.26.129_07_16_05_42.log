@@ -1,0 +1,221 @@
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh run router eigrp 
+Tue Jul 10 12:32:16.991 UTC
+router eigrp 1
+ address-family ipv4
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/2
+  !
+ !
+!
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Tue Jul 10 12:32:20.491 UTC
+RP/0/0/CPU0:XR2(config)#no router eigrp 1
+RP/0/0/CPU0:XR2(config)#
+RP/0/0/CPU0:XR2(config)#router ospf 100  
+RP/0/0/CPU0:XR2(config-ospf)#area 0
+RP/0/0/CPU0:XR2(config-ospf-ar)#interface gigabitEthernet 0/0/0/2
+RP/0/0/CPU0:XR2(config-ospf-ar-if)#commit 
+Tue Jul 10 12:32:48.779 UTC
+RP/0/0/CPU0:XR2(config-ospf-ar-if)#
+RP/0/0/CPU0:XR2(config-ospf-ar-if)#inter lo0
+RP/0/0/CPU0:XR2(config-ospf-ar-if)#commit 
+Tue Jul 10 12:32:58.469 UTC
+RP/0/0/CPU0:XR2(config-ospf-ar-if)#end
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show ospf neighbor 
+Tue Jul 10 12:33:10.518 UTC
+
+* Indicates MADJ interface
+# Indicates Neighbor awaiting BFD session up
+
+Neighbors for OSPF 100
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+19.19.19.19     1     FULL/DR         00:00:36    10.19.20.1      GigabitEthernet0/0/0/2
+    Neighbor is up for 00:00:12
+
+Total neighbor count: 1
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR2 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+

@@ -1,0 +1,1 @@
+RP/0/0/CPU0:Jul 10 12:23:27.588 : eigrp[1001]: %ROUTING-EIGRP-3-NO_REDISTMETRIC : EIGRP-1: VPN_A-v4 1: No metric set while redistributing route 1.1.1.1/32 

@@ -1,0 +1,11 @@
+
+CSR4(config)#
+CSR4(config)#
+CSR4(config)#
+CSR4(config)#
+CSR4(config)#end
+CSR4#wr
+Building configuration...
+
+*Jul 31 02:12:30.687: %SYS-5-CONFIG_I: Configured from console by console[OK]
+CSR4#

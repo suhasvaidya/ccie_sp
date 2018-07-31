@@ -1,0 +1,566 @@
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf terminal 
+Wed Jul  4 10:28:03.468 UTC
+RP/0/0/CPU0:XR2(config)#end     
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show mpls ldp igp sync 
+Wed Jul  4 10:28:12.987 UTC
+
+GigabitEthernet0/0/0/0:
+  VRF: 'default' (0x60000000)
+  Sync delay: Disabled
+  Sync status: Ready
+    Peers:
+      6.6.6.6:0
+
+GigabitEthernet0/0/0/1:
+  VRF: 'default' (0x60000000)
+  Sync delay: Disabled
+  Sync status: Ready
+    Peers:
+      5.5.5.5:0
+
+
+RP/0/0/CPU0:XR2# 
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Wed Jul  4 10:28:19.077 UTC
+RP/0/0/CPU0:XR2(config)#router ospf 1
+RP/0/0/CPU0:XR2(config-ospf)#mpls ldp sync ?
+  <cr>  
+RP/0/0/CPU0:XR2(config-ospf)#mpls ldp sync 
+RP/0/0/CPU0:XR2(config-ospf)#commit  
+Wed Jul  4 10:28:35.896 UTC
+RP/0/0/CPU0:XR2(config-ospf)#end
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show mpls ldp igp sync 
+Wed Jul  4 10:28:39.086 UTC
+
+GigabitEthernet0/0/0/0:
+  VRF: 'default' (0x60000000)
+  Sync delay: Disabled
+  Sync status: Ready
+    Peers:
+      6.6.6.6:0
+
+GigabitEthernet0/0/0/1:
+  VRF: 'default' (0x60000000)
+  Sync delay: Disabled
+  Sync status: Ready
+    Peers:
+      5.5.5.5:0
+
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show mpls ldp igp sync 
+Wed Jul  4 10:28:43.115 UTC
+
+GigabitEthernet0/0/0/0:
+  VRF: 'default' (0x60000000)
+  Sync delay: Disabled
+  Sync status: Ready
+    Peers:
+      6.6.6.6:0
+
+GigabitEthernet0/0/0/1:
+  VRF: 'default' (0x60000000)
+  Sync delay: Disabled
+  Sync status: Ready
+    Peers:
+      5.5.5.5:0
+
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR2 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: 
+Username: 
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show mpls ldp neighbor detail 
+Wed Jul  4 10:48:46.253 UTC
+
+Peer LDP Identifier: 6.6.6.6:0
+  TCP connection: 6.6.6.6:646 - 19.19.19.19:23596
+  Graceful Restart: No
+  Session Holdtime: 180 sec
+  State: Oper; Msgs sent/rcvd: 153/152; Downstream-Unsolicited
+  Up time: 01:39:07
+  LDP Discovery Sources:
+    IPv4: (1)
+      GigabitEthernet0/0/0/0
+    IPv6: (0)
+  Addresses bound to this peer:
+    IPv4: (5)
+      6.6.6.6        20.3.6.2       20.4.6.2       20.5.6.2       
+      20.6.19.1      
+    IPv6: (0)
+  Peer holdtime: 180 sec; KA interval: 60 sec; Peer state: Estab
+  NSR: Disabled
+  Capabilities:
+    Sent: 
+      0x508  (MP: Point-to-Multipoint (P2MP))
+      0x509  (MP: Multipoint-to-Multipoint (MP2MP))
+      0x50b  (Typed Wildcard FEC)
+    Received: 
+      0x508  (MP: Point-to-Multipoint (P2MP))
+      0x509  (MP: Multipoint-to-Multipoint (MP2MP))
+      0x50b  (Typed Wildcard FEC)
+
+Peer LDP Identifier: 5.5.5.5:0
+  TCP connection: 5.5.5.5:646 - 19.19.19.19:50319
+  Graceful Restart: No
+  Session Holdtime: 180 sec
+  State: Oper; Msgs sent/rcvd: 154/153; Downstream-Unsolicited
+  Up time: 01:39:07
+  LDP Discovery Sources:
+    IPv4: (1)
+      GigabitEthernet0/0/0/1
+    IPv6: (0)
+  Addresses bound to this peer:
+    IPv4: (4)
+      5.5.5.5        20.4.5.2       20.5.6.1       20.19.5.1      
+    IPv6: (0)
+  Peer holdtime: 180 sec; KA interval: 60 sec; Peer state: Estab
+  NSR: Disabled
+  Capabilities:
+    Sent: 
+      0x508  (MP: Point-to-Multipoint (P2MP))
+      0x509  (MP: Multipoint-to-Multipoint (MP2MP))
+      0x50b  (Typed Wildcard FEC)
+    Received: 
+      0x508  (MP: Point-to-Multipoint (P2MP))
+      0x509  (MP: Multipoint-to-Multipoint (MP2MP))
+      0x50b  (Typed Wildcard FEC)
+
+RP/0/0/CPU0:XR2#conf t      
+Wed Jul  4 10:49:00.312 UTC
+RP/0/0/CPU0:XR2(config)#mpls ldp 
+RP/0/0/CPU0:XR2(config-ldp)#session protection 
+RP/0/0/CPU0:XR2(config-ldp)#commit 
+Wed Jul  4 10:49:09.041 UTC
+RP/0/0/CPU0:XR2(config-ldp)#end
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show mpls ldp neighbor detail 
+Wed Jul  4 10:49:11.931 UTC
+
+Peer LDP Identifier: 6.6.6.6:0
+  TCP connection: 6.6.6.6:646 - 19.19.19.19:23596
+  Graceful Restart: No
+  Session Holdtime: 180 sec
+  State: Oper; Msgs sent/rcvd: 154/153; Downstream-Unsolicited
+  Up time: 01:39:33
+  LDP Discovery Sources:
+    IPv4: (2)
+      GigabitEthernet0/0/0/0
+      Targeted Hello (19.19.19.19 -> 6.6.6.6, active)
+    IPv6: (0)
+  Addresses bound to this peer:
+    IPv4: (5)
+      6.6.6.6        20.3.6.2       20.4.6.2       20.5.6.2       
+      20.6.19.1      
+    IPv6: (0)
+  Peer holdtime: 180 sec; KA interval: 60 sec; Peer state: Estab
+  NSR: Disabled
+  Clients: Session Protection
+  Session Protection:
+    Enabled, state: Ready
+    Duration: 86400 sec
+  Capabilities:
+    Sent: 
+      0x508  (MP: Point-to-Multipoint (P2MP))
+      0x509  (MP: Multipoint-to-Multipoint (MP2MP))
+      0x50b  (Typed Wildcard FEC)
+    Received: 
+      0x508  (MP: Point-to-Multipoint (P2MP))
+      0x509  (MP: Multipoint-to-Multipoint (MP2MP))
+      0x50b  (Typed Wildcard FEC)
+
+Peer LDP Identifier: 5.5.5.5:0
+  TCP connection: 5.5.5.5:646 - 19.19.19.19:50319
+  Graceful Restart: No
+  Session Holdtime: 180 sec
+  State: Oper; Msgs sent/rcvd: 154/153; Downstream-Unsolicited
+  Up time: 01:39:33
+  LDP Discovery Sources:
+    IPv4: (2)
+      GigabitEthernet0/0/0/1
+      Targeted Hello (19.19.19.19 -> 5.5.5.5, active)
+    IPv6: (0)
+  Addresses bound to this peer:
+    IPv4: (4)
+      5.5.5.5        20.4.5.2       20.5.6.1       20.19.5.1      
+    IPv6: (0)
+  Peer holdtime: 180 sec; KA interval: 60 sec; Peer state: Estab
+  NSR: Disabled
+  Clients: Session Protection
+  Session Protection:
+    Enabled, state: Ready
+    Duration: 86400 sec
+  Capabilities:
+    Sent: 
+      0x508  (MP: Point-to-Multipoint (P2MP))
+      0x509  (MP: Multipoint-to-Multipoint (MP2MP))
+      0x50b  (Typed Wildcard FEC)
+    Received: 
+      0x508  (MP: Point-to-Multipoint (P2MP))
+      0x509  (MP: Multipoint-to-Multipoint (MP2MP))
+      0x50b  (Typed Wildcard FEC)
+
+RP/0/0/CPU0:XR2#  
+RP/0/0/CPU0:XR2#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR2 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+

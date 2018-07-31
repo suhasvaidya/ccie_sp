@@ -1,0 +1,478 @@
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+RP/0/0/CPU0:Jul 10 08:02:33.400 : exec[65723]: %SECURITY-LOGIN-4-AUTHEN_FAILED : Failed authentication attempt by user '<unknown>' from 'console' on 'con0_0_CPU0' 
+
+User Access Verification
+
+Username: 
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR2# 
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#ping 1.1.1.1 source lo0
+Tue Jul 10 08:05:03.300 UTC
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 1.1.1.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 19/19/19 ms
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#traceroute 1.1.1.1 source lo0 
+Tue Jul 10 08:05:11.779 UTC
+% Bad hostname or protocol not running
+RP/0/0/CPU0:XR2#traceroute 1.1.1.1 source 20.20.20.20
+Tue Jul 10 08:05:17.689 UTC
+
+Type escape sequence to abort.
+Tracing the route to 1.1.1.1
+
+ 1  10.19.20.1 19 msec  0 msec  0 msec 
+ 2  20.6.19.1 [MPLS: Labels 601/205 Exp 0] 9 msec  19 msec  19 msec 
+ 3  20.3.6.1 [MPLS: Labels 301/205 Exp 0] 19 msec  9 msec  19 msec 
+ 4  10.1.2.2 [MPLS: Label 205 Exp 0] 9 msec  9 msec  9 msec 
+ 5  10.1.2.1 19 msec  *  9 msec 
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR2 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: 
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Tue Jul 10 08:59:12.757 UTC
+RP/0/0/CPU0:XR2(config)#rip ?
+                         ^
+% Invalid input detected at '^' marker.
+RP/0/0/CPU0:XR2(config)#route
+route-policy  router  router-convergence  
+RP/0/0/CPU0:XR2(config)#router
+router  router-convergence  
+RP/0/0/CPU0:XR2(config)#router ri
+rib  rip  
+RP/0/0/CPU0:XR2(config)#router   
+router  router-convergence  
+RP/0/0/CPU0:XR2(config)#router rip 
+RP/0/0/CPU0:XR2(config-rip)#interface gigabitEthernet 0/0/0/2
+RP/0/0/CPU0:XR2(config-rip-if)#commit 
+Tue Jul 10 08:59:50.785 UTC
+RP/0/0/CPU0:XR2(config-rip-if)#end
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show route
+Tue Jul 10 09:00:01.534 UTC
+
+Codes: C - connected, S - static, R - RIP, B - BGP, (>) - Diversion path
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - ISIS, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, su - IS-IS summary null, * - candidate default
+       U - per-user static route, o - ODR, L - local, G  - DAGR, l - LISP
+       A - access/subscriber, a - Application route
+       M - mobile route, r - RPL, (!) - FRR Backup path
+
+Gateway of last resort is 10.19.20.1 to network 0.0.0.0
+
+S*   0.0.0.0/0 [1/0] via 10.19.20.1, 06:04:42
+C    10.19.20.0/30 is directly connected, 06:59:57, GigabitEthernet0/0/0/2
+L    10.19.20.2/32 is directly connected, 06:59:57, GigabitEthernet0/0/0/2
+L    20.20.20.20/32 is directly connected, 06:59:58, Loopback0
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh run for
+formal  forward-protocol  
+RP/0/0/CPU0:XR2#sh run formal router     
+router  router-convergence  
+RP/0/0/CPU0:XR2#sh run formal router static 
+Tue Jul 10 09:00:19.163 UTC
+router static address-family ipv4 unicast 0.0.0.0/0 10.19.20.1
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Tue Jul 10 09:00:21.573 UTC
+RP/0/0/CPU0:XR2(config)#no router static address-family ipv4 unicast 0.0.0.0/0$
+RP/0/0/CPU0:XR2(config)#commit 
+Tue Jul 10 09:00:27.662 UTC
+RP/0/0/CPU0:XR2(config)#end
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh run formal router static 
+Tue Jul 10 09:00:31.882 UTC
+% No such configuration item(s)
+
+RP/0/0/CPU0:XR2#show route                  
+Tue Jul 10 09:00:35.652 UTC
+
+Codes: C - connected, S - static, R - RIP, B - BGP, (>) - Diversion path
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - ISIS, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, su - IS-IS summary null, * - candidate default
+       U - per-user static route, o - ODR, L - local, G  - DAGR, l - LISP
+       A - access/subscriber, a - Application route
+       M - mobile route, r - RPL, (!) - FRR Backup path
+
+Gateway of last resort is not set
+
+C    10.19.20.0/30 is directly connected, 07:00:32, GigabitEthernet0/0/0/2
+L    10.19.20.2/32 is directly connected, 07:00:32, GigabitEthernet0/0/0/2
+L    20.20.20.20/32 is directly connected, 07:00:32, Loopback0
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Tue Jul 10 09:01:23.698 UTC
+RP/0/0/CPU0:XR2(config)#route
+route-policy  router  router-convergence  
+RP/0/0/CPU0:XR2(config)#router
+router  router-convergence  
+RP/0/0/CPU0:XR2(config)#router rip 
+RP/0/0/CPU0:XR2(config-rip)#interface lo0
+RP/0/0/CPU0:XR2(config-rip-if)#commit 
+Tue Jul 10 09:01:31.348 UTC
+RP/0/0/CPU0:XR2(config-rip-if)#end
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show route
+Tue Jul 10 09:01:42.247 UTC
+
+Codes: C - connected, S - static, R - RIP, B - BGP, (>) - Diversion path
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - ISIS, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, su - IS-IS summary null, * - candidate default
+       U - per-user static route, o - ODR, L - local, G  - DAGR, l - LISP
+       A - access/subscriber, a - Application route
+       M - mobile route, r - RPL, (!) - FRR Backup path
+
+Gateway of last resort is not set
+
+C    10.19.20.0/30 is directly connected, 07:01:38, GigabitEthernet0/0/0/2
+L    10.19.20.2/32 is directly connected, 07:01:38, GigabitEthernet0/0/0/2
+L    20.20.20.20/32 is directly connected, 07:01:39, Loopback0
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show route
+Tue Jul 10 09:03:01.932 UTC
+
+Codes: C - connected, S - static, R - RIP, B - BGP, (>) - Diversion path
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - ISIS, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, su - IS-IS summary null, * - candidate default
+       U - per-user static route, o - ODR, L - local, G  - DAGR, l - LISP
+       A - access/subscriber, a - Application route
+       M - mobile route, r - RPL, (!) - FRR Backup path
+
+Gateway of last resort is not set
+
+R    1.1.1.1/32 [120/2] via 10.19.20.1, 00:00:04, GigabitEthernet0/0/0/2
+R    10.1.2.0/30 [120/1] via 10.19.20.1, 00:00:04, GigabitEthernet0/0/0/2
+C    10.19.20.0/30 is directly connected, 07:02:58, GigabitEthernet0/0/0/2
+L    10.19.20.2/32 is directly connected, 07:02:58, GigabitEthernet0/0/0/2
+L    20.20.20.20/32 is directly connected, 07:02:59, Loopback0
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#  
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#terminal length 0
+Tue Jul 10 09:03:51.768 UTC
+RP/0/0/CPU0:XR2#configure terminal
+Tue Jul 10 09:03:51.948 UTC
+RP/0/0/CPU0:XR2(config)#no logging console
+RP/0/0/CPU0:XR2(config)#commit
+Tue Jul 10 09:03:52.368 UTC
+RP/0/0/CPU0:XR2(config)#exit
+RP/0/0/CPU0:XR2#show running-config
+Tue Jul 10 09:03:52.718 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Tue Jul 10 09:01:31 2018 by cisco
+!
+hostname XR2
+interface Loopback0
+ ipv4 address 20.20.20.20 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/1
+ shutdown
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 10.19.20.2 255.255.255.252
+!
+route-policy PASS
+  pass
+end-policy
+!
+router bgp 20
+ address-family ipv4 unicast
+  network 20.20.20.20/32
+ !
+ neighbor 10.19.20.1
+  remote-as 100
+  address-family ipv4 unicast
+   route-policy PASS in
+   route-policy PASS out
+  !
+ !
+!
+router rip
+ interface Loopback0
+ !
+ interface GigabitEthernet0/0/0/2
+ !
+!
+end
+
+RP/0/0/CPU0:XR2#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR2 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+

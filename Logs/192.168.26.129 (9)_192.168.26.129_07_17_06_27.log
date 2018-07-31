@@ -1,0 +1,441 @@
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh route
+Tue Jul 10 15:53:22.345 UTC
+
+Codes: C - connected, S - static, R - RIP, B - BGP, (>) - Diversion path
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - ISIS, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, su - IS-IS summary null, * - candidate default
+       U - per-user static route, o - ODR, L - local, G  - DAGR, l - LISP
+       A - access/subscriber, a - Application route
+       M - mobile route, r - RPL, (!) - FRR Backup path
+
+Gateway of last resort is not set
+
+O E2 1.1.1.1/32 [110/1] via 10.19.20.1, 00:02:32, GigabitEthernet0/0/0/2
+C    10.19.20.0/30 is directly connected, 13:53:18, GigabitEthernet0/0/0/2
+L    10.19.20.2/32 is directly connected, 13:53:18, GigabitEthernet0/0/0/2
+L    20.20.20.20/32 is directly connected, 13:53:19, Loopback0
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh run router ospf 
+Tue Jul 10 15:57:13.399 UTC
+router ospf 100
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/2
+  !
+ !
+!
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Tue Jul 10 15:57:15.689 UTC
+RP/0/0/CPU0:XR2(config)#no router ospf
+% Incomplete command.
+RP/0/0/CPU0:XR2(config)#no router ospf 100
+RP/0/0/CPU0:XR2(config)#commit
+Tue Jul 10 15:57:25.508 UTC
+RP/0/0/CPU0:XR2(config)#router bgp 1
+RP/0/0/CPU0:XR2(config-bgp)#
+RP/0/0/CPU0:XR2(config-bgp)#neighbor 10.19.20.1 remote-as 100
+RP/0/0/CPU0:XR2(config-bgp)#address-family ipv4 unicast 
+RP/0/0/CPU0:XR2(config-bgp-af)#network 20.20.20.20/32 
+RP/0/0/CPU0:XR2(config-bgp-af)#commit
+Tue Jul 10 15:58:19.385 UTC
+
+% Failed to commit one or more configuration items during a pseudo-atomic operation. All changes made have been reverted. Please issue 'show configuration failed [inheritance]' from this session to view the errors
+RP/0/0/CPU0:XR2(config-bgp-af)#
+RP/0/0/CPU0:XR2(config-bgp-af)#
+RP/0/0/CPU0:XR2(config-bgp-af)#show configuration failed
+Tue Jul 10 15:58:24.734 UTC
+!! SEMANTIC ERRORS: This configuration was rejected by 
+!! the system due to semantic errors. The individual 
+!! errors with each failed configuration command can be 
+!! found below.
+
+
+router bgp 1
+!!% The instance name is used already: asn 0.20 inst-name default
+!
+end
+
+RP/0/0/CPU0:XR2(config-bgp-af)#exit
+RP/0/0/CPU0:XR2(config-bgp)#exit
+RP/0/0/CPU0:XR2(config)#exit
+Uncommitted changes found, commit them before exiting(yes/no/cancel)? [cancel]:
+RP/0/0/CPU0:XR2(config)#do sh run router bgp 
+Tue Jul 10 15:58:49.343 UTC
+router bgp 20
+ address-family ipv4 unicast
+  network 20.20.20.20/32
+ !
+ neighbor 10.19.20.1
+  remote-as 100
+  address-family ipv4 unicast
+   route-policy PASS in
+   route-policy PASS out
+  !
+ !
+!
+
+RP/0/0/CPU0:XR2(config)#no router bgp 20
+RP/0/0/CPU0:XR2(config)#
+RP/0/0/CPU0:XR2(config)#
+RP/0/0/CPU0:XR2(config)#commit 
+Tue Jul 10 15:59:06.101 UTC
+
+% Failed to commit one or more configuration items during a pseudo-atomic operation. All changes made have been reverted. Please issue 'show configuration failed [inheritance]' from this session to view the errors
+RP/0/0/CPU0:XR2(config)#
+RP/0/0/CPU0:XR2(config)#show configuration failed
+Tue Jul 10 15:59:11.171 UTC
+!! SEMANTIC ERRORS: This configuration was rejected by 
+!! the system due to semantic errors. The individual 
+!! errors with each failed configuration command can be 
+!! found below.
+
+
+router bgp 1
+!!% The instance name is used already: asn 0.20 inst-name default
+!
+end
+
+RP/0/0/CPU0:XR2(config)#exit
+Uncommitted changes found, commit them before exiting(yes/no/cancel)? [cancel]:no
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh run router bgp 
+Tue Jul 10 15:59:32.940 UTC
+router bgp 20
+ address-family ipv4 unicast
+  network 20.20.20.20/32
+ !
+ neighbor 10.19.20.1
+  remote-as 100
+  address-family ipv4 unicast
+   route-policy PASS in
+   route-policy PASS out
+  !
+ !
+!
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Tue Jul 10 15:59:37.099 UTC
+RP/0/0/CPU0:XR2(config)#no router bgp 20
+RP/0/0/CPU0:XR2(config)#commit
+Tue Jul 10 15:59:42.239 UTC
+RP/0/0/CPU0:XR2(config)#
+RP/0/0/CPU0:XR2(config)#router bgp 1 
+RP/0/0/CPU0:XR2(config-bgp)#address-family ipv4 unicast 
+RP/0/0/CPU0:XR2(config-bgp-af)#ne
+network  nexthop  
+RP/0/0/CPU0:XR2(config-bgp-af)#network 20.20.20.20/32
+RP/0/0/CPU0:XR2(config-bgp-af)#neighbor 10.19.20.1
+RP/0/0/CPU0:XR2(config-bgp-nbr)#  remote-as 100
+RP/0/0/CPU0:XR2(config-bgp-nbr)#  address-family ipv4 unicast
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#   route-policy PASS in
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#   route-policy PASS out
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#commit 
+Tue Jul 10 16:00:14.927 UTC
+RP/0/0/CPU0:XR2(config-bgp-nbr-af)#end
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show bgp sum
+Tue Jul 10 16:01:45.560 UTC
+BGP router identifier 20.20.20.20, local AS number 1
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 2
+BGP main routing table version 2
+BGP NSR Initial initsync version 4294967295 (Not Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               2          1          2          0           1           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+10.19.20.1        0   100       0       1        0    0    0 00:00:00 Idle
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show bgp sum
+Tue Jul 10 16:01:47.750 UTC
+BGP router identifier 20.20.20.20, local AS number 1
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 2
+BGP main routing table version 2
+BGP NSR Initial initsync version 4294967295 (Not Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               2          1          2          0           1           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+10.19.20.1        0   100       0       1        0    0    0 00:00:00 Idle
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show bgp sum
+Tue Jul 10 16:02:42.367 UTC
+BGP router identifier 20.20.20.20, local AS number 1
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 2
+BGP main routing table version 2
+BGP NSR Initial initsync version 4294967295 (Not Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               2          1          2          0           1           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+10.19.20.1        0   100       0       2        0    0    0 00:00:00 Idle
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show bgp sum
+Tue Jul 10 16:02:44.056 UTC
+BGP router identifier 20.20.20.20, local AS number 1
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 2
+BGP main routing table version 2
+BGP NSR Initial initsync version 4294967295 (Not Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               2          1          2          0           1           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+10.19.20.1        0   100       0       2        0    0    0 00:00:00 Idle
+
+RP/0/0/CPU0:XR2#show bgp sum
+Tue Jul 10 16:02:45.146 UTC
+BGP router identifier 20.20.20.20, local AS number 1
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 2
+BGP main routing table version 2
+BGP NSR Initial initsync version 4294967295 (Not Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               2          1          2          0           1           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+10.19.20.1        0   100       0       2        0    0    0 00:00:00 Active
+
+RP/0/0/CPU0:XR2#show bgp sum
+Tue Jul 10 16:02:45.966 UTC
+BGP router identifier 20.20.20.20, local AS number 1
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 2
+BGP main routing table version 2
+BGP NSR Initial initsync version 4294967295 (Not Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               2          1          2          0           1           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+10.19.20.1        0   100       2       4        0    0    0 00:00:00          0
+
+RP/0/0/CPU0:XR2#show bgp sum
+Tue Jul 10 16:02:47.116 UTC
+BGP router identifier 20.20.20.20, local AS number 1
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 2
+BGP main routing table version 2
+BGP NSR Initial initsync version 4294967295 (Not Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               2          1          2          0           1           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+10.19.20.1        0   100       2       4        0    0    0 00:00:01          0
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show bgp sum
+Tue Jul 10 16:02:48.516 UTC
+BGP router identifier 20.20.20.20, local AS number 1
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 2
+BGP main routing table version 2
+BGP NSR Initial initsync version 4294967295 (Not Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               2          1          2          0           1           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+10.19.20.1        0   100       2       4        0    0    0 00:00:03          0
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show bgp sum
+Tue Jul 10 16:02:50.386 UTC
+BGP router identifier 20.20.20.20, local AS number 1
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 3
+BGP main routing table version 3
+BGP NSR Initial initsync version 2 (Not Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               3          3          3          3           3           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+10.19.20.1        0   100       3       6        3    0    0 00:00:05          0
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show bgp sum
+Tue Jul 10 16:02:52.526 UTC
+BGP router identifier 20.20.20.20, local AS number 1
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 3
+BGP main routing table version 3
+BGP NSR Initial initsync version 2 (Not Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               3          3          3          3           3           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+10.19.20.1        0   100       3       6        3    0    0 00:00:07          0
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show bgp sum
+Tue Jul 10 16:02:54.666 UTC
+BGP router identifier 20.20.20.20, local AS number 1
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 3
+BGP main routing table version 3
+BGP NSR Initial initsync version 2 (Not Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               3          3          3          3           3           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+10.19.20.1        0   100       3       6        3    0    0 00:00:09          0
+
+RP/0/0/CPU0:XR2#show bgp    
+Tue Jul 10 16:02:59.115 UTC
+BGP router identifier 20.20.20.20, local AS number 1
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 3
+BGP main routing table version 3
+BGP NSR Initial initsync version 2 (Not Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+Status codes: s suppressed, d damped, h history, * valid, > best
+              i - internal, r RIB-failure, S stale, N Nexthop-discard
+Origin codes: i - IGP, e - EGP, ? - incomplete
+   Network            Next Hop            Metric LocPrf Weight Path
+*> 20.20.20.20/32     0.0.0.0                  0         32768 i
+
+Processed 1 prefixes, 1 paths
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#

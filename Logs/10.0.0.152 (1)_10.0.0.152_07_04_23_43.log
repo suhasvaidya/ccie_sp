@@ -1,0 +1,506 @@
+
+CSR2>
+CSR2>
+CSR2>en
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#vrf
+CSR2(config)#vrf VPN_A
+                 ^
+% Invalid input detected at '^' marker.
+
+CSR2(config)#vrf ?    
+  definition   VRF definition mode
+  list         List of VRFs
+  selection    selection criteria
+  upgrade-cli  upgrade cli 
+
+CSR2(config)#vrf de
+CSR2(config)#vrf definition ?
+  __Platform_iVRF:_ID00_
+  WORD  VRF name
+
+CSR2(config)#vrf definition VPN_A
+CSR2(config-vrf)#
+CSR2(config-vrf)#ro
+CSR2(config-vrf)#route-target 100:1
+% VRF VPN_A does not have an RD configured, please configure the RD before configuring route-target
+CSR2(config-vrf)#rd
+CSR2(config-vrf)#rd 100:1
+CSR2(config-vrf)#
+CSR2(config-vrf)#
+CSR2(config-vrf)#route-target 100:1
+CSR2(config-vrf)#
+CSR2(config-vrf)#exit
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#inter
+CSR2(config)#interface gi
+CSR2(config)#interface gigabitEthernet 0
+CSR2(config)#interface gigabitEthernet 1
+CSR2(config-if)#ip
+CSR2(config-if)#exit
+CSR2(config)#
+CSR2(config)#do sh run inter
+CSR2(config)#do sh run interface gi1
+Building configuration...
+
+Current configuration : 98 bytes
+!
+interface GigabitEthernet1
+ ip address 10.1.2.2 255.255.255.252
+ negotiation auto
+ mpls ip
+end
+
+CSR2(config)#
+CSR2(config)#inter
+CSR2(config)#interface gi
+CSR2(config)#interface gigabitEthernet 1
+CSR2(config-if)#ip
+CSR2(config-if)#ip vr
+CSR2(config-if)#ip vrf VPN_A     
+% Use 'vrf definition VPN_A' command
+CSR2(config)#vr
+CSR2(config)#vrf
+CSR2(config)#vrf de
+CSR2(config)#vrf definition VPN_A
+CSR2(config-vrf)#
+CSR2(config-vrf)#
+CSR2(config-vrf)#exit
+CSR2(config)#
+CSR2(config)#do sh run interface gi1    
+Building configuration...
+
+Current configuration : 98 bytes
+!
+interface GigabitEthernet1
+ ip address 10.1.2.2 255.255.255.252
+ negotiation auto
+ mpls ip
+end
+
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#ip vrf VPN_A           
+% Use 'vrf definition VPN_A' command
+CSR2(config)#
+CSR2(config)#interface gigabitEthernet 1
+CSR2(config-if)#
+CSR2(config-if)#?
+Interface configuration commands:
+  aaa                 Authentication, Authorization and Accounting.
+  access-expression   Build a bridge boolean access expression
+  access-session      Access Session specific Interface Configuration Commands
+  ancp                ANCP interface commands
+  apollo              Apollo interface subcommands
+  appletalk           Appletalk interface subcommands
+  arp                 Set arp type (arpa, probe, snap), timeout, log options or
+                      packet priority
+  autonomic           Autonomic Networking
+  backup              Modify backup parameters
+  bandwidth           Set bandwidth informational parameter
+  bfd                 BFD interface configuration commands
+  bgp-policy          Apply policy propagated by bgp community string
+  carrier-delay       Specify delay for interface transitions
+  cdp                 CDP interface subcommands
+  channel-group       Add this interface to an Etherchannel group
+  clns                CLNS interface subcommands
+  cmns                OSI CMNS
+  crypto              Encryption/Decryption commands
+  ctr                 Cloud Tunnel Relay
+  cts                 Configure Cisco Trusted Security
+  cws-tunnel          Configure Cloud Web Security Tunnel
+  cxsc                Configure CXSC related features
+  dampening           Enable event dampening
+  decnet              Interface DECnet config commands
+  default             Set a command to its defaults
+  delay               Specify interface throughput delay
+  description         Interface specific description
+  domain              Specify a domain
+  dot1q               dot1q interface configuration commands
+  ethernet            Ethernet interface parameters
+  exit                Exit from interface configuration mode
+  fhrp                Configure FHRP
+  fras                DLC Switch Interface Command
+  glbp                Gateway Load Balancing Protocol interface commands
+  h323-gateway        Configure H323 Gateway
+  help                Description of the interactive help system
+  history             Interface history histograms - 60 second, 60 minute and
+                      72 hour
+  hold-queue          Set hold queue depth
+  ip                  Interface Internet Protocol config commands
+  ipv6                IPv6 interface subcommands
+  isis                IS-IS commands
+  iso-igrp            ISO-IGRP interface subcommands
+  keepalive           Enable keepalive
+  l2protocol          Configure l2 control protocol processing
+  lacp                LACP interface subcommands
+  lan-name            LAN Name command
+  lat                 LAT commands
+  lisp                Locator/ID Separation Protocol
+  llc2                LLC2 Interface Subcommands
+  lldp                LLDP interface subcommands
+  load-interval       Specify interval for load calculation for an interface
+  locaddr-priority    Assign a priority group
+  location            Interface location information
+  logging             Configure logging for interface
+  loopback            Configure internal loopback on an interface
+  mac-address         Manually set interface MAC address
+  medium              Configure interface medium
+  member              Configure the Layer2 VPN member
+  metadata            Metadata Application
+  mop                 DEC MOP server commands
+  mpls                Configure MPLS interface parameters
+  mtu                 Set the interface Maximum Transmission Unit (MTU)
+  nat64               NAT64 interface commands
+  negotiation         Select autonegotiation mode
+  netbios             Use a defined NETBIOS access list or enable name-caching
+  no                  Negate a command or set its defaults
+  ntp                 Configure NTP
+  onep                Configure onep settings
+  ospfv3              OSPFv3 interface commands
+  performance         Global performance monitor configuration
+  platform            Configure platform
+  plim                Configure features on the PLIM
+  pppoe               pppoe interface subcommands
+  pppoe-client        pppoe client
+  pppoe-sessions      Configure pppoe per-interface options
+  sap-priority        Assign a priority group
+  sbc                 Session Border Controller
+  service             Configure Ether Service
+  service-insertion   Service-insertion AppNav Controller
+  service-policy      Configure CPL Service Policy
+  service-routing     Service Routing in Interface Mode
+  shutdown            Shutdown the selected interface
+  smrp                Simple Multicast Routing Protocol interface subcommands
+  sna                 SNA pu configuration
+  snapshot            Configure snapshot support on the interface
+  snmp                Modify SNMP interface parameters
+  source              Get config from another source
+  spanning-tree       Spanning Tree Subsystem
+  speed               Configure speed operation.
+  srlg                Interface Shared Risk Link Group config commands
+  standby             HSRP interface configuration commands
+  subscriber          Subscriber inactivity timeout value.
+  tarp                TARP interface subcommands
+  timeout             Define timeout values for this interface
+  topology            Configure routing topology on the interface
+  transmit-interface  Assign a transmit interface to a receive-only interface
+  utd                 UTD support on this interface
+  vines               VINES interface subcommands
+  vlan-autoconfig     Configure dynamic VLAN interface
+  vlan-id             Process VLAN-encapsulated packets with a specific VLAN ID
+  vlan-range          Process VLAN-encapsulated packets with a range of VLAN
+                      IDs
+  vpdn                Virtual Private Dialup Network
+  vpn                 vpn_config
+  vrf                 VPN Routing/Forwarding parameters on the interface
+  vrrp                VRRP Interface configuration commands
+  xconnect            Xconnect commands
+  zone-member         Apply zone name
+
+CSR2(config-if)#vrf
+CSR2(config-if)#i0  
+CSR2(config-if)#ip
+CSR2(config-if)#ip ?
+Interface IP configuration subcommands:
+  access-group            Specify access control for packets
+  address                 Set the IP address of an interface
+  admission               Apply Network Admission Control
+  authentication          authentication subcommands
+  bandwidth-percent       Set EIGRP bandwidth limit
+  bgp                     BGP interface commands
+  broadcast-address       Set the broadcast address of an interface
+  cef                     Cisco Express Forwarding interface commands
+  cgmp                    Enable/disable CGMP
+  dampening-change        Percent interface metric must change to cause update
+  dampening-interval      Time in seconds to check interface metrics
+  dhcp                    Configure DHCP parameters for this interface
+  directed-broadcast      Enable forwarding of directed broadcasts
+  dns                     Configure DNS server
+  flow                    NetFlow related commands
+  flowspec                FlowSpec configuration
+  header-compression      IPHC options
+  hello-interval          Configures EIGRP-IPv4 hello interval
+  helper-address          Specify a destination address for UDP broadcasts
+  hold-time               Configures EIGRP-IPv4 hold time
+  igmp                    IGMP interface commands
+  information-reply       Enable sending ICMP Information Reply messages
+  irdp                    ICMP Router Discovery Protocol
+  lisp                    Locator/ID Separation Protocol
+  load-sharing            Style of load sharing
+  local-proxy-arp         Enable local-proxy ARP
+  mask-reply              Enable sending ICMP Mask Reply messages
+  mfib                    Interface Specific MFIB Control
+  mobile                  Mobile IP support
+  mrm                     Configure IP Multicast Routing Monitor tester
+  mroute-cache            Enable switching cache for incoming multicast packets
+  mtu                     Set IP Maximum Transmission Unit
+  multicast               IP multicast interface commands
+  nat                     NAT interface commands
+  nbar                    Network-Based Application Recognition
+  next-hop-self           Configures EIGRP-IPv4 next-hop-self
+  ospf                    OSPF interface commands
+  pgm                     PGM Reliable Transport Protocol
+  pim                     PIM interface commands
+  policy                  Enable policy routing
+  portbundle              IP Portbundle configuration
+  probe                   Enable HP Probe support
+  proxy-arp               Enable proxy ARP
+  rarp-server             Enable RARP server for static arp entries
+  reassembly              Reassembly
+  redirects               Enable sending ICMP Redirect messages
+  rgmp                    Enable/disable RGMP
+  rip                     Router Information Protocol
+  route-cache             Enable fast-switching cache for outgoing packets
+  router                  IP router interface commands
+  rsvp                    RSVP Interface Commands
+  rtp                     RTP parameters
+  sap                     Session Advertisement Protocol interface commands
+  security                DDN IP Security Option
+  service                 IP service
+  split-horizon           Perform split horizon
+  sticky-arp              Allow the creation of sticky ARP entries
+  subscriber              IP session configuration options
+  summary-address         Perform address summarization
+  tcp                     TCP interface commands
+  topology-accounting     Enable accounting for IP on all topologies of
+                          interface
+  unnumbered              Enable IP processing without an explicit address
+  unreachables            Enable sending ICMP Unreachable messages
+  urd                     Configure URL Rendezvousing
+  verify                  Enable per packet validation
+  virtual-reassembly      Enable Virtual Fragment Reassembly (Input)
+  virtual-reassembly-out  Enable Virtual Fragment Reassembly (Output)
+  vrf                     VPN Routing/Forwarding parameters on the interface
+  wccp                    WCCP IPv4 interface commands
+
+CSR2(config-if)#ip vrf
+CSR2(config-if)#ip vrf  ?
+  autoclassify  Enable IP VRF Autoclassify feature
+  forwarding    Configure forwarding table
+  receive       Add interface address into VRF select database
+  select        Enable VRF selection
+  sitemap       Configure route-map for routes received from this site
+
+CSR2(config-if)#ip vrf  fo
+CSR2(config-if)#ip vrf  forwarding ?
+  VPN_A
+  __Platform_iVRF:_ID00_
+  WORD  VRF name
+
+CSR2(config-if)#ip vrf  forwarding VPN_A
+% Use 'vrf forwarding' command for VRF VPN_A
+CSR2(config-if)#vrf forwarding VPN_A    
+% Interface GigabitEthernet1 IPv4 disabled and address(es) removed due to enabling VRF VPN_A
+CSR2(config-if)#
+CSR2(config-if)#
+CSR2(config-if)#
+CSR2(config-if)#
+CSR2(config-if)# ip address 10.1.2.2 255.255.255.252
+%GigabitEthernet1 is linked to a VRF. Enable IPv4 on that VRF first.
+CSR2(config-if)# negotiation auto
+CSR2(config-if)# mpls ip
+CSR2(config-if)#
+CSR2(config-if)#
+CSR2(config-if)#
+CSR2(config-if)#
+CSR2(config-if)#do sh run interface gi1             
+Building configuration...
+
+Current configuration : 98 bytes
+!
+interface GigabitEthernet1
+ vrf forwarding VPN_A
+ no ip address
+ negotiation auto
+ mpls ip
+end
+
+CSR2(config-if)#
+CSR2(config-if)#exti
+                  ^
+% Invalid input detected at '^' marker.
+
+CSR2(config-if)#exit
+CSR2(config)#vrf
+CSR2(config)#vrf de
+CSR2(config)#vrf definition  ip address 10.1.2.2 255.255.255.252
+                                ^
+% Invalid input detected at '^' marker.
+
+CSR2(config)# negotiation auto
+                ^
+% Invalid input detected at '^' marker.
+
+CSR2(config)# mpls ip
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#vrf
+CSR2(config)#vrf de
+CSR2(config)#vrf definition VPN_A
+CSR2(config-vrf)#ip
+CSR2(config-vrf)#ipv4 u
+CSR2(config-vrf)#ipv4 ?
+  multicast  IP multicast configuration
+
+CSR2(config-vrf)#?    
+VPN Routing/Forwarding instance configuration commands:
+  address-family  Enter Address Family command mode
+  default         Set a command to its defaults
+  description     VRF specific description
+  exit            Exit from VRF configuration mode
+  help            Description of the interactive help system
+  ipv4            VRF IPv4 configuration
+  no              Negate a command or set its defaults
+  rd              Specify Route Distinguisher
+  route-target    Specify Target VPN Extended Communities
+  vnet            Virtual NETworking configuration
+  vpn             Configure VPN ID as specified in rfc2685
+
+CSR2(config-vrf)#add
+CSR2(config-vrf)#address-family i
+CSR2(config-vrf)#address-family ipv4
+CSR2(config-vrf)#address-family ipv4 ?
+  multicast  Address Family modifier
+  unicast    Address Family modifier
+  <cr>
+
+CSR2(config-vrf)#address-family ipv4 un
+CSR2(config-vrf)#address-family ipv4 unicast 
+% Could not set CSC label distribution method because VRF (tableid 1) is invalid
+CSR2(config-vrf-af)#address-family ipv4 unicast ?
+% Unrecognized command
+CSR2(config-vrf-af)#address-family ipv4 unicast ?
+% Unrecognized command
+CSR2(config-vrf-af)#address-family ipv4 ?       
+% Unrecognized command
+CSR2(config-vrf-af)#address-family      
+CSR2(config-vrf-af)#address-family?
+% Unrecognized command
+CSR2(config-vrf-af)#?             
+VPN Routing/Forwarding address-family configuration commands:
+  bgp                  Commands pertaining to BGP
+  default              Set a command to its defaults
+  exit-address-family  Exit from VRF address-family configuration submode
+  export               VRF export
+  help                 Description of the interactive help system
+  import               VRF import
+  inter-as-hybrid      Inter AS hybrid mode
+  maximum              Set a limit to a routing table
+  mdt                  Backbone Multicast Distribution Tree
+  no                   Negate a command or set its defaults
+  protection           Configure local repair
+  route-replicate      Replicate (import) routes from another topology (and
+                       another VRF)
+  route-target         Specify Target VPN Extended Communities
+  snmp                 Modify snmp parameters
+
+CSR2(config-vrf-af)#
+CSR2(config-vrf-af)#exit
+CSR2(config-vrf)#
+CSR2(config-vrf)#
+CSR2(config-vrf)#exit
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#exit
+CSR2#
+CSR2#sh 
+*Jul  4 14:41:47.389: %SYS-5-CONFIG_I: Configured from console by consolerun 
+CSR2#sh run | s vrf
+vrf definition VPN_A
+ rd 100:1
+ route-target export 100:1
+ route-target import 100:1
+ !
+ address-family ipv4
+ exit-address-family
+ vrf forwarding VPN_A
+CSR2#
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#inte
+CSR2(config)#interface gi
+CSR2(config)#interface gigabitEthernet 1
+CSR2(config-if)# ip address 10.1.2.2 255.255.255.252
+CSR2(config-if)# negotiation auto
+CSR2(config-if)# mpls ip
+CSR2(config-if)#
+CSR2(config-if)#exit
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#exit
+CSR2#
+CSR2#
+CSR2#
+*Jul  4 14:42:19.075: %SYS-5-CONFIG_I: Configured from console by console
+CSR2#ping vr
+CSR2#ping vrf  ip address 10.1.2.2 255.255.255.252
+vrf ip does not exist                          ^
+% Invalid input detected at '^' marker.
+
+CSR2# negotiation auto
+       ^
+% Invalid input detected at '^' marker.
+
+CSR2# mpls i 
+           ^
+% Invalid input detected at '^' marker.
+
+CSR2#
+CSR2#
+CSR2#
+CSR2#ping vrf VPN_A 10.1.2.2
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.1.2.2, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 2/4/15 ms
+CSR2#
+*Jul  4 14:42:37.582: %BGP-3-NOTIFICATION: sent to neighbor 10.1.2.1 4/0 (hold time expired) 0 bytes ping vrf VPN_A 10.1.2.2
+CSR2#ping vrf VPN_A 10.1.2.2
+*Jul  4 14:42:37.582: %BGP-5-NBR_RESET: Neighbor 10.1.2.1 reset (BGP Notification sent)
+*Jul  4 14:42:37.583: %BGP-5-ADJCHANGE: neighbor 10.1.2.1 Down BGP Notification sent
+*Jul  4 14:42:37.583: %BGP_SESSION-5-ADJCHANGE: neighbor 10.1.2.1 IPv4 Unicast topology base removed from session  BGP Notification sent
+CSR2#ping vrf VPN_A 10.1.2.2
+CSR2#ping vrf VPN_A 10.1.2.2
+CSR2#ping vrf VPN_A 10.1.2.1
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.1.2.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 9/12/16 ms
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh run | s r b
+router bgp 100
+ bgp log-neighbor-changes
+ neighbor 10.1.2.1 remote-as 1
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+ neighbor 19.19.19.19 next-hop-self
+CSR2#
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#
+*Jul  4 14:46:10.317: %LDP-5-SP: 3.3.3.3:0: session hold up initiated
+*Jul  4 14:46:10.340: %LDP-5-SP: 4.4.4.4:0: session hold up initiated
+*Jul  4 14:46:10.718: %LDP-5-SP: 4.4.4.4:0: session recovery succeeded

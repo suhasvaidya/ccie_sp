@@ -1,0 +1,93 @@
+
+CSR4>en
+CSR4#
+CSR4#
+CSR4#
+CSR4#
+CSR4#sh
+CSR4#show mpl
+CSR4#show mpls d
+CSR4#show mpls lds       
+CSR4#show mpls ld 
+CSR4#show mpls ldp ig
+CSR4#show mpls ldp igp sy
+CSR4#show mpls ldp igp sync 
+    GigabitEthernet1:
+        LDP configured; LDP-IGP Synchronization not enabled.
+    GigabitEthernet2:
+        LDP configured; LDP-IGP Synchronization not enabled.
+    GigabitEthernet3:
+        LDP configured; LDP-IGP Synchronization not enabled.
+    GigabitEthernet4:
+        LDP configured; LDP-IGP Synchronization not enabled.
+CSR4#
+CSR4#
+CSR4#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR4(config)#router os
+CSR4(config)#router ospf 1
+CSR4(config-router)#mpl
+CSR4(config-router)#mpls ld
+CSR4(config-router)#mpls ldp sy
+CSR4(config-router)#mpls ldp sync 
+CSR4(config-router)#
+CSR4(config-router)#end
+CSR4#
+CSR4#
+CSR4#show mpls ldp igp sync 
+*Jul  4 10:26:50.500: %SYS-5-CONFIG_I: Configured from console by console
+    GigabitEthernet1:
+        LDP configured; LDP-IGP Synchronization enabled.
+        Sync status: sync achieved; peer reachable.
+        Sync delay time: 0 seconds (0 seconds left)
+        IGP holddown time: infinite.
+        Peer LDP Ident: 5.5.5.5:0
+        IGP enabled: OSPF 1
+    GigabitEthernet2:
+        LDP configured; LDP-IGP Synchronization enabled.
+        Sync status: sync achieved; peer reachable.
+        Sync delay time: 0 seconds (0 seconds left)
+        IGP holddown time: infinite.
+        Peer LDP Ident: 2.2.2.2:0
+        IGP enabled: OSPF 1
+    GigabitEthernet3:
+        LDP configured; LDP-IGP Synchronization enabled.
+        Sync status: sync achieved; peer reachable.
+        Sync delay time: 0 seconds (0 seconds left)
+        IGP holddown time: infinite.
+        Peer LDP Ident: 6.6.6.6:0
+        IGP enabled: OSPF 1
+    GigabitEthernet4:
+        LDP configured; LDP-IGP Synchronization enabled.
+        Sync status: sync achieved; peer reachable.
+        Sync delay time: 0 seconds (0 seconds left)
+        IGP holddown time: infinite.
+        Peer LDP Ident: 3.3.3.3:0
+        IGP enabled: OSPF 1
+CSR4#
+CSR4#
+CSR4#
+CSR4#
+CSR4#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR4(config)#mpl
+CSR4(config)#mpls ld
+CSR4(config)#mpls ldp se
+CSR4(config)#mpls ldp session pr
+CSR4(config)#mpls ldp session protection 
+CSR4(config)#end
+CSR4#
+CSR4#
+CSR4#
+*Jul  4 10:46:47.039: %SYS-5-CONFIG_I: Configured from console by console
+CSR4#
+CSR4#
+CSR4#
+CSR4#
+CSR4#
+CSR4#
+CSR4#wr
+Building configuration...
+[OK]
+CSR4#
+CSR4#

@@ -1,0 +1,303 @@
+
+% Please answer 'yes' or 'no'.
+Would you like to enter the initial configuration dialog? [yes/no]: no
+
+
+
+Press RETURN to get started!
+
+
+*Jul 10 01:59:23.499: %VUDI-6-EVENT: [serial number: 9WWLW89R2O3], [vUDI: ], vUDI is successfully retrieved from license file
+*Jul 10 01:59:23.843: %SMART_LIC-6-AGENT_READY: Smart Agent for Licensing is initialized
+*Jul 10 01:59:23.910: %IOS_LICENSE_IMAGE_APPLICATION-6-LICENSE_LEVEL: Module name = csr1000v Next reboot level = ax and License = No valid license found
+*Jul 10 01:59:34.385: %IOSXE_RP_NV-3-NV_ACCESS_FAIL: Initial read of NVRAM contents failed
+*Jul 10 01:59:34.781: %VXE_THROUGHPUT-6-LEVEL: Throughput level has been set to 100 kbps
+*Jul 10 01:59:34.781: %VXE_THRO
+Router>UGHPUT-2-LOW_THROUGHPUT: CSR throughput set to low default level 100kbps, system performance can be severely impacted.Please install a valid license, configure the boot level and reload, to switch to a higher throughput
+*Jul 10 01:59:34.803: memupgrade reg_invoke_iosxe_license_register_feature: VXE_MEM_LIC_STR
+
+*Jul 10 01:59:40.163: dev_pluggable_optics_selftest attribute table internally inconsistent @ 0x144
+
+*Jul 10 01:59:44.279: %VUDI-6-EVENT: [serial number: 9WWLW89R2O3], [vUDI: ], vUDI initialization is now complete
+*Jul 10 01:59:55.233: %SPANTREE-5-EXTENDED_SYSID: Extended SysId enabled for type vlan
+*Jul 10 01:59:57.100: %VOICE_HA-7-STATUS: CUBE HA-supported platform detected.
+*Jul 10 02:00:00.914: %LINK-3-UPDOWN: Interface Lsmpi0, changed state to up
+*Jul 10 02:00:00.917: %LINK-3-UPDOWN: Interface EOBC0, changed state to up
+*Jul 10 02:00:00.918: %LINEPROTO-5-UPDOWN: Line protocol on Interface VoIP-Null0, changed state to up
+*Jul 10 02:00:00.918: %LINEPROTO-5-UPDOWN: Line protocol on Interface LI-Null0, changed state to up
+*Jul 10 02:00:00.918: %LINK-3-UPDOWN: Interface LIIN0, changed state to up
+*Jul 10 02:00:00.918: %LINK-3-UPDOWN: Interface GigabitEthernet1, changed state to down
+*Jul 10 02:00:00.957: %LINK-3-UPDOWN: Interface GigabitEthernet2, changed state to down
+*Jul 10 02:00:00.957: %LINK-3-UPDOWN: Interface GigabitEthernet3, changed state to down
+*Jul 10 02:00:00.957: %LINK-3-UPDOWN: Interface GigabitEthernet4, changed state to down
+*Jul 10 02:00:03.603: %LINEPROTO-5-UPDOWN: Line protocol on Interface Lsmpi0, changed state to up
+*Jul 10 02:00:03.603: %LINEPROTO-5-UPDOWN: Line protocol on Interface EOBC0, changed state to up
+*Jul 10 02:00:03.607: %LINEPROTO-5-UPDOWN: Line protocol on Interface LIIN0, changed state to up
+*Jul 10 02:00:03.607: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1, changed state to up
+*Jul 10 02:00:03.612: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet2, changed state to up
+*Jul 10 02:00:03.613: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet3, changed state to up
+*Jul 10 02:00:03.613: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet4, changed state to up
+*Jul 10 02:00:19.475: %IOSXE_OIR-6-INSCARD: Card (rp) inserted in slot R1
+*Jul 10 02:00:19.476: %IOSXE_OIR-6-INSCARD: Card (fp) inserted in slot F0
+*Jul 10 02:00:19.476: %IOSXE_OIR-6-ONLINECARD: Card (fp) online in slot F0
+*Jul 10 02:00:19.716: %LINK-3-UPDOWN: Interface GigabitEthernet2, changed state to up
+*Jul 10 02:00:19.724: %LINK-3-UPDOWN: Interface GigabitEthernet4, changed state to up
+*Jul 10 02:00:19.798: %LINK-3-UPDOWN: Interface GigabitEthernet1, changed state to up
+*Jul 10 02:00:19.798: %LINK-3-UPDOWN: Interface GigabitEthernet3, changed state to up
+*Jul 10 02:01:49.137: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, CSR1000V Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 15.5(3)S5, RELEASE SOFTWARE (fc2)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2017 by Cisco Systems, Inc.
+Compiled Thu 19-Jan-17 09:11 by mcpre
+*Jul 10 02:01:49.204: %CRYPTO-6-ISAKMP_ON_OFF: ISAKMP is OFF
+*Jul 10 02:01:49.204: %CRYPTO-6-GDOI_ON_OFF: GDOI is OFF
+*Jul 10 02:01:49.646: %LINK-5-CHANGED: Interface GigabitEthernet1, changed state to administratively down
+*Jul 10 02:01:49.721: %LINK-5-CHANGED: Interface GigabitEthernet2, changed state to administratively down
+*Jul 10 02:01:49.770: %LINK-5-CHANGED: Interface GigabitEthernet3, changed state to administratively down
+*Jul 10 02:01:49.820: %LIN
+Router>
+Router>K-5-CHANGED: Interface GigabitEthernet4, changed state to administratively down
+*Jul 10 02:01:50.648: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1, changed state to down
+*Jul 10 02:01:50.722: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet2, changed state to down
+*Jul 10 02:01:50.770: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet3, changed state to down
+*Jul 10 02:01:50.819: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet4, changed s
+Router>tate to down
+Router>
+Router>
+Router>
+Router>
+Router>
+Router>
+Router>
+Router>
+Router>
+Router>conf t
+          ^
+% Invalid input detected at '^' marker.
+
+Router>conf t
+          ^
+% Invalid input detected at '^' marker.
+
+Router>end
+% Bad IP address or host name% Unknown command or computer name, or unable to find computer address
+Router>
+Router>
+Router>
+Router>en
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#
+Router(config)#
+Router(config)#
+Router(config)#service timestamps debug datetime msec
+Router(config)#service timestamps log datetime msec
+Router(config)#no platform punt-keepalive disable-kernel-core
+Router(config)#platform console serial
+Router(config)#!
+Router(config)#hostname CSR5
+CSR5(config)#!
+CSR5(config)#boot-start-marker
+CSR5(config)#boot-end-marker
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#no aaa new-model
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#
+CSR5(config)#
+CSR5(config)#
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#subscriber templating
+A system RELOAD is required before templating state change
+CSR5(config)#!
+CSR5(config)#mpls label range 500 599
+CSR5(config)#mpls ldp session protection
+CSR5(config)#mpls ldp label
+CSR5(config-ldp-lbl)# allocate global prefix-list LABELS
+CSR5(config-ldp-lbl)#multilink bundle-name authenticated
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#license udi pid CSR1000V sn 9WWLW89R2O3
+CSR5(config)#!
+CSR5(config)#spanning-tree extend system-id
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#redundancy
+CSR5(config-red)#!
+CSR5(config-red)#!
+CSR5(config-red)#!
+CSR5(config-red)#!
+CSR5(config-red)#!
+CSR5(config-red)#!
+CSR5(config-red)#! 
+CSR5(config-red)#!
+CSR5(config-red)#!
+CSR5(config-red)#!
+CSR5(config-red)#!
+CSR5(config-red)#!
+CSR5(config-red)#!
+CSR5(config-red)#!
+CSR5(config-red)#!
+CSR5(config-red)#!
+CSR5(config-red)#!
+CSR5(config-red)#!
+CSR5(config-red)#!
+CSR5(config-red)#! 
+CSR5(config-red)#! 
+CSR5(config-red)#! 
+CSR5(config-red)#! 
+CSR5(config-red)#! 
+CSR5(config-red)#! 
+CSR5(config-red)#!
+CSR5(config-red)#!
+CSR5(config-red)#interface Loopback0
+CSR5(config-if)# no shutdown
+CSR5(config-if)# ip address 5.5.5.5 255.255.255.255
+CSR5(config-if)#!
+CSR5(config-if)#interface GigabitEthernet1
+CSR5(config-if)# no shutdown
+CSR5(config-if)# ip address 20.4.5.2 255.255.255.252
+CSR5(config-if)# negotiation auto
+CSR5(config-if)# mpls ip
+CSR5(config-if)#!
+CSR5(config-if)#interface GigabitEthernet2
+CSR5(config-if)# no shutdown
+CSR5(config-if)# ip address 20.5.6.1 255.255.255.252
+CSR5(config-if)# negotiation auto
+CSR5(config-if)# mpls ip
+CSR5(config-if)#!
+CSR5(config-if)#interface GigabitEthernet3
+CSR5(config-if)# no shutdown
+CSR5(config-if)# ip address 10.5.8.1 255.255.255.252
+CSR5(config-if)# negotiation auto
+CSR5(config-if)#!
+CSR5(config-if)#interface GigabitEthernet4
+CSR5(config-if)# no shutdown
+CSR5(config-if)# ip address 20.5.19.1 255.255.255.252
+CSR5(config-if)# negotiation auto
+CSR5(config-if)# mpls ip
+CSR5(config-if)#!
+CSR5(config-if)#router ospf 1
+CSR5(config-router)# network 5.5.5.5 0.0.0.0 area 0
+CSR5(config-router)# network 10.5.8.0 0.0.0.3 area 0
+CSR5(config-router)# network 20.4.5.0 0.0.0.3 area 0
+CSR5(config-router)# network 20.5.6.0 0.0.0.3 area 0
+CSR5(config-router)# network 20.5.19.0 0.0.0.3 area 0
+CSR5(config-router)# mpls ldp sync
+CSR5(config-router)#!
+CSR5(config-router)#ip forward-protocol nd
+CSR5(config)#!
+CSR5(config)#no ip http server
+CSR5(config)#no ip http secure-server
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+CSR5(config)#ip prefix-list LABELS seq 10 permit 3.3.3.3/32
+CSR5(config)#ip prefix-list LABELS seq 15 permit 4.4.4.4/32
+CSR5(config)#ip prefix-list LABELS seq 20 permit 5.5.5.5/32
+CSR5(config)#ip prefix-list LABELS seq 25 permit 6.6.6.6/32
+CSR5(config)#ip prefix-list LABELS seq 30 permit 19.19.19.19/32
+CSR5(config)#!
+CSR5(config)#mpls ldp router-id Loopback0 force
+CSR5(config)#!
+CSR5(config)#!
+CSR5(config)#control-plane
+CSR5(config-cp)#!
+CSR5(config-cp)# !
+CSR5(config-cp)# !
+CSR5(config-cp)# !
+CSR5(config-cp)# !
+CSR5(config-cp)#!
+CSR5(config-cp)#
+*Jul 10 02:07:47.712: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback0, changed state to up
+*Jul 10 02:07:47.856: %IOSXE-4-PLATFORM: R0/0: kernel: e1000: Gi1: e1000_phy_read_status: Error reading PHY register
+*Jul 10 02:07:48.012: %IOSXE-4-PLATFORM: R0/0: kernel: e1000: Gi2: e1000_phy_read_status: Error reading PHY register
+*Jul 10 02:07:48.099: %IOSXE-4-PLATFORM: R0/0: kernel: e1000: Gi3: e1000_phy_read_status: Error reading PHY register
+*Jul 10 02:07:48.190: %IOSXE-4-PLATFORM: R0/0: kernel!
+CSR5(config-cp)#!
+CSR5(config-cp)#!
+CSR5(config-cp)#!
+CSR5(config-cp)#line con 0
+CSR5(config-line)# stopbits 1
+CSR5(config-line)#line vty 0 4
+CSR5(config-line)# login
+% Login disabled on line 1, until 'password' is set
+% Login disabled on line 2, until 'password' is set
+% Login disabled on line 3, until 'password' is set
+% Login disabled on line 4, until 'password' is set
+% Login disabled on line 5, until 'password' is set
+CSR5(config-line)#!
+CSR5(config-line)#!
+CSR5(config-line)#end: e1000: Gi4: e1000_phy_read_status: Error reading PHY register
+*Jul 10 02:07:48.281: %LDP-5-INFO: default: LDP ID removed
+CSR5#
+CSR5#
+CSR5#
+*Jul 10 02:07:52.972: %LINK-3-UPDOWN: Interface GigabitEthernet1, changed state to up
+*Jul 10 02:07:52.986: %LINK-3-UPDOWN: Interface GigabitEthernet2, changed state to up
+*Jul 10 02:07:52.988: %LINK-3-UPDOWN: Interface GigabitEthernet3, changed state to up
+*Jul 10 02:07:52.988: %LINK-3-UPDOWN: Interface GigabitEthernet4, changed state to up
+*Jul 10 02:07:53.923: %SYS-5-CONFIG_I: Configured from console by console
+CSR5#
+CSR5#
+CSR5#
+*Jul 10 02:07:53.973: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1, changed state to up
+*Jul 10 02:07:54.036: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet2, changed state to up
+*Jul 10 02:07:54.036: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet3, changed state to up
+*Jul 10 02:07:54.036: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet4, changed state to up
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+*Jul 10 02:07:57.142: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet1 from LOADING to FULL, Loading Done
+*Jul 10 02:08:01.212: %OSPF-5-ADJCHG: Process 1, Nbr 6.6.6.6 on GigabitEthernet2 from LOADING to FULL, Loading Done
+*Jul 10 02:08:02.663: %OSPF-5-ADJCHG: Process 1, Nbr 19.19.19.19 on GigabitEthernet4 from LOADING to FULL, Loading Done
+*Jul 10 02:08:03.549: %OSPF-5-ADJCHG: Process 1, Nbr 8.8.8.8 on GigabitEthernet3 from LOADING to FULL, Loading Done
+*Jul 10 02:08:03.850: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (1) is UP
+*Jul 10 02:08:04.238: %LDP-5-NBRCHG: LDP Neighbor 6.6.6.6:0 (2) is UP
+*Jul 10 02:08:05.155: %LDP-5-NBRCHG: LDP Neighbor 19.19.19.19:0 (3) is UP
+CSR5#
+CSR5#
+CSR5#
+CSR5#

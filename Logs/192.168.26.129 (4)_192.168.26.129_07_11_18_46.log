@@ -1,0 +1,291 @@
+
+
+CSR5>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR5 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+CSR5>en
+CSR5#wr
+Building configuration...
+[OK]
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#terminal length 0
+CSR5#more system:running-config
+!
+! Last configuration change at 02:07:53 UTC Tue Jul 10 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR5
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 500 599
+mpls ldp session protection
+mpls ldp label
+ allocate global prefix-list LABELS
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9WWLW89R2O3
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 5.5.5.5 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address 20.4.5.2 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet2
+ ip address 20.5.6.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet3
+ ip address 10.5.8.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet4
+ ip address 20.5.19.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+router ospf 1
+ network 5.5.5.5 0.0.0.0 area 0
+ network 10.5.8.0 0.0.0.3 area 0
+ network 20.4.5.0 0.0.0.3 area 0
+ network 20.5.6.0 0.0.0.3 area 0
+ network 20.5.19.0 0.0.0.3 area 0
+ mpls ldp sync
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+ip prefix-list LABELS seq 10 permit 3.3.3.3/32
+ip prefix-list LABELS seq 15 permit 4.4.4.4/32
+ip prefix-list LABELS seq 20 permit 5.5.5.5/32
+ip prefix-list LABELS seq 25 permit 6.6.6.6/32
+ip prefix-list LABELS seq 30 permit 19.19.19.19/32
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ login
+!
+!
+end
+
+CSR5#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR5 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+

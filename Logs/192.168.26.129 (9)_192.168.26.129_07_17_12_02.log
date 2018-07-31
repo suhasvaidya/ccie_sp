@@ -1,0 +1,639 @@
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh bgp sum              
+Tue Jul 10 16:41:55.015 UTC
+BGP router identifier 20.20.20.20, local AS number 1
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 3
+BGP main routing table version 3
+BGP NSR Initial initsync version 2 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               3          3          3          3           3           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+10.19.20.1        0   100      43      45        3    0    0 00:39:09          0
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh bgp sum
+Tue Jul 10 16:49:51.533 UTC
+BGP router identifier 20.20.20.20, local AS number 1
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 3
+BGP main routing table version 3
+BGP NSR Initial initsync version 2 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               3          3          3          3           3           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+10.19.20.1        0   100      51      53        3    0    0 00:47:06          0
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh bgp sum
+Tue Jul 10 16:49:53.433 UTC
+BGP router identifier 20.20.20.20, local AS number 1
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 3
+BGP main routing table version 3
+BGP NSR Initial initsync version 2 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               3          3          3          3           3           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+10.19.20.1        0   100      51      53        3    0    0 00:47:08          0
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh bgp sum
+Tue Jul 10 16:51:29.426 UTC
+BGP router identifier 20.20.20.20, local AS number 1
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 3
+BGP main routing table version 3
+BGP NSR Initial initsync version 2 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               3          3          3          3           3           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+10.19.20.1        0   100      53      55        3    0    0 00:48:44          0
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh bgp sum
+Tue Jul 10 16:54:42.873 UTC
+BGP router identifier 20.20.20.20, local AS number 1
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 4
+BGP main routing table version 4
+BGP NSR Initial initsync version 2 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               4          4          4          4           4           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+10.19.20.1        0   100      57      58        4    0    0 00:51:57          1
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh bgp sum
+Tue Jul 10 16:54:44.373 UTC
+BGP router identifier 20.20.20.20, local AS number 1
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 4
+BGP main routing table version 4
+BGP NSR Initial initsync version 2 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               4          4          4          4           4           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+10.19.20.1        0   100      57      58        4    0    0 00:51:59          1
+
+RP/0/0/CPU0:XR2#sh bgp    
+Tue Jul 10 16:54:46.443 UTC
+BGP router identifier 20.20.20.20, local AS number 1
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 4
+BGP main routing table version 4
+BGP NSR Initial initsync version 2 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+Status codes: s suppressed, d damped, h history, * valid, > best
+              i - internal, r RIB-failure, S stale, N Nexthop-discard
+Origin codes: i - IGP, e - EGP, ? - incomplete
+   Network            Next Hop            Metric LocPrf Weight Path
+*> 1.1.1.1/32         10.19.20.1                             0 100 100 i
+*> 20.20.20.20/32     0.0.0.0                  0         32768 i
+
+Processed 2 prefixes, 2 paths
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh bgp
+Tue Jul 10 16:57:09.413 UTC
+BGP router identifier 20.20.20.20, local AS number 1
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 4
+BGP main routing table version 4
+BGP NSR Initial initsync version 2 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+Status codes: s suppressed, d damped, h history, * valid, > best
+              i - internal, r RIB-failure, S stale, N Nexthop-discard
+Origin codes: i - IGP, e - EGP, ? - incomplete
+   Network            Next Hop            Metric LocPrf Weight Path
+*> 1.1.1.1/32         10.19.20.1                             0 100 100 i
+*> 20.20.20.20/32     0.0.0.0                  0         32768 i
+
+Processed 2 prefixes, 2 paths
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show route
+Tue Jul 10 16:57:15.292 UTC
+
+Codes: C - connected, S - static, R - RIP, B - BGP, (>) - Diversion path
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - ISIS, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, su - IS-IS summary null, * - candidate default
+       U - per-user static route, o - ODR, L - local, G  - DAGR, l - LISP
+       A - access/subscriber, a - Application route
+       M - mobile route, r - RPL, (!) - FRR Backup path
+
+Gateway of last resort is not set
+
+B    1.1.1.1/32 [20/0] via 10.19.20.1, 00:02:32
+C    10.19.20.0/30 is directly connected, 14:57:11, GigabitEthernet0/0/0/2
+L    10.19.20.2/32 is directly connected, 14:57:11, GigabitEthernet0/0/0/2
+L    20.20.20.20/32 is directly connected, 14:57:12, Loopback0
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#ping 1.1.1.1 so lo0
+Tue Jul 10 16:57:23.062 UTC
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 1.1.1.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 19/19/19 ms
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#traceroute 1.1.1.1 source 20.20.20.20
+Tue Jul 10 16:57:35.791 UTC
+
+Type escape sequence to abort.
+Tracing the route to 1.1.1.1
+
+ 1  10.19.20.1 0 msec  0 msec  0 msec 
+ 2  20.6.19.1 [MPLS: Labels 601/208 Exp 0] 19 msec  29 msec  19 msec 
+ 3  20.4.6.1 [MPLS: Labels 402/208 Exp 0] 19 msec  29 msec  19 msec 
+ 4  10.1.2.2 [MPLS: Label 208 Exp 0] 9 msec  9 msec  9 msec 
+ 5  10.1.2.1 19 msec  *  19 msec 
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#terminal length 0
+Tue Jul 10 16:58:45.416 UTC
+RP/0/0/CPU0:XR2#configure terminal
+Tue Jul 10 16:58:45.586 UTC
+RP/0/0/CPU0:XR2(config)#no logging console
+RP/0/0/CPU0:XR2(config)#commit
+Tue Jul 10 16:58:46.056 UTC
+RP/0/0/CPU0:XR2(config)#exit
+RP/0/0/CPU0:XR2#show running-config
+Tue Jul 10 16:58:46.396 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Tue Jul 10 16:00:14 2018 by cisco
+!
+hostname XR2
+interface Loopback0
+ ipv4 address 20.20.20.20 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/1
+ shutdown
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 10.19.20.2 255.255.255.252
+!
+route-policy PASS
+  pass
+end-policy
+!
+router bgp 1
+ address-family ipv4 unicast
+  network 20.20.20.20/32
+ !
+ neighbor 10.19.20.1
+  remote-as 100
+  address-family ipv4 unicast
+   route-policy PASS in
+   route-policy PASS out
+  !
+ !
+!
+end
+
+RP/0/0/CPU0:XR2#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR2 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: 
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR2#terminal length 0
+Tue Jul 10 16:59:20.684 UTC
+RP/0/0/CPU0:XR2#configure terminal
+Tue Jul 10 16:59:20.834 UTC
+RP/0/0/CPU0:XR2(config)#no logging console
+RP/0/0/CPU0:XR2(config)#commit
+Tue Jul 10 16:59:21.284 UTC
+RP/0/0/CPU0:XR2(config)#exit
+RP/0/0/CPU0:XR2#show running-config
+Tue Jul 10 16:59:21.614 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Tue Jul 10 16:00:14 2018 by cisco
+!
+hostname XR2
+interface Loopback0
+ ipv4 address 20.20.20.20 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/1
+ shutdown
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 10.19.20.2 255.255.255.252
+!
+route-policy PASS
+  pass
+end-policy
+!
+router bgp 1
+ address-family ipv4 unicast
+  network 20.20.20.20/32
+ !
+ neighbor 10.19.20.1
+  remote-as 100
+  address-family ipv4 unicast
+   route-policy PASS in
+   route-policy PASS out
+  !
+ !
+!
+end
+
+RP/0/0/CPU0:XR2#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR2 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+

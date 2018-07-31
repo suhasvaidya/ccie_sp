@@ -1,0 +1,112 @@
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show ip route
+Sat Jul 28 16:26:27.327 UTC
+
+Codes: C - connected, S - static, R - RIP, B - BGP, (>) - Diversion path
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - ISIS, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, su - IS-IS summary null, * - candidate default
+       U - per-user static route, o - ODR, L - local, G  - DAGR, l - LISP
+       A - access/subscriber, a - Application route
+       M - mobile route, r - RPL, (!) - FRR Backup path
+
+Gateway of last resort is not set
+
+B    1.1.1.1/32 [20/0] via 10.19.20.1, 00:16:18
+C    10.19.20.0/30 is directly connected, 00:17:31, GigabitEthernet0/0/0/2
+L    10.19.20.2/32 is directly connected, 00:17:31, GigabitEthernet0/0/0/2
+L    20.20.20.20/32 is directly connected, 00:17:32, Loopback0
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#ping 1.1.1.1 so lo0
+Sat Jul 28 16:26:38.477 UTC
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 1.1.1.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 19/35/79 ms
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#traceroute 1.1.1.1 source 20.20.20.20 
+Sat Jul 28 16:26:56.895 UTC
+
+Type escape sequence to abort.
+Tracing the route to 1.1.1.1
+
+ 1  10.19.20.1 9 msec  0 msec  0 msec 
+ 2  20.6.19.1 [MPLS: Labels 604/205 Exp 0] 9 msec  19 msec  19 msec 
+ 3  20.3.6.1 [MPLS: Labels 303/205 Exp 0] 9 msec  9 msec  19 msec 
+ 4  10.1.2.2 [MPLS: Label 205 Exp 0] 9 msec  9 msec  0 msec 
+ 5  10.1.2.1 19 msec  *  9 msec 
+RP/0/0/CPU0:XR2#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR2 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+

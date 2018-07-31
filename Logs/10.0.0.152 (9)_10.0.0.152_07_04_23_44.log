@@ -1,0 +1,239 @@
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#configure terminal 
+Wed Jul  4 14:34:02.107 UTC
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#vrf ?
+  WORD  VRF name
+RP/0/0/CPU0:XR1(config)#vrf VPN_A
+RP/0/0/CPU0:XR1(config-vrf)#?
+  address-family          AFI/SAFI configuration
+  apply-group             Apply configuration from a group
+  apply-group-append      Append apply-group configuration from a group
+  apply-group-remove      Remove a group from apply-group configuration
+  clear                   Clear the uncommitted configuration
+  commit                  Commit the configuration changes to running
+  describe                Describe a command without taking real actions
+  description             A description for the VRF
+  do                      Run an exec command
+  exclude-group           Exclude apply-group configuration from a group
+  exclude-item            Negate a command or set its defaults
+  exit                    Exit from this submode
+  fallback-vrf            Fallback vrf for this VRF
+  mhost                   Multicast host stack options
+  mode                    VRF mode which determines the max prefix scale
+  no                      Negate a command or set its defaults
+  pwd                     Commands used to reach current submode
+  remote-route-filtering  Enable/Disable remote route filtering per VRF
+  root                    Exit to the global configuration mode
+  show                    Show contents of configuration
+  vpn                     VPN ID for the VRF
+RP/0/0/CPU0:XR1(config-vrf)#r
+remote-route-filtering  root  
+RP/0/0/CPU0:XR1(config-vrf)#   
+RP/0/0/CPU0:XR1(config-vrf)#address-family ?
+  ipv4  IPv4 address family
+  ipv6  IPv6 address family
+RP/0/0/CPU0:XR1(config-vrf)#address-family ipv4 ?
+  flowspec   Flowspec sub address family
+  multicast  Multicast topology
+  unicast    Unicast sub address family
+RP/0/0/CPU0:XR1(config-vrf)#address-family ipv4 unicast ?
+  export   VRF export
+  import   VRF import
+  maximum  Set maximum prefix limit
+  <cr>     
+RP/0/0/CPU0:XR1(config-vrf)#address-family ipv4 unicast 
+RP/0/0/CPU0:XR1(config-vrf-af)#
+RP/0/0/CPU0:XR1(config-vrf-af)#root ?
+  <cr>  Exit to the global configuration mode
+RP/0/0/CPU0:XR1(config-vrf-af)#     
+RP/0/0/CPU0:XR1(config-vrf-af)#
+RP/0/0/CPU0:XR1(config-vrf-af)#
+RP/0/0/CPU0:XR1(config-vrf-af)#import route-target 100:1
+RP/0/0/CPU0:XR1(config-vrf-af)#export route-target 100:1
+RP/0/0/CPU0:XR1(config-vrf-af)#
+RP/0/0/CPU0:XR1(config-vrf-af)#
+RP/0/0/CPU0:XR1(config-vrf-af)#commit 
+Wed Jul  4 14:35:28.951 UTC
+RP/0/0/CPU0:XR1(config-vrf-af)#
+RP/0/0/CPU0:XR1(config-vrf-af)#
+RP/0/0/CPU0:XR1(config-vrf-af)#
+RP/0/0/CPU0:XR1(config-vrf-af)#
+RP/0/0/CPU0:XR1(config-vrf-af)#
+RP/0/0/CPU0:XR1(config-vrf-af)#
+RP/0/0/CPU0:XR1(config-vrf-af)#
+RP/0/0/CPU0:XR1(config-vrf-af)#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR1 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
