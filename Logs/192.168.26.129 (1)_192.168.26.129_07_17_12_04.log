@@ -1,0 +1,777 @@
+
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh bgp summ
+CSR2#sh bgp summ
+BGP router identifier 2.2.2.2, local AS number 100
+BGP table version is 7, main routing table version 7
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+19.19.19.19     4          100     838     927        7    0    0 13:49:45        0
+CSR2#
+CSR2#
+CSR2#sh bg
+CSR2#sh bgp vpn
+CSR2#sh bgp vpnv4
+CSR2#sh bgp vpnv4 su
+CSR2#sh bgp vr      
+CSR2#sh bgp vrf VPN_A sum
+CSR2#sh bgp vrf VPN_A sum
+CSR2#
+CSR2#
+CSR2#sh run | s rb       
+CSR2#sh run | s r b
+router bgp 100
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 next-hop-self
+ exit-address-family
+ !
+ address-family vpnv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 send-community extended
+ exit-address-family
+ !
+ address-family ipv4 vrf VPN_A
+  neighbor 10.1.2.1 remote-as 1
+  neighbor 10.1.2.1 activate
+ exit-address-family
+CSR2#
+CSR2#sh 
+CSR2#sh bg
+CSR2#sh bgp su
+CSR2#sh bgp vr
+CSR2#sh bgp vrf VPN_A 
+BGP table version is 62, local router ID is 2.2.2.2
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+Route Distinguisher: 100:1 (default for vrf VPN_A)
+ *>  1.1.1.1/32       10.1.2.1                 0             0 1 i
+ *>i 20.20.20.20/32   19.19.19.19              0    100      0 1 i
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh bgp vrf VPN_A sum
+CSR2#sh bgp vrf VPN_A sum
+CSR2#sh bgp vrf VPN_A    
+BGP table version is 62, local router ID is 2.2.2.2
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+Route Distinguisher: 100:1 (default for vrf VPN_A)
+ *>  1.1.1.1/32       10.1.2.1                 0             0 1 i
+ *>i 20.20.20.20/32   19.19.19.19              0    100      0 1 i
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh run | s r b
+router bgp 100
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 next-hop-self
+ exit-address-family
+ !
+ address-family vpnv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 send-community extended
+ exit-address-family
+ !
+ address-family ipv4 vrf VPN_A
+  neighbor 10.1.2.1 remote-as 1
+  neighbor 10.1.2.1 activate
+ exit-address-family
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#router bgp 100
+CSR2(config-router)# address-family ipv4 vrf VPN_A
+CSR2(config-router-af)#neighbor 10.1.2.1 as
+CSR2(config-router-af)#neighbor 10.1.2.1 as-override 
+CSR2(config-router-af)#
+CSR2(config-router-af)#commi
+CSR2(config-router-af)#commi
+                       ^
+% Invalid input detected at '^' marker.
+
+CSR2(config-router-af)#end
+CSR2#
+CSR2#
+CSR2#conf t
+*Jul 10 16:56:06.527: %SYS-5-CONFIG_I: Configured from console by csh run | s r b
+router bgp 100
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 next-hop-self
+ exit-address-family
+ !
+ address-family vpnv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 send-community extended
+ exit-address-family
+ !
+ address-family ipv4 vrf VPN_A
+  neighbor 10.1.2.1 remote-as 1
+  neighbor 10.1.2.1 activate
+  neighbor 10.1.2.1 as-override
+ exit-address-family
+CSR2#
+CSR2#
+CSR2#sh bgp vrf VPN_A    
+BGP table version is 62, local router ID is 2.2.2.2
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+Route Distinguisher: 100:1 (default for vrf VPN_A)
+ *>  1.1.1.1/32       10.1.2.1                 0             0 1 i
+ *>i 20.20.20.20/32   19.19.19.19              0    100      0 1 i
+CSR2#
+CSR2#
+CSR2#sh bgp vrf VPN_A 
+BGP table version is 62, local router ID is 2.2.2.2
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+Route Distinguisher: 100:1 (default for vrf VPN_A)
+ *>  1.1.1.1/32       10.1.2.1                 0             0 1 i
+ *>i 20.20.20.20/32   19.19.19.19              0    100      0 1 i
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh bgp vrf VPN_A 
+BGP table version is 62, local router ID is 2.2.2.2
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+Route Distinguisher: 100:1 (default for vrf VPN_A)
+ *>  1.1.1.1/32       10.1.2.1                 0             0 1 i
+ *>i 20.20.20.20/32   19.19.19.19              0    100      0 1 i
+CSR2#
+CSR2#sh bgp vrf VPN_A 
+BGP table version is 62, local router ID is 2.2.2.2
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+Route Distinguisher: 100:1 (default for vrf VPN_A)
+ *>  1.1.1.1/32       10.1.2.1                 0             0 1 i
+ *>i 20.20.20.20/32   19.19.19.19              0    100      0 1 i
+CSR2#
+CSR2#
+CSR2#sh bgp vrf VPN_A 
+BGP table version is 62, local router ID is 2.2.2.2
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+Route Distinguisher: 100:1 (default for vrf VPN_A)
+ *>  1.1.1.1/32       10.1.2.1                 0             0 1 i
+ *>i 20.20.20.20/32   19.19.19.19              0    100      0 1 i
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#terminal length 0
+CSR2#more system:running-config
+!
+! Last configuration change at 16:56:06 UTC Tue Jul 10 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition VPN_A
+ rd 100:1
+ route-target export 100:1
+ route-target import 100:1
+ !
+ address-family ipv4
+ exit-address-family
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 200 299
+mpls ldp session protection
+mpls ldp label
+ allocate global prefix-list LABELS
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9S2KOPAUVOD
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+!
+interface Loopback10
+ no ip address
+!
+interface GigabitEthernet1
+ vrf forwarding VPN_A
+ ip address 10.1.2.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.2.4.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet3
+ ip address 20.2.3.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+!
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp sync
+!
+router bgp 100
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 next-hop-self
+ exit-address-family
+ !
+ address-family vpnv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 send-community extended
+ exit-address-family
+ !
+ address-family ipv4 vrf VPN_A
+  neighbor 10.1.2.1 remote-as 1
+  neighbor 10.1.2.1 activate
+  neighbor 10.1.2.1 as-override
+ exit-address-family
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+ip prefix-list LABELS seq 10 permit 3.3.3.3/32
+ip prefix-list LABELS seq 15 permit 4.4.4.4/32
+ip prefix-list LABELS seq 20 permit 5.5.5.5/32
+ip prefix-list LABELS seq 25 permit 6.6.6.6/32
+ip prefix-list LABELS seq 30 permit 19.19.19.19/32
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR2#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR2 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+CSR2>
+CSR2>
+CSR2>enable
+CSR2#terminal length 0
+CSR2#more system:running-config
+!
+! Last configuration change at 16:56:06 UTC Tue Jul 10 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition VPN_A
+ rd 100:1
+ route-target export 100:1
+ route-target import 100:1
+ !
+ address-family ipv4
+ exit-address-family
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 200 299
+mpls ldp session protection
+mpls ldp label
+ allocate global prefix-list LABELS
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9S2KOPAUVOD
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+!
+interface Loopback10
+ no ip address
+!
+interface GigabitEthernet1
+ vrf forwarding VPN_A
+ ip address 10.1.2.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.2.4.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet3
+ ip address 20.2.3.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+!
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp sync
+!
+router bgp 100
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 next-hop-self
+ exit-address-family
+ !
+ address-family vpnv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 send-community extended
+ exit-address-family
+ !
+ address-family ipv4 vrf VPN_A
+  neighbor 10.1.2.1 remote-as 1
+  neighbor 10.1.2.1 activate
+  neighbor 10.1.2.1 as-override
+ exit-address-family
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+ip prefix-list LABELS seq 10 permit 3.3.3.3/32
+ip prefix-list LABELS seq 15 permit 4.4.4.4/32
+ip prefix-list LABELS seq 20 permit 5.5.5.5/32
+ip prefix-list LABELS seq 25 permit 6.6.6.6/32
+ip prefix-list LABELS seq 30 permit 19.19.19.19/32
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR2#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR2 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+

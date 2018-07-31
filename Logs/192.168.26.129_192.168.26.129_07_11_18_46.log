@@ -1,0 +1,473 @@
+
+R1>
+R1>
+R1>
+R1>en
+R1#ping 20.20.20.20 so
+R1#ping 20.20.20.20 source lo0 
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 20.20.20.20, timeout is 2 seconds:
+Packet sent with a source address of 1.1.1.1 
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 48/51/52 ms
+R1#
+R1#
+R1#trace
+R1#traceroute 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+R1>en
+R1#
+R1#
+R1#
+R1#trac
+R1#traceroute 20.20.20.20 so
+R1#traceroute 20.20.20.20 source lo0
+Type escape sequence to abort.
+Tracing the route to 20.20.20.20
+VRF info: (vrf in name/id, vrf out name/id)
+  1 10.1.2.2 40 msec 28 msec 72 msec
+  2 20.2.4.2 [MPLS: Labels 403/19005 Exp 0] 68 msec 40 msec 48 msec
+  3 20.4.6.2 [MPLS: Labels 603/19005 Exp 0] 48 msec 32 msec 52 msec
+  4 20.6.19.2 48 msec 36 msec 52 msec
+  5 10.19.20.2 44 msec 32 msec * 
+R1#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1>en
+R1#
+R1#
+R1#
+R1#
+R1#sh run | s ip route
+ip route 0.0.0.0 0.0.0.0 10.1.2.2
+R1#
+R1#
+R1#con ft
+% Ambiguous command:  "con ft"
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#no ip route
+% Incomplete command.
+
+R1(config)#no ip route 0.0.0.0 0.0.0.0 10.1.2.2
+R1(config)#
+R1(config)#router rip
+R1(config)#router rip v
+R1(config)#router rip ?
+  <cr>
+
+R1(config)#router rip 
+R1(config-router)#ver
+R1(config-router)#version ?
+  <1-2>  rip version 1 or 2
+
+R1(config-router)#version 2
+R1(config-router)#
+R1(config-router)#net
+R1(config-router)#network 10.1.2.0 ?
+  <cr>
+
+R1(config-router)#network 10.1.2.0 
+R1(config-router)#cl
+R1(config-router)#ip
+R1(config-router)#cl
+R1(config-router)#ne
+R1(config-router)#net
+R1(config-router)#network cl
+R1(config-router)#?         
+Router configuration commands:
+  address-family          Enter Address Family command mode
+  auto-summary            Enable automatic network number summarization
+  bfd                     BFD configuration commands
+  default                 Set a command to its defaults
+  default-information     Control distribution of default information
+  default-metric          Set metric of redistributed routes
+  distance                Define an administrative distance
+  distribute-list         Filter networks in routing updates
+  exit                    Exit from routing protocol configuration mode
+  flash-update-threshold  Specify flash update threshold in second
+  help                    Description of the interactive help system
+  input-queue             Specify input queue depth
+  maximum-paths           Forward packets over multiple paths
+  neighbor                Specify a neighbor router
+  network                 Enable routing on an IP network
+  no                      Negate a command or set its defaults
+  offset-list             Add or subtract offset from RIP metrics
+  output-delay            Interpacket delay for RIP updates
+  passive-interface       Suppress routing updates on an interface
+  redistribute            Redistribute information from another routing
+                          protocol
+          
+R1(config-router)#no cl
+R1(config-router)#no cla
+R1(config-router)#no ?  
+  address-family          Enter Address Family command mode
+  auto-summary            Enable automatic network number summarization
+  bfd                     BFD configuration commands
+  default-information     Control distribution of default information
+  default-metric          Set metric of redistributed routes
+  distance                Define an administrative distance
+  distribute-list         Filter networks in routing updates
+  flash-update-threshold  Specify flash update threshold in second
+  input-queue             Specify input queue depth
+  maximum-paths           Forward packets over multiple paths
+  neighbor                Specify a neighbor router
+  network                 Enable routing on an IP network
+  offset-list             Add or subtract offset from RIP metrics
+  output-delay            Interpacket delay for RIP updates
+  passive-interface       Suppress routing updates on an interface
+  redistribute            Redistribute information from another routing
+                          protocol
+  timers                  Adjust routing timers
+  traffic-share           How to compute traffic share over alternate paths
+  validate-update-source  Perform sanity checks against source address of
+                          routing updates
+  version                 Set routing protocol version
+          
+R1(config-router)#no au
+R1(config-router)#no auto-summary 
+R1(config-router)#
+R1(config-router)#net
+R1(config-router)#network ?
+  A.B.C.D  Network number
+
+R1(config-router)#network 10.1.2.0 ?
+  <cr>
+
+R1(config-router)#network 10.1.2.0  
+R1(config-router)#?
+Router configuration commands:
+  address-family          Enter Address Family command mode
+  auto-summary            Enable automatic network number summarization
+  bfd                     BFD configuration commands
+  default                 Set a command to its defaults
+  default-information     Control distribution of default information
+  default-metric          Set metric of redistributed routes
+  distance                Define an administrative distance
+  distribute-list         Filter networks in routing updates
+  exit                    Exit from routing protocol configuration mode
+  flash-update-threshold  Specify flash update threshold in second
+  help                    Description of the interactive help system
+  input-queue             Specify input queue depth
+  maximum-paths           Forward packets over multiple paths
+  neighbor                Specify a neighbor router
+  network                 Enable routing on an IP network
+  no                      Negate a command or set its defaults
+  offset-list             Add or subtract offset from RIP metrics
+  output-delay            Interpacket delay for RIP updates
+  passive-interface       Suppress routing updates on an interface
+  redistribute            Redistribute information from another routing
+                          protocol
+  timers                  Adjust routing timers
+  traffic-share           How to compute traffic share over alternate paths
+  validate-update-source  Perform sanity checks against source address of
+                          routing updates
+  version                 Set routing protocol version
+
+R1(config-router)#network 1.1.1.1 
+R1(config-router)#
+R1(config-router)#
+R1(config-router)#
+R1(config-router)#add
+R1(config-router)#address-family v
+R1(config-router)#vr              
+R1(config-router)#vrf
+R1(config-router)#add
+R1(config-router)#address-family ip
+R1(config-router)#address-family ipv4 vr
+R1(config-router)#address-family ipv4 vrf VPN_A ?
+  <cr>
+
+R1(config-router)#address-family ipv4 vrf VPN_A 
+% VRF VPN_A does not exist or does not have a RD
+R1(config-router)#exit
+R1(config)#
+R1(config)#exit
+R1#
+R1#sh run | 
+*Jul 10 08:57:47.770: %SYS-5-CONFIG_I: Configured from console by consoles r 
+R1#sh run | s r r
+R1#sh run | s r r
+router rip
+ version 2
+ network 1.0.0.0
+ network 10.0.0.0
+ no auto-summary
+R1#
+R1#
+R1#
+R1#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+R1>en
+R1#
+R1#sh ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/32 is subnetted, 1 subnets
+C        1.1.1.1 is directly connected, Loopback0
+      10.0.0.0/8 is variably subnetted, 3 subnets, 2 masks
+C        10.1.2.0/30 is directly connected, FastEthernet0/0
+L        10.1.2.1/32 is directly connected, FastEthernet0/0
+R        10.19.20.0/30 [120/1] via 10.1.2.2, 00:00:05, FastEthernet0/0
+R1#
+R1#
+R1#
+R1#
+R1#sh ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/32 is subnetted, 1 subnets
+C        1.1.1.1 is directly connected, Loopback0
+      10.0.0.0/8 is variably subnetted, 3 subnets, 2 masks
+C        10.1.2.0/30 is directly connected, FastEthernet0/0
+L        10.1.2.1/32 is directly connected, FastEthernet0/0
+R        10.19.20.0/30 [120/1] via 10.1.2.2, 00:00:17, FastEthernet0/0
+      20.0.0.0/32 is subnetted, 1 subnets
+R        20.20.20.20 [120/2] via 10.1.2.2, 00:00:02, FastEthernet0/0
+R1#
+R1#
+R1#wr
+Building configuration...
+[OK]
+R1#
+R1#
+R1#vutn1k0n0opn
+    ^
+% Invalid input detected at '^' marker.
+
+R1#
+R1#terminal length 0
+R1#write
+Building configuration...
+[OK]
+R1#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+

@@ -1,0 +1,143 @@
+
+CSR2#
+CSR2#sh run | s r o
+router ospf 100 vrf VPN_A
+ redistribute bgp 100 subnets
+ network 10.1.2.0 0.0.0.3 area 0
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp sync
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#no router ospf 100 vrf VPN_A
+CSR2(config)#
+CSR2(config)#end      
+CSR2#
+CSR2#
+CSR2#
+*Jul 10 15:55:48.226: %SYS-5-CONFIG_I: Configured from console by consolesh run | 
+CSR2#sh run | s r o
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp sync
+CSR2#
+CSR2#sh run | s r b
+router bgp 100
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 next-hop-self
+ exit-address-family
+ !
+ address-family vpnv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 send-community extended
+ exit-address-family
+ !
+ address-family ipv4 vrf VPN_A
+ exit-address-family
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#router bg
+CSR2(config)#router bgp 100
+CSR2(config-router)#nei
+CSR2(config-router)#neighbor 10.1.2.1 remo
+CSR2(config-router)#neighbor 10.1.2.1 remote-as 1
+CSR2(config-router)#
+CSR2(config-router)#ad
+CSR2(config-router)#address-family ip
+CSR2(config-router)#address-family ipv4
+CSR2(config-router)#address-family ipv4 v
+CSR2(config-router)#address-family ipv4 vrf VPN_A
+CSR2(config-router-af)#ne
+CSR2(config-router-af)#neu
+CSR2(config-router-af)#nei
+CSR2(config-router-af)#neighbor 10.1.2.1 ac
+CSR2(config-router-af)#neighbor 10.1.2.1 activate 
+% Specify remote-as or peer-group commands first
+CSR2(config-router-af)#neighbor 10.1.2.1 remo     
+CSR2(config-router-af)#neighbor 10.1.2.1 remot
+CSR2(config-router-af)#neighbor 10.1.2.1 remote-as 1
+CSR2(config-router-af)#
+CSR2(config-router-af)#neighbor 10.1.2.1 a          
+*Jul 10 15:57:03.977: %BGP-5-ADJCHANGE: neighbor 10.1.2.1 vpn vrf VPN_A Up ct
+CSR2(config-router-af)#neighbor 10.1.2.1 activate 
+CSR2(config-router-af)#neighbor 10.1.2.1 activate 
+CSR2(config-router-af)#
+CSR2(config-router-af)#
+CSR2(config-router-af)#EXIT
+CSR2(config-router)#EXIT
+CSR2(config)#EXIT
+CSR2#
+CSR2#s
+*Jul 10 15:57:18.395: %SYS-5-CONFIG_I: Configured from console by consoleh run 
+CSR2#sh run 
+CSR2#sh run | s r b
+router bgp 100
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 10.1.2.1 remote-as 1
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 next-hop-self
+ exit-address-family
+ !
+ address-family vpnv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 send-community extended
+ exit-address-family
+ !
+ address-family ipv4 vrf VPN_A
+  neighbor 10.1.2.1 remote-as 1
+  neighbor 10.1.2.1 activate
+ exit-address-family
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#router bg
+CSR2(config)#router bgp 100
+CSR2(config-router)#no neighbor 10.1.2.1 remote-as 1
+CSR2(config-router)#end
+CSR2#
+CSR2#
+CSR2#sh run | s r b
+*Jul 10 15:57:36.212: %SYS-5-CONFIG_I: Configured from console by console
+CSR2#sh run | s r b
+CSR2#sh run | s r b
+CSR2#sh run | s r b
+router bgp 100
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 next-hop-self
+ exit-address-family
+ !
+ address-family vpnv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 send-community extended
+ exit-address-family
+ !
+ address-family ipv4 vrf VPN_A
+  neighbor 10.1.2.1 remote-as 1
+  neighbor 10.1.2.1 activate
+ exit-address-family
+CSR2#
+CSR2#
+CSR2#

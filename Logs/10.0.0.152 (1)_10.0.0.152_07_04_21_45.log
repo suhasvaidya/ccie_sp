@@ -1,0 +1,1177 @@
+
+CSR2>en
+CSR2#
+CSR2#sh run | s r o
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 10.1.2.0 0.0.0.3 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp sync
+CSR2#
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#router is
+CSR2(config)#router os
+CSR2(config)#router ospf 1
+CSR2(config-router)#no network 10.1.2.0 0.0.0.3 area 0
+CSR2(config-router)#
+CSR2(config-router)#exit
+CSR2(config)#
+CSR2(config)#router bg
+CSR2(config)#router bgp 100
+CSR2(config-router)#nei
+CSR2(config-router)#neighbor 10.1.2.1 remo
+CSR2(config-router)#neighbor 10.1.2.1 remot
+CSR2(config-router)#neighbor 10.1.2.1 remote-as 1
+CSR2(config-router)#add
+CSR2(config-router)#ne             
+*Jul  4 13:07:40.460: %BGP-5-ADJCHANGE: neighbor 10.1.2.1 Up t
+CSR2(config-router)#        
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#exit
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#end
+CSR2#
+CSR2#sh
+CSR2#show  bg
+CSR2#show  bgp 
+*Jul  4 13:08:37.841: %SYS-5-CONFIG_I: Configured from console by consolesum
+CSR2#show  bgp sum
+BGP router identifier 2.2.2.2, local AS number 100
+BGP table version is 2, main routing table version 2
+1 network entries using 248 bytes of memory
+1 path entries using 120 bytes of memory
+1/1 BGP path/bestpath attribute entries using 248 bytes of memory
+1 BGP AS-PATH entries using 24 bytes of memory
+0 BGP route-map cache entries using 0 bytes of memory
+0 BGP filter-list cache entries using 0 bytes of memory
+BGP using 640 total bytes of memory
+BGP activity 1/0 prefixes, 1/0 paths, scan interval 60 secs
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+10.1.2.1        4            1       5       5        2    0    0 00:01:00        1
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh  
+CSR2#show ip rout
+CSR2#show ip route 
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override, p - overrides from PfR
+
+Gateway of last resort is not set
+
+      1.0.0.0/32 is subnetted, 1 subnets
+B        1.1.1.1 [20/0] via 10.1.2.1, 00:01:08
+      2.0.0.0/32 is subnetted, 1 subnets
+C        2.2.2.2 is directly connected, Loopback0
+      3.0.0.0/32 is subnetted, 1 subnets
+O        3.3.3.3 [110/2] via 20.2.3.2, 01:29:33, GigabitEthernet3
+      4.0.0.0/32 is subnetted, 1 subnets
+O        4.4.4.4 [110/2] via 20.2.4.2, 01:25:23, GigabitEthernet2
+      5.0.0.0/32 is subnetted, 1 subnets
+O        5.5.5.5 [110/3] via 20.2.4.2, 01:23:36, GigabitEthernet2
+      6.0.0.0/32 is subnetted, 1 subnets
+O        6.6.6.6 [110/3] via 20.2.4.2, 01:25:23, GigabitEthernet2
+                 [110/3] via 20.2.3.2, 01:29:33, GigabitEthernet3
+      7.0.0.0/32 is subnetted, 1 subnets
+O        7.7.7.7 [110/3] via 20.2.4.2, 01:08:43, GigabitEthernet2
+      8.0.0.0/32 is subnetted, 1 subnets
+O        8.8.8.8 [110/4] via 20.2.4.2, 00:57:07, GigabitEthernet2
+      10.0.0.0/8 is variably subnetted, 5 subnets, 2 masks
+C        10.1.2.0/30 is directly connected, GigabitEthernet1
+L        10.1.2.2/32 is directly connected, GigabitEthernet1
+O        10.4.7.0/30 [110/2] via 20.2.4.2, 01:08:43, GigabitEthernet2
+O        10.5.8.0/30 [110/3] via 20.2.4.2, 01:07:43, GigabitEthernet2
+O        10.19.20.0/30 [110/4] via 20.2.4.2, 00:07:59, GigabitEthernet2
+                       [110/4] via 20.2.3.2, 00:07:59, GigabitEthernet3
+      19.0.0.0/32 is subnetted, 1 subnets
+O        19.19.19.19 [110/4] via 20.2.4.2, 01:20:08, GigabitEthernet2
+                     [110/4] via 20.2.3.2, 01:20:08, GigabitEthernet3
+      20.0.0.0/8 is variably subnetted, 11 subnets, 2 masks
+C        20.2.3.0/30 is directly connected, GigabitEthernet3
+L        20.2.3.1/32 is directly connected, GigabitEthernet3
+C        20.2.4.0/30 is directly connected, GigabitEthernet2
+L        20.2.4.1/32 is directly connected, GigabitEthernet2
+O        20.3.4.0/30 [110/2] via 20.2.4.2, 01:25:23, GigabitEthernet2
+                     [110/2] via 20.2.3.2, 01:25:13, GigabitEthernet3
+O        20.3.6.0/30 [110/2] via 20.2.3.2, 01:29:33, GigabitEthernet3
+O        20.4.5.0/30 [110/2] via 20.2.4.2, 01:23:36, GigabitEthernet2
+O        20.4.6.0/30 [110/2] via 20.2.4.2, 01:25:23, GigabitEthernet2
+          
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#router bg
+CSR2(config)#router bgp 100
+CSR2(config-router)#nei
+CSR2(config-router)#neighbor 19.19.19.19 remo
+CSR2(config-router)#neighbor 19.19.19.19 remot
+CSR2(config-router)#neighbor 19.19.19.19 remote-as 100
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#end
+CSR2#
+CSR2#
+CSR2#
+CSR2#conf t
+*Jul  4 13:10:25.841: %SYS-5-CONFIG_I: Configured from console by cshow ip route 
+CSR2#show  bgp sum 
+BGP router identifier 2.2.2.2, local AS number 100
+BGP table version is 2, main routing table version 2
+1 network entries using 248 bytes of memory
+1 path entries using 120 bytes of memory
+1/1 BGP path/bestpath attribute entries using 248 bytes of memory
+1 BGP AS-PATH entries using 24 bytes of memory
+0 BGP route-map cache entries using 0 bytes of memory
+0 BGP filter-list cache entries using 0 bytes of memory
+BGP using 640 total bytes of memory
+BGP activity 1/0 prefixes, 1/0 paths, scan interval 60 secs
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+10.1.2.1        4            1       7       7        2    0    0 00:02:49        1
+19.19.19.19     4          100       0       0        1    0    0 never    Idle
+CSR2#
+CSR2#
+CSR2#
+CSR2#show  bgp sum
+BGP router identifier 2.2.2.2, local AS number 100
+BGP table version is 2, main routing table version 2
+1 network entries using 248 bytes of memory
+1 path entries using 120 bytes of memory
+1/1 BGP path/bestpath attribute entries using 248 bytes of memory
+1 BGP AS-PATH entries using 24 bytes of memory
+0 BGP route-map cache entries using 0 bytes of memory
+0 BGP filter-list cache entries using 0 bytes of memory
+BGP using 640 total bytes of memory
+BGP activity 1/0 prefixes, 1/0 paths, scan interval 60 secs
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+10.1.2.1        4            1       7       7        2    0    0 00:03:18        1
+19.19.19.19     4          100       0       0        1    0    0 never    Idle
+CSR2#
+CSR2#
+CSR2#sh
+CSR2#show log
+Syslog logging: enabled (0 messages dropped, 2 messages rate-limited, 0 flushes, 0 overruns, xml disabled, filtering disabled)
+
+No Active Message Discriminator.
+
+
+
+No Inactive Message Discriminator.
+
+
+    Console logging: level debugging, 113 messages logged, xml disabled,
+                     filtering disabled
+    Monitor logging: level debugging, 0 messages logged, xml disabled,
+                     filtering disabled
+    Buffer logging:  level debugging, 113 messages logged, xml disabled,
+                    filtering disabled
+    Exception Logging: size (4096 bytes)
+    Count and timestamp logging messages: disabled
+    Persistent logging: disabled
+
+No active filter modules.
+
+    Trap logging: level informational, 112 message lines logged
+        Logging Source-Interface:       VRF Name:
+
+Log Buffer (4096 bytes):
+eceived error notification from peer: Holddown time expired)
+*Jul  4 08:56:04.797: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (2) is UP
+*Jul  4 08:56:36.318: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (2) is DOWN (LDP disabled on interface)
+*Jul  4 08:56:42.188: %LDP-5-NBRCHG: LDP Neighbor 3.3.3.3:0 (1) is DOWN (LDP disabled on interface)
+*Jul  4 08:56:54.519: %LDP-5-NBRCHG: LDP Neighbor 3.3.3.3:0 (1) is UP
+*Jul  4 08:56:54.533: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (2) is UP
+*Jul  4 08:56:55.640: %SYS-5-CONFIG_I: Configured from console by console
+*Jul  4 08:59:35.942: %LDP-5-NBRCHG: LDP Neighbor 3.3.3.3:0 (1) is DOWN (Received error notification from peer: Holddown time expired)
+*Jul  4 08:59:49.627: %LDP-5-NBRCHG: LDP Neighbor 3.3.3.3:0 (1) is UP
+*Jul  4 09:29:44.444: %SYS-5-CONFIG_I: Configured from console by console
+*Jul  4 09:30:47.094: %SYS-5-CONFIG_I: Configured from console by console
+*Jul  4 10:27:00.535: %SYS-5-CONFIG_I: Configured from console by console
+*Jul  4 10:45:00.445: %SYS-5-CONFIG_I: Configured from console by console
+*Jul  4 11:07:53.790: %SYS-5-CONFIG_I: Configured from console by console
+*Jul  4 11:08:19.225: %SYS-5-CONFIG_I: Configured from console by console
+*Jul  4 11:18:46.191: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet2 from FULL to DOWN, Neighbor Down: Interface down or detached
+*Jul  4 11:18:46.191: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet3 from FULL to DOWN, Neighbor Down: Interface down or detached
+*Jul  4 11:18:46.220: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet2 from LOADING to FULL, Loading Done
+*Jul  4 11:18:46.220: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet3 from LOADING to FULL, Loading Done
+*Jul  4 11:21:44.530: %SYS-5-CONFIG_I: Configured from console by console
+*Jul  4 11:21:48.843: %OSPF-5-ADJCHG: Process 1, Nbr 10.1.2.1 on GigabitEthernet1 from LOADING to FULL, Loading Done
+*Jul  4 11:23:18.523: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet1 from LOADING to FULL, Loading Done
+*Jul  4 11:23:58.418: %OSPF-5-ADJCHG: Process 1, Nbr 10.1.2.1 on GigabitEthernet1 from FULL to DOWN, Neighbor Down: Dead timer expired
+*Jul  4 11:35:11.226: %SYS-5-CONFIG_I: Configured from console by console
+*Jul  4 11:37:41.524: %SYS-5-CONFIG_I: Configured from console by console
+*Jul  4 11:39:09.579: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet1 from FULL to DOWN, Neighbor Down: Interface down or detached
+*Jul  4 11:39:09.579: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet2 from FULL to DOWN, Neighbor Down: Interface down or detached
+*Jul  4 11:39:09.579: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet3 from FULL to DOWN, Neighbor Down: Interface down or detached
+*Jul  4 11:39:09.617: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet2 from LOADING to FULL, Loading Done
+*Jul  4 11:39:09.617: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet3 from LOADING to FULL, Loading Done
+*Jul  4 11:39:46.249: %LDP-5-SP: 4.4.4.4:0: session hold up initiated
+*Jul  4 11:39:46.249: %LDP-5-SP: 3.3.3.3:0: session hold up initiated
+*Jul  4 11:39:46.274: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet1 from LOADING to FULL, Loading Done
+*Jul  4 11:39:47.285: %SYS-5-CONFIG_I: Configured from console by console
+*Jul  4 11:40:36.257: LDP Peer 4.4.4.4:0 re-announced
+*Jul  4 11:40:36.257: LDP Peer 3.3.3.3:0 re-announced
+*Jul  4 11:40:42.629: %LDP-5-SP: 4.4.4.4:0: session recovery succeeded
+*Jul  4 11:40:48.623: %LDP-5-SP: 3.3.3.3:0: session recovery succeeded
+*Jul  4 11:40:49.808: %SYS-5-CONFIG_I: Configured from console by console
+*Jul  4 11:42:51.409: %LDP-5-SP: 4.4.4.4:0: session hold up initiated
+*Jul  4 11:43:16.788: %LDP-5-SP: 4.4.4.4:0: session recovery succeeded
+*Jul  4 13:00:04.740: %OSPF-5-ADJCHG: Process 1, Nbr 1.1.1.1 on GigabitEthernet1 from FULL to DOWN, Neighbor Down: Dead timer expired
+*Jul  4 13:07:40.460: %BGP-5-ADJCHANGE: neighbor 10.1.2.1 Up 
+*Jul  4 13:08:37.841: %SYS-5-CONFIG_I: Configured from console by console
+*Jul  4 13:10:25.841: %SYS-5-CONFIG_I: Configured from console by console
+CSR2#        
+CSR2#
+CSR2#
+CSR2#deb
+CSR2#debug bg
+CSR2#debug bgp 
+% Incomplete command.
+
+CSR2#debug bgp ?
+  *         All scopes
+  all       All address families
+  ipv4      Address family
+  ipv6      Address family
+  l2vpn     Address family
+  lmm       Label Management Module debugging
+  nsap      Address family
+  rtfilter  Address family
+  vpnv4     Address family
+  vpnv6     Address family
+  vrf       VRF scope
+
+CSR2#debug bgp *
+% Incomplete command.
+
+CSR2#debug bgp *?
+*  
+
+CSR2#debug bgp * ?
+  all       All address families
+  ipv4      Address family
+  ipv6      Address family
+  l2vpn     Address family
+  lmm       Label Management Module debugging
+  nsap      Address family
+  rtfilter  Address family
+  vpnv4     Address family
+  vpnv6     Address family
+
+CSR2#debug bgp * al
+CSR2#debug bgp * all 
+BGP debugging is on for all address families
+CSR2#
+*Jul  4 13:11:25.796: BGP: topo global:IPv4 Unicast:base Scanning routing tables
+*Jul  4 13:11:25.796: BGP: topo global:IPv6 Unicast:base Scanning routing tables
+*Jul  4 13:11:25.796: BGP: topo global:IPv4 Multicast:base Scanning routing tables
+*Jul  4 13:11:25.796: BGP: topo global:L2VPN E-VPN:base Scanning routing tables
+*Jul  4 13:11:25.796: BGP: topo global:MVPNv4 Unicast:base Scanning routing tables
+*Jul  4 13:11:25.797: BGP: topo global:MVPNv6 Unicast:base Scanning routing tables
+*Jul  4 13:11:30.637: BGP: 19.19.19.19 active went from Idle to Active
+*Jul  4 13:11:30.638: BGP: 19.19.19.19 open active, local address 20.2.4.1
+*Jul  4 13:11:30.648: BGP: 19.19.19.19 open failed: Connection refused by remote host
+*Jul  4 13:11:30.649: BGP: 19.19.19.19 Active open failed - tcb is not available, open active delayed 11264ms (35000ms max, 60% jitter)
+*Jul  4 13:11:30.649: BGP: ses global 19.19.19.19 (0x7FA4B7BA5480:0) act Reset (Active open failed).
+*Jul  4 13:11:30.649: BGP: 19.19.19.19 active went from Active to Idle
+*Jul  4 13:11:30.649: BGP: nbr global 19.19.19.19 Active open failed - open timer running
+*Jul  4 13:11:30.649: BGP: nbr global 19.19.19.19 Active open failed - open timer running
+*Jul  4 13:11:41.899: BGP: 19.19.19.19 active went from Idle to Active
+*Jul  4 13:11:41.900: BGP: 19.19.19.19 open active, local address 20.2.4.1
+*Jul  4 13:11:41.908: BGP: 19.19.19.19 open failed: Connection refused by remote host
+*Jul  4 13:11:41.908: BGP: 19.19.19.19 Active open failed - tcb is not available, open active delayed 6144ms (35000ms max, 60% jitter)
+*Jul  4 13:11:41.908: BGP: ses global 19.19.19.19 (0x7FA49A2D4B28:0) act Reset (Active open failed).
+*Jul  4 13:11:41.908: BGP: 19.19.19.19 active went from Active to Idle
+*Jul  4 13:11:41.908: BGP: nbr global 19.19.19.19 Active open failed - open timer running
+*Jul  4 13:11:41.908: BGP: nbr global 19.19.19.19 Active open failed - open timer runningun
+*Jul  4 13:11:48.044: BGP: 19.19.19.19 active went from Idle to Active
+*Jul  4 13:11:48.044: BGP: 19.19.19.19 open active, local address 20.2.4.1
+*Jul  4 13:11:48.052: BGP: 19.19.19.19 open failed: Connection refused by remote host
+*Jul  4 13:11:48.052: BGP: 19.19.19.19 Active open failed - tcb is not available, open active delayed 9216ms (35000ms max, 60% jitter)
+*Jul  4 13:11:48.052: BGP: ses global 19.19.19.19 (0x7FA4B7BA5480:0) act Reset (Active open failed).
+*Jul  4 13:11:48.052: BGP: 19.19.19.
+CSR2#
+CSR2#19 active went from Active to Idle
+*Jul  4 13:11:48.052: BGP: nbr global 19.19.19.19 Active open failed - open timer running
+*Jul  4 13:11:48.052: BGP: nbr global 19.19.19.19 Active open failed - open timer runningun
+CSR2#
+CSR2#un
+CSR2#de
+CSR2#debu
+CSR2#debug 
+*Jul  4 13:11:57.265: BGP: 19.19.19.19 active went from Idle to Active
+*Jul  4 13:11:57.265: BGP: 19.19.19.19 open active, local address 20.2.4.1
+*Jul  4 13:11:57.274: BGP: 19.19.19.19 open failed: Connection refused by remote host
+*Jul  4 13:11:57.275: BGP: 19.19.19.19 Active open failed - tcb is not available, open active delayed 14336ms (35000ms max, 60% jitter)
+*Jul  4 13:11:57.275: BGP: ses global 19.19.19.19 (0x7FA4B7BA5BD0:0) act Reset (Active open failed).
+*Jul  4 13:11:57.275: 
+CSR2#debug 
+CSR2#debug BGP: 19.19.19.19 active went from Active to Idle
+*Jul  4 13:11:57.275: BGP: nbr global 19.19.19.19 Active open failed - open timer running
+*Jul  4 13:11:57.275: BGP: nbr global 19.19.19.19 Active open failed - open timer running
+CSR2#debug ?
+  aaa                   AAA Authentication, Authorization and Accounting
+  access-expression     Boolean access expression
+  acircuit              Attachment Circuit information
+  acl                   ACL debugs
+  adjacency             adjacency
+  alg                   ALG debugging
+  all                   Enable all debugging
+  alps                  ALPS debug information
+  ancp                  ANCP information
+  apollo                Apollo information
+  appfw                 Application Firewall events
+  apple                 Appletalk information
+  application           Application routing
+  appnav-controller     AppNav Controller Debug
+  arap                  Appletalk Remote Access
+  archive               debug archive commands
+  arp                   IP ARP and HP Probe transactions
+  asnl                  Application Subscribe Notify Layer
+  aspp                  ASPP information
+  async                 Async interface information
+  atm                   ATM interface packets
+  authentication        Access control debugging
+  autonomic             Autonomic Networking
+  backup                Backup events
+  beep                  BEEP debugging
+  bfd                   Bi-directional forwarding detection
+  bgp                   BGP information
+  bing                  Bing(d) debugging
+  bridge-domain         Bridge-domain
+  bsc                   BSC information
+  bstun                 BSTUN information
+  bulkstat              Bulsktat debugging
+  c3pl                  C3PL events
+  caaa                  caaa debug commands
+  call                  Call Information
+  call-admission        Call admission control
+  call-home             Call-Home debugging
+  callback              Callback activity
+  cca                   CCA activity
+  cce                   Common Classification Engine (CCE)
+  cch323                CCH323 information
+  ccm                   Cluster Control Manager HA information
+  ccm-manager           Call Manager Application information
+  ccsip                 CCSIP information
+  cdapi                 CDAPI information
+  cdp                   CDP information
+  cef                   CEF address family independent operations
+  cfgdiff               debug cfgdiff commands
+  chat                  Chat scripts activity
+  checkpoint            Checkpoint Facility Debugging
+  clns                  CLNS information
+  cls                   CLS Information
+  cns                   CNS agents
+  compress              COMPRESS traffic
+  condition             Condition
+  confmodem             Modem configuration database
+  conn                  Connection Manager information
+  cops                  COPS
+  cpc                   CPC Pak Subblock
+  cpl                   Cisco Common Class-based Policy Language debugging
+  crypto                Cryptographic subsystem
+  ctr                   Cloud Tunnel Relay
+  cts                   Cisco Trusted Security
+  ctunnel               Generic CTunnel Interface
+  custom-queue          Custom output queueing
+  cwan                  Catalyst WAN events
+  cws-tunnel            CWS tunnel events
+  dampening             Dampening
+  dcm                   dcm commands
+  decnet                DECnet information
+  device-sensor         Device Sensor
+  dhcp                  DHCP client activity
+  diagnostic            Diagnostic debugging
+  dialer                Dial on Demand
+  dialpeer              Dialpeer info
+  dlsw                  Data Link Switching (DLSw) events
+  dmvpn                 DMVPN protocol
+  dnsix                 Dnsix information
+  domain                Domain debugging
+  drip                  DRiP debug information
+  dsp-resource-manager  DSP Resource Manager Debug
+  dspapi                Generic DSP API
+  dwnld_mgr             IDMGR interaction
+  dxi                   atm-dxi information
+  eap                   EAP debugging
+  ehsa                  EHSA Redundancy debug
+  eigrp                 EIGRP debug commands
+  elog                  Event logging boolean control
+  entry                 Incoming queue entries
+  environment           Environmental Monitoring debug options
+  epc                   Embedded Packet Capture debugging
+  epm                   Policy Enforcemnt Module
+  ethernet              Ethernet debugging commands
+  event                 Event related commands
+  event-manager         Event manager activity
+  fax                   Fax
+  fh_fd_rpc             FH_FD_RPC information
+  fhrp                  Debug First Hop Router Protocol
+  flow                  Flow information
+  flowspec              FlowSpec debugging
+  format                format information
+  fpm                   FPM information
+  frame-relay           Frame Relay
+  fras                  FRAS Debug 
+  fras-host             FRAS Host Debug 
+  frr-manager           IP FRR manager debugging commands
+  funi                  FUNI interface packets
+  gbic                  GBIC security messages
+  glbp                  Gateway Load Balancing Protocol (GLBP)
+  gssapi                GSSAPI debugs
+  gtp                   GTP Debug Information
+  h225                  H.225 Library Debugging
+  h245                  H.245 Library Debugging
+  ha-infra              HA Infra Debugging
+  hpi                   HPI (54x) DSP messages 
+  hqf                   Debugging hqf
+  http                  HTTP Debugging
+  hw-module             Debug hardware module commands
+  iamp                  IAMP Debug
+  idbgroup              Interface Descriptor Block group debug
+  identity              Identity debugging support
+  idmgr                 IDMGR interaction
+  if-mgr                IF_MGR information
+  ifs                   File System information
+  inform_feature_msg    Inform feature msg only
+  interface             Interface Descriptor Block
+  ip                    IP information
+  ipam                  IP Address Manager (IPAM) information
+  ipc                   Interprocess communications debugging
+  iphc                  IPHC information
+  ipv6                  IPv6 information
+  isis                  IS-IS Information
+  issu                  issu debug options
+  kerberos              KERBEROS authentication and authorization
+  keystore              CTS Keystore
+  kpml                  KPML Parser/Builder information
+  kron                  Kron subsys debugs
+  l2ctrl                L2 Control component
+  l2fib                 Layer 2 forwarding Information Base
+  l2tp                  L2TP information
+  l2vpn                 L2VPN debugs
+  lacp                  Link Aggregation Control Protocol
+  lapb                  LAPB protocol transactions
+  lat                   LAT Information
+  license               License debugs
+  lisp                  Locator/ID Separation Protocol
+  list                  Set interface or/and access list for the next debug
+                        command
+  llc2                  LLC2 type II Information
+  lldp                  LLDP information
+  lnm                   Lan Network Manager information
+  lnx                   generic qllc/llc2 conversion activity
+  local-ack             Local ACKnowledgement information
+  location-mgr          Location information manager
+  logging               Add debug messages to logging
+  macdb                 Debug MAC database
+  management            Management applications debugging
+  mcsa                  mcsa debugging
+  mdns                  MDNS feature
+  media                 Media Services
+  mediatrace            Mediatrace debugging
+  memory                Memory related debugging
+  metadata              Metadata debugs
+  mfib                  MFIB address family independent operations
+  mlrib                 MLRIB debugging
+  modem                 Modem control/process activation
+  monitor               SPAN debug information
+  mop                   DECnet MOP server events
+  mpa                   mpa debug information
+  mpls                  MPLS debug
+  mrcp                  Media Resource Control Protocol client
+  mtm                   MTM
+  mvpn                  MVPN events
+  mvr                   MVR debug all
+  mvrp                  Multiple VLAN Registration Protocol
+  nat64                 NAT64 debugging
+  nbf                   NetBIOS information
+  ncia                  Native Client Interface Architecture (NCIA) events
+  netbios-name-cache    NetBIOS name cache tracing
+  netconf               NETCONF information
+  network-rf            network-rf debugging
+  nhrp                  NHRP protocol
+  nmsp                  debug NMSP
+  ntp                   NTP information
+  nve                   Network Virtualization Endpoint
+  nvram                 Debug NVRAM behavior
+  object-group          Object Group information
+  oce                   Output chain elements
+  onep                  ONE-P commands
+  ospfv3                OSPFv3 debug commands
+  otv                   Overlay Transport Virtualization
+  packet                Log unknown packets
+  packet-debug          Packet debug information
+  pad                   X25 PAD protocol
+  pakdbg-infra          Enable Pakdbg infra debugs
+  performance           Performance monitor debugging
+  persistent            Debug persistent
+  pfr                   Performance Routing(PfR) information
+  platform              Debug platform information
+  pnp                   Debug PNP behavior
+  police                Debugging police
+  policy-manager        Policy Manager
+  ppp                   PPP (Point to Point Protocol) information
+  pppatm                PPP over ATM
+  pppoe                 PPPoE information
+  pre                   pre debug commands
+  priority              Priority output queueing
+  probe                 HP Probe Proxy Requests
+  protofltr             Routing protocol filter manager
+  ps_class_params       is_ps_class_params
+  ps_policymap_feature  ps_policymap_feature
+  psp                   Packet-Service
+  qbm                   QoS Bandwidth Manager
+  qdm                   QoS Device Manager
+  qllc                  qllc debug information
+  qos                   QoS debugging
+  radius                RADIUS protocol
+  radius-proxy          RADIUS Proxy debugging
+  ras                   H.323 RAS Library
+  rbm                   Role-based Access Control Manager
+  redundancy            Redundancy Facility (RF) debug options
+  remote-management     Remote management information
+  resource              Embedded Resource Manager debug commands
+  rif                   RIF cache transactions
+  route-map             Route-map
+  rpl                   RPL Protocol debugging
+  rpms-proc             RPMS Process Information
+  rtpspi                RTP Service Provider Interface.
+  rtsp                  Real Time Streaming Protocol client
+  rtty                  Remote TTY debugging
+  sadb                  sadb debug commands
+  sampler               Sampler configuration and operation
+  sasl                  Simple Authentication and Security Layer
+  sbc                   Session Border Controller
+  sccp                  Skinny Client Control Protocol
+  sdlc                  SDLC information
+  sdllc                 SDLLC media translation
+  segment-routing       SR APP debugging commands
+  serial                Serial interface information
+  service-group         Service Group
+  service-integration   Integrated Services Debugs
+  service-overlay       Service Overlay debug options
+  service-routing       Enable Service Routing Debug options
+  sgbp                  SGBP debugging
+  sgcp                  Simple Gateway Control Protocol
+  sgf                   Stack Group Forwarding
+  sgi                   SGI debugs
+  smart_lic             Smart Licensing Agents debug
+  smf                   Software MAC filter
+  smrp                  SMRP information
+  sna                   SNA Information
+  snapshot              Snapshot activity
+  snmp                  SNMP information
+  sntp                  SNTP information
+  source                Source bridging information
+  spanning-tree         Spanning tree debugging
+  ssl                   SSL Debug command
+  ssm                   Segment Switch Manager
+  standby               Hot Standby Router Protocol (HSRP)
+  stun                  STUN information
+  subscriber            Subscriber Service Switch information
+  tacacs                TACACS authentication and authorization
+  tarp                  TARP information
+  tbridge               Transparent Bridging
+  tccs                  Transparent CCS information
+  telnet                Incoming telnet connections
+  template              Template activity
+  tftp                  TFTP debugging
+  token                 Token Ring information
+  topology              Topology Manager
+  track                 Debug tracking
+  translate             Protocol translation events
+  translation           translation rule information
+  tunnel                Generic Tunnel Interface
+  udptn                 UDPtn async data transport
+  utd                   UTD Service Plane debugging
+  vasi                  VASI information
+  vdsl                  VDSL debug commands
+  vfi                   VFI information
+  vines                 VINES information
+  virtual-service       Virtual service configuration debugging
+  vlan                  VLAN information
+  vlan-autoconfig       dynamic VLAN configuration
+  vmi                   VMI interface debugging
+  voice                 VOICE information
+  voip                  VOIP information
+  vpdn                  VPDN information
+  vpn                   VPN information
+  vprofile              Virtual Profile information
+  vrf                   VRF Manager
+  vrrp                  Debug Virtual Router Redundancy Protocol
+  vrrs                  Virtual Router Redundancy Service
+  vtemplate             Virtual Template information
+  vtsp                  Voice Telephony Call Control information
+  wccp                  WCCP debugging
+  wsapi                 Web Service API debug information
+  wsma                  Web Services Management Agents debug
+  x25                   X.25, CMNS and XOT information
+  x28                   X28 mode
+  xcl2                  Xconnect L2TPv3 information
+  xconnect              Xconnect debugs
+  xdr                   XDR debugging
+  xmpp                  Extensible Messaging and Presence Protocol debug
+  xremote               XREMOTE
+  zone                  Zone security events
+
+CSR2#no de  
+CSR2#no debug 
+*Jul  4 13:12:11.644: BGP: 19.19.19.19 active went from Idle to Active
+*Jul  4 13:12:11.645: BGP: 19.19.19.19 open active, local address 20.2.4.1
+*Jul  4 13:12:11.655: BGP: 19.19.19.19 open failed: Connection refused by remote host
+*Jul  4 13:12:11.655: BGP: 19.19.19.19 Active open failed - tcb is not available, open active delayed 11264ms (35000ms max, 60% jitter)
+*Jul  4 13:12:11.655: BGP: ses global 19.19.19.19 (0x7FA4B7BA5480:0) act Reset (Active open failed).
+*Jul  4 13:12:11.656: BGP: 19.19.19
+% Type "debug ?" for a list of subcommands
+CSR2#
+CSR2#.19 active went from Active to Idle
+*Jul  4 13:12:11.656: BGP: nbr global 19.19.19.19 Active open failed - open timer running
+*Jul  4 13:12:11.656: BGP: nbr global 19.19.19.19 Active open failed - open timer runningno debug 
+CSR2#no debug 
+CSR2#no debug ?
+  aaa                   AAA Authentication, Authorization and Accounting
+  access-expression     Boolean access expression
+  acircuit              Attachment Circuit information
+  acl                   ACL debugs
+  adjacency             adjacency
+  alg                   ALG debugging
+  all                   Enable all debugging
+  alps                  ALPS debug information
+  ancp                  ANCP information
+  apollo                Apollo information
+  appfw                 Application Firewall events
+  apple                 Appletalk information
+  application           Application routing
+  appnav-controller     AppNav Controller Debug
+  arap                  Appletalk Remote Access
+  archive               debug archive commands
+  arp                   IP ARP and HP Probe transactions
+  asnl                  Application Subscribe Notify Layer
+  aspp                  ASPP information
+  async                 Async interface information
+  atm                   ATM interface packets
+  authentication        Access control debugging
+  autonomic             Autonomic Networking
+  backup                Backup events
+  beep                  BEEP debugging
+  bfd                   Bi-directional forwarding detection
+  bgp                   BGP information
+  bing                  Bing(d) debugging
+  bridge-domain         Bridge-domain
+  bsc                   BSC information
+  bstun                 BSTUN information
+  bulkstat              Bulsktat debugging
+  c3pl                  C3PL events
+  caaa                  caaa debug commands
+  call                  Call Information
+  call-admission        Call admission control
+  call-home             Call-Home debugging
+  callback              Callback activity
+  cca                   CCA activity
+  cce                   Common Classification Engine (CCE)
+  cch323                CCH323 information
+  ccm                   Cluster Control Manager HA information
+  ccm-manager           Call Manager Application information
+  ccsip                 CCSIP information
+  cdapi                 CDAPI information
+  cdp                   CDP information
+  cef                   CEF address family independent operations
+  cfgdiff               debug cfgdiff commands
+  chat                  Chat scripts activity
+  checkpoint            Checkpoint Facility Debugging
+  clns                  CLNS information
+  cls                   CLS Information
+  cns                   CNS agents
+  compress              COMPRESS traffic
+  condition             Condition
+  confmodem             Modem configuration database
+  conn                  Connection Manager information
+  cops                  COPS
+  cpc                   CPC Pak Subblock
+  cpl                   Cisco Common Class-based Policy Language debugging
+  crypto                Cryptographic subsystem
+  ctr                   Cloud Tunnel Relay
+  cts                   Cisco Trusted Security
+  ctunnel               Generic CTunnel Interface
+  custom-queue          Custom output queueing
+  cwan                  Catalyst WAN events
+  cws-tunnel            CWS tunnel events
+  dampening             Dampening
+  dcm                   dcm commands
+  decnet                DECnet information
+  device-sensor         Device Sensor
+  dhcp                  DHCP client activity
+  diagnostic            Diagnostic debugging
+  dialer                Dial on Demand
+  dialpeer              Dialpeer info
+  dlsw                  Data Link Switching (DLSw) events
+  dmvpn                 DMVPN protocol
+  dnsix                 Dnsix information
+  domain                Domain debugging
+  drip                  DRiP debug information
+  dsp-resource-manager  DSP Resource Manager Debug
+  dspapi                Generic DSP API
+  dwnld_mgr             IDMGR interaction
+  dxi                   atm-dxi information
+  eap                   EAP debugging
+  ehsa                  EHSA Redundancy debug
+  eigrp                 EIGRP debug commands
+  elog                  Event logging boolean control
+  entry                 Incoming queue entries
+  environment           Environmental Monitoring debug options
+  epc                   Embedded Packet Capture debugging
+  epm                   Policy Enforcemnt Module
+  ethernet              Ethernet debugging commands
+  event                 Event related commands
+  event-manager         Event manager activity
+  fax                   Fax
+  fh_fd_rpc             FH_FD_RPC information
+  fhrp                  Debug First Hop Router Protocol
+  flow                  Flow information
+  flowspec              FlowSpec debugging
+  format                format information
+  fpm                   FPM information
+  frame-relay           Frame Relay
+  fras                  FRAS Debug 
+  fras-host             FRAS Host Debug 
+  frr-manager           IP FRR manager debugging commands
+  funi                  FUNI interface packets
+  gbic                  GBIC security messages
+  glbp                  Gateway Load Balancing Protocol (GLBP)
+  gssapi                GSSAPI debugs
+  gtp                   GTP Debug Information
+  h225                  H.225 Library Debugging
+  h245                  H.245 Library Debugging
+  ha-infra              HA Infra Debugging
+  hpi                   HPI (54x) DSP messages 
+  hqf                   Debugging hqf
+  http                  HTTP Debugging
+  hw-module             Debug hardware module commands
+  iamp                  IAMP Debug
+  idbgroup              Interface Descriptor Block group debug
+  identity              Identity debugging support
+  idmgr                 IDMGR interaction
+  if-mgr                IF_MGR information
+  ifs                   File System information
+  inform_feature_msg    Inform feature msg only
+  interface             Interface Descriptor Block
+  ip                    IP information
+  ipam                  IP Address Manager (IPAM) information
+  ipc                   Interprocess communications debugging
+  iphc                  IPHC information
+  ipv6                  IPv6 information
+  isis                  IS-IS Information
+  issu                  issu debug options
+  kerberos              KERBEROS authentication and authorization
+  keystore              CTS Keystore
+  kpml                  KPML Parser/Builder information
+  kron                  Kron subsys debugs
+          
+CSR2#undeb    
+CSR2#undebug 
+*Jul  4 13:12:22.914: BGP: 19.19.19.19 active went from Idle to Active
+*Jul  4 13:12:22.914: BGP: 19.19.19.19 open active, local address 20.2.4.1
+*Jul  4 13:12:22.924: BGP: 19.19.19.19 open failed: Connection refused by remote host
+*Jul  4 13:12:22.924: BGP: 19.19.19.19 Active open failed - tcb is not available, open active delayed 14336ms (35000ms max, 60% jitter)
+*Jul  4 13:12:22.924: BGP: ses global 19.19.19.19 (0x7FA49A2D4B28:0) act Reset (Active open failed).
+*Jul  4 13:12:22.925: BGP: 19.19.19
+% Incomplete command.
+
+CSR2#
+CSR2#.19 active went from Active to Idle
+*Jul  4 13:12:22.925: BGP: nbr global 19.19.19.19 Active open failed - open timer running
+*Jul  4 13:12:22.925: BGP: nbr global 19.19.19.19 Active open failed - open timer runningundebug 
+CSR2#undebug 
+CSR2#undebug 
+CSR2#undebug all
+CSR2#undebug all 
+*Jul  4 13:12:25.800: BGP: topo global:IPv4 Unicast:base Scanning routing tables
+*Jul  4 13:12:25.800: BGP: topo global:IPv6 Unicast:base Scanning routing tables
+*Jul  4 13:12:25.800: BGP: topo global:IPv4 Multicast:base Scanning routing tables
+*Jul  4 13:12:25.800: BGP: topo global:L2VPN E-VPN:base Scanning routing tables
+*Jul  4 13:12:25.800: BGP: topo global:MVPNv4 Unicast:base Scanning routing tables
+*Jul  4 13:12:25.800: BGP: topo global:MVPNv6 Unicast:base Scanning routing tables
+ Parameter map cws-tunnel global not configured
+All possible debugging has been turned off
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#router bg
+CSR2(config)#router bgp 100
+CSR2(config-router)#
+CSR2(config-router)#nei
+CSR2(config-router)#neighbor 19.19.19.19 up
+CSR2(config-router)#neighbor 19.19.19.19 update-source lo0
+CSR2(config-router)#
+CSR2(config-router)#
+*Jul  4 13:14:12.555: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:14:12.555: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#                                      
+*Jul  4 13:14:22.784: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:14:22.784: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the sessionend
+CSR2#
+CSR2#
+CSR2#undebug all 
+*Jul  4 13:14:26.040: %SYS-5-CONFIG_I: Configured from consoldebug bgp *     
+*Jul  4 13:14:28.928: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:14:28.928: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed show  bgp sum
+BGP router identifier 2.2.2.2, local AS number 100
+BGP table version is 2, main routing table version 2
+1 network entries using 248 bytes of memory
+1 path entries using 120 bytes of memory
+1/1 BGP path/bestpath attribute entries using 248 bytes of memory
+1 BGP AS-PATH entries using 24 bytes of memory
+0 BGP route-map cache entries using 0 bytes of memory
+0 BGP filter-list cache entries using 0 bytes of memory
+BGP using 640 total bytes of memory
+BGP activity 1/0 prefixes, 1/0 paths, scan interval 60 secs
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+10.1.2.1        4            1      10      11        2    0    0 00:06:53        1
+19.19.19.19     4          100       0       0        1    0    0 never    Idle
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+*Jul  4 13:14:37.129: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:14:37.129: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:14:49.414: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:14:49.414: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:14:56.589: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:14:56.589: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:15:06.840: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:15:06.841: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:15:15.024: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:15:15.025: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:15:26.286: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:15:26.286: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:15:37.559: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:15:37.560: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:15:49.860: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:15:49.860: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:15:56.038: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:15:56.041: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:16:03.174: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:16:03.174: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:16:13.417: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:16:13.417: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:16:22.634: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:16:22.634: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:16:34.934: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:16:34.934: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:16:45.177: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:16:45.177: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:16:52.342: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:16:52.342: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh run 
+*Jul  4 13:17:03.609: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:17:03.609: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session| s r
+CSR2#sh run | s r
+CSR2#sh run | s r b
+router bgp 100
+ bgp log-neighbor-changes
+ neighbor 10.1.2.1 remote-as 1
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+CSR2#
+*Jul  4 13:17:12.832: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:17:12.832: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:17:21.025: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:17:21.025: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:17:33.315: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:17:33.316: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:17:45.616: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:17:45.617: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:17:54.824: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:17:54.824: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:18:04.043: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:18:04.044: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:18:12.238: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:18:12.239: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:18:21.476: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:18:21.477: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session 
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh run int
+CSR2#sh run interface lo0
+Building configuration...
+
+Current configuration : 63 bytes
+!
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+end
+
+CSR2#
+CSR2#
+*Jul  4 13:18:32.728: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:18:32.729: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#ping 19.19.19.19 so
+CSR2#ping 19.19.19.19 source lo0
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 19.19.19.19, timeout is 2 seconds:
+Packet sent with a source address of 2.2.2.2 
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 9/11/17 ms
+CSR2#
+CSR2#
+CSR2#
+*Jul  4 13:18:45.027: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:18:45.028: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:18:58.335: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:18:58.336: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:19:12.669: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:19:12.669: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:20:56.656: %BGP-5-ADJCHANGE: neighbor 19.19.19.19 Up 
+CSR2#
+CSR2#
+CSR2#
+*Jul  4 13:23:41.151: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 reset (Peer closed the session)
+*Jul  4 13:23:41.152: %BGP-5-ADJCHANGE: neighbor 19.19.19.19 Down Peer closed the session
+*Jul  4 13:23:41.152: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh run | s r b             
+*Jul  4 13:24:53.814: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:24:53.814: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closedow  bgp sum 
+*Jul  4 13:25:03.030: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:25:03.030: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:25:10.206: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:25:10.207: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+BGP router identifier 2.2.2.2, local AS number 100
+BGP table version is 2, main routing table version 2
+1 network entries using 248 bytes of memory
+1 path entries using 120 bytes of memory
+1/1 BGP path/bestpath attribute entries using 248 bytes of memory
+1 BGP AS-PATH entries using 24 bytes of memory
+0 BGP route-map cache entries using 0 bytes of memory
+0 BGP filter-list cache entries using 0 bytes of memory
+BGP using 640 total bytes of memory
+BGP activity 1/0 prefixes, 1/0 paths, scan interval 60 secs
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+10.1.2.1        4            1      18      23        2    0    0 00:17:32        1
+19.19.19.19     4          100       0       0        1    0    0 00:01:31 Idle
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#show  bgp sum              
+BGP router identifier 2.2.2.2, local AS number 100
+BGP table version is 2, main routing table version 2
+1 network entries using 248 bytes of memory
+1 path entries using 120 bytes of memory
+1/1 BGP path/bestpath attribute entries using 248 bytes of memory
+1 BGP AS-PATH entries using 24 bytes of memory
+0 BGP route-map cache entries using 0 bytes of memory
+0 BGP filter-list cache entries using 0 bytes of memory
+BGP using 640 total bytes of memory
+BGP activity 1/0 prefixes, 1/0 paths, scan interval 60 secs
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+10.1.2.1        4            1      18      23        2    0    0 00:17:36        1
+19.19.19.19     4          100       0       0        1    0    0 00:01:35 Idle
+CSR2#
+CSR2#
+CSR2#
+*Jul  4 13:25:19.420: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:25:19.421: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:25:30.691: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:25:30.692: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:25:40.941: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:25:40.942: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:25:48.103: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:25:48.103: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:26:02.454: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:26:02.454: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:26:13.709: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:26:13.709: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul  4 13:26:20.885: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul  4 13:26:20.886: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+CSR2#
+CSR2#
+CSR2#
+CSR2#show  bgp sum
+BGP router identifier 2.2.2.2, local AS number 100
+BGP table version is 2, main routing table version 2
+1 network entries using 248 bytes of memory
+1 path entries using 120 bytes of memory
+1/1 BGP path/bestpath attribute entries using 248 bytes of memory
+1 BGP AS-PATH entries using 24 bytes of memory
+0 BGP route-map cache entries using 0 bytes of memory
+0 BGP filter-list cache entries using 0 bytes of memory
+BGP using 640 total bytes of memory
+BGP activity 1/0 prefixes, 1/0 paths, scan interval 60 secs
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+10.1.2.1        4            1      19      24        2    0    0 00:18:46        1
+19.19.19.19     4          100       0       1        1    0    0 00:00:00 OpenSent
+CSR2#
+CSR2#
+CSR2#show  bgp sum
+BGP router identifier 2.2.2.2, local AS number 100
+BGP table version is 2, main routing table version 2
+1 network entries using 248 bytes of memory
+1 path entries using 120 bytes of memory
+1/1 BGP path/bestpath attribute entries using 248 bytes of memory
+1 BGP AS-PATH entries using 24 bytes of memory
+0 BGP route-map cache entries using 0 bytes of memory
+0 BGP filter-list cache entries using 0 bytes of memory
+BGP using 640 total bytes of memory
+BGP activity 1/0 prefixes, 1/0 paths, scan interval 60 secs
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+10.1.2.1        4            1      19      24        2    0    0 00:18:49        1
+19.19.19.19     4          100       0       1        1    0    0 00:00:02 OpenSent
+CSR2#
+CSR2#
+CSR2#show  bgp sum
+*Jul  4 13:26:29.661: %BGP-5-ADJCHANGE: neighbor 19.19.19.19 Up 
+BGP router identifier 2.2.2.2, local AS number 100
+BGP table version is 2, main routing table version 2
+1 network entries using 248 bytes of memory
+1 path entries using 120 bytes of memory
+1/1 BGP path/bestpath attribute entries using 248 bytes of memory
+1 BGP AS-PATH entries using 24 bytes of memory
+0 BGP route-map cache entries using 0 bytes of memory
+0 BGP filter-list cache entries using 0 bytes of memory
+BGP using 640 total bytes of memory
+BGP activity 1/0 prefixes, 1/0 paths, scan interval 60 secs
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+10.1.2.1        4            1      19      24        2    0    0 00:18:50        1
+19.19.19.19     4          100       2       5        2    0    0 00:00:01        0
+CSR2#
+CSR2#
+CSR2#show  bgp sum
+BGP router identifier 2.2.2.2, local AS number 100
+BGP table version is 2, main routing table version 2
+1 network entries using 248 bytes of memory
+1 path entries using 120 bytes of memory
+1/1 BGP path/bestpath attribute entries using 248 bytes of memory
+1 BGP AS-PATH entries using 24 bytes of memory
+0 BGP route-map cache entries using 0 bytes of memory
+0 BGP filter-list cache entries using 0 bytes of memory
+BGP using 640 total bytes of memory
+BGP activity 1/0 prefixes, 1/0 paths, scan interval 60 secs
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+10.1.2.1        4            1      19      24        2    0    0 00:18:52        1
+19.19.19.19     4          100       2       5        2    0    0 00:00:03        0
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#router 
+CSR2(config)#router bng
+CSR2(config)#router bg 
+CSR2(config)#router bgp 100
+CSR2(config-router)#nei
+CSR2(config-router)#neighbor 19.19.19.19 ne
+CSR2(config-router)#neighbor 19.19.19.19 next-hop-s
+CSR2(config-router)#neighbor 19.19.19.19 next-hop-self 
+CSR2(config-router)#end 
+CSR2#
+CSR2#
+CSR2#show  bgp sum
+*Jul  4 13:28:59.603: %SYS-5-CONFIG_I: Configured from consoping 19.19.19.19 source lo0
+CSR2#show  bgp sum              
+BGP router identifier 2.2.2.2, local AS number 100
+BGP table version is 2, main routing table version 2
+1 network entries using 248 bytes of memory
+1 path entries using 120 bytes of memory
+1/1 BGP path/bestpath attribute entries using 248 bytes of memory
+1 BGP AS-PATH entries using 24 bytes of memory
+0 BGP route-map cache entries using 0 bytes of memory
+0 BGP filter-list cache entries using 0 bytes of memory
+BGP using 640 total bytes of memory
+BGP activity 1/0 prefixes, 1/0 paths, scan interval 60 secs
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+10.1.2.1        4            1      21      27        2    0    0 00:21:22        1
+19.19.19.19     4          100       5       7        1    0    0 00:02:33        0
+CSR2#
+CSR2#
+CSR2#
+CSR2#show mpls forwarding-table
+Local      Outgoing   Prefix           Bytes Label   Outgoing   Next Hop    
+Label      Label      or Tunnel Id     Switched      interface              
+200        400        5.5.5.5/32       0             Gi2        20.2.4.2    
+201        308        6.6.6.6/32       0             Gi3        20.2.3.2    
+           401        6.6.6.6/32       0             Gi2        20.2.4.2    
+207        Pop Label  4.4.4.4/32       0             Gi2        20.2.4.2    
+209        305        19.19.19.19/32   0             Gi3        20.2.3.2    
+           406        19.19.19.19/32   0             Gi2        20.2.4.2    
+211        Pop Label  3.3.3.3/32       0             Gi3        20.2.3.2    
+CSR2#
+CSR2#
+CSR2#
+CSR2#show  bgp sum             
+BGP router identifier 2.2.2.2, local AS number 100
+BGP table version is 4, main routing table version 4
+2 network entries using 496 bytes of memory
+2 path entries using 240 bytes of memory
+2/2 BGP path/bestpath attribute entries using 496 bytes of memory
+2 BGP AS-PATH entries using 48 bytes of memory
+0 BGP route-map cache entries using 0 bytes of memory
+0 BGP filter-list cache entries using 0 bytes of memory
+BGP using 1280 total bytes of memory
+BGP activity 2/0 prefixes, 2/0 paths, scan interval 60 secs
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+10.1.2.1        4            1      31      46        4    0    0 00:37:31        1
+19.19.19.19     4          100      21      26        4    0    0 00:18:42        1
+CSR2#
+CSR2#

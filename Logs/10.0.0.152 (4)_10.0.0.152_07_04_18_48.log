@@ -1,0 +1,173 @@
+
+CSR5>
+CSR5>en
+CSR5#
+CSR5#sh
+CSR5#show mpl
+CSR5#show mpls ld
+CSR5#show mpls ldp i
+CSR5#show mpls ldp isy
+CSR5#show mpls ldp ig 
+CSR5#show mpls ldp igp s
+CSR5#show mpls ldp igp sync y
+                            ^
+% Invalid input detected at '^' marker.
+
+CSR5#
+CSR5#show mpls ldp igp sync  
+    GigabitEthernet1:
+        LDP configured; LDP-IGP Synchronization not enabled.
+    GigabitEthernet2:
+        LDP configured; LDP-IGP Synchronization not enabled.
+    GigabitEthernet4:
+        LDP configured; LDP-IGP Synchronization not enabled.
+CSR5#
+CSR5#
+CSR5#
+CSR5#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR5(config)#
+CSR5(config)#router os
+CSR5(config)#router ospf 1
+CSR5(config-router)#mpl
+CSR5(config-router)#mpls ld
+CSR5(config-router)#mpls ldp sy
+CSR5(config-router)#mpls ldp sync 
+CSR5(config-router)#
+CSR5(config-router)#end
+CSR5#
+CSR5#show mpls ldp igp sync
+    GigabitEthernet1:
+        LDP configured; LDP-IGP Synchronization enabled.
+        Sync status: sync achieved; peer reachable.
+        Sync delay time: 0 seconds (0 seconds left)
+        IGP holddown time: infinite.
+        Peer LDP Ident: 4.4.4.4:0
+        IGP enabled: OSPF 1
+    GigabitEthernet2:
+        LDP configured; LDP-IGP Synchronization enabled.
+        Sync status: sync achieved; peer reachable.
+        Sync delay time: 0 seconds (0 seconds left)
+        IGP holddown time: infinite.
+        Peer LDP Ident: 6.6.6.6:0
+        IGP enabled: OSPF 1
+    GigabitEthernet4:
+        LDP configured; LDP-IGP Synchronization enabled.
+        Sync status: sync achieved; peer reachable.
+        Sync delay time: 0 seconds (0 seconds left)
+        IGP holddown time: infinite.
+        Peer LDP Ident: 19.19.19.19:0
+        IGP enabled: OSPF 1
+CSR5#
+*Jul  4 10:28:51.554: %SYS-5-CONFIG_I: Configured from console by console
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR5 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+CSR5>
+CSR5>
+CSR5>en
+CSR5#
+CSR5#
+CSR5#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR5(config)#mpl
+CSR5(config)#mpls ld
+CSR5(config)#mpls ldp se
+CSR5(config)#mpls ldp session pr
+CSR5(config)#mpls ldp session protection 
+CSR5(config)#end
+CSR5#
+CSR5#
+CSR5#
+CSR5#wr
+*Jul  4 10:49:04.304: %SYS-5-CONFIG_I: Configured from console by console
+Building configuration...
+[OK]
+CSR5#
+CSR5#
+CSR5#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR5 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+

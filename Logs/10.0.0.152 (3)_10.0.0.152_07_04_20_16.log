@@ -1,0 +1,434 @@
+
+CSR4#
+CSR4#
+CSR4#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR4(config)#
+CSR4(config)#exit
+CSR4#
+CSR4#sh 
+*Jul  4 11:40:42.516: %SYS-5-CONFIG_I: Configured from console by consolerun | s r p
+CSR4#sh run | s r o
+router ospf 1
+ network 4.4.4.4 0.0.0.0 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ network 20.3.4.0 0.0.0.3 area 0
+ network 20.4.5.0 0.0.0.3 area 0
+ network 20.4.6.0 0.0.0.3 area 0
+ mpls ldp sync
+ mpls ldp autoconfig
+CSR4#
+CSR4#
+CSR4#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR4(config)#
+CSR4(config)#router os
+CSR4(config)#router ospf 1
+CSR4(config-router)#no ml
+CSR4(config-router)#no mpl
+CSR4(config-router)#no mpls ld
+CSR4(config-router)#no mpls ldp au
+CSR4(config-router)#no mpls ldp autoconfig 
+CSR4(config-router)#
+CSR4(config-router)#
+*Jul  4 11:41:09.020: %LDP-5-SP: 5.5.5.5:0: session hold up initiated
+*Jul  4 11:41:09.020: %LDP-5-SP: 2.2.2.2:0: session hold up initiated
+*Jul  4 11:41:09.020: %LDP-5-SP: 6.6.6.6:0: session hold up initiated
+*Jul  4 11:41:09.020: %LDP-5-SP: 3.3.3.3:0: session hold up initiated
+CSR4(config-router)#
+CSR4(config-router)#
+CSR4(config-router)#
+CSR4(config-router)#
+CSR4(config-router)#
+CSR4(config-router)#exit
+CSR4(config)#
+CSR4(config)#
+CSR4(config)#inter
+CSR4(config)#interface gi
+CSR4(config)#interface gigabitEthernet 1
+CSR4(config-if)#mpl
+CSR4(config-if)#mpls ip
+CSR4(config-if)#
+*Jul  4 11:41:39.915: LDP Peer 2.2.2.2:0 re-announced
+*Jul  4 11:41:39.915: LDP Peer 5.5.5.5:0 re-announced
+*Jul  4 11:41:39.915: LDP Peer 3.3.3.3:0 re-announced
+*Jul  4 11:41:39.915: LDP Peer 6.6.6.6:0 re-announcedmpls ip
+CSR4(config-if)#mpls ip 
+*Jul  4 11:41:39.918: %LDP-5-SP: 5.5.5.5:0: session recovery succeeded
+CSR4(config-if)#interface gigabitEthernet 2
+CSR4(config-if)#
+CSR4(config-if)#mpls ip                    
+CSR4(config-if)#
+CSR4(config-if)#
+CSR4(config-if)#
+*Jul  4 11:41:46.880: %LDP-5-SP: 2.2.2.2:0: session recovery succeeded
+CSR4(config-if)#
+CSR4(config-if)#
+CSR4(config-if)#interface gigabitEthernet 3
+CSR4(config-if)#
+CSR4(config-if)#mpls ip                    
+CSR4(config-if)#
+CSR4(config-if)#
+CSR4(config-if)#interface gigabitEthernet 3
+*Jul  4 11:41:52.391: %LDP-5-SP: 6.6.6.6:0: session recovery succeeded
+CSR4(config-if)#interface gigabitEthernet 4
+CSR4(config-if)#
+CSR4(config-if)#mpls ip                    
+CSR4(config-if)#
+CSR4(config-if)#
+CSR4(config-if)#mpls ip
+*Jul  4 11:41:57.737: %LDP-5-SP: 3.3.3.3:0: session recovery suinterface gigabitEthernet 5
+CSR4(config-if)#
+CSR4(config-if)#mpls ip                    
+CSR4(config-if)#
+CSR4(config-if)#
+CSR4(config-if)#end
+CSR4#
+CSR4#
+CSR4#
+*Jul  4 11:42:04.454: %SYS-5-CONFIG_I: Configured from console by console
+CSR4#
+CSR4#
+CSR4#wr
+Building configuration...
+[OK]
+CSR4#
+CSR4#
+CSR4#
+CSR4#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR4(config)#inter
+CSR4(config)#interface g
+CSR4(config)#interface gi
+CSR4(config)#interface gigabitEthernet 5
+CSR4(config-if)#no mpl
+CSR4(config-if)#no mpls ip
+CSR4(config-if)#no mpls ip 
+CSR4(config-if)#
+CSR4(config-if)#end
+CSR4#
+CSR4#wr
+Building configuration...
+[OK]
+CSR4#
+*Jul  4 11:42:49.944: %SYS-5-CONFIG_I: Configured from console by console
+*Jul  4 11:43:26.392: %LDP-5-SP: 5.5.5.5:0: session hold up initiated
+*Jul  4 11:43:27.088: %LDP-5-SP: 5.5.5.5:0: session recovery succeeded
+CSR4#
+CSR4#
+CSR4#
+CSR4#
+CSR4#
+CSR4#
+CSR4#sh run | s r o
+router ospf 1
+ network 4.4.4.4 0.0.0.0 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ network 20.3.4.0 0.0.0.3 area 0
+ network 20.4.5.0 0.0.0.3 area 0
+ network 20.4.6.0 0.0.0.3 area 0
+ mpls ldp sync
+CSR4#
+CSR4#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR4(config)#router os
+CSR4(config)#router ospf 1
+CSR4(config-router)#net
+CSR4(config-router)#network 10.4.7.0 255.255.255.252
+% Incomplete command.
+
+CSR4(config-router)#network 10.4.7.0 0.0.0.3 are    
+CSR4(config-router)#network 10.4.7.0 0.0.0.3 area 0
+CSR4(config-router)#
+CSR4(config-router)#exit
+CSR4(config)#inter
+CSR4(config)#interface gi
+CSR4(config)#interface gigabitEthernet 5
+CSR4(config-if)#ip add
+CSR4(config-if)#ip address 10.4.7.1 255.255.255.252
+CSR4(config-if)#
+CSR4(config-if)#
+*Jul  4 11:58:20.452: %OSPF-5-ADJCHG: Process 1, Nbr 7.7.7.7 on GigabitEthernet5 from LOADING to FULL, Loading Done
+CSR4(config-if)#
+CSR4(config-if)#
+CSR4(config-if)#
+CSR4(config-if)#
+CSR4(config-if)#end
+CSR4#
+CSR4#
+CSR4#
+*Jul  4 11:58:27.430: %SYS-5-CONFIG_I: Configured from console by console
+CSR4#
+CSR4#
+CSR4#
+CSR4#
+CSR4#sh
+CSR4#show ip
+CSR4#show ip os
+CSR4#show ip ospf ne
+CSR4#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+7.7.7.7           1   FULL/DR         00:00:30    10.4.7.2        GigabitEthernet5
+5.5.5.5           1   FULL/BDR        00:00:30    20.4.5.2        GigabitEthernet1
+6.6.6.6           1   FULL/BDR        00:00:39    20.4.6.2        GigabitEthernet3
+3.3.3.3           1   FULL/DR         00:00:34    20.3.4.1        GigabitEthernet4
+2.2.2.2           1   FULL/BDR        00:00:39    20.2.4.1        GigabitEthernet2
+CSR4#
+CSR4#
+CSR4#wr
+Building configuration...
+[OK]
+CSR4#
+CSR4#
+CSR4#
+CSR4#
+CSR4#terminal length 0
+CSR4#more system:running-config
+!
+! Last configuration change at 11:58:27 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR4
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 400 499
+mpls ldp session protection
+mpls ldp label
+ allocate global prefix-list LABELS
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 94OWIUZYGUQ
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 4.4.4.4 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address 20.4.5.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet2
+ ip address 20.2.4.2 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet3
+ ip address 20.4.6.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet4
+ ip address 20.3.4.2 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet5
+ ip address 10.4.7.1 255.255.255.252
+ negotiation auto
+!
+router ospf 1
+ network 4.4.4.4 0.0.0.0 area 0
+ network 10.4.7.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ network 20.3.4.0 0.0.0.3 area 0
+ network 20.4.5.0 0.0.0.3 area 0
+ network 20.4.6.0 0.0.0.3 area 0
+ mpls ldp sync
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+ip prefix-list LABELS seq 10 permit 3.3.3.3/32
+ip prefix-list LABELS seq 15 permit 4.4.4.4/32
+ip prefix-list LABELS seq 20 permit 5.5.5.5/32
+ip prefix-list LABELS seq 25 permit 6.6.6.6/32
+ip prefix-list LABELS seq 30 permit 19.19.19.19/32
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR4#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR4 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+

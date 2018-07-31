@@ -1,0 +1,1148 @@
+
+CSR2#
+CSR2#sh
+CSR2#show ri
+CSR2#show ri
+CSR2#show rip vr
+CSR2#show rip vrf
+CSR2#show rip ?  
+% Unrecognized command
+CSR2#show ip  
+CSR2#show ip ri
+CSR2#show ip rip
+CSR2#            
+CSR2#
+CSR2#sh
+CSR2#show rip
+CSR2#show rip ?
+% Unrecognized command
+CSR2#show ?   
+  aaa                   Show AAA values
+  access-expression     List access expression
+  access-lists          List access lists
+  accounting            Show accounting
+  acircuit              Access circuit info
+  adjacency             Adjacent nodes
+  alg                   ALG information
+  aliases               Display alias commands
+  alignment             Show alignment information
+  alps                  Alps information
+  ancp                  ANCP information
+  apollo                Apollo network information
+  appfw                 Application Firewall information
+  appletalk             AppleTalk information
+  application           Application Routing
+  arap                  Show Appletalk Remote Access statistics
+  archive               Archive functions
+  arp                   ARP table
+  async                 Information on terminal lines used as router interfaces
+  authentication        Shows Auth Manager stats, registrations or sessions
+  auto                  Show Automation Template
+  autonomic             Autonomic Networking
+  backup                Backup status
+  banner                Display banner information
+  beep                  Show BEEP information
+  bfd                   BFD protocol info
+  bgp                   BGP information
+  bootflash:            display information about bootflash: file system
+  bootlog               Show bootlog contents
+  boottime              Show boottime in ms
+  bootvar               Boot and related environment variable
+  bridge                Bridge Forwarding/Filtering Database [verbose]
+  bridge-domain         Bridge-domain
+  bsc                   BSC interface information
+  bstun                 BSTUN interface information
+  buffers               Buffer pool statistics
+  bulkstat              Bulkstat show commands
+  caaa                  Subscriber Policy Entity Information
+  cache                 Shows Device-Sensor Cache Informations 
+  call                  Show call
+  call-home             Show command for call home
+  capability            Capability Information
+  cca                   CCA information
+  cce                   Common Classification Engine (CCE)
+  ccm                   CCM HA Information
+  ccm-manager           Call Manager Application information
+  cdp                   CDP information
+  cef                   CEF address family independent status
+  checkpoint            Checkpoint Facility (CF)
+  class-map             Show CPL Class Map
+  clns                  CLNS network information
+  clock                 Display the system clock
+  cls                   DLC user information
+  cns                   CNS agents
+  compress              Show compression statistics
+  configuration         Contents of Non-Volatile memory
+  connection            Show Connection
+  controllers           Interface controller status
+  cops                  COPS information
+  crypto                Encryption module
+  ctr                   Show CTR information
+  cts                   Cisco Trusted Security information
+  cube                  Show cube info
+  cws-tunnel            Show CWS Tunnel information
+  dampening             Display dampening information 
+  data-corruption       Show data errors
+  database              Show Database
+  dcm                   Data Collection Manager Core Details
+  debugging             State of each debugging option
+  decnet                DECnet information
+  derived-config        Derived operating configuration
+  device-sensor         Shows Device Sensor Information 
+  dhcp                  Dynamic Host Configuration Protocol status
+  diag                  Show diagnostic and eeprom information
+  diagnostic            Show command for diagnostic
+  dial-peer             Dial Plan Mapping Table for, e.g. VoIP Peers
+  dialer                Dialer parameters and statistics
+  dialplan              Voice telephony dial plan
+  dlsw                  Data Link Switching information
+  dmvpn                 Display DMVPN session related information
+  dnsix                 Shows Dnsix/DMDP information
+  domain                Domain Show Commands
+  drip                  DRiP DB
+  dsp-group             DSP group
+  dspfarm               Display DSPFARM related information 
+  dwnld_mgr             Download Manager
+  dxi                   atm-dxi information
+  eap                   Shows EAP registration/session information
+  eigrp                 EIGRP show commands
+  entry                 Queued terminal entries
+  eobc                  Cat 6000 out of band (EOBC) interface show commands
+  epm                   EPM information
+  etherchannel          EtherChannel Parameters
+  ethernet              Ethernet parameters
+  event                 Embedded event related commands
+  event-manager         Event manager information
+  exception             exception informations
+  facility-alarm        Show Facility Alarms
+  fallback              Display Fallback configuration
+  fhrp                  FHRP information
+  file                  Show filesystem information
+  flash:                display information about flash: file system
+  flow                  Flow information
+  flowspec              FlowSpec information
+  format                Show format information
+  frame-relay           Frame-Relay information
+  fras                  FRAS Information
+  fras-host             FRAS Host Information
+  frr-manager           IP FRR manager 
+  funi                  FUNI information
+  gateway               Show status of gateway
+  glbp                  GLBP information
+  h323                  Show H.323 VoIP information
+  history               Display the session command history
+  hosts                 IP domain-name, lookup style, nameservers, and host
+                        table
+  html                  HTML helper commands
+  http                  Display HTTP info
+  hw-module             Show hardware module commands
+  hw-programmable       Show hw-programmable information
+  id-manager            ID pool manager
+  idb                   List of Interface Descriptor Blocks
+  identity              Identity profiles and policies
+  idmgr                 IDMGR interaction
+  if-mgr                if-mgr information
+  ifnum                 IDB Interface Index (Number)
+  interfaces            Interface status and configuration
+  inventory             Show the physical inventory
+  ip                    IP information
+  ipam                  IP Addr Mgr (IPAM) information
+  ipc                   Interprocess communications commands
+  ipv6                  IPv6 information
+  isis                  IS-IS routing information
+  issu                  ISSU Information
+  kerberos              Show Kerberos Values
+  key                   Key information
+  keymap                Terminal keyboard mappings
+  keystore              Show keystore information
+  kron                  Kron Subsystem
+  l2fib                 Layer 2 Forwarding Information Base
+  l2vpn                 Show information about Layer2 VPN
+  l3vpn                 l3vpn encapsulation ip commands
+  lacp                  Port channel information
+  lat                   DEC LAT information
+  license               Show license information
+  line                  TTY line information
+  lisp                  Locator/ID Separation Protocol
+  llc2                  IBM LLC2 circuit information
+  lldp                  LLDP information
+  lnm                   IBM LAN manager
+  local-ack             Local Acknowledgement virtual circuits
+  location              Display the system location
+  logging               Show the contents of logging buffers
+  login                 Display Secure Login Configurations and State
+  macdb                 show MAC database
+  management            Display the management applications
+  management-interface  Host management-interface information
+  mcsa                  mcsa info
+  mdns                  MDNS feature
+  media                 Display media related information 
+  mediatrace            Mediatrace show commands
+  memory                Memory statistics
+  mfib                  MFIB address family independent status
+  mlrib                 Multi Layer RIB information 
+  modem                 Show modem
+  modemcap              Show Modem Capabilities database
+  monitor               Monitoring different system events
+  mpls                  MPLS information
+  mrcp                  MRCP information
+  mtm                   MTM
+  mvr                   Show mvr global parameters
+  nat64                 NAT64 information
+  nbf                   NBF (NetBEUI) information
+  ncia                  Native Client Interface Architecture
+  netbios-cache         NetBIOS name cache contents
+  netconf               Show NETCONF information
+  nhrp                  Display NHRP related information
+  nmsp                  nmsp show commands
+  node                  Show known LAT nodes
+  ntp                   Network time protocol
+  num-exp               Number Expansion (Speed Dial) information
+  nve                   Display NVE information
+  object-group          List object groups
+  odb                   Opaque Database
+  odm-format            Show the schema used for ODM input file
+  onep                  ONEP related commands
+  ospfv3                OSPFv3 information
+  otv                   Display OTV information
+  packet-debug          Packet debug information
+  parameter-map         Show parameter map of type
+  parameter-map         parameter map information
+  parser                Display parser information
+  per-call              Per call debug
+  performance           Media Monitor show commands
+  persistent            Show persistent information
+  pfr                   Performance Routing(PfR) information
+  platform              Show platform information
+  pnp                   Display PNP information
+  policy-firewall       show firewall statistics 
+  policy-manager        Policy Manager
+  policy-map            Show Policy Map
+  ppp                   PPP parameters and statistics
+  pppatm                PPP over ATM
+  pppoe                 PPPoE information
+  pre                   PRE show commands
+  privilege             Show current privilege level
+  processes             Active process statistics
+  protocols             Active network routing protocols
+  qbm                   QoS Bandwidth Manager information
+  qllc                  Display qllc-llc2 and qllc-sdlc conversion information
+  qos                   Quality of Service show commands
+  radius                Shows radius information
+  radius-proxy          Shows radius-proxy client/session information
+  rbscp                 RBSCP information
+  redirect              Show L4 redirect information
+  redundancy            Redundancy Facility (RF) information
+  region                Region Manager Status
+  registry              Function registry information
+  reload                Scheduled reload information
+  remote-management     Display remote management information
+  resource              Display Resource Usage/Relations and more details
+  resource-group        Resource group statistics
+  rhosts                Remote-host+user equivalences
+  rib                   Routing Information Base
+  rif                   RIF cache entries
+  rmon                  rmon statistics
+  rom-monitor           Show ROMMON version information
+  romvar                All ROMMON environment variables
+  route-map             route-map information
+  route-tag             route-tag information
+  rpl                   RPL protocol status
+  rpms-proc             RPMS Process Information
+  rtpspi                RTP Service Provider Interface
+  rtsp                  Real Time Streaming Protocol information
+  running-config        Current operating configuration
+  sampler               Sampler information
+  sasl                  show SASL information
+  sbc                   Session Border Controller
+  sccp                  Display Skinny Client Control Protocol information 
+  sdllc                 Display sdlc - llc2 conversion information
+  segment-routing       SR Info 
+  self-diagnostics      Display self diagnostics
+  service-group         Show service group information
+  service-insertion     AppNav Controller
+  service-overlay       Service Overlay show commands
+  service-routing       Service-Routing show commands
+  service-template      Show service-templates/identity policies
+  services              LAT learned services
+  sessions              Information about Telnet connections
+  sgbp                  SGBP group information
+  sgcp                  Display Simple Gateway Control Protocol information 
+  sgi                   Show SGI information
+  sip-ua                Show SIP User Agent
+  smf                   Software MAC filter
+  smrp                  Simple Multicast Routing Protocol (SMRP) information
+  sna                   Display SNA host information
+  snapshot              Snapshot parameters and statistics
+  snmp                  snmp statistics
+  sntp                  Simple network time protocol
+  sockets               Socket Details
+  software              List software information
+  source-bridge         Source-bridge parameters and statistics
+  spanning-tree         Spanning tree topology
+  ssh                   Status of SSH server connections
+  ssm                   Segment Switching Manager Status
+  stacks                Process stack utilization
+  standby               Hot Standby Router Protocol (HSRP) information
+  startup-config        Contents of startup configuration
+  stcapp                show SCCP Telephony
+  stun                  STUN status and configuration
+  subscriber            Subscriber Service Switch Information
+  subscriber-policy     Subscriber policy
+  subscription          Subscription information to show
+  subsys                Show subsystem information
+  tacacs                Shows tacacs+ server statistics 
+  tarp                  TARP information
+  tcp                   Status of TCP connections
+  tech-support          Show system information for Tech-Support
+  template              Template information
+  terminal              Display terminal configuration parameters
+  test_rib_access       RIB_ACCESS TEST info
+  time-range            Time range
+  tn3270                TN3270 settings
+  topology              Topology instance information
+  track                 Tracking information
+  translate             Protocol translation information
+  translation-rule      Show translation rule table
+  transport-map         Transport map information
+  ttycap                Terminal capability tables
+  tunnel                Show configured tunnels
+  udp                   UDP Details
+  usb-devices           System USB devices
+  users                 Display information about terminal lines
+  utd                   Show Unified Threat Defense information
+  vasi                  VASI information
+  vc-group              Show VC Group
+  version               System hardware and software status
+  vfi                   Virtual Forwarding Instance information
+  video                 Video monitoring stats
+  vines                 VINES information
+  virtual-service       Virtual service and infrastructure related commands
+  vlan-autoconfig       dynamic VLAN configuration
+  vlan-range            VLAN Range
+  vlans                 Virtual LANs Information
+  vmi                   Show vmi commands
+  vnet                  Virtual NETwork instance information
+  voice                 Voice port configuration, mon-channels & stats
+  voip                  Voice over Internet Protocol information
+  vpdn                  VPDN information
+  vrf                   VPN Routing/Forwarding instance information
+  vrrp                  VRRP information
+  vrrs                  VRRS information
+  vsp                   Voice Streaming Processing information
+  vtemplate             Virtual Template interface information
+  wccp                  WCCP information
+  whoami                Info on current tty line
+  wsapi                 Web Service API debug information
+  wsma                  Show Web Services Management Agents information
+  x25                   X.25 information
+  x29                   X.29 information
+  xconnect              Xconnect information
+  xdr                   Show details about XDR
+  xos                   Cross-OS Library Information and Traces
+  xremote               XRemote statistics
+  xsd-format            Show the ODM XSD for the command
+  zone                  Zone Information
+  zone-pair             Zone pair information
+
+CSR2#show ip rip ?
+  database   IPv4 RIP database
+  neighbors  RIP BFD neighbors
+
+CSR2#show ip rip da
+CSR2#show ip rip da       
+CSR2#show ip rip database vr
+CSR2#show ip rip database vrf ?
+  WORD  VPN Routing/Forwarding instance name
+
+CSR2#show ip rip database vrf VPN
+CSR2#show ip rip database vrf VPN_A
+1.0.0.0/8    auto-summary
+1.1.1.1/32
+    [1] via 10.1.2.1, 00:00:03, GigabitEthernet1
+10.0.0.0/8    auto-summary
+10.1.2.0/30    directly connected, GigabitEthernet1
+10.19.20.0/30    redistributed
+    [1] via 19.19.19.19, 
+20.0.0.0/8    auto-summary
+20.20.20.20/32    redistributed
+    [2] via 19.19.19.19, 
+CSR2#show ip rip database vrf VPN_A def
+CSR2#show ip rip database vrf VPN_A det
+CSR2#show ip rip database vrf VPN_A ?  
+  A.B.C.D  Network to display information about
+  |        Output modifiers
+  <cr>
+
+CSR2#show ip rip database vrf VPN_A 
+1.0.0.0/8    auto-summary
+1.1.1.1/32
+    [1] via 10.1.2.1, 00:00:11, GigabitEthernet1
+10.0.0.0/8    auto-summary
+10.1.2.0/30    directly connected, GigabitEthernet1
+10.19.20.0/30    redistributed
+    [1] via 19.19.19.19, 
+20.0.0.0/8    auto-summary
+20.20.20.20/32    redistributed
+    [2] via 19.19.19.19, 
+CSR2#show bgp vpnv4 unicast all
+BGP table version is 20, local router ID is 2.2.2.2
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+Route Distinguisher: 100:1 (default for vrf VPN_A)
+ *>  1.1.1.1/32       10.1.2.1                 1         32768 ?
+ *>  10.1.2.0/30      0.0.0.0                  0         32768 ?
+ *>i 10.19.20.0/30    19.19.19.19              0    100      0 ?
+ *>i 20.20.20.20/32   19.19.19.19              1    100      0 ?
+CSR2#
+CSR2#
+CSR2#
+CSR2#show bgp vpnv4 unicast all
+BGP table version is 20, local router ID is 2.2.2.2
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+Route Distinguisher: 100:1 (default for vrf VPN_A)
+ *>  1.1.1.1/32       10.1.2.1                 1         32768 ?
+ *>  10.1.2.0/30      0.0.0.0                  0         32768 ?
+ *>i 10.19.20.0/30    19.19.19.19              0    100      0 ?
+ *>i 20.20.20.20/32   19.19.19.19              1    100      0 ?
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#terminal length 0
+CSR2#more system:running-config
+!
+! Last configuration change at 08:49:32 UTC Tue Jul 10 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition VPN_A
+ rd 100:1
+ route-target export 100:1
+ route-target import 100:1
+ !
+ address-family ipv4
+ exit-address-family
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 200 299
+mpls ldp session protection
+mpls ldp label
+ allocate global prefix-list LABELS
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9S2KOPAUVOD
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+!
+interface Loopback10
+ no ip address
+!
+interface GigabitEthernet1
+ vrf forwarding VPN_A
+ ip address 10.1.2.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.2.4.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet3
+ ip address 20.2.3.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+!
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp sync
+!
+router rip
+ !
+ address-family ipv4 vrf VPN_A
+  redistribute bgp 100 metric transparent
+  network 10.0.0.0
+  no auto-summary
+  version 2
+ exit-address-family
+!
+router bgp 100
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 next-hop-self
+ exit-address-family
+ !
+ address-family vpnv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 send-community extended
+ exit-address-family
+ !
+ address-family ipv4 vrf VPN_A
+  redistribute rip
+ exit-address-family
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+ip prefix-list LABELS seq 10 permit 3.3.3.3/32
+ip prefix-list LABELS seq 15 permit 4.4.4.4/32
+ip prefix-list LABELS seq 20 permit 5.5.5.5/32
+ip prefix-list LABELS seq 25 permit 6.6.6.6/32
+ip prefix-list LABELS seq 30 permit 19.19.19.19/32
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR2#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR2 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+CSR2>
+CSR2>en
+CSR2#
+CSR2#
+CSR2#sh run forn
+CSR2#sh run for 
+CSR2#sh run | s r 
+subscriber templating
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp sync
+router rip
+ !
+ address-family ipv4 vrf VPN_A
+  redistribute bgp 100 metric transparent
+  network 10.0.0.0
+  no auto-summary
+  version 2
+ exit-address-family
+router bgp 100
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 next-hop-self
+CSR2#sh run | s r 
+subscriber templating
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp sync
+router rip
+ !
+ address-family ipv4 vrf VPN_A
+  redistribute bgp 100 metric transparent
+  network 10.0.0.0
+  no auto-summary
+  version 2
+ exit-address-family
+router bgp 100
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 next-hop-self
+ exit-address-family
+ !        
+CSR2#     
+CSR2#
+CSR2#sh run form
+CSR2#sh run | s r r
+router rip
+ !
+ address-family ipv4 vrf VPN_A
+  redistribute bgp 100 metric transparent
+  network 10.0.0.0
+  no auto-summary
+  version 2
+ exit-address-family
+CSR2#
+CSR2#
+CSR2#conf 
+Configuring from terminal, memory, or network [terminal]? t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#no router rip
+CSR2(config)#
+CSR2(config)#router ei
+CSR2(config)#router eigrp 1
+CSR2(config-router)#add
+CSR2(config-router)#address-family vr
+CSR2(config-router)#address-family vrf
+CSR2(config-router)#address-family ip 
+CSR2(config-router)#address-family ipv4 vr
+CSR2(config-router)#address-family ipv4 vrf VPN_A
+CSR2(config-router-af)#
+CSR2(config-router-af)#red
+CSR2(config-router-af)#redistribute bg
+CSR2(config-router-af)#redistribute bgp ?
+  <1-4294967295>  Autonomous system number
+  <1.0-XX.YY>     Autonomous system number
+
+CSR2(config-router-af)#redistribute bgp 100 ?
+  metric     Metric for redistributed routes
+  route-map  Route map reference
+  <cr>
+
+CSR2(config-router-af)#redistribute bgp 100 me
+CSR2(config-router-af)#redistribute bgp 100 metric ?
+  <1-4294967295>  Bandwidth metric in Kbits per second
+
+CSR2(config-router-af)#redistribute bgp 100 metric 1
+CSR2(config-router-af)#redistribute bgp 100 metric 100 ?
+  <0-4294967295>  EIGRP delay metric, in 10 microsecond units
+
+CSR2(config-router-af)#redistribute bgp 100 metric 10     
+% Incomplete command.
+
+CSR2(config-router-af)#redistribute bgp 100 metric 100 11 11 11
+% Incomplete command.
+
+CSR2(config-router-af)#redistribute bgp 100 metric ?              
+  <1-4294967295>  Bandwidth metric in Kbits per second
+
+CSR2(config-router-af)#redistribute bgp 100 metric 6500 ?
+  <0-4294967295>  EIGRP delay metric, in 10 microsecond units
+
+CSR2(config-router-af)#redistribute bgp 100 metric 6500 0 ?
+  <0-255>  EIGRP reliability metric where 255 is 100% reliable
+
+CSR2(config-router-af)#redistribute bgp 100 metric 6500 0 255 ?
+  <1-255>  EIGRP Effective bandwidth metric (Loading) where 255 is 100% loaded
+
+CSR2(config-router-af)#redistribute bgp 100 metric 6500 0 255 ?
+  <1-255>  EIGRP Effective bandwidth metric (Loading) where 255 is 100% loaded
+
+CSR2(config-router-af)#redistribute bgp 100 metric 6500 0 255 1 ?
+  <1-65535>  EIGRP MTU of the path 
+
+CSR2(config-router-af)#redistribute bgp 100 metric 6500 0 255 1 1500 ?
+  route-map  Route map reference
+  <cr>
+
+CSR2(config-router-af)#redistribute bgp 100 metric 6500 0 255 1 1500 
+CSR2(config-router-af)#
+CSR2(config-router-af)#
+CSR2(config-router-af)#
+CSR2(config-router-af)#
+CSR2(config-router-af)#net
+CSR2(config-router-af)#network 10.1.2.0 ?
+  A.B.C.D  EIGRP wild card bits
+  <cr>
+
+CSR2(config-router-af)#network 10.1.2.0 0.0.0.3 ?
+  <cr>
+
+CSR2(config-router-af)#network 10.1.2.0 0.0.0.3 
+CSR2(config-router-af)#
+CSR2(config-router-af)#
+CSR2(config-router-af)#no au
+CSR2(config-router-af)#no auto-summary 
+CSR2(config-router-af)#
+CSR2(config-router-af)#
+CSR2(config-router-af)#end
+CSR2#
+CSR2#sh
+CSR2#show 
+*Jul 10 10:08:22.985: %SYS-5-CONFIG_I: Configured from console by console
+CSR2#show ip ei
+CSR2#show ip eigrp vr
+CSR2#show ip eigrp vrf ne
+CSR2#show ip eigrp vrf nei
+CSR2#show ip eigrp vrf ?  
+  WORD  VPN Routing/Forwarding instance name
+
+CSR2#show ip eigrp vrf VPN_A ne
+CSR2#show ip eigrp vrf VPN_A neighbors 
+EIGRP-IPv4 Neighbors for AS(0) VRF(VPN_A)
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh run | s r e                    
+router eigrp 1
+ !
+ address-family ipv4 vrf VPN_A 
+  redistribute bgp 100 metric 6500 0 255 1 1500
+  network 10.1.2.0 0.0.0.3
+ exit-address-family
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh run 
+Building configuration...
+
+Current configuration : 2614 bytes
+!
+! Last configuration change at 10:08:22 UTC Tue Jul 10 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition VPN_A
+ rd 100:1
+ route-target export 100:1
+ route-target import 100:1
+ !
+ address-family ipv4
+ exit-address-family
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!         
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 200 299
+mpls ldp session protection
+mpls ldp label
+ allocate global prefix-list LABELS
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!         
+!
+!
+license udi pid CSR1000V sn 9S2KOPAUVOD
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!         
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+!
+interface Loopback10
+ no ip address
+!
+interface GigabitEthernet1
+ vrf forwarding VPN_A
+ ip address 10.1.2.2 255.255.255.252
+ negotiation auto
+!         
+interface GigabitEthernet2
+ ip address 20.2.4.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet3
+ ip address 20.2.3.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+!
+!
+router eigrp 1
+ !
+ address-family ipv4 vrf VPN_A 
+  redistribute bgp 100 metric 6500 0 255 1 1500
+  network 10.1.2.0 0.0.0.3
+ exit-address-family
+!         
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp sync
+!
+router bgp 100
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 next-hop-self
+ exit-address-family
+ !
+ address-family vpnv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 send-community extended
+ exit-address-family
+ !
+ address-family ipv4 vrf VPN_A
+ exit-address-family
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+ip prefix-list LABELS seq 10 permit 3.3.3.3/32
+ip prefix-list LABELS seq 15 permit 4.4.4.4/32
+ip prefix-list LABELS seq 20 permit 5.5.5.5/32
+ip prefix-list LABELS seq 25 permit 6.6.6.6/32
+ip prefix-list LABELS seq 30 permit 19.19.19.19/32
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+          
+CSR2#onf t
+       ^
+% Invalid input detected at '^' marker.
+
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#router bgp 100
+CSR2(config-router)#address-family ipv4 vrf VPN_A
+CSR2(config-router-af)#
+CSR2(config-router-af)#red
+CSR2(config-router-af)#redistribute ei
+CSR2(config-router-af)#redistribute eigrp 1 ?
+  metric     Metric for redistributed routes
+  route-map  Route map reference
+  <cr>
+
+CSR2(config-router-af)#redistribute eigrp 1 me
+CSR2(config-router-af)#redistribute eigrp 1 metric ?
+  <0-4294967295>  Default metric
+
+CSR2(config-router-af)#redistribute eigrp 1 ?      
+  metric     Metric for redistributed routes
+  route-map  Route map reference
+  <cr>
+
+CSR2(config-router-af)#redistribute eigrp 1 me
+CSR2(config-router-af)#redistribute eigrp 1 metric ?
+  <0-4294967295>  Default metric
+
+CSR2(config-router-af)#redistribute eigrp 1        
+CSR2(config-router-af)#
+CSR2(config-router-af)#commi
+CSR2(config-router-af)#end  
+CSR2#
+CSR2#
+CSR2#sh ru
+*Jul 10 10:11:23.983: %SYS-5-CONFIG_I: Configured from console by consolen 
+CSR2#sh run | s r b
+router bgp 100
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 next-hop-self
+ exit-address-family
+ !
+ address-family vpnv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 send-community extended
+ exit-address-family
+ !
+ address-family ipv4 vrf VPN_A
+  redistribute eigrp 1 
+ exit-address-family
+CSR2#
+CSR2# 
+CSR2#
+CSR2#
+CSR2#
+*Jul 10 10:20:07.068: %LDP-5-SP: 3.3.3.3:0: session hold up initiated
+*Jul 10 10:20:07.071: %LDP-5-SP: 4.4.4.4:0: session hold up initiated
+*Jul 10 10:20:07.300: %LDP-5-SP: 4.4.4.4:0: session recovery succeeded

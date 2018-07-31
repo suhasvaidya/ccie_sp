@@ -1,0 +1,346 @@
+
+CSR6>
+CSR6>en
+CSR6>enable 
+CSR6#
+CSR6#
+CSR6#sh    
+CSR6#show mpl
+CSR6#show mpls ld
+CSR6#show mpls ldp ig
+CSR6#show mpls ldp igp s
+CSR6#show mpls ldp igp sync 
+    GigabitEthernet1:
+        LDP configured; LDP-IGP Synchronization not enabled.
+    GigabitEthernet2:
+        LDP configured; LDP-IGP Synchronization not enabled.
+    GigabitEthernet3:
+        LDP configured; LDP-IGP Synchronization not enabled.
+    GigabitEthernet4:
+        LDP configured; LDP-IGP Synchronization not enabled.
+CSR6#
+CSR6#
+CSR6#conf r
+% Incomplete command.
+
+CSR6#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR6(config)#router is
+CSR6(config)#router os
+CSR6(config)#router ospf 1
+CSR6(config-router)#mpl
+CSR6(config-router)#mpls ld
+CSR6(config-router)#mpls ldp sy
+CSR6(config-router)#mpls ldp sync 
+CSR6(config-router)#
+CSR6(config-router)#end
+CSR6#
+CSR6#
+CSR6#
+*Jul  4 10:29:16.980: %SYS-5-CONFIG_I: Configured from console by console
+CSR6#
+CSR6#
+CSR6#
+CSR6#
+CSR6#sh 
+CSR6#show mpl
+CSR6#show mpls ld
+CSR6#show mpls ldp det
+CSR6#show mpls ldp ne 
+CSR6#show mpls ldp neighbor ?
+  A.B.C.D            Neighbor address
+  ACR                Virtual ACR interface
+  ATM-ACR            ATM interface with ACR
+  Analysis-Module    Cisco network analysis service module
+  AppNav-Compress    Service-Context Virtual Interface Compress
+  AppNav-UnCompress  Service-Context Virtual interface UnCompress
+  Async              Async interface
+  Auto-Template      Auto-Template interface
+  BDI                Bridge-Domain interface
+  BVI                Bridge-Group Virtual Interface
+  CDMA-Ix            CDMA Ix interface
+  CEM-ACR            Circuit Emulation interface with ACR
+  CTunnel            CTunnel interface
+  Container          Container interface
+  Dialer             Dialer interface
+  EsconPhy           ESCON interface
+  Ethernet-Internal  Ethernet-Internal interface
+  Fcpa               Fiber Channel
+  Filter             Filter interface
+  Filtergroup        Filter Group interface
+  GMPLS              MPLS interface
+  GigabitEthernet    GigabitEthernet IEEE 802.3z
+  IMA-ACR            IMA interface with ACR
+  LISP               Locator/ID Separation Protocol Virtual Interface
+  LongReachEthernet  Long-Reach Ethernet interface
+  Loopback           Loopback interface
+  Lspvif             LSP virtual interface
+  MFR                Multilink Frame Relay bundle interface
+  Multilink          Multilink-group interface
+  NVI                NAT virtual interface
+  Null               Null interface
+  Overlay            Overlay interface
+  Port-channel       Ethernet Channel of interfaces
+  Portgroup          Portgroup interface
+  Pos-channel        POS Channel of interfaces
+  SBC                Session Border Controller
+  SONET_ACR          Virtual SONET-ACR controller
+  SSLVPN-VIF         SSLVPN Virtual Interface
+  SYSCLOCK           Telecom-Bus Clock Controller
+  Service-Engine     Cisco service engine module
+  Tunnel             Tunnel interface
+  Tunnel-tp          MPLS Transport Profile interface
+  VPN                VPN interface
+  Vif                PGM Multicast Host interface
+  Vir-cem-ACR        Circuit Emulation Virtual interface with ACR
+  Virtual-PPP        Virtual PPP interface
+  Virtual-Template   Virtual Template interface
+  Virtual-TokenRing  Virtual TokenRing
+  VirtualPortGroup   Virtual Port Group
+  Vlan               Catalyst Vlans
+  all                Display neighbor information in all VRFs
+  capabilities       Display neighbor capability information
+  detail             Display detailed neighbor information
+  graceful-restart   Display graceful restart neighbor information
+  multiservice       Multiservice interface
+  nve                Network virtualization endpoint interface
+  password           Display neighbor password information
+  ucse               Cisco ucse server
+  vasileft           VasiLeft interface
+  vasiright          VasiRight interface
+  vmi                Virtual Multipoint Interface
+  voaBypassIn        VOA-Bypass-In interface
+  voaBypassOut       VOA-Bypass-Out interface
+  voaFilterIn        VOA-Filter-In interface
+  voaFilterOut       VOA-Filter-Out interface
+  voaIn              VOA-In interface
+  voaOut             VOA-Out interface
+  vrf                VRF Routing/Forwarding instance information
+          
+CSR6#show mpls ldp neighbor de
+CSR6#show mpls ldp neighbor detail 
+    Peer LDP Ident: 3.3.3.3:0; Local LDP Ident 6.6.6.6:0
+        TCP connection: 3.3.3.3.646 - 6.6.6.6.16614
+        Password: not required, none, in use
+        State: Oper; Msgs sent/rcvd: 163/164; Downstream; Last TIB rev sent 44
+        Up time: 01:48:34; UID: 8; Peer Id 0
+        LDP discovery sources:
+          GigabitEthernet1; Src IP addr: 20.3.6.1 
+            holdtime: 15000 ms, hello interval: 5000 ms
+        Addresses bound to peer LDP Ident:
+          20.3.6.1        20.2.3.2        20.3.4.1        3.3.3.3         
+        Peer holdtime: 180000 ms; KA interval: 60000 ms; Peer state: estab
+        NSR: Not Ready
+        Capabilities Sent:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+        Capabilities Received:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+    Peer LDP Ident: 5.5.5.5:0; Local LDP Ident 6.6.6.6:0
+        TCP connection: 5.5.5.5.646 - 6.6.6.6.18649
+        Password: not required, none, in use
+        State: Oper; Msgs sent/rcvd: 162/163; Downstream; Last TIB rev sent 44
+        Up time: 01:48:34; UID: 9; Peer Id 1
+        LDP discovery sources:
+          GigabitEthernet2; Src IP addr: 20.5.6.1 
+            holdtime: 15000 ms, hello interval: 5000 ms
+        Addresses bound to peer LDP Ident:
+          20.4.5.2        20.5.6.1        5.5.5.5         20.19.5.1       
+        Peer holdtime: 180000 ms; KA interval: 60000 ms; Peer state: estab
+        NSR: Not Ready
+        Capabilities Sent:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+        Capabilities Received:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+    Peer LDP Ident: 4.4.4.4:0; Local LDP Ident 6.6.6.6:0
+        TCP connection: 4.4.4.4.646 - 6.6.6.6.26608
+        Password: not required, none, in use
+        State: Oper; Msgs sent/rcvd: 162/163; Downstream; Last TIB rev sent 44
+        Up time: 01:48:34; UID: 10; Peer Id 2
+        LDP discovery sources:
+          GigabitEthernet3; Src IP addr: 20.4.6.1 
+            holdtime: 15000 ms, hello interval: 5000 ms
+        Addresses bound to peer LDP Ident:
+          20.2.4.2        4.4.4.4         20.3.4.2        20.4.6.1        
+          20.4.5.1        
+        Peer holdtime: 180000 ms; KA interval: 60000 ms; Peer state: estab
+        NSR: Not Ready
+        Capabilities Sent:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+        Capabilities Received:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+    Peer LDP Ident: 19.19.19.19:0; Local LDP Ident 6.6.6.6:0
+        TCP connection: 19.19.19.19.23596 - 6.6.6.6.646
+        Password: not required, none, in use
+        State: Oper; Msgs sent/rcvd: 152/153; Downstream; Last TIB rev sent 44
+        Up time: 01:38:26; UID: 12; Peer Id 3
+        LDP discovery sources:
+          GigabitEthernet4; Src IP addr: 20.6.19.2 
+            holdtime: 15000 ms, hello interval: 5000 ms
+        Addresses bound to peer LDP Ident:
+          20.6.19.2       20.5.19.2       20.19.20.1      19.19.19.19     
+        Peer holdtime: 180000 ms; KA interval: 60000 ms; Peer state: estab
+        NSR: Not Ready
+        Capabilities Sent:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+        Capabilities Received:
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+CSR6# 
+CSR6#
+CSR6#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR6(config)#mpl
+CSR6(config)#mpls ld
+CSR6(config)#mpls ldp se
+CSR6(config)#mpls ldp session pr
+CSR6(config)#mpls ldp session protection 
+CSR6(config)#end
+CSR6#
+CSR6#
+CSR6#conf t
+*Jul  4 10:49:40.546: %SYS-5-CONFIG_I: Configured from console by cshow mpls ldp neighbor detail 
+    Peer LDP Ident: 3.3.3.3:0; Local LDP Ident 6.6.6.6:0
+        TCP connection: 3.3.3.3.646 - 6.6.6.6.16614
+        Password: not required, none, in use
+        State: Oper; Msgs sent/rcvd: 164/164; Downstream; Last TIB rev sent 44
+        Up time: 01:48:52; UID: 8; Peer Id 0
+        LDP discovery sources:
+          GigabitEthernet1; Src IP addr: 20.3.6.1 
+            holdtime: 15000 ms, hello interval: 5000 ms
+          Targeted Hello 6.6.6.6 -> 3.3.3.3, active, passive;
+            holdtime: infinite, hello interval: 10000 ms
+        Addresses bound to peer LDP Ident:
+          20.3.6.1        20.2.3.2        20.3.4.1        3.3.3.3         
+        Peer holdtime: 180000 ms; KA interval: 60000 ms; Peer state: estab
+        Clients: Dir Adj Client
+        LDP Session Protection enabled, state: Ready
+            duration: 86400 seconds
+        NSR: Not Ready
+        Capabilities Sent:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+        Capabilities Received:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+    Peer LDP Ident: 5.5.5.5:0; Local LDP Ident 6.6.6.6:0
+        TCP connection: 5.5.5.5.646 - 6.6.6.6.18649
+        Password: not required, none, in use
+        State: Oper; Msgs sent/rcvd: 162/163; Downstream; Last TIB rev sent 44
+        Up time: 01:48:52; UID: 9; Peer Id 1
+        LDP discovery sources:
+          GigabitEthernet2; Src IP addr: 20.5.6.1 
+            holdtime: 15000 ms, hello interval: 5000 ms
+          Targeted Hello 6.6.6.6 -> 5.5.5.5, active, passive;
+            holdtime: infinite, hello interval: 10000 ms
+        Addresses bound to peer LDP Ident:
+          20.4.5.2        20.5.6.1        5.5.5.5         20.19.5.1       
+        Peer holdtime: 180000 ms; KA interval: 60000 ms; Peer state: estab
+        Clients: Dir Adj Client
+        LDP Session Protection enabled, state: Ready
+            duration: 86400 seconds
+        NSR: Not Ready
+        Capabilities Sent:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+        Capabilities Received:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+    Peer LDP Ident: 4.4.4.4:0; Local LDP Ident 6.6.6.6:0
+        TCP connection: 4.4.4.4.646 - 6.6.6.6.26608
+        Password: not required, none, in use
+        State: Oper; Msgs sent/rcvd: 162/163; Downstream; Last TIB rev sent 44
+        Up time: 01:48:52; UID: 10; Peer Id 2
+        LDP discovery sources:
+          GigabitEthernet3; Src IP addr: 20.4.6.1 
+            holdtime: 15000 ms, hello interval: 5000 ms
+          Targeted Hello 6.6.6.6 -> 4.4.4.4, active, passive;
+            holdtime: infinite, hello interval: 10000 ms
+        Addresses bound to peer LDP Ident:
+          20.2.4.2        4.4.4.4         20.3.4.2        20.4.6.1        
+          20.4.5.1        
+        Peer holdtime: 180000 ms; KA interval: 60000 ms; Peer state: estab
+        Clients: Dir Adj Client
+        LDP Session Protection enabled, state: Ready
+            duration: 86400 seconds
+        NSR: Not Ready
+        Capabilities Sent:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+        Capabilities Received:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+    Peer LDP Ident: 19.19.19.19:0; Local LDP Ident 6.6.6.6:0
+        TCP connection: 19.19.19.19.23596 - 6.6.6.6.646
+        Password: not required, none, in use
+        State: Oper; Msgs sent/rcvd: 152/153; Downstream; Last TIB rev sent 44
+        Up time: 01:38:43; UID: 12; Peer Id 3
+        LDP discovery sources:
+          GigabitEthernet4; Src IP addr: 20.6.19.2 
+            holdtime: 15000 ms, hello interval: 5000 ms
+        Addresses bound to peer LDP Ident:
+          20.6.19.2       20.5.19.2       20.19.20.1      19.19.19.19     
+        Peer holdtime: 180000 ms; KA interval: 60000 ms; Peer state: estab
+        Clients: Dir Adj Client
+        LDP Session Protection enabled, state: Incomplete
+            duration: 86400 seconds
+        NSR: Not Ready
+        Capabilities Sent:
+          [ICCP (type 0x0405) MajVer 1 MinVer 0]
+          [Dynamic Announcement (0x0506)]
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+        Capabilities Received:
+          [mLDP Point-to-Multipoint (0x0508)]
+          [mLDP Multipoint-to-Multipoint (0x0509)]
+          [Typed Wildcard (0x050B)]
+CSR6# 
+CSR6#
+CSR6#

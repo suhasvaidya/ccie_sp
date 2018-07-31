@@ -1,0 +1,5 @@
+
+CSR2#
+CSR2#
+CSR2#show ip eigrp vrf VPN_A neighbors 
+EIGRP-IPv4 Neighbors for AS(0) VRF(VPN_A)

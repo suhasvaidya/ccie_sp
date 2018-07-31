@@ -1,0 +1,1156 @@
+
+*Jul  4 08:55:34.552: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (2) is DOWN (Received error notification from peer: Holddown time expired)
+*Jul  4 08:56:04.665: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (2) is UP
+*Jul  4 08:57:28.831: %LDP-5-NBRCHG: LDP Neighbor 5.5.5.5:0 (3) is DOWN (Received error notification from peer: Holddown time expired)
+*Jul  4 08:57:45.087: %LDP-5-NBRCHG: LDP Neighbor 5.5.5.5:0 (3) is UP
+*Jul  4 08:59:30.146: %LDP-5-NBRCHG: LDP Neighbor 3.3.3.3:0 (1) is DOWN (Received error notification from peer: Holddown time expired)
+*Jul  4 08:59:53.738: %LDP-5-NBRCHG: LDP Neighbor 3.3.3.3:0 (1) is UP
+CSR6>
+CSR6>
+CSR6>
+CSR6>
+CSR6>
+CSR6>en
+CSR6#
+CSR6#sh mpl
+CSR6#sh mpls inter
+CSR6#sh mpls interfaces 
+Interface              IP            Tunnel   BGP Static Operational
+GigabitEthernet1       Yes (ldp)     No       No  No     Yes        
+GigabitEthernet2       Yes (ldp)     No       No  No     Yes        
+GigabitEthernet3       Yes (ldp)     No       No  No     Yes        
+GigabitEthernet4       Yes (ldp)     No       No  No     Yes        
+CSR6#inter
+CSR6#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR6(config)#int
+CSR6(config)#interface gi1
+CSR6(config-if)#no mpls ip
+CSR6(config-if)#
+CSR6(config-if)#interface gi1
+*Jul  4 09:00:27.624: %LDP-5-NBRCHG: LDP Neighbor 3.3.3.3:0 (1) is DOWN (LDP disabled on interface2
+CSR6(config-if)#
+CSR6(config-if)#no mpls ip   
+CSR6(config-if)#
+CSR6(config-if)#
+CSR6(config-if)#interface gi2
+*Jul  4 09:00:32.300: %LDP-5-NBRCHG: LDP Neighbor 5.5.5.5:0 (3) is DOWN (LDP disabled on interface3
+CSR6(config-if)#
+CSR6(config-if)#no mpls ip   
+CSR6(config-if)#
+CSR6(config-if)#
+CSR6(config-if)#interface gi3
+*Jul  4 09:00:37.037: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (2) is DOWN (LDP disabled on interface4
+CSR6(config-if)#
+CSR6(config-if)#no mpls ip   
+CSR6(config-if)#
+CSR6(config-if)#
+CSR6(config-if)#
+CSR6(config-if)#
+*Jul  4 09:00:40.886: %LDP-5-NBRCHG: LDP Neighbor 19.19.19.19:0 (4) is DOWN (LDP disabled on interface)router os
+CSR6(config-if)#router ospf 1
+CSR6(config-router)#
+CSR6(config-router)#mpl
+CSR6(config-router)#mpls ld
+CSR6(config-router)#mpls ldp au
+CSR6(config-router)#mpls ldp autoconfig 
+CSR6(config-router)#
+CSR6(config-router)#end
+CSR6#
+CSR6#
+CSR6#
+CSR6#
+*Jul  4 09:00:50.355: %LDP-5-NBRCHG: LDP Neighbor 3.3.3.3:0 (1) is UP
+*Jul  4 09:00:50.355: %LDP-5-NBRCHG: LDP Neighbor 5.5.5.5:0 (2) is UP
+*Jul  4 09:00:50.360: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (3) is UP
+CSR6#
+CSR6#
+*Jul  4 09:00:51.396: %SYS-5-CONFIG_I: Configured from console by console
+CSR6#
+CSR6#
+CSR6#
+*Jul  4 09:00:54.431: %LDP-5-NBRCHG: LDP Neighbor 19.19.19.19:0 (4) is UP
+CSR6#
+CSR6#
+CSR6#
+CSR6#
+CSR6#wr
+Building configuration...
+[OK]
+CSR6#
+CSR6#
+*Jul  4 09:08:18.632: %LDP-5-NBRCHG: LDP Neighbor 19.19.19.19:0 (4) is DOWN (Received error notification from peer: Holddown time expired)
+*Jul  4 09:10:58.696: %LDP-5-NBRCHG: LDP Neighbor 19.19.19.19:0 (4) is UP
+CSR6#
+CSR6#
+CSR6#terminal length 0
+CSR6#more system:running-config
+!
+! Last configuration change at 09:00:51 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR6
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 600 699
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 945V2JQGOFZ
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 6.6.6.6 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address 20.3.6.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.5.6.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet3
+ ip address 20.4.6.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet4
+ ip address 20.6.19.1 255.255.255.252
+ negotiation auto
+!
+router ospf 1
+ network 6.6.6.6 0.0.0.0 area 0
+ network 20.3.6.0 0.0.0.3 area 0
+ network 20.4.6.0 0.0.0.3 area 0
+ network 20.5.6.0 0.0.0.3 area 0
+ network 20.6.19.0 0.0.0.3 area 0
+ mpls ldp autoconfig
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR6#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR6 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+CSR6>
+CSR6>
+CSR6>enable
+CSR6#terminal length 0
+CSR6#more system:running-config
+!
+! Last configuration change at 09:00:51 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR6
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 600 699
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 945V2JQGOFZ
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 6.6.6.6 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address 20.3.6.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.5.6.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet3
+ ip address 20.4.6.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet4
+ ip address 20.6.19.1 255.255.255.252
+ negotiation auto
+!
+router ospf 1
+ network 6.6.6.6 0.0.0.0 area 0
+ network 20.3.6.0 0.0.0.3 area 0
+ network 20.4.6.0 0.0.0.3 area 0
+ network 20.5.6.0 0.0.0.3 area 0
+ network 20.6.19.0 0.0.0.3 area 0
+ mpls ldp autoconfig
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR6#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR6 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+CSR6>
+CSR6>en
+CSR6#
+CSR6#w
+% No connections open
+CSR6#wr
+Building configuration...
+[OK]
+CSR6#
+CSR6#
+CSR6#
+CSR6#
+CSR6#terminal length 0
+CSR6#more system:running-config
+!
+! Last configuration change at 09:00:51 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR6
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 600 699
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 945V2JQGOFZ
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 6.6.6.6 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address 20.3.6.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.5.6.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet3
+ ip address 20.4.6.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet4
+ ip address 20.6.19.1 255.255.255.252
+ negotiation auto
+!
+router ospf 1
+ network 6.6.6.6 0.0.0.0 area 0
+ network 20.3.6.0 0.0.0.3 area 0
+ network 20.4.6.0 0.0.0.3 area 0
+ network 20.5.6.0 0.0.0.3 area 0
+ network 20.6.19.0 0.0.0.3 area 0
+ mpls ldp autoconfig
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR6#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR6 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+CSR6>en
+CSR6#
+CSR6#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR6(config)#ip prefix-list LABELS permit 2.2.2.2/32
+CSR6(config)#ip prefix-list LABELS permit 3.3.3.3/32
+CSR6(config)#ip prefix-list LABELS permit 4.4.4.4/32
+CSR6(config)#ip prefix-list LABELS permit 5.5.5.5/32
+CSR6(config)#ip prefix-list LABELS permit 6.6.6.6/32
+CSR6(config)#ip prefix-list LABELS permit 19.19.19.19/32
+CSR6(config)#
+CSR6(config)#end
+CSR6#
+CSR6#
+*Jul  4 09:29:23.035: %SYS-5-CONFIG_I: Configured from console by console
+CSR6#
+CSR6#
+CSR6#sh
+CSR6#show mpl
+CSR6#show mpls fo
+CSR6#show mpls forwarding-table 
+Local      Outgoing   Prefix           Bytes Label   Outgoing   Next Hop    
+Label      Label      or Tunnel Id     Switched      interface              
+600        Pop Label  4.4.4.4/32       0             Gi3        20.4.6.1    
+601        Pop Label  3.3.3.3/32       0             Gi1        20.3.6.1    
+602        309        2.2.2.2/32       0             Gi1        20.3.6.1    
+           404        2.2.2.2/32       0             Gi3        20.4.6.1    
+603        No Label   20.4.5.0/30      0             Gi3        20.4.6.1    
+           No Label   20.4.5.0/30      0             Gi2        20.5.6.1    
+604        No Label   20.2.4.0/30      766           Gi3        20.4.6.1    
+605        No Label   20.2.3.0/30      0             Gi1        20.3.6.1    
+606        No Label   20.3.4.0/30      0             Gi1        20.3.6.1    
+           No Label   20.3.4.0/30      0             Gi3        20.4.6.1    
+607        Pop Label  5.5.5.5/32       4674          Gi2        20.5.6.1    
+608        No Label   20.19.5.0/30     0             Gi2        20.5.6.1    
+609        Pop Label  19.19.19.19/32   5466          Gi4        20.6.19.2   
+610        Pop Label  20.5.19.0/30     0             Gi4        20.6.19.2   
+CSR6#
+CSR6#
+CSR6#
+CSR6#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR6(config)#
+CSR6(config)# mpls ldp label
+CSR6(config-ldp-lbl)#      allocate global prefix-list LABELS
+CSR6(config-ldp-lbl)#
+CSR6(config-ldp-lbl)#
+CSR6(config-ldp-lbl)#end
+CSR6#
+CSR6#
+CSR6#show mpls forwarding-table 
+*Jul  4 09:30:37.510: %SYS-5-CONFIG_I: Configured from console by console
+Local      Outgoing   Prefix           Bytes Label   Outgoing   Next Hop    
+Label      Label      or Tunnel Id     Switched      interface              
+600        Pop Label  4.4.4.4/32       0             Gi3        20.4.6.1    
+601        Pop Label  3.3.3.3/32       0             Gi1        20.3.6.1    
+602        309        2.2.2.2/32       0             Gi1        20.3.6.1    
+           404        2.2.2.2/32       0             Gi3        20.4.6.1    
+603        No Label   20.4.5.0/30      0             Gi3        20.4.6.1    
+           No Label   20.4.5.0/30      0             Gi2        20.5.6.1    
+604        No Label   20.2.4.0/30      766           Gi3        20.4.6.1    
+605        No Label   20.2.3.0/30      0             Gi1        20.3.6.1    
+606        No Label   20.3.4.0/30      0             Gi1        20.3.6.1    
+           No Label   20.3.4.0/30      0             Gi3        20.4.6.1    
+607        Pop Label  5.5.5.5/32       5072          Gi2        20.5.6.1    
+608        No Label   20.19.5.0/30     0             Gi2        20.5.6.1    
+609        Pop Label  19.19.19.19/32   5864          Gi4        20.6.19.2   
+610        Pop Label  20.5.19.0/30     0             Gi4        20.6.19.2   
+CSR6#
+CSR6#
+CSR6#show mpls forwarding-table 
+Local      Outgoing   Prefix           Bytes Label   Outgoing   Next Hop    
+Label      Label      or Tunnel Id     Switched      interface              
+600        Pop Label  4.4.4.4/32       0             Gi3        20.4.6.1    
+601        Pop Label  3.3.3.3/32       0             Gi1        20.3.6.1    
+602        309        2.2.2.2/32       0             Gi1        20.3.6.1    
+           404        2.2.2.2/32       0             Gi3        20.4.6.1    
+603        No Label   20.4.5.0/30      0             Gi3        20.4.6.1    
+           No Label   20.4.5.0/30      0             Gi2        20.5.6.1    
+604        No Label   20.2.4.0/30      766           Gi3        20.4.6.1    
+605        No Label   20.2.3.0/30      0             Gi1        20.3.6.1    
+606        No Label   20.3.4.0/30      0             Gi1        20.3.6.1    
+           No Label   20.3.4.0/30      0             Gi3        20.4.6.1    
+607        Pop Label  5.5.5.5/32       5072          Gi2        20.5.6.1    
+608        No Label   20.19.5.0/30     0             Gi2        20.5.6.1    
+609        Pop Label  19.19.19.19/32   5864          Gi4        20.6.19.2   
+610        Pop Label  20.5.19.0/30     0             Gi4        20.6.19.2   
+CSR6#
+CSR6#
+CSR6#
+CSR6#
+CSR6#show mpls forwarding-table 
+Local      Outgoing   Prefix           Bytes Label   Outgoing   Next Hop    
+Label      Label      or Tunnel Id     Switched      interface              
+600        Pop Label  4.4.4.4/32       0             Gi3        20.4.6.1    
+601        Pop Label  3.3.3.3/32       0             Gi1        20.3.6.1    
+602        309        2.2.2.2/32       0             Gi1        20.3.6.1    
+           404        2.2.2.2/32       0             Gi3        20.4.6.1    
+607        Pop Label  5.5.5.5/32       5126          Gi2        20.5.6.1    
+609        Pop Label  19.19.19.19/32   5936          Gi4        20.6.19.2   
+CSR6#
+CSR6#
+CSR6#
+CSR6#
+CSR6#wr
+Building configuration...
+[OK]
+CSR6#
+CSR6#
+CSR6#
+CSR6#terminal length 0
+CSR6#more system:running-config
+!
+! Last configuration change at 09:30:37 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR6
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 600 699
+mpls ldp label
+ allocate global prefix-list LABELS
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 945V2JQGOFZ
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 6.6.6.6 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address 20.3.6.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.5.6.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet3
+ ip address 20.4.6.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet4
+ ip address 20.6.19.1 255.255.255.252
+ negotiation auto
+!
+router ospf 1
+ network 6.6.6.6 0.0.0.0 area 0
+ network 20.3.6.0 0.0.0.3 area 0
+ network 20.4.6.0 0.0.0.3 area 0
+ network 20.5.6.0 0.0.0.3 area 0
+ network 20.6.19.0 0.0.0.3 area 0
+ mpls ldp autoconfig
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+ip prefix-list LABELS seq 10 permit 3.3.3.3/32
+ip prefix-list LABELS seq 15 permit 4.4.4.4/32
+ip prefix-list LABELS seq 20 permit 5.5.5.5/32
+ip prefix-list LABELS seq 25 permit 6.6.6.6/32
+ip prefix-list LABELS seq 30 permit 19.19.19.19/32
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR6#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR6 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1023 @@
+
+CSR2>
+*Jul 10 02:00:47.249: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet3 from LOADING to FULL, Loading Done
+*Jul 10 02:00:51.571: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on GigabitEthernet2 from LOADING to FULL, Loading Done
+*Jul 10 02:00:52.359: %LDP-5-NBRCHG: LDP Neighbor 3.3.3.3:0 (1) is UP
+*Jul 10 02:01:02.667: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (2) is UP
+CSR2>
+CSR2>
+CSR2>en
+CSR2#sh
+CSR2#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override, p - overrides from PfR
+
+Gateway of last resort is not set
+
+      2.0.0.0/32 is subnetted, 1 subnets
+C        2.2.2.2 is directly connected, Loopback0
+      3.0.0.0/32 is subnetted, 1 subnets
+O        3.3.3.3 [110/2] via 20.2.3.2, 00:08:27, GigabitEthernet3
+      4.0.0.0/32 is subnetted, 1 subnets
+O        4.4.4.4 [110/2] via 20.2.4.2, 00:08:17, GigabitEthernet2
+      5.0.0.0/32 is subnetted, 1 subnets
+O        5.5.5.5 [110/3] via 20.2.4.2, 00:01:17, GigabitEthernet2
+      6.0.0.0/32 is subnetted, 1 subnets
+O        6.6.6.6 [110/3] via 20.2.4.2, 00:08:17, GigabitEthernet2
+                 [110/3] via 20.2.3.2, 00:08:27, GigabitEthernet3
+      7.0.0.0/32 is subnetted, 1 subnets
+O        7.7.7.7 [110/3] via 20.2.4.2, 00:08:17, GigabitEthernet2
+      8.0.0.0/32 is subnetted, 1 subnets
+O        8.8.8.8 [110/4] via 20.2.4.2, 00:01:17, GigabitEthernet2
+      10.0.0.0/8 is variably subnetted, 5 subnets, 2 masks
+C        10.1.2.0/30 is directly connected, GigabitEthernet1
+L        10.1.2.2/32 is directly connected, GigabitEthernet1
+O        10.4.7.0/30 [110/2] via 20.2.4.2, 00:08:17, GigabitEthernet2
+O        10.5.8.0/30 [110/3] via 20.2.4.2, 00:01:17, GigabitEthernet2
+O        10.19.20.0/30 [110/4] via 20.2.4.2, 00:08:17, GigabitEthernet2
+                       [110/4] via 20.2.3.2, 00:08:17, GigabitEthernet3
+      19.0.0.0/32 is subnetted, 1 subnets
+O        19.19.19.19 [110/4] via 20.2.4.2, 00:08:17, GigabitEthernet2
+                     [110/4] via 20.2.3.2, 00:08:17, GigabitEthernet3
+      20.0.0.0/8 is variably subnetted, 11 subnets, 2 masks
+C        20.2.3.0/30 is directly connected, GigabitEthernet3
+L        20.2.3.1/32 is directly connected, GigabitEthernet3
+C        20.2.4.0/30 is directly connected, GigabitEthernet2
+L        20.2.4.1/32 is directly connected, GigabitEthernet2
+O        20.3.4.0/30 [110/2] via 20.2.4.2, 00:08:17, GigabitEthernet2
+                     [110/2] via 20.2.3.2, 00:08:17, GigabitEthernet3
+O        20.3.6.0/30 [110/2] via 20.2.3.2, 00:08:27, GigabitEthernet3
+O        20.4.5.0/30 [110/2] via 20.2.4.2, 00:01:17, GigabitEthernet2
+O        20.4.6.0/30 [110/2] via 20.2.4.2, 00:08:17, GigabitEthernet2
+O        20.5.6.0/30 [110/3] via 20.2.4.2, 00:08:17, GigabitEthernet2
+                     [110/3] via 20.2.3.2, 00:08:27, GigabitEthernet3
+O        20.5.19.0/30 [110/3] via 20.2.4.2, 00:01:17, GigabitEthernet2
+O        20.6.19.0/30 [110/3] via 20.2.4.2, 00:08:17, GigabitEthernet2
+                      [110/3] via 20.2.3.2, 00:08:17, GigabitEthernet3
+CSR2# 
+CSR2#
+CSR2#tra
+CSR2#traceroute 19.19.19.19 so
+CSR2#traceroute 19.19.19.19 source lo0 
+Type escape sequence to abort.
+Tracing the route to 19.19.19.19
+VRF info: (vrf in name/id, vrf out name/id)
+  1 20.2.3.2 [MPLS: Label 303 Exp 0] 40 msec
+    20.2.4.2 [MPLS: Label 403 Exp 0] 18 msec
+    20.2.3.2 [MPLS: Label 303 Exp 0] 14 msec
+  2 20.4.6.2 [MPLS: Label 603 Exp 0] 15 msec
+    20.3.6.2 [MPLS: Label 603 Exp 0] 7 msec
+    20.4.6.2 [MPLS: Label 603 Exp 0] 8 msec
+  3 20.6.19.2 19 msec 26 msec * 
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh run 
+Building configuration...
+
+Current configuration : 1842 bytes
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!         
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 200 299
+mpls ldp session protection
+mpls ldp label
+ allocate global prefix-list LABELS
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9S2KOPAUVOD
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!         
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+!         
+!
+!
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+!
+interface Loopback10
+ no ip address
+!
+interface GigabitEthernet1
+ ip address 10.1.2.2 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet2
+ ip address 20.2.4.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet3
+ ip address 20.2.3.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!         
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+!
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 10.1.2.0 0.0.0.3 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp sync
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+ip prefix-list LABELS seq 10 permit 3.3.3.3/32
+ip prefix-list LABELS seq 15 permit 4.4.4.4/32
+ip prefix-list LABELS seq 20 permit 5.5.5.5/32
+ip prefix-list LABELS seq 25 permit 6.6.6.6/32
+ip prefix-list LABELS seq 30 permit 19.19.19.19/32
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR2# 
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh
+CSR2#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override, p - overrides from PfR
+
+Gateway of last resort is not set
+
+      2.0.0.0/32 is subnetted, 1 subnets
+C        2.2.2.2 is directly connected, Loopback0
+      3.0.0.0/32 is subnetted, 1 subnets
+O        3.3.3.3 [110/2] via 20.2.3.2, 00:24:15, GigabitEthernet3
+      4.0.0.0/32 is subnetted, 1 subnets
+O        4.4.4.4 [110/2] via 20.2.4.2, 00:24:05, GigabitEthernet2
+      5.0.0.0/32 is subnetted, 1 subnets
+O        5.5.5.5 [110/3] via 20.2.4.2, 00:17:05, GigabitEthernet2
+      6.0.0.0/32 is subnetted, 1 subnets
+O        6.6.6.6 [110/3] via 20.2.4.2, 00:24:05, GigabitEthernet2
+                 [110/3] via 20.2.3.2, 00:24:15, GigabitEthernet3
+      7.0.0.0/32 is subnetted, 1 subnets
+O        7.7.7.7 [110/3] via 20.2.4.2, 00:24:05, GigabitEthernet2
+      8.0.0.0/32 is subnetted, 1 subnets
+O        8.8.8.8 [110/4] via 20.2.4.2, 00:17:05, GigabitEthernet2
+      10.0.0.0/8 is variably subnetted, 5 subnets, 2 masks
+C        10.1.2.0/30 is directly connected, GigabitEthernet1
+L        10.1.2.2/32 is directly connected, GigabitEthernet1
+O        10.4.7.0/30 [110/2] via 20.2.4.2, 00:24:05, GigabitEthernet2
+O        10.5.8.0/30 [110/3] via 20.2.4.2, 00:17:05, GigabitEthernet2
+O        10.19.20.0/30 [110/4] via 20.2.4.2, 00:24:05, GigabitEthernet2
+                       [110/4] via 20.2.3.2, 00:24:05, GigabitEthernet3
+      19.0.0.0/32 is subnetted, 1 subnets
+O        19.19.19.19 [110/4] via 20.2.4.2, 00:24:05, GigabitEthernet2
+                     [110/4] via 20.2.3.2, 00:24:05, GigabitEthernet3
+      20.0.0.0/8 is variably subnetted, 11 subnets, 2 masks
+C        20.2.3.0/30 is directly connected, GigabitEthernet3
+L        20.2.3.1/32 is directly connected, GigabitEthernet3
+C        20.2.4.0/30 is directly connected, GigabitEthernet2
+L        20.2.4.1/32 is directly connected, GigabitEthernet2
+O        20.3.4.0/30 [110/2] via 20.2.4.2, 00:24:05, GigabitEthernet2
+                     [110/2] via 20.2.3.2, 00:24:05, GigabitEthernet3
+O        20.3.6.0/30 [110/2] via 20.2.3.2, 00:24:15, GigabitEthernet3
+          
+CSR2#
+CSR2#
+CSR2#sh
+CSR2#show bg
+CSR2#show bgp sum
+CSR2#show bgp sum
+% BGP not active
+
+CSR2#show bgp summ
+CSR2#show bgp summ
+% BGP not active
+
+CSR2#sh
+CSR2#show ip bg
+CSR2#show ip bgp sum
+CSR2#show ip bgp summary 
+% BGP not active
+
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh run | se r b
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#router bgp 100
+CSR2(config-router)# bgp log-neighbor-changes
+CSR2(config-router)# neighbor 10.1.2.1 remote-as 1
+CSR2(config-router)# neighbor 19.19.19.19 remote-as 100
+CSR2(config-router)# neighbor 19.19.19.19 update-source Loopback0
+CSR2(config-router)# neighbor 19.19.19.19 next-hop-self
+CSR2(config-router)#!
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#
+*Jul 10 02:28:06.367: %BGP-5-ADJCHANGE: neighbor 10.1.2.1 Up 
+*Jul 10 02:28:15.381: %BGP-5-ADJCHANGE: neighbor 19.19.19.19 Up 
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#end
+CSR2#
+CSR2#wr
+Building configuration...
+
+*Jul 10 02:28:27.423: %SYS-5-CONFIG_I: Configured from console by console[OK]
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#ip vr
+CSR2(config)#vrf definition VPN_A
+CSR2(config-vrf)# rd 100:1
+CSR2(config-vrf)# route-target export 100:1
+CSR2(config-vrf)# route-target import 100:1
+CSR2(config-vrf)#
+CSR2(config-vrf)#
+CSR2(config-vrf)#address-family ipv4
+CSR2(config-vrf-af)# exit-address-family
+CSR2(config-vrf)#
+*Jul 10 02:36:56.867: %BGP-5-NBR_RESET: Neighbor 10.1.2.1 reset (Peer closed the session)
+*Jul 10 02:36:56.869: %BGP-5-ADJCHANGE: neighbor 10.1.2.1 Down Peer closed the session
+*Jul 10 02:36:56.869: %BGP_SESSION-5-ADJCHANGE: neighbor 10.1.2.1 IPv4 Unicast topology base removed from session  Peer closed the session
+CSR2(config-vrf)#
+CSR2(config-vrf)#
+CSR2(config-vrf)#
+CSR2(config-vrf)#
+CSR2(config-vrf)#exir
+                    ^
+% Invalid input detected at '^' marker.
+
+CSR2(config-vrf)#exit
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#inter
+CSR2(config)#interface gi1
+CSR2(config-if)#
+CSR2(config-if)#
+CSR2(config-if)#
+CSR2(config-if)#do sh run inter
+CSR2(config-if)#do sh run inter gi1
+Building configuration...
+
+Current configuration : 98 bytes
+!
+interface GigabitEthernet1
+ ip address 10.1.2.2 255.255.255.252
+ negotiation auto
+ mpls ip
+end
+
+CSR2(config-if)#
+CSR2(config-if)#ip     
+CSR2(config-if)#ip v
+CSR2(config-if)#ip vrf
+CSR2(config-if)#ip vrf VPN_A
+% Use 'vrf definition VPN_A' command
+CSR2(config)#ip vrf de   
+CSR2(config)#ip vrf def
+CSR2(config)#vrf       
+CSR2(config)#vrf def
+CSR2(config)#vrf definition VPN_A
+CSR2(config-vrf)#
+CSR2(config-vrf)#
+CSR2(config-vrf)#
+CSR2(config-vrf)#vrf
+CSR2(config-vrf)#vrf fo
+CSR2(config-vrf)#vrf for
+CSR2(config-vrf)#vrf dw 
+CSR2(config-vrf)#ip vr 
+CSR2(config-vrf)#ip vrf
+CSR2(config-vrf)#fo    
+CSR2(config-vrf)#? 
+VPN Routing/Forwarding instance configuration commands:
+  address-family  Enter Address Family command mode
+  default         Set a command to its defaults
+  description     VRF specific description
+  exit            Exit from VRF configuration mode
+  help            Description of the interactive help system
+  ipv4            VRF IPv4 configuration
+  no              Negate a command or set its defaults
+  rd              Specify Route Distinguisher
+  route-target    Specify Target VPN Extended Communities
+  vnet            Virtual NETworking configuration
+  vpn             Configure VPN ID as specified in rfc2685
+
+CSR2(config-vrf)#ad
+CSR2(config-vrf)#address-family ?
+  ipv4  Address Family
+  ipv6  Address Family
+
+CSR2(config-vrf)#address-family ip
+CSR2(config-vrf)#address-family ipv4
+CSR2(config-vrf)#address-family ipv4 ?
+  multicast  Address Family modifier
+  unicast    Address Family modifier
+  <cr>
+
+CSR2(config-vrf)#address-family ipv4 un
+CSR2(config-vrf)#address-family ipv4 unicast ?
+  <cr>
+
+CSR2(config-vrf)#                            
+CSR2(config-vrf)#
+CSR2(config-vrf)#exit
+CSR2(config)#inter
+CSR2(config)#interface gi1
+CSR2(config-if)#ip
+CSR2(config-if)#ip vr
+CSR2(config-if)#ip vrf ?
+  autoclassify  Enable IP VRF Autoclassify feature
+  forwarding    Configure forwarding table
+  receive       Add interface address into VRF select database
+  select        Enable VRF selection
+  sitemap       Configure route-map for routes received from this site
+
+CSR2(config-if)#ip vrf fo
+CSR2(config-if)#ip vrf forwarding ?
+  VPN_A
+  __Platform_iVRF:_ID00_
+  WORD  VRF name
+
+CSR2(config-if)#ip vrf forwarding VP
+CSR2(config-if)#ip vrf forwarding VPN_A 
+% Use 'vrf forwarding' command for VRF VPN_A
+CSR2(config-if)#
+CSR2(config-if)#vrf forwarding VPN_A    
+% Interface GigabitEthernet1 IPv4 disabled and address(es) removed due to enabling VRF VPN_A
+CSR2(config-if)#
+CSR2(config-if)#
+CSR2(config-if)#
+*Jul 10 02:39:41.842: %LDP-4-IDENT: cannot set VRF VPN_A LDP ident
+CSR2(config-if)#
+CSR2(config-if)#
+CSR2(config-if)#
+CSR2(config-if)#
+CSR2(config-if)#
+CSR2(config-if)#
+CSR2(config-if)#do sh run inter gi1     
+Building configuration...
+
+Current configuration : 98 bytes
+!
+interface GigabitEthernet1
+ vrf forwarding VPN_A
+ no ip address
+ negotiation auto
+ mpls ip
+end
+
+CSR2(config-if)#
+CSR2(config-if)#no mpls ip
+CSR2(config-if)#
+CSR2(config-if)#
+*Jul 10 02:40:03.730: %BGP_LMM-6-MPLS_INIT: MPLS has been disabled for the BGP address-family VPNv4ip address 10.1.2.2 255.255.255.252
+CSR2(config-if)#
+CSR2(config-if)#
+CSR2(config-if)#exit
+CSR2(config)#exit
+CSR2#
+CSR2#sh 
+*Jul 10 02:40:14.906: %SYS-5-CONFIG_I: Configured from console by console
+CSR2#sh 
+CSR2#sh run int gi1
+Building configuration...
+
+Current configuration : 111 bytes
+!
+interface GigabitEthernet1
+ vrf forwarding VPN_A
+ ip address 10.1.2.2 255.255.255.252
+ negotiation auto
+end
+
+CSR2#
+CSR2#
+CSR2#conf 
+Configuring from terminal, memory, or network [terminal]? t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#bg
+CSR2(config)#router bg
+CSR2(config)#router bgp 1
+BGP is already running; AS is 100
+CSR2(config)#exit        
+CSR2#
+CSR2#sh run 
+*Jul 10 02:40:55.215: %SYS-5-CONFIG_I: Configured from console by console
+Building configuration...
+
+Current configuration : 2241 bytes
+!
+! Last configuration change at 02:40:55 UTC Tue Jul 10 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition VPN_A
+ rd 100:1
+ route-target export 100:1
+ route-target import 100:1
+ !
+ address-family ipv4
+ exit-address-family
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!         
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 200 299
+mpls ldp session protection
+mpls ldp label
+ allocate global prefix-list LABELS
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!         
+!
+!
+license udi pid CSR1000V sn 9S2KOPAUVOD
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!         
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+!
+interface Loopback10
+ no ip address
+!
+interface GigabitEthernet1
+ vrf forwarding VPN_A
+ ip address 10.1.2.2 255.255.255.252
+ negotiation auto
+!         
+interface GigabitEthernet2
+ ip address 20.2.4.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet3
+ ip address 20.2.3.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+!
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 10.1.2.0 0.0.0.3 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp sync
+!
+router bgp 100
+ bgp log-neighbor-changes
+ neighbor 10.1.2.1 remote-as 1
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+ neighbor 19.19.19.19 next-hop-self
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+ip prefix-list LABELS seq 10 permit 3.3.3.3/32
+ip prefix-list LABELS seq 15 permit 4.4.4.4/32
+ip prefix-list LABELS seq 20 permit 5.5.5.5/32
+ip prefix-list LABELS seq 25 permit 6.6.6.6/32
+ip prefix-list LABELS seq 30 permit 19.19.19.19/32
+!
+          
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#router os
+CSR2(config)#router ospf 1
+CSR2(config-router)#no network 10.1.2.0 0.0.0.3 area 0
+CSR2(config-router)#router bgp 100
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)# no bgp default ipv4-unicast
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#add
+CSR2(config-router)#address-family v
+CSR2(config-router)#address-family vpnv 
+CSR2(config-router)#address-family vpnv4 >?
+% Unrecognized command
+CSR2(config-router)#address-family vpnv4 ?
+  flowspec   Address Family modifier
+  multicast  Address Family modifier
+  unicast    Address Family Modifier
+  <cr>
+
+CSR2(config-router)#address-family vpnv4 un
+CSR2(config-router)#address-family vpnv4 unicast ?
+  <cr>
+
+CSR2(config-router)#address-family vpnv4 unicast 
+CSR2(config-router-af)#exit
+CSR2(config-router)#no address-family vpnv4 unicast 
+CSR2(config-router)#
+CSR2(config-router)#
+*Jul 10 02:42:27.701: %BGP_LMM-6-MPLS_INIT: MPLS has been disabled for the BGP address-family VPNv4
+CSR2(config-router)#
+CSR2(config-router)#address-family vpnv4
+% Topology global::VPNv4 Unicast::base is currently being deconfigured.
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#address-family vpnv4
+% Topology global::VPNv4 Unicast::base is currently being deconfigured.
+CSR2(config-router)#exit
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#router bg
+CSR2(config)#router bgp 100
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#address-family vpnv4
+% Topology global::VPNv4 Unicast::base is currently being deconfigured.
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#exit
+CSR2(config)#exit
+CSR2#
+CSR2#
+CSR2#sh run 
+*Jul 10 02:43:00.324: %SYS-5-CONFIG_I: Configured from console by console|
+CSR2#sh run | s r b
+router bgp 100
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 10.1.2.1 remote-as 1
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 10.1.2.1 activate
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 next-hop-self
+ exit-address-family
+CSR2#
+CSR2#
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#router 
+CSR2(config)#router bg
+CSR2(config)#router bgp 100
+CSR2(config-router)#add
+CSR2(config-router)#address-family ip
+CSR2(config-router)#address-family ipv4
+CSR2(config-router)#address-family ipv4 
+CSR2(config-router-af)#no net
+CSR2(config-router-af)#no neig    
+CSR2(config-router-af)#no neighbor 10.1.2.1
+CSR2(config-router-af)#
+CSR2(config-router-af)#exit
+CSR2(config-router)#
+CSR2(config-router)#add
+CSR2(config-router)#address-family vpn4
+                                      ^
+% Invalid input detected at '^' marker.
+
+CSR2(config-router)#address-family vpn4
+CSR2(config-router)#address-family vpn 
+CSR2(config-router)#address-family vpnv4
+CSR2(config-router)#address-family vpnv4 
+CSR2(config-router-af)#
+CSR2(config-router-af)#nei
+CSR2(config-router-af)#neighbor 19.19.19.19?
+A.B.C.D  WORD  
+
+CSR2(config-router-af)#neighbor 19.19.19.19 ?
+  accept-route-legacy-rt  Accept Legacy Route Target
+  activate                Enable the Address Family for this Neighbor
+  advertise               Advertise to this neighbor
+  advertisement-interval  Minimum interval between sending BGP routing updates
+  allow-policy            Enable the policy support for this IBGP Neighbor
+  allowas-in              Accept as-path with my AS present in it
+  capability              Advertise capability to the peer
+  distribute-list         Filter updates to/from this neighbor
+  dmzlink-bw              Propagate the DMZ link bandwidth
+  filter-list             Establish BGP filters
+  inherit                 Inherit a template
+  inter-as-hybrid         Inter AS Hybrid mode
+  maximum-prefix          Maximum number of prefixes accepted from this peer
+  next-hop-self           Disable the next hop calculation for this neighbor
+  next-hop-unchanged      Propagate next hop unchanged for iBGP paths to this
+                          neighbor
+  prefix-list             Filter updates to/from this neighbor
+  remove-private-as       Remove private AS number from outbound updates
+  route-map               Apply route map to neighbor
+  route-reflector-client  Configure a neighbor as Route Reflector client
+  send-community          Send Community attribute to this neighbor
+  slow-peer               Configure slow-peer
+  soft-reconfiguration    Per neighbor soft reconfiguration
+  soo                     Site-of-Origin extended community
+  unsuppress-map          Route-map to selectively unsuppress suppressed routes
+  weight                  Set default weight for routes from this neighbor
+
+CSR2(config-router-af)#neighbor 19.19.19.19 remo
+CSR2(config-router-af)#neighbor 19.19.19.19 as                
+CSR2(config-router-af)#neighbor 19.19.19.19 ? 
+  accept-route-legacy-rt  Accept Legacy Route Target
+  activate                Enable the Address Family for this Neighbor
+  advertise               Advertise to this neighbor
+  advertisement-interval  Minimum interval between sending BGP routing updates
+  allow-policy            Enable the policy support for this IBGP Neighbor
+  allowas-in              Accept as-path with my AS present in it
+  capability              Advertise capability to the peer
+  distribute-list         Filter updates to/from this neighbor
+  dmzlink-bw              Propagate the DMZ link bandwidth
+  filter-list             Establish BGP filters
+  inherit                 Inherit a template
+  inter-as-hybrid         Inter AS Hybrid mode
+  maximum-prefix          Maximum number of prefixes accepted from this peer
+  next-hop-self           Disable the next hop calculation for this neighbor
+  next-hop-unchanged      Propagate next hop unchanged for iBGP paths to this
+                          neighbor
+  prefix-list             Filter updates to/from this neighbor
+  remove-private-as       Remove private AS number from outbound updates
+  route-map               Apply route map to neighbor
+  route-reflector-client  Configure a neighbor as Route Reflector client
+  send-community          Send Community attribute to this neighbor
+  slow-peer               Configure slow-peer
+  soft-reconfiguration    Per neighbor soft reconfiguration
+  soo                     Site-of-Origin extended community
+  unsuppress-map          Route-map to selectively unsuppress suppressed routes
+  weight                  Set default weight for routes from this neighbor
+
+CSR2(config-router-af)#neighbor 19.19.19.19 
+% Incomplete command.
+
+CSR2(config-router-af)#neighbor 19.19.19.19 act
+CSR2(config-router-af)#neighbor 19.19.19.19 activate 
+CSR2(config-router-af)#
+*Jul 10 02:44:25.167: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 reset (Capability changed)
+*Jul 10 02:44:25.172: %BGP-5-ADJCHANGE: neighbor 19.19.19.19 Down Capability changed
+*Jul 10 02:44:25.172: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Capability changed
+*Jul 10 02:44:25.843: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 active reset (Peer closed the session)
+*Jul 10 02:44:25.843: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 VPNv4 Unicast topology base removed from session  Peer closed the session
+*Jul 10 02:44:25.843: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+CSR2(config-router-af)#
+CSR2(config-router-af)#
+CSR2(config-router-af)#
+*Jul 10 02:44:36.663: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 VPNv4 Unicast topology base removed from session  Capability changed
+*Jul 10 02:44:36.663: %BGP-5-ADJCHANGE: neighbor 19.19.19.19 Up 
+CSR2(config-router-af)#
+CSR2(config-router-af)#
+CSR2(config-router-af)#  neighbor 19.19.19.19 send-community extended
+CSR2(config-router-af)# exit-address-family
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#ip
+CSR2(config-router)#ip v
+CSR2(config-router)#add 
+CSR2(config-router)#address-family ip
+CSR2(config-router)#address-family ipv4
+CSR2(config-router)#address-family ipv4 v
+CSR2(config-router)#address-family ipv4 vrf V
+CSR2(config-router)#address-family ipv4 vrf VPN_A
+CSR2(config-router-af)#
+CSR2(config-router-af)#network 1.1.1.1 mask 255.255.255.255
+CSR2(config-router-af)# exit-address-family
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#exit
+CSR2(config)#
+CSR2(config)#ip route
+CSR2(config)#ip route vr
+CSR2(config)#ip route vrf VPN_A 1.1.1.1 255.255.255.255 10.1.2.1
+CSR2(config)#
+CSR2(config)#exit
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+*Jul 10 02:45:53.611: %SYS-5-CONFIG_I: Configured from console by consoleping vr
+CSR2#ping vrf 
+CSR2#ping vrf VPN_A 1.1.1.1
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 1.1.1.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 10/11/14 ms
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+*Jul 10 02:59:54.939: %BGP-5-NBR_RESET: Neighbor 19.19.19.19 reset (Peer closed the session)
+*Jul 10 02:59:54.940: %BGP-5-ADJCHANGE: neighbor 19.19.19.19 Down Peer closed the session
+*Jul 10 02:59:54.940: %BGP_SESSION-5-ADJCHANGE: neighbor 19.19.19.19 IPv4 Unicast topology base removed from session  Peer closed the session
+*Jul 10 03:00:04.701: %BGP-5-ADJCHANGE: neighbor 19.19.19.19 Up 
+CSR2#
+CSR2#
+CSR2#sh                    
+CSR2#show ip bg
+CSR2#show ip bgp vpn
+CSR2#show ip bgp vpnv4
+CSR2#show ip bgp vpnv4 un
+CSR2#show ip bgp vpnv4 su 
+CSR2#show ip bgp vpnv4 sum
+CSR2#show ip bgp vpnv4 un 
+CSR2#show ip bgp vpnv4 uni
+CSR2#show ip bgp vpnv4 ?  
+  all  Display information about all VPN NLRIs
+  rd   Display information for a route distinguisher
+  vrf  Display information for a VPN Routing/Forwarding instance
+
+CSR2#show ip bgp vpnv4 al
+CSR2#show ip bgp vpnv4 all 
+BGP table version is 5, local router ID is 2.2.2.2
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+Route Distinguisher: 100:1 (default for vrf VPN_A)
+ *>  1.1.1.1/32       10.1.2.1                 0         32768 i
+ *>i 20.20.20.20/32   19.19.19.19              0    100      0 i
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#ping vr
+CSR2#ping vrf VPN_A 1.1.1.1
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 1.1.1.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 10/18/44 ms
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh
+CSR2#show ip
+CSR2#show ip ro
+CSR2#show ip route vf
+CSR2#show ip route vf
+CSR2#show ip route vfn
+CSR2#show ip route vr 
+CSR2#show ip route vrf VPN_A
+
+Routing Table: VPN_A
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override, p - overrides from PfR
+
+Gateway of last resort is not set
+
+      1.0.0.0/32 is subnetted, 1 subnets
+S        1.1.1.1 [1/0] via 10.1.2.1
+      10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        10.1.2.0/30 is directly connected, GigabitEthernet1
+L        10.1.2.2/32 is directly connected, GigabitEthernet1
+      20.0.0.0/32 is subnetted, 1 subnets
+B        20.20.20.20 [200/0] via 19.19.19.19, 00:01:58
+CSR2#
+CSR2#

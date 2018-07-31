@@ -1,0 +1,478 @@
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show ri
+rib  rip  
+RP/0/0/CPU0:XR2#show eigrp neighbors 
+Tue Jul 10 11:02:15.291 UTC
+
+IPv4-EIGRP Neighbors for AS(1) VRF default
+
+H   Address                 Interface       Hold Uptime   SRTT   RTO  Q  Seq
+                                            (sec)         (ms)       Cnt Num
+0   10.19.20.1              Gi0/0/0/2         14 00:00:18    9   200  0  3
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR2 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh route
+Tue Jul 10 11:23:25.684 UTC
+
+Codes: C - connected, S - static, R - RIP, B - BGP, (>) - Diversion path
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - ISIS, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, su - IS-IS summary null, * - candidate default
+       U - per-user static route, o - ODR, L - local, G  - DAGR, l - LISP
+       A - access/subscriber, a - Application route
+       M - mobile route, r - RPL, (!) - FRR Backup path
+
+Gateway of last resort is not set
+
+D    1.1.1.1/32 [90/2575360] via 10.19.20.1, 00:05:10, GigabitEthernet0/0/0/2
+D    10.1.2.0/30 [90/15360] via 10.19.20.1, 00:05:10, GigabitEthernet0/0/0/2
+C    10.19.20.0/30 is directly connected, 09:23:22, GigabitEthernet0/0/0/2
+L    10.19.20.2/32 is directly connected, 09:23:22, GigabitEthernet0/0/0/2
+L    20.20.20.20/32 is directly connected, 09:23:22, Loopback0
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#ping 1.1.1.1
+Tue Jul 10 11:23:32.564 UTC
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 1.1.1.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 19/19/19 ms
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#traceroute 1.1.1.1 source lo0
+Tue Jul 10 11:23:43.643 UTC
+% Bad hostname or protocol not running
+RP/0/0/CPU0:XR2#traceroute 1.1.1.1 source 20.20.20.20
+Tue Jul 10 11:23:50.003 UTC
+
+Type escape sequence to abort.
+Tracing the route to 1.1.1.1
+
+ 1  10.19.20.1 0 msec  0 msec  0 msec 
+ 2  20.6.19.1 [MPLS: Labels 601/206 Exp 0] 19 msec  19 msec  19 msec 
+ 3  20.4.6.1 [MPLS: Labels 402/206 Exp 0] 29 msec  19 msec  19 msec 
+ 4  10.1.2.2 [MPLS: Label 206 Exp 0] 19 msec  9 msec  9 msec 
+ 5  10.1.2.1 19 msec  *  9 msec 
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#traceroute 1.1.1.1 source 20.20.20.20
+Tue Jul 10 11:27:45.907 UTC
+
+Type escape sequence to abort.
+Tracing the route to 1.1.1.1
+
+ 1  10.19.20.1 0 msec  0 msec  0 msec 
+ 2  20.6.19.1 [MPLS: Labels 601/206 Exp 0] 19 msec  19 msec  19 msec 
+ 3  20.4.6.1 [MPLS: Labels 402/206 Exp 0] 19 msec  19 msec  19 msec 
+ 4  10.1.2.2 [MPLS: Label 206 Exp 0] 19 msec  9 msec  9 msec 
+ 5  10.1.2.1 19 msec  *  19 msec 
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#terminal length 0
+Tue Jul 10 11:45:58.012 UTC
+RP/0/0/CPU0:XR2#configure terminal
+Tue Jul 10 11:45:58.202 UTC
+RP/0/0/CPU0:XR2(config)#no logging console
+RP/0/0/CPU0:XR2(config)#commit
+Tue Jul 10 11:45:58.642 UTC
+RP/0/0/CPU0:XR2(config)#exit
+RP/0/0/CPU0:XR2#show running-config
+Tue Jul 10 11:45:58.972 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Tue Jul 10 10:13:02 2018 by cisco
+!
+hostname XR2
+interface Loopback0
+ ipv4 address 20.20.20.20 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/1
+ shutdown
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 10.19.20.2 255.255.255.252
+!
+route-policy PASS
+  pass
+end-policy
+!
+router bgp 20
+ address-family ipv4 unicast
+  network 20.20.20.20/32
+ !
+ neighbor 10.19.20.1
+  remote-as 100
+  address-family ipv4 unicast
+   route-policy PASS in
+   route-policy PASS out
+  !
+ !
+!
+router eigrp 1
+ address-family ipv4
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/2
+  !
+ !
+!
+end
+
+RP/0/0/CPU0:XR2#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR2 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+

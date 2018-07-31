@@ -1,0 +1,768 @@
+
+CSR2#
+CSR2#
+CSR2#sh
+CSR2#show vrf
+CSR2#show vrf det
+CSR2#show vrf detail 
+VRF VPN_A (VRF Id = 1); default RD 100:1; default VPNID <not set>
+  New CLI format, supports multiple address-families
+  Flags: 0x180C
+  Interfaces:
+    Gi1                     
+Address family ipv4 unicast (Table ID = 0x1):
+  Flags: 0x0
+  Export VPN route-target communities
+    RT:100:1                
+  Import VPN route-target communities
+    RT:100:1                
+  No import route-map
+  No global export route-map
+  No export route-map
+  VRF label distribution protocol: not configured
+  VRF label allocation mode: per-prefix
+Address family ipv6 unicast not active
+Address family ipv4 multicast not active
+
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh
+CSR2#show bg
+CSR2#show bgp v
+CSR2#show bgp vp
+CSR2#show bgp vpnv4
+CSR2#show bgp vpnv4 un
+CSR2#show bgp vpnv4 unicast al
+CSR2#show bgp vpnv4 unicast all 
+BGP table version is 7, local router ID is 2.2.2.2
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+Route Distinguisher: 100:1 (default for vrf VPN_A)
+ *>  1.1.1.1/32       10.1.2.1                 0         32768 i
+ *>i 20.20.20.20/32   19.19.19.19              0    100      0 i
+CSR2#
+CSR2#
+CSR2#
+CSR2#show bgp vpnv4 unicast all ?
+  A.B.C.D            Network in the BGP routing table to display
+  A.B.C.D/nn         IP prefix <network>/<length>, e.g., 35.0.0.0/8
+  bmp                BGP BMP information
+  cidr-only          Display only routes with non-natural netmasks
+  cluster-ids        Display configured cluster IDs
+  community          Display routes matching the communities
+  community-list     Display routes matching the community-list
+  dampening          Display detailed information about dampening
+  detail             Display detailed routes
+  extcommunity-list  Display routes matching the extcommunity-list
+  filter-list        Display routes conforming to the filter-list
+  inconsistency      Display all inconsistent paths
+  inconsistent-as    Display only routes with inconsistent origin ASs
+  labels             Display BGP labels for prefixes
+  neighbors          Detailed information on TCP and BGP neighbor connections
+  nexthops           Nexthop address table
+  oer-paths          Display all oer controlled paths
+  path-attribute     Display path-attribute specific information
+  paths              Path information
+  peer-group         Display information on peer-groups
+  pending-prefixes   Display prefixes pending deletion
+  prefix-list        Display routes matching the prefix-list
+          
+CSR2#show bgp vpnv4 unicast all 20.20.20.20 
+BGP routing table entry for 100:1:20.20.20.20/32, version 7
+Paths: (1 available, best #1, table VPN_A)
+  Not advertised to any peer
+  Refresh Epoch 1
+  Local
+    19.19.19.19 (metric 4) (via default) from 19.19.19.19 (19.19.19.19)
+      Origin IGP, metric 0, localpref 100, valid, internal, best
+      Extended Community: RT:100:1
+      mpls labels in/out nolabel/19005
+      rx pathid: 0, tx pathid: 0x0
+CSR2#
+CSR2#show bgp vpnv4 unicast all 20.20.20.20 der
+CSR2#show bgp vpnv4 unicast all 20.20.20.20 de 
+CSR2#show bgp vpnv4 unicast all 20.20.20.20 ? 
+  A.B.C.D     Network mask
+  bestpath    Display the bestpath for this prefix
+  multipaths  Display the multipaths for this prefix
+  |           Output modifiers
+  <cr>
+
+CSR2#show bgp vpnv4 unicast all 20.20.20.20 
+BGP routing table entry for 100:1:20.20.20.20/32, version 7
+Paths: (1 available, best #1, table VPN_A)
+  Not advertised to any peer
+  Refresh Epoch 1
+  Local
+    19.19.19.19 (metric 4) (via default) from 19.19.19.19 (19.19.19.19)
+      Origin IGP, metric 0, localpref 100, valid, internal, best
+      Extended Community: RT:100:1
+      mpls labels in/out nolabel/19005
+      rx pathid: 0, tx pathid: 0x0
+CSR2#
+CSR2#
+CSR2#sh bg
+CSR2#sh bgp la
+CSR2#sh bgp ? 
+  *         All scopes
+  all       All address families
+  ipv4      Address family
+  ipv6      Address family
+  l2vpn     Address family
+  nsap      Address family
+  rtfilter  Address family
+  vpnv4     Address family
+  vpnv6     Address family
+  vrf       VRF scope
+
+CSR2#sh bgp vpn
+CSR2#sh bgp vpnv4
+CSR2#sh bgp vpnv4 ?
+  flowspec   Address Family Modifier
+  multicast  Address Family Modifier
+  unicast    Address Family Modifier
+
+CSR2#sh bgp vpnv4 un
+CSR2#sh bgp vpnv4 unicast ?
+  all  Display information about all VPN NLRIs
+  rd   Display information for a route distinguisher
+  vrf  Display information for a VPN Routing/Forwarding instance
+
+CSR2#sh bgp vpnv4 unicast al
+CSR2#sh bgp vpnv4 unicast all 
+BGP table version is 7, local router ID is 2.2.2.2
+Status codes: s suppressed, d damped, h history, * valid, > best, i - internal, 
+              r RIB-failure, S Stale, m multipath, b backup-path, f RT-Filter, 
+              x best-external, a additional-path, c RIB-compressed, 
+Origin codes: i - IGP, e - EGP, ? - incomplete
+RPKI validation codes: V valid, I invalid, N Not found
+
+     Network          Next Hop            Metric LocPrf Weight Path
+Route Distinguisher: 100:1 (default for vrf VPN_A)
+ *>  1.1.1.1/32       10.1.2.1                 0         32768 i
+ *>i 20.20.20.20/32   19.19.19.19              0    100      0 i
+CSR2#?
+Exec commands:
+  access-profile   Apply user-profile to interface
+  alps             ALPS exec commands
+  appnav           IOS Wide Area Application Services
+  archive          manage archive files
+  attach           Connect to a module's console
+  audio-prompt     load ivr prompt
+  authentication   Authentication options for eEdge
+  auto             Exec level Automation
+  beep             Blocks Extensible Exchange Protocol commands
+  bfe              For manual emergency modes setting
+  bulkstat         Bulkstat exec commands
+  call             Voice call
+  call-home        Call-Home commands
+  cd               Change current directory
+  clear            Reset functions
+  clock            Manage the system clock
+  cns              CNS agents
+  configure        Enter configuration mode
+  connect          Open a terminal connection
+  copy             Copy from one file to another
+  crypto           Encryption related commands.
+  cts              Cisco Trusted Security Exec Commands
+  debug            Debugging functions (see also 'undebug')
+  delete           Delete a file
+  diagnostic       Diagnostic commands
+  dir              List files on a filesystem
+  disable          Turn off privileged commands
+  disconnect       Disconnect an existing network connection
+  do-exec          Mode-independent "do-exec" prefix support
+  eap              EAP Exec Commands
+  enable           Turn on privileged commands
+  erase            Erase a filesystem
+  ethernet         Ethernet parameters
+  event            Event related commands
+  exit             Exit from the EXEC
+  file-acct        File mode accounting exec command
+  flush            File mode accounting flush options
+  format           Format a filesystem
+  fsck             Filesystem check
+  help             Description of the interactive help system
+  hw-module        Apply command to specific hardware component
+  if-mgr           IF-MGR operations
+  ip               IP SLA Exec Command
+  issu             issu commands
+  l2vpn            Layer2 VPN commands
+  lat              Open a lat connection
+  license          License information
+  lig              LISP Internet Groper
+  lock             Lock the terminal
+  logging          Handles logging operations
+  login            Log in as a particular user
+  logout           Exit from the EXEC
+  mediatrace       Mediatrace Commands
+  mkdir            Create new directory
+  mlacp            mLACP EXEC commands
+  monitor          Monitoring different system events
+  more             Display the contents of a file
+  mpls             MPLS commands
+  mrinfo           Request neighbor and version information from a multicast
+                   router
+  mrm              IP Multicast Routing Monitor Test
+  mstat            Show statistics after multiple multicast traceroutes
+  mtrace           Trace reverse multicast path from destination to source
+  name-connection  Name an existing network connection
+  ncia             Start/Stop NCIA Server
+  no               Disable debugging functions
+  onep             ONEP related commands
+          
+CSR2#
+CSR2#
+CSR2#sh                       
+% Type "show ?" for a list of subcommands
+CSR2#
+CSR2#sh
+CSR2#show ip
+CSR2#show la 
+CSR2#show mpl
+CSR2#show mpls fo
+CSR2#show mpls forwarding-table 
+Local      Outgoing   Prefix           Bytes Label   Outgoing   Next Hop    
+Label      Label      or Tunnel Id     Switched      interface              
+200        300        6.6.6.6/32       0             Gi3        20.2.3.2    
+           400        6.6.6.6/32       0             Gi2        20.2.4.2    
+201        Pop Label  3.3.3.3/32       0             Gi3        20.2.3.2    
+202        Pop Label  4.4.4.4/32       0             Gi2        20.2.4.2    
+203        303        19.19.19.19/32   0             Gi3        20.2.3.2    
+           403        19.19.19.19/32   0             Gi2        20.2.4.2    
+204        404        5.5.5.5/32       0             Gi2        20.2.4.2    
+205        No Label   1.1.1.1/32[V]    7000          Gi1        10.1.2.1    
+CSR2#
+CSR2#
+CSR2#show bgp vpnv4 unicast all labels
+   Network          Next Hop      In label/Out label
+Route Distinguisher: 100:1 (VPN_A)
+   1.1.1.1/32       10.1.2.1        205/nolabel
+   20.20.20.20/32   19.19.19.19     nolabel/19005
+
+CSR2#
+CSR2#
+CSR2#
+CSR2#\\
+% Bad IP address or host name% Unknown command or computer name, or unable to find computer address
+CSR2#
+CSR2#
+CSR2#sh
+CSR2#show bg
+CSR2#show bgp vpn
+CSR2#show bgp vpnv4
+CSR2#show bgp vpnv4 un
+CSR2#show bgp vpnv4 unicast l
+CSR2#show bgp vpnv4 unicast al
+CSR2#show bgp vpnv4 unicast all l
+CSR2#show bgp vpnv4 unicast all labels 
+   Network          Next Hop      In label/Out label
+Route Distinguisher: 100:1 (VPN_A)
+   1.1.1.1/32       10.1.2.1        205/nolabel
+   20.20.20.20/32   19.19.19.19     nolabel/19005
+
+CSR2#
+CSR2#
+CSR2#sh
+CSR2#show ip rout
+CSR2#show ip route 19.19.19.19
+Routing entry for 19.19.19.19/32
+  Known via "ospf 1", distance 110, metric 4, type intra area
+  Last update from 20.2.3.2 on GigabitEthernet3, 00:05:24 ago
+  Routing Descriptor Blocks:
+  * 20.2.4.2, from 19.19.19.19, 01:46:27 ago, via GigabitEthernet2
+      Route metric is 4, traffic share count is 1
+    20.2.3.2, from 19.19.19.19, 00:05:24 ago, via GigabitEthernet3
+      Route metric is 4, traffic share count is 1
+CSR2#
+CSR2#show ip cef vrf VPN_A 20.20.20.20 detail
+20.20.20.20/32, epoch 0, flags [rib defined all labels]
+  recursive via 19.19.19.19 label 19005
+    nexthop 20.2.3.2 GigabitEthernet3 label 303
+    nexthop 20.2.4.2 GigabitEthernet2 label 403
+CSR2#
+CSR2#
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#
+CSR2(config)#exit
+CSR2#
+CSR2#sh run 
+*Jul 10 08:44:49.718: %SYS-5-CONFIG_I: Configured from console by console| s 
+CSR2#sh run | s ip route
+ip route vrf VPN_A 1.1.1.1 255.255.255.255 10.1.2.1
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#no ip route vrf VPN_A 1.1.1.1 255.255.255.255 10.1.2.1
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#router rip 
+CSR2(config-router)#ver
+CSR2(config-router)#version 2
+CSR2(config-router)#
+CSR2(config-router)#net
+CSR2(config-router)#network 10.1.2.0
+CSR2(config-router)#no au
+CSR2(config-router)#no auto-summary 
+CSR2(config-router)#
+CSR2(config-router)#net
+CSR2(config-router)#exit    
+CSR2(config)#no net
+CSR2(config)#no route
+CSR2(config)#no router
+CSR2(config)#no router rip
+CSR2(config)#
+CSR2(config)#router ri
+CSR2(config)#router rip 
+CSR2(config-router)#add
+CSR2(config-router)#address-family ip
+CSR2(config-router)#address-family ipv4 v
+CSR2(config-router)#address-family ipv4 vrf ?
+  WORD  VPN Routing/Forwarding instance name
+
+CSR2(config-router)#address-family ipv4 vrf VPN_A ?
+  <cr>
+
+CSR2(config-router)#address-family ipv4 vrf VPN_A 
+CSR2(config-router-af)#
+CSR2(config-router-af)#net
+CSR2(config-router-af)#ver     
+CSR2(config-router-af)#version 2
+CSR2(config-router-af)#add
+CSR2(config-router-af)#net
+CSR2(config-router-af)#network 10.1.2.0
+CSR2(config-router-af)#no au
+CSR2(config-router-af)#no auto-summary 
+CSR2(config-router-af)#
+CSR2(config-router-af)#
+CSR2(config-router-af)#red
+CSR2(config-router-af)#redistribute bg
+CSR2(config-router-af)#redistribute bgp 100 ?
+  metric     Metric for redistributed routes
+  route-map  Route map reference
+  <cr>
+
+CSR2(config-router-af)#redistribute bgp 100 me
+CSR2(config-router-af)#redistribute bgp 100 metric ?
+  <0-16>       Default metric
+  transparent  Transparently redistribute metric
+
+CSR2(config-router-af)#redistribute bgp 100 metric tra
+CSR2(config-router-af)#redistribute bgp 100 metric transparent ?
+  route-map  Route map reference
+  <cr>
+
+CSR2(config-router-af)#redistribute bgp 100 metric transparent 
+CSR2(config-router-af)#
+CSR2(config-router-af)#
+CSR2(config-router-af)#exit
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#exit
+CSR2(config)#exit
+CSR2#sh run 
+*Jul 10 08:48:14.617: %SYS-5-CONFIG_I: Configured from console by console| s r r
+router rip
+ !
+ address-family ipv4 vrf VPN_A
+  redistribute bgp 100 metric transparent
+  network 10.0.0.0
+  no auto-summary
+  version 2
+ exit-address-family
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#router bg
+CSR2(config)#router bgp 100
+CSR2(config-router)#exit
+CSR2(config)#
+CSR2(config)#exit
+CSR2#
+CSR2#sh ru
+*Jul 10 08:48:32.057: %SYS-5-CONFIG_I: Configured from console by consolen 
+CSR2#sh run | s r b
+router bgp 100
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 next-hop-self
+ exit-address-family
+ !
+ address-family vpnv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 send-community extended
+ exit-address-family
+ !
+ address-family ipv4 vrf VPN_A
+  network 1.1.1.1 mask 255.255.255.255
+ exit-address-family
+CSR2#
+CSR2#
+CSR2#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR2(config)#router bgp 100
+CSR2(config-router)#ad
+CSR2(config-router)#address-family 
+CSR2(config-router)#address-family ip
+CSR2(config-router)#address-family ipv4
+CSR2(config-router)#address-family ipv4 vr
+CSR2(config-router)#address-family ipv4 vrf VPN_A
+CSR2(config-router-af)#no net
+CSR2(config-router-af)#no network 1.1.1.1 mask 255.255.255.255
+CSR2(config-router-af)#
+CSR2(config-router-af)#
+CSR2(config-router-af)#red
+CSR2(config-router-af)#redistribute ro
+CSR2(config-router-af)#redistribute ri
+CSR2(config-router-af)#redistribute rip ?
+  metric     Metric for redistributed routes
+  route-map  Route map reference
+  <cr>
+
+CSR2(config-router-af)#redistribute rip 
+CSR2(config-router-af)#
+CSR2(config-router-af)# 
+CSR2(config-router-af)#
+CSR2(config-router-af)#exit
+CSR2(config-router)#
+CSR2(config-router)#
+CSR2(config-router)#exit
+CSR2(config)#
+CSR2(config)#
+CSR2(config)#exit
+CSR2#
+CSR2#
+CSR2#
+*Jul 10 08:49:32.517: %SYS-5-CONFIG_I: Configured from console by console
+CSR2#
+CSR2#ping vr
+CSR2#ping vrf 1.1.1.1 
+% Unable to find vrf '1.1.1.1'
+
+CSR2#ping vrf VPN_A 1.1.1.1
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 1.1.1.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 10/11/14 ms
+CSR2#
+CSR2#
+CSR2#show ip cef vrf VPN_A 20.20.20.20 detail
+0.0.0.0/0, epoch 0, flags [default route handler, default route]
+  no route
+CSR2#
+CSR2#
+CSR2#show bgp vpnv4 unicast all labels       
+   Network          Next Hop      In label/Out label
+Route Distinguisher: 100:1 (VPN_A)
+   1.1.1.1/32       10.1.2.1        207/nolabel
+   10.1.2.0/30      0.0.0.0         208/nolabel(VPN_A)
+   20.20.20.20/32   19.19.19.19     nolabel/19005
+
+CSR2#
+CSR2#
+CSR2#wr
+Building configuration...
+[OK]
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#terminal length 0
+CSR2#more system:running-config
+!
+! Last configuration change at 08:49:32 UTC Tue Jul 10 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+vrf definition VPN_A
+ rd 100:1
+ route-target export 100:1
+ route-target import 100:1
+ !
+ address-family ipv4
+ exit-address-family
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 200 299
+mpls ldp session protection
+mpls ldp label
+ allocate global prefix-list LABELS
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9S2KOPAUVOD
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+!
+interface Loopback10
+ no ip address
+!
+interface GigabitEthernet1
+ vrf forwarding VPN_A
+ ip address 10.1.2.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.2.4.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet3
+ ip address 20.2.3.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+!
+router ospf 1
+ network 2.2.2.2 0.0.0.0 area 0
+ network 20.2.3.0 0.0.0.3 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ mpls ldp sync
+!
+router rip
+ !
+ address-family ipv4 vrf VPN_A
+  redistribute bgp 100 metric transparent
+  network 10.0.0.0
+  no auto-summary
+  version 2
+ exit-address-family
+!
+router bgp 100
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 19.19.19.19 remote-as 100
+ neighbor 19.19.19.19 update-source Loopback0
+ !
+ address-family ipv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 next-hop-self
+ exit-address-family
+ !
+ address-family vpnv4
+  neighbor 19.19.19.19 activate
+  neighbor 19.19.19.19 send-community extended
+ exit-address-family
+ !
+ address-family ipv4 vrf VPN_A
+  redistribute rip
+ exit-address-family
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+ip prefix-list LABELS seq 10 permit 3.3.3.3/32
+ip prefix-list LABELS seq 15 permit 4.4.4.4/32
+ip prefix-list LABELS seq 20 permit 5.5.5.5/32
+ip prefix-list LABELS seq 25 permit 6.6.6.6/32
+ip prefix-list LABELS seq 30 permit 19.19.19.19/32
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR2#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR2 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+

@@ -1,0 +1,77 @@
+
+*Jul  4 08:55:25.642: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (1) is DOWN (Received error notification from peer: Holddown time expired)
+*Jul  4 08:56:05.294: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (1) is UP
+CSR5>
+CSR5>
+CSR5>
+CSR5>
+CSR5>en
+CSR5#
+CSR5#sh mpl
+CSR5#sh mpls int
+CSR5#sh mpls interfaces 
+Interface              IP            Tunnel   BGP Static Operational
+GigabitEthernet1       Yes (ldp)     No       No  No     Yes        
+GigabitEthernet2       Yes (ldp)     No       No  No     Yes        
+GigabitEthernet4       Yes (ldp)     No       No  No     Yes        
+CSR5#
+CSR5#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR5(config)#inter
+CSR5(config)#interface gi
+CSR5(config)#interface gigabitEthernet 1
+CSR5(config-if)#no mp
+CSR5(config-if)#no mpls ip
+CSR5(config-if)#no mpls ip
+*Jul  4 08:57:24.461: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (1) is DOWN (LDP disabled on interface gigabitEthernet 1
+CSR5(config-if)#interface gigabitEthernet 2
+CSR5(config-if)#
+CSR5(config-if)#no mpls ip                 
+CSR5(config-if)#
+CSR5(config-if)#interface gigabitEthernet 2
+*Jul  4 08:57:29.515: %LDP-5-NBRCHG: LDP Neighbor 6.6.6.6:0 (2) is DOWN (LDP disabled on interface4
+CSR5(config-if)#interface gigabitEthernet 4
+CSR5(config-if)#no mpls ip                 
+CSR5(config-if)#
+CSR5(config-if)#
+CSR5(config-if)#
+CSR5(config-if)#
+CSR5(config-if)#
+CSR5(config-if)#
+*Jul  4 08:57:33.844: %LDP-5-NBRCHG: LDP Neighbor 19.19.19.19:0 (3) is DOWN (LDP disabled on interface)
+CSR5(config-if)#
+CSR5(config-if)#
+CSR5(config-if)#exit
+CSR5(config)#
+CSR5(config)#router os
+CSR5(config)#router ospf 1
+CSR5(config-router)#mpl
+CSR5(config-router)#mpls ld
+CSR5(config-router)#mpls ldp au
+CSR5(config-router)#mpls ldp autoconfig 
+CSR5(config-router)#end
+CSR5#
+CSR5#
+CSR5#
+*Jul  4 08:57:45.771: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (1) is UP
+*Jul  4 08:57:45.794: %LDP-5-NBRCHG: LDP Neighbor 6.6.6.6:0 (2) is UP
+*Jul  4 08:57:46.520: %SYS-5-CONFIG_I: Configured from console by console
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+*Jul  4 08:57:49.854: %LDP-5-NBRCHG: LDP Neighbor 19.19.19.19:0 (3) is UP
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#wr
+Building configuration...
+[OK]
+CSR5#
+CSR5#
+CSR5#
+CSR5#

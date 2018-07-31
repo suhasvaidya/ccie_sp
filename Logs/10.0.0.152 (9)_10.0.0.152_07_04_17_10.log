@@ -1,0 +1,1405 @@
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show mpls interfaces 
+Wed Jul  4 09:06:29.593 UTC
+Interface                  LDP      Tunnel   Static   Enabled 
+-------------------------- -------- -------- -------- --------
+GigabitEthernet0/0/0/0     Yes      No       No       Yes
+GigabitEthernet0/0/0/1     Yes      No       No       Yes
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh run mpls  
+Wed Jul  4 09:06:41.642 UTC
+mpls ldp
+ interface GigabitEthernet0/0/0/0
+ !
+ interface GigabitEthernet0/0/0/1
+ !
+!
+mpls label range table 0 19000 19099
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf 
+Wed Jul  4 09:06:45.872 UTC
+RP/0/0/CPU0:XR2(config)#
+RP/0/0/CPU0:XR2(config)#mpls ldp 
+RP/0/0/CPU0:XR2(config-ldp)#no interface gigabitEthernet 0/0/0/0
+RP/0/0/CPU0:XR2(config-ldp)#no interface gigabitEthernet 0/0/0/1
+RP/0/0/CPU0:XR2(config-ldp)#commit 
+Wed Jul  4 09:06:59.301 UTC
+RP/0/0/CPU0:XR2(config-ldp)#
+RP/0/0/CPU0:XR2(config-ldp)#
+RP/0/0/CPU0:XR2(config-ldp)#
+RP/0/0/CPU0:XR2(config-ldp)#
+RP/0/0/CPU0:XR2(config-ldp)#
+RP/0/0/CPU0:XR2(config-ldp)#
+RP/0/0/CPU0:XR2(config-ldp)#
+RP/0/0/CPU0:XR2(config-ldp)#
+RP/0/0/CPU0:XR2(config-ldp)#end
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show mpls interfaces 
+Wed Jul  4 09:07:08.971 UTC
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conft
+                    ^
+% Invalid input detected at '^' marker.
+RP/0/0/CPU0:XR2#conf 
+Wed Jul  4 09:07:13.840 UTC
+RP/0/0/CPU0:XR2(config)#
+RP/0/0/CPU0:XR2(config)#mpls ldp 
+RP/0/0/CPU0:XR2(config-ldp)#
+RP/0/0/CPU0:XR2(config-ldp)#?
+  address-family      Configure Address Family and its parameters
+  apply-group         Apply configuration from a group
+  apply-group-append  Append apply-group configuration from a group
+  apply-group-remove  Remove a group from apply-group configuration
+  capabilities        Configure LDP Capabilities(cisco-support)
+  clear               Clear the uncommitted configuration
+  commit              Commit the configuration changes to running
+  default-vrf         Control default VRF behaviour
+  describe            Describe a command without taking real actions
+  discovery           Configure discovery parameters
+  do                  Run an exec command
+  entropy-label       Configure Entropy Label
+  exclude-group       Exclude apply-group configuration from a group
+  exclude-item        Negate a command or set its defaults
+  exit                Exit from this submode
+  graceful-restart    Configure graceful restart feature
+  igp                 Configure igp parameters
+  interface           Enable LDP on an interface and enter interface submode
+  log                 Configure logging of LDP events
+  ltrace-buffer       Configure ltrace buffer file
+  mldp                Configure mLDP parameters
+  neighbor            Configure neighbor parameters
+  no                  Negate a command or set its defaults
+  nsr                 Configure Non-Stop Routing
+  pwd                 Commands used to reach current submode
+  root                Exit to the global configuration mode
+  router-id           Configure router Id
+  session             Configure session parameters
+  show                Show contents of configuration
+  signalling          Configure signalling parameters
+  vrf                 Configure VRF parameters
+RP/0/0/CPU0:XR2(config-ldp)#address-family ipv4 ?
+  discovery     Configure discovery parameters
+  label         Configure label control and policies
+  neighbor      Configure neighbor parameters
+  redistribute  Redistribute routes from routing protocols
+  traffic-eng   Configure LDP parameters for MPLS Traffic-Engineering (TE)
+  <cr>          
+RP/0/0/CPU0:XR2(config-ldp)#address-family ipv4 label ?
+  local   Configure local label control and policies
+  remote  Configure remote/peer label control and policies
+  <cr>    
+RP/0/0/CPU0:XR2(config-ldp)#address-family ipv4 ?     
+  discovery     Configure discovery parameters
+  label         Configure label control and policies
+  neighbor      Configure neighbor parameters
+  redistribute  Redistribute routes from routing protocols
+  traffic-eng   Configure LDP parameters for MPLS Traffic-Engineering (TE)
+  <cr>          
+RP/0/0/CPU0:XR2(config-ldp)#address-family ipv4 discovery ?
+  targeted-hello     LDP Targeted Hellos
+  transport-address  Specify transport address for TCP connection
+RP/0/0/CPU0:XR2(config-ldp)#address-family ipv4 ?         
+  discovery     Configure discovery parameters
+  label         Configure label control and policies
+  neighbor      Configure neighbor parameters
+  redistribute  Redistribute routes from routing protocols
+  traffic-eng   Configure LDP parameters for MPLS Traffic-Engineering (TE)
+  <cr>          
+RP/0/0/CPU0:XR2(config-ldp)#address-family ipv4 ? 
+  discovery     Configure discovery parameters
+  label         Configure label control and policies
+  neighbor      Configure neighbor parameters
+  redistribute  Redistribute routes from routing protocols
+  traffic-eng   Configure LDP parameters for MPLS Traffic-Engineering (TE)
+  <cr>          
+RP/0/0/CPU0:XR2(config-ldp)#address-family ipv4 
+RP/0/0/CPU0:XR2(config-ldp-af)#?
+  apply-group         Apply configuration from a group
+  apply-group-append  Append apply-group configuration from a group
+  apply-group-remove  Remove a group from apply-group configuration
+  clear               Clear the uncommitted configuration
+  commit              Commit the configuration changes to running
+  describe            Describe a command without taking real actions
+  discovery           Configure discovery parameters
+  do                  Run an exec command
+  exclude-group       Exclude apply-group configuration from a group
+  exclude-item        Negate a command or set its defaults
+  exit                Exit from this submode
+  label               Configure label control and policies
+  neighbor            Configure neighbor parameters
+  no                  Negate a command or set its defaults
+  pwd                 Commands used to reach current submode
+  redistribute        Redistribute routes from routing protocols
+  root                Exit to the global configuration mode
+  show                Show contents of configuration
+  traffic-eng         Configure LDP parameters for MPLS Traffic-Engineering (TE)
+RP/0/0/CPU0:XR2(config-ldp-af)#mp?
+                               ^
+% Invalid input detected at '^' marker.
+RP/0/0/CPU0:XR2(config-ldp-af)#  
+RP/0/0/CPU0:XR2(config-ldp-af)#
+RP/0/0/CPU0:XR2(config-ldp-af)#?
+  apply-group         Apply configuration from a group
+  apply-group-append  Append apply-group configuration from a group
+  apply-group-remove  Remove a group from apply-group configuration
+  clear               Clear the uncommitted configuration
+  commit              Commit the configuration changes to running
+  describe            Describe a command without taking real actions
+  discovery           Configure discovery parameters
+  do                  Run an exec command
+  exclude-group       Exclude apply-group configuration from a group
+  exclude-item        Negate a command or set its defaults
+  exit                Exit from this submode
+  label               Configure label control and policies
+  neighbor            Configure neighbor parameters
+  no                  Negate a command or set its defaults
+  pwd                 Commands used to reach current submode
+  redistribute        Redistribute routes from routing protocols
+  root                Exit to the global configuration mode
+  show                Show contents of configuration
+  traffic-eng         Configure LDP parameters for MPLS Traffic-Engineering (TE)
+RP/0/0/CPU0:XR2(config-ldp-af)#exit
+RP/0/0/CPU0:XR2(config-ldp)#?
+  address-family      Configure Address Family and its parameters
+  apply-group         Apply configuration from a group
+  apply-group-append  Append apply-group configuration from a group
+  apply-group-remove  Remove a group from apply-group configuration
+  capabilities        Configure LDP Capabilities(cisco-support)
+  clear               Clear the uncommitted configuration
+  commit              Commit the configuration changes to running
+  default-vrf         Control default VRF behaviour
+  describe            Describe a command without taking real actions
+  discovery           Configure discovery parameters
+  do                  Run an exec command
+  entropy-label       Configure Entropy Label
+  exclude-group       Exclude apply-group configuration from a group
+  exclude-item        Negate a command or set its defaults
+  exit                Exit from this submode
+  graceful-restart    Configure graceful restart feature
+  igp                 Configure igp parameters
+  interface           Enable LDP on an interface and enter interface submode
+  log                 Configure logging of LDP events
+  ltrace-buffer       Configure ltrace buffer file
+  mldp                Configure mLDP parameters
+  neighbor            Configure neighbor parameters
+  no                  Negate a command or set its defaults
+  nsr                 Configure Non-Stop Routing
+  pwd                 Commands used to reach current submode
+  root                Exit to the global configuration mode
+  router-id           Configure router Id
+  session             Configure session parameters
+  show                Show contents of configuration
+  signalling          Configure signalling parameters
+  vrf                 Configure VRF parameters
+RP/0/0/CPU0:XR2(config-ldp)#igp ?
+  sync  Configure LDP-IGP synchronization parameters
+RP/0/0/CPU0:XR2(config-ldp)#igp sync ?
+  delay  Configure sync up delay after session up
+RP/0/0/CPU0:XR2(config-ldp)#igp sync ?
+  delay  Configure sync up delay after session up
+RP/0/0/CPU0:XR2(config-ldp)#igp sync exi
+                                     ^
+% Invalid input detected at '^' marker.
+RP/0/0/CPU0:XR2(config-ldp)#exit
+RP/0/0/CPU0:XR2(config)#
+RP/0/0/CPU0:XR2(config)#
+RP/0/0/CPU0:XR2(config)#
+RP/0/0/CPU0:XR2(config)#exit
+Uncommitted changes found, commit them before exiting(yes/no/cancel)? [cancel]:no
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf  
+Wed Jul  4 09:09:23.081 UTC
+RP/0/0/CPU0:XR2(config)#router ospf 1
+RP/0/0/CPU0:XR2(config-ospf)#mpls ldp ?
+  auto-config         Enable LDP IGP interface auto-configuration
+  sync                Enable LDP IGP synchronization
+  sync-igp-shortcuts  LDP sync for igp-shortcut tunnels
+RP/0/0/CPU0:XR2(config-ospf)#mpls ldp auto-config ?
+  <cr>  
+RP/0/0/CPU0:XR2(config-ospf)#mpls ldp auto-config 
+RP/0/0/CPU0:XR2(config-ospf)#commit 
+Wed Jul  4 09:09:39.390 UTC
+RP/0/0/CPU0:XR2(config-ospf)#end
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show mpls interfaces 
+Wed Jul  4 09:09:43.400 UTC
+Interface                  LDP      Tunnel   Static   Enabled 
+-------------------------- -------- -------- -------- --------
+GigabitEthernet0/0/0/0     Yes      No       No       Yes
+GigabitEthernet0/0/0/1     Yes      No       No       Yes
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#terminal length 0
+Wed Jul  4 09:12:08.410 UTC
+RP/0/0/CPU0:XR2#configure terminal
+Wed Jul  4 09:12:08.570 UTC
+RP/0/0/CPU0:XR2(config)#no logging console
+RP/0/0/CPU0:XR2(config)#commit
+Wed Jul  4 09:12:09.010 UTC
+RP/0/0/CPU0:XR2(config)#exit
+RP/0/0/CPU0:XR2#show running-config
+Wed Jul  4 09:12:09.380 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 09:09:39 2018 by cisco
+!
+hostname XR2
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 20.19.20.1 255.255.255.252
+!
+router ospf 1
+ mpls ldp auto-config
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+ !
+!
+mpls ldp
+!
+mpls label range table 0 19000 19099
+end
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#terminal length 0
+Wed Jul  4 09:14:26.921 UTC
+RP/0/0/CPU0:XR2#configure terminal
+Wed Jul  4 09:14:27.081 UTC
+RP/0/0/CPU0:XR2(config)#no logging console
+RP/0/0/CPU0:XR2(config)#commit
+Wed Jul  4 09:14:27.550 UTC
+RP/0/0/CPU0:XR2(config)#exit
+RP/0/0/CPU0:XR2#show running-config
+Wed Jul  4 09:14:27.920 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 09:09:39 2018 by cisco
+!
+hostname XR2
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 20.19.20.1 255.255.255.252
+!
+router ospf 1
+ mpls ldp auto-config
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+ !
+!
+mpls ldp
+!
+mpls label range table 0 19000 19099
+end
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#commit
+                  ^
+% Invalid input detected at '^' marker.
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#terminal length 0
+Wed Jul  4 09:19:59.808 UTC
+RP/0/0/CPU0:XR2#configure terminal
+Wed Jul  4 09:19:59.968 UTC
+RP/0/0/CPU0:XR2(config)#no logging console
+RP/0/0/CPU0:XR2(config)#commit
+Wed Jul  4 09:20:00.438 UTC
+RP/0/0/CPU0:XR2(config)#exit
+RP/0/0/CPU0:XR2#show running-config
+Wed Jul  4 09:20:00.778 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 09:09:39 2018 by cisco
+!
+hostname XR2
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 20.19.20.1 255.255.255.252
+!
+router ospf 1
+ mpls ldp auto-config
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+ !
+!
+mpls ldp
+!
+mpls label range table 0 19000 19099
+end
+
+RP/0/0/CPU0:XR2#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR2 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Wed Jul  4 09:31:01.242 UTC
+RP/0/0/CPU0:XR2(config)#ipv4 access-list ?
+  log-update  Control access lists log updates
+  WORD        Access list name - maximum 64 characters
+RP/0/0/CPU0:XR2(config)#ipv4 access-list LABELS
+RP/0/0/CPU0:XR2(config-ipv4-acl)#permit ipv4 host 2.2.2.2 any
+RP/0/0/CPU0:XR2(config-ipv4-acl)#permit ipv4 host 3.3.3.3 any
+RP/0/0/CPU0:XR2(config-ipv4-acl)#permit ipv4 host 4.4.4.4 any
+RP/0/0/CPU0:XR2(config-ipv4-acl)#permit ipv4 host 5.5.5.5 any
+RP/0/0/CPU0:XR2(config-ipv4-acl)#permit ipv4 host 6.6.6.6 any
+RP/0/0/CPU0:XR2(config-ipv4-acl)#permit ipv4 host 19.19.19.19 any
+RP/0/0/CPU0:XR2(config-ipv4-acl)#
+RP/0/0/CPU0:XR2(config-ipv4-acl)#
+RP/0/0/CPU0:XR2(config-ipv4-acl)#end
+Uncommitted changes found, commit them before exiting(yes/no/cancel)? [cancel]:yes
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show mp
+mpa  mpg  mpls  
+RP/0/0/CPU0:XR2#show mpls ldp forwarding 
+Wed Jul  4 09:32:45.455 UTC
+
+Codes: 
+  - = GR label recovering, (!) = LFA FRR pure backup path 
+  {} = Label stack with multi-line output for a routing path
+  G = GR, S = Stale, R = Remote LFA FRR backup
+
+Prefix          Label   Label(s)       Outgoing     Next Hop            Flags
+                In      Out            Interface                        G S R
+--------------- ------- -------------- ------------ ------------------- -----
+2.2.2.2/32      19000   602            Gi0/0/0/0    20.6.19.1                
+3.3.3.3/32      19001   601            Gi0/0/0/0    20.6.19.1                
+4.4.4.4/32      19002   600            Gi0/0/0/0    20.6.19.1                
+5.5.5.5/32      19003   607            Gi0/0/0/0    20.6.19.1                
+6.6.6.6/32      19004   ImpNull        Gi0/0/0/0    20.6.19.1                
+20.2.3.0/30     19008   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.2.4.0/30     19010   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.3.4.0/30     19011   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.3.6.0/30     19007   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.4.5.0/30     19009   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.4.6.0/30     19006   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.5.6.0/30     19005   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.19.5.0/30    19012   Unlabelled     Gi0/0/0/0    20.6.19.1                
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show mpls ldp forwarding 
+Wed Jul  4 09:32:49.025 UTC
+
+Codes: 
+  - = GR label recovering, (!) = LFA FRR pure backup path 
+  {} = Label stack with multi-line output for a routing path
+  G = GR, S = Stale, R = Remote LFA FRR backup
+
+Prefix          Label   Label(s)       Outgoing     Next Hop            Flags
+                In      Out            Interface                        G S R
+--------------- ------- -------------- ------------ ------------------- -----
+2.2.2.2/32      19000   602            Gi0/0/0/0    20.6.19.1                
+3.3.3.3/32      19001   601            Gi0/0/0/0    20.6.19.1                
+4.4.4.4/32      19002   600            Gi0/0/0/0    20.6.19.1                
+5.5.5.5/32      19003   607            Gi0/0/0/0    20.6.19.1                
+6.6.6.6/32      19004   ImpNull        Gi0/0/0/0    20.6.19.1                
+20.2.3.0/30     19008   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.2.4.0/30     19010   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.3.4.0/30     19011   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.3.6.0/30     19007   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.4.5.0/30     19009   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.4.6.0/30     19006   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.5.6.0/30     19005   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.19.5.0/30    19012   Unlabelled     Gi0/0/0/0    20.6.19.1                
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show mpls ldp forwarding 
+Wed Jul  4 09:32:52.515 UTC
+
+Codes: 
+  - = GR label recovering, (!) = LFA FRR pure backup path 
+  {} = Label stack with multi-line output for a routing path
+  G = GR, S = Stale, R = Remote LFA FRR backup
+
+Prefix          Label   Label(s)       Outgoing     Next Hop            Flags
+                In      Out            Interface                        G S R
+--------------- ------- -------------- ------------ ------------------- -----
+2.2.2.2/32      19000   602            Gi0/0/0/0    20.6.19.1                
+3.3.3.3/32      19001   601            Gi0/0/0/0    20.6.19.1                
+4.4.4.4/32      19002   600            Gi0/0/0/0    20.6.19.1                
+5.5.5.5/32      19003   607            Gi0/0/0/0    20.6.19.1                
+6.6.6.6/32      19004   ImpNull        Gi0/0/0/0    20.6.19.1                
+20.2.3.0/30     19008   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.2.4.0/30     19010   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.3.4.0/30     19011   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.3.6.0/30     19007   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.4.5.0/30     19009   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.4.6.0/30     19006   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.5.6.0/30     19005   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.19.5.0/30    19012   Unlabelled     Gi0/0/0/0    20.6.19.1                
+
+RP/0/0/CPU0:XR2#show mpls ldp forwarding 
+Wed Jul  4 09:32:54.085 UTC
+
+Codes: 
+  - = GR label recovering, (!) = LFA FRR pure backup path 
+  {} = Label stack with multi-line output for a routing path
+  G = GR, S = Stale, R = Remote LFA FRR backup
+
+Prefix          Label   Label(s)       Outgoing     Next Hop            Flags
+                In      Out            Interface                        G S R
+--------------- ------- -------------- ------------ ------------------- -----
+2.2.2.2/32      19000   602            Gi0/0/0/0    20.6.19.1                
+3.3.3.3/32      19001   601            Gi0/0/0/0    20.6.19.1                
+4.4.4.4/32      19002   600            Gi0/0/0/0    20.6.19.1                
+5.5.5.5/32      19003   607            Gi0/0/0/0    20.6.19.1                
+6.6.6.6/32      19004   ImpNull        Gi0/0/0/0    20.6.19.1                
+20.2.3.0/30     19008   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.2.4.0/30     19010   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.3.4.0/30     19011   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.3.6.0/30     19007   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.4.5.0/30     19009   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.4.6.0/30     19006   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.5.6.0/30     19005   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.19.5.0/30    19012   Unlabelled     Gi0/0/0/0    20.6.19.1                
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show mpls ldp forwarding 
+Wed Jul  4 09:33:01.974 UTC
+
+Codes: 
+  - = GR label recovering, (!) = LFA FRR pure backup path 
+  {} = Label stack with multi-line output for a routing path
+  G = GR, S = Stale, R = Remote LFA FRR backup
+
+Prefix          Label   Label(s)       Outgoing     Next Hop            Flags
+                In      Out            Interface                        G S R
+--------------- ------- -------------- ------------ ------------------- -----
+2.2.2.2/32      19000   602            Gi0/0/0/0    20.6.19.1                
+3.3.3.3/32      19001   601            Gi0/0/0/0    20.6.19.1                
+4.4.4.4/32      19002   600            Gi0/0/0/0    20.6.19.1                
+5.5.5.5/32      19003   607            Gi0/0/0/0    20.6.19.1                
+6.6.6.6/32      19004   ImpNull        Gi0/0/0/0    20.6.19.1                
+20.2.3.0/30     19008   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.2.4.0/30     19010   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.3.4.0/30     19011   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.3.6.0/30     19007   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.4.5.0/30     19009   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.4.6.0/30     19006   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.5.6.0/30     19005   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.19.5.0/30    19012   Unlabelled     Gi0/0/0/0    20.6.19.1                
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show mpls ldp forwarding 
+Wed Jul  4 09:33:03.434 UTC
+
+Codes: 
+  - = GR label recovering, (!) = LFA FRR pure backup path 
+  {} = Label stack with multi-line output for a routing path
+  G = GR, S = Stale, R = Remote LFA FRR backup
+
+Prefix          Label   Label(s)       Outgoing     Next Hop            Flags
+                In      Out            Interface                        G S R
+--------------- ------- -------------- ------------ ------------------- -----
+2.2.2.2/32      19000   602            Gi0/0/0/0    20.6.19.1                
+3.3.3.3/32      19001   601            Gi0/0/0/0    20.6.19.1                
+4.4.4.4/32      19002   600            Gi0/0/0/0    20.6.19.1                
+5.5.5.5/32      19003   607            Gi0/0/0/0    20.6.19.1                
+6.6.6.6/32      19004   ImpNull        Gi0/0/0/0    20.6.19.1                
+20.2.3.0/30     19008   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.2.4.0/30     19010   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.3.4.0/30     19011   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.3.6.0/30     19007   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.4.5.0/30     19009   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.4.6.0/30     19006   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.5.6.0/30     19005   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.19.5.0/30    19012   Unlabelled     Gi0/0/0/0    20.6.19.1                
+
+RP/0/0/CPU0:XR2#show mpls ldp forwarding 
+Wed Jul  4 09:33:04.524 UTC
+
+Codes: 
+  - = GR label recovering, (!) = LFA FRR pure backup path 
+  {} = Label stack with multi-line output for a routing path
+  G = GR, S = Stale, R = Remote LFA FRR backup
+
+Prefix          Label   Label(s)       Outgoing     Next Hop            Flags
+                In      Out            Interface                        G S R
+--------------- ------- -------------- ------------ ------------------- -----
+2.2.2.2/32      19000   602            Gi0/0/0/0    20.6.19.1                
+3.3.3.3/32      19001   601            Gi0/0/0/0    20.6.19.1                
+4.4.4.4/32      19002   600            Gi0/0/0/0    20.6.19.1                
+5.5.5.5/32      19003   607            Gi0/0/0/0    20.6.19.1                
+6.6.6.6/32      19004   ImpNull        Gi0/0/0/0    20.6.19.1                
+20.2.3.0/30     19008   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.2.4.0/30     19010   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.3.4.0/30     19011   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.3.6.0/30     19007   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.4.5.0/30     19009   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.4.6.0/30     19006   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.5.6.0/30     19005   Unlabelled     Gi0/0/0/0    20.6.19.1                
+20.19.5.0/30    19012   Unlabelled     Gi0/0/0/0    20.6.19.1                
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Wed Jul  4 09:33:16.493 UTC
+RP/0/0/CPU0:XR2(config)#mpls ldp   
+RP/0/0/CPU0:XR2(config-ldp)#?  
+  address-family      Configure Address Family and its parameters
+  apply-group         Apply configuration from a group
+  apply-group-append  Append apply-group configuration from a group
+  apply-group-remove  Remove a group from apply-group configuration
+  capabilities        Configure LDP Capabilities(cisco-support)
+  clear               Clear the uncommitted configuration
+  commit              Commit the configuration changes to running
+  default-vrf         Control default VRF behaviour
+  describe            Describe a command without taking real actions
+  discovery           Configure discovery parameters
+  do                  Run an exec command
+  entropy-label       Configure Entropy Label
+  exclude-group       Exclude apply-group configuration from a group
+  exclude-item        Negate a command or set its defaults
+  exit                Exit from this submode
+  graceful-restart    Configure graceful restart feature
+  igp                 Configure igp parameters
+  interface           Enable LDP on an interface and enter interface submode
+  log                 Configure logging of LDP events
+  ltrace-buffer       Configure ltrace buffer file
+  mldp                Configure mLDP parameters
+  neighbor            Configure neighbor parameters
+  no                  Negate a command or set its defaults
+  nsr                 Configure Non-Stop Routing
+  pwd                 Commands used to reach current submode
+  root                Exit to the global configuration mode
+  router-id           Configure router Id
+  session             Configure session parameters
+  show                Show contents of configuration
+  signalling          Configure signalling parameters
+  vrf                 Configure VRF parameters
+RP/0/0/CPU0:XR2(config-ldp)#
+RP/0/0/CPU0:XR2(config-ldp)#
+RP/0/0/CPU0:XR2(config-ldp)#
+RP/0/0/CPU0:XR2(config-ldp)#
+RP/0/0/CPU0:XR2(config-ldp)#
+RP/0/0/CPU0:XR2(config-ldp)#
+RP/0/0/CPU0:XR2(config-ldp)#?
+  address-family      Configure Address Family and its parameters
+  apply-group         Apply configuration from a group
+  apply-group-append  Append apply-group configuration from a group
+  apply-group-remove  Remove a group from apply-group configuration
+  capabilities        Configure LDP Capabilities(cisco-support)
+  clear               Clear the uncommitted configuration
+  commit              Commit the configuration changes to running
+  default-vrf         Control default VRF behaviour
+  describe            Describe a command without taking real actions
+  discovery           Configure discovery parameters
+  do                  Run an exec command
+  entropy-label       Configure Entropy Label
+  exclude-group       Exclude apply-group configuration from a group
+  exclude-item        Negate a command or set its defaults
+  exit                Exit from this submode
+  graceful-restart    Configure graceful restart feature
+  igp                 Configure igp parameters
+  interface           Enable LDP on an interface and enter interface submode
+  log                 Configure logging of LDP events
+  ltrace-buffer       Configure ltrace buffer file
+  mldp                Configure mLDP parameters
+  neighbor            Configure neighbor parameters
+  no                  Negate a command or set its defaults
+  nsr                 Configure Non-Stop Routing
+  pwd                 Commands used to reach current submode
+  root                Exit to the global configuration mode
+  router-id           Configure router Id
+  session             Configure session parameters
+  show                Show contents of configuration
+  signalling          Configure signalling parameters
+  vrf                 Configure VRF parameters
+RP/0/0/CPU0:XR2(config-ldp)#apply-group?
+apply-group  apply-group-append  apply-group-remove  
+RP/0/0/CPU0:XR2(config-ldp)#apply-group ?
+  WORD  Group name
+RP/0/0/CPU0:XR2(config-ldp)#address-family ?
+  ipv4  IPv4
+  ipv6  IPv6
+RP/0/0/CPU0:XR2(config-ldp)#address-family ipv4 ?
+  discovery     Configure discovery parameters
+  label         Configure label control and policies
+  neighbor      Configure neighbor parameters
+  redistribute  Redistribute routes from routing protocols
+  traffic-eng   Configure LDP parameters for MPLS Traffic-Engineering (TE)
+  <cr>          
+RP/0/0/CPU0:XR2(config-ldp)#address-family ipv4 label ?
+  local   Configure local label control and policies
+  remote  Configure remote/peer label control and policies
+  <cr>    
+RP/0/0/CPU0:XR2(config-ldp)#address-family ipv4 label local ?
+  advertise               Configure outbound label advertisement control
+  allocate                Configure label allocation control
+  default-route           Enable MPLS forwarding for default route
+  implicit-null-override  Configure use of implicit-null local label for non-egress prefixes
+  <cr>                    
+RP/0/0/CPU0:XR2(config-ldp)#address-family ipv4 label local allocate ?
+  for  Limit label allocation to a set of prefixes
+RP/0/0/CPU0:XR2(config-ldp)#address-family ipv4 label local allocate for ?
+  WORD         IP access-list
+  host-routes  Allocate label for host routes only
+RP/0/0/CPU0:XR2(config-ldp)#?                                            
+  address-family      Configure Address Family and its parameters
+  apply-group         Apply configuration from a group
+  apply-group-append  Append apply-group configuration from a group
+  apply-group-remove  Remove a group from apply-group configuration
+  capabilities        Configure LDP Capabilities(cisco-support)
+  clear               Clear the uncommitted configuration
+  commit              Commit the configuration changes to running
+  default-vrf         Control default VRF behaviour
+  describe            Describe a command without taking real actions
+  discovery           Configure discovery parameters
+  do                  Run an exec command
+  entropy-label       Configure Entropy Label
+  exclude-group       Exclude apply-group configuration from a group
+  exclude-item        Negate a command or set its defaults
+  exit                Exit from this submode
+  graceful-restart    Configure graceful restart feature
+  igp                 Configure igp parameters
+  interface           Enable LDP on an interface and enter interface submode
+  log                 Configure logging of LDP events
+  ltrace-buffer       Configure ltrace buffer file
+  mldp                Configure mLDP parameters
+  neighbor            Configure neighbor parameters
+  no                  Negate a command or set its defaults
+  nsr                 Configure Non-Stop Routing
+  pwd                 Commands used to reach current submode
+  root                Exit to the global configuration mode
+  router-id           Configure router Id
+  session             Configure session parameters
+  show                Show contents of configuration
+  signalling          Configure signalling parameters
+  vrf                 Configure VRF parameters
+RP/0/0/CPU0:XR2(config-ldp)#address-family ipv4 ?
+  discovery     Configure discovery parameters
+  label         Configure label control and policies
+  neighbor      Configure neighbor parameters
+  redistribute  Redistribute routes from routing protocols
+  traffic-eng   Configure LDP parameters for MPLS Traffic-Engineering (TE)
+  <cr>          
+RP/0/0/CPU0:XR2(config-ldp)#address-family ipv4 label ?
+  local   Configure local label control and policies
+  remote  Configure remote/peer label control and policies
+  <cr>    
+RP/0/0/CPU0:XR2(config-ldp)#address-family ipv4 label remote ?
+  accept  Configure inbound label acceptance control
+  <cr>    
+RP/0/0/CPU0:XR2(config-ldp)#address-family ipv4 label remote accept ?
+  from  Neighbor from whom to accept label advertisement
+  <cr>  
+RP/0/0/CPU0:XR2(config-ldp)#address-family ipv4 label local ?       
+  advertise               Configure outbound label advertisement control
+  allocate                Configure label allocation control
+  default-route           Enable MPLS forwarding for default route
+  implicit-null-override  Configure use of implicit-null local label for non-egress prefixes
+  <cr>                    
+RP/0/0/CPU0:XR2(config-ldp)#address-family ipv4 label local allocate ?
+  for  Limit label allocation to a set of prefixes
+RP/0/0/CPU0:XR2(config-ldp)#address-family ipv4 label local allocate for ?
+  WORD         IP access-list
+  host-routes  Allocate label for host routes only
+RP/0/0/CPU0:XR2(config-ldp)#address-family ipv4 label local allocate for LABELS
+RP/0/0/CPU0:XR2(config-ldp)#
+RP/0/0/CPU0:XR2(config-ldp)#commit 
+Wed Jul  4 09:35:40.863 UTC
+RP/0/0/CPU0:XR2(config-ldp)#
+RP/0/0/CPU0:XR2(config-ldp)#end
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show mpls ldp forwarding 
+Wed Jul  4 09:35:44.043 UTC
+
+Codes: 
+  - = GR label recovering, (!) = LFA FRR pure backup path 
+  {} = Label stack with multi-line output for a routing path
+  G = GR, S = Stale, R = Remote LFA FRR backup
+
+Prefix          Label   Label(s)       Outgoing     Next Hop            Flags
+                In      Out            Interface                        G S R
+--------------- ------- -------------- ------------ ------------------- -----
+2.2.2.2/32      19000   602            Gi0/0/0/0    20.6.19.1                
+3.3.3.3/32      19001   601            Gi0/0/0/0    20.6.19.1                
+4.4.4.4/32      19002   600            Gi0/0/0/0    20.6.19.1                
+5.5.5.5/32      19003   607            Gi0/0/0/0    20.6.19.1                
+6.6.6.6/32      19004   ImpNull        Gi0/0/0/0    20.6.19.1                
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show mpls ldp forwarding 
+Wed Jul  4 09:35:48.823 UTC
+
+Codes: 
+  - = GR label recovering, (!) = LFA FRR pure backup path 
+  {} = Label stack with multi-line output for a routing path
+  G = GR, S = Stale, R = Remote LFA FRR backup
+
+Prefix          Label   Label(s)       Outgoing     Next Hop            Flags
+                In      Out            Interface                        G S R
+--------------- ------- -------------- ------------ ------------------- -----
+2.2.2.2/32      19000   602            Gi0/0/0/0    20.6.19.1                
+3.3.3.3/32      19001   601            Gi0/0/0/0    20.6.19.1                
+4.4.4.4/32      19002   600            Gi0/0/0/0    20.6.19.1                
+5.5.5.5/32      19003   607            Gi0/0/0/0    20.6.19.1                
+6.6.6.6/32      19004   ImpNull        Gi0/0/0/0    20.6.19.1                
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR2 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: 
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR2#terminal length 0
+Wed Jul  4 09:46:42.168 UTC
+RP/0/0/CPU0:XR2#configure terminal
+Wed Jul  4 09:46:42.358 UTC
+RP/0/0/CPU0:XR2(config)#no logging console
+RP/0/0/CPU0:XR2(config)#commit
+Wed Jul  4 09:46:42.788 UTC
+RP/0/0/CPU0:XR2(config)#exit
+RP/0/0/CPU0:XR2#show running-config
+Wed Jul  4 09:46:43.128 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 09:35:40 2018 by cisco
+!
+hostname XR2
+ipv4 access-list LABELS
+ 10 permit ipv4 host 2.2.2.2 any
+ 20 permit ipv4 host 3.3.3.3 any
+ 30 permit ipv4 host 4.4.4.4 any
+ 40 permit ipv4 host 5.5.5.5 any
+ 50 permit ipv4 host 6.6.6.6 any
+ 60 permit ipv4 host 19.19.19.19 any
+!
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 20.19.20.1 255.255.255.252
+!
+router ospf 1
+ mpls ldp auto-config
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+ !
+!
+mpls ldp
+ address-family ipv4
+  label
+   local
+    allocate for LABELS
+   !
+  !
+ !
+!
+mpls label range table 0 19000 19099
+end
+
+RP/0/0/CPU0:XR2#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR2 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+

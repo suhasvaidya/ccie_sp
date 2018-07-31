@@ -1,0 +1,89 @@
+
+
+CSR5>en
+CSR5#
+CSR5#
+*Jul 10 14:33:25.565: %LDP-5-SP: 19.19.19.19:0: session hold up initiated
+*Jul 10 14:33:27.913: %LDP-5-SP: 19.19.19.19:0: session recovery succeeded
+CSR5#
+CSR5#
+CSR5#
+*Jul 10 14:34:37.281: %OSPF-5-ADJCHG: Process 1, Nbr 8.8.8.8 on GigabitEthernet3 from FULL to DOWN, Neighbor Down: Dead timer expired
+*Jul 10 14:34:37.821: %OSPF-5-ADJCHG: Process 1, Nbr 8.8.8.8 on GigabitEthernet3 from LOADING to FULL, Loading Done
+CSR5#
+CSR5#
+CSR5#show mpls ldp neighbor 
+    Peer LDP Ident: 4.4.4.4:0; Local LDP Ident 5.5.5.5:0
+        TCP connection: 4.4.4.4.646 - 5.5.5.5.22848
+        State: Oper; Msgs sent/rcvd: 858/864; Downstream
+        Up time: 12:27:06
+        LDP discovery sources:
+          Targeted Hello 5.5.5.5 -> 4.4.4.4, active, passive
+          GigabitEthernet1, Src IP addr: 20.4.5.1
+        Addresses bound to peer LDP Ident:
+          4.4.4.4         20.4.5.1        20.2.4.2        20.4.6.1        
+          20.3.4.2        10.4.7.1        
+    Peer LDP Ident: 19.19.19.19:0; Local LDP Ident 5.5.5.5:0
+        TCP connection: 19.19.19.19.47386 - 5.5.5.5.646
+        State: Oper; Msgs sent/rcvd: 862/856; Downstream
+        Up time: 12:27:05
+        LDP discovery sources:
+          Targeted Hello 5.5.5.5 -> 19.19.19.19, active, passive
+          GigabitEthernet4, Src IP addr: 20.5.19.2
+        Addresses bound to peer LDP Ident:
+          19.19.19.19     20.6.19.2       20.5.19.2       
+    Peer LDP Ident: 6.6.6.6:0; Local LDP Ident 5.5.5.5:0
+        TCP connection: 6.6.6.6.48288 - 5.5.5.5.646
+        State: Oper; Msgs sent/rcvd: 26/25; Downstream
+        Up time: 00:14:48
+        LDP discovery sources:
+          GigabitEthernet2, Src IP addr: 20.5.6.2
+        Addresses bound to peer LDP Ident:
+          6.6.6.6         20.5.6.2        20.4.6.2        20.6.19.1       
+          20.3.6.2        
+CSR5#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR5 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+

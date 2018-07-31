@@ -1,0 +1,132 @@
+Connected to Dynamips VM "R8" (ID 8, type c7200) - Console port
+Press ENTER to get the prompt.
+s and is subject to United
+States and local country laws governing import, export, transfer and
+use. Delivery of Cisco cryptographic products does not imply
+third-party authority to import, export, distribute or use encryption.
+Importers, exporters, distributors and users are responsible for
+compliance with U.S. and local country laws. By using this product you
+agree to comply with applicable laws and regulations. If you are unable
+to comply with U.S. and local laws, return this product immediately.
+
+A summary of U.S. laws governing Cisco cryptographic products may be found at:
+http://www.cisco.com/wwl/export/crypto/tool/stqrg.html
+
+If you require further assistance please contact us by sending email to
+export@cisco.com.
+
+Cisco 7206VXR (NPE400) processor (revision A) with 491520K/32768K bytes of memory.
+Processor board ID 4279256517
+R7000 CPU at 150MHz, Implementation 39, Rev 2.1, 256KB L2, 512KB L3 Cache
+6 slot VXR midplane, Version 2.1
+
+Last reset from power-on
+
+PCI bus mb0_mb1 (Slots 0, 1, 3 and 5) has a capacity of 600 bandwidth points.
+Current configuration on bus mb0_mb1 has a total of 400 bandwidth points. 
+This configuration is within the PCI bus capacity and is supported. 
+
+PCI bus mb2 (Slots 2, 4, 6) has a capacity of 600 bandwidth points.
+Current configuration on bus mb2 has a total of 200 bandwidth points 
+This configuration is within the PCI bus capacity and is supported. 
+
+Please refer to the following document "Cisco 7200 Series Port Adaptor
+Hardware Configuration Guidelines" on Cisco.com <http://www.cisco.com>
+for c7200 bandwidth points oversubscription and usage guidelines.
+
+
+3 FastEthernet interfaces
+125K bytes of NVRAM.
+
+131072K bytes of ATA PCMCIA card at slot 0 (Sector size 512 bytes).
+131072K bytes of ATA PCMCIA card at slot 1 (Sector size 512 bytes).
+8192K bytes of Flash internal SIMM (Sector size 256K).
+% Crashinfo may not be recovered at bootflash:crashinfo
+% This file system device reports an error
+
+
+Press RETURN to get started!
+
+
+*Jul 30 20:57:53.015: %IFMGR-7-NO_IFINDEX_FILE: Unable to open nvram:/ifIndex-table No such file or directory
+*Jul 30 20:57:53.235: %DEC21140-1-INITFAIL: Unsupported PHY brand timed out, csr5=0x0
+*Jul 30 20:57:53.335: %DEC21140-1-INITFAIL: Unsupported PHY brand timed out, csr5=0x0
+*Jul 30 20:57:53.439: %DEC21140-1-INITFAIL: Unsupported PHY brand timed out, csr5=0x0
+*Jul 30 20:57:58.367: %LINK-3-UPDOWN: Interface FastEthernet0/0, changed state to up
+*Jul 30 20:57:58.407: %LINK-3-UPDOWN: Interface FastEthernet1/0, changed state to up
+*Jul 30 20:57:58.411: %LINK-3-UPDOWN: Interface FastEthernet2/0, changed state to up
+*Jul 30 20:57:58.711: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback0, changed state to up
+*Jul 30 20:57:59.031: %SYS-5-CONFIG_I: Configured from memory by console
+*Jul 30 20:57:59.263: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, 7200 Software (C7200-ADVIPSERVICESK9-M), Version 15.2(4)S5, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2014 by Cisco Systems, Inc.
+Compiled Thu 20-Feb-14 06:51 by prod_rel_team
+*Jul 30 20:57:59.519: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+*Jul 30 20:57:59.527: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet1/0, changed state to down
+*Jul 30 20:57:59.527: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet2/0, changed state to down
+*Jul 30 20:58:00.919: %LINK-5-CHANGED: Interface FastEthernet1/0, changed state to administratively down
+*Jul 30 20:58:00.947: %LINK-5-CHANGED: Interface FastEthernet2/0, changed state to administratively down
+*Jul 30 20:59:32.891: %OSPF-5-ADJCHG: Process 1, Nbr 5.5.5.5 on FastEthernet0/0 from LOADING to FULL, Loading Done
+R8>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R8 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+*Jul 30 21:41:08.931: %OSPF-5-ADJCHG: Process 1, Nbr 5.5.5.5 on FastEthernet0/0 from FULL to DOWN, Neighbor Down: Dead timer expired
+R8>en
+R8#
+R8#
+R8#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R8(config)#ip route 0.0.0.0 0.0.0.0 10.5.8.1
+R8(config)#end
+R8#
+R8#w
+*Jul 30 21:41:46.967: %SYS-5-CONFIG_I: Configured from console by consoler
+Warning: Attempting to overwrite an NVRAM configuration previously written
+by a different version of the system image.
+Overwrite the previous NVRAM configuration?[confirm]
+Building configuration...
+[OK]
+R8#

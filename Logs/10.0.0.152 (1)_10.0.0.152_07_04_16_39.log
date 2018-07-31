@@ -1,0 +1,44 @@
+
+CSR2#
+CSR2#
+CSR2#
+CSR2#
+CSR2#sh
+CSR2#show mpl
+CSR2#show mpls fo
+CSR2#show mpls forwarding-table 
+Local      Outgoing   Prefix           Bytes Label   Outgoing   Next Hop    
+Label      Label      or Tunnel Id     Switched      interface              
+200        Pop Label  3.3.3.3/32       0             Gi3        20.2.3.2    
+201        Pop Label  4.4.4.4/32       0             Gi2        20.2.4.2    
+202        Pop Label  20.3.4.0/30      0             Gi3        20.2.3.2    
+           Pop Label  20.3.4.0/30      0             Gi2        20.2.4.2    
+203        Pop Label  20.3.6.0/30      0             Gi3        20.2.3.2    
+204        Pop Label  20.4.5.0/30      0             Gi2        20.2.4.2    
+205        Pop Label  20.4.6.0/30      0             Gi2        20.2.4.2    
+206        305        6.6.6.6/32       0             Gi3        20.2.3.2    
+           401        6.6.6.6/32       0             Gi2        20.2.4.2    
+207        306        20.5.6.0/30      0             Gi3        20.2.3.2    
+           402        20.5.6.0/30      0             Gi2        20.2.4.2    
+208        307        20.6.19.0/30     0             Gi3        20.2.3.2    
+           403        20.6.19.0/30     0             Gi2        20.2.4.2    
+209        404        5.5.5.5/32       0             Gi2        20.2.4.2    
+210        405        20.19.5.0/30     0             Gi2        20.2.4.2    
+211        310        19.19.19.19/32   0             Gi3        20.2.3.2    
+           406        19.19.19.19/32   0             Gi2        20.2.4.2    
+212        311        20.5.19.0/30     0             Gi3        20.2.3.2    
+           407        20.5.19.0/30     0             Gi2        20.2.4.2    
+CSR2#
+CSR2#
+CSR2#tra
+CSR2#traceroute 19.19.19.19 
+Type escape sequence to abort.
+Tracing the route to 19.19.19.19
+VRF info: (vrf in name/id, vrf out name/id)
+  1 20.2.3.2 [MPLS: Label 310 Exp 0] 43 msec
+    20.2.4.2 [MPLS: Label 406 Exp 0] 22 msec
+    20.2.3.2 [MPLS: Label 310 Exp 0] 13 msec
+  2 20.4.6.2 [MPLS: Label 609 Exp 0] 9 msec
+    20.3.6.2 [MPLS: Label 609 Exp 0] 10 msec
+    20.4.6.2 [MPLS: Label 609 Exp 0] 8 msec
+  3 20.6.19.2 30 msec 9 msec * 

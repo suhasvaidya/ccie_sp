@@ -1,0 +1,302 @@
+
+CSR6>
+CSR6>
+CSR6>
+CSR6>en
+CSR6#sh
+CSR6#show mpl
+CSR6#show mpls fo
+CSR6#show mpls forwarding-table 
+Local      Outgoing   Prefix           Bytes Label   Outgoing   Next Hop    
+Label      Label      or Tunnel Id     Switched      interface              
+600        Pop Label  3.3.3.3/32       0             Gi1        20.3.6.1    
+601        301        2.2.2.2/32       1760          Gi1        20.3.6.1    
+           402        2.2.2.2/32       14856         Gi3        20.4.6.1    
+602        Pop Label  4.4.4.4/32       152           Gi3        20.4.6.1    
+603        Pop Label  19.19.19.19/32   59897         Gi4        20.6.19.2   
+604        Pop Label  5.5.5.5/32       0             Gi2        20.5.6.1    
+CSR6#conf y
+          ^
+% Invalid input detected at '^' marker.
+
+CSR6#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR6(config)#inyet
+CSR6(config)#inter
+CSR6(config)#interface gi
+CSR6(config)#interface gigabitEthernet 1
+CSR6(config-if)#shut
+CSR6(config-if)#
+*Jul 10 08:30:01.629: %LDP-5-NBRCHG: LDP Neighbor 3.3.3.3:0 (3) is DOWN (Interface not operational)
+*Jul 10 08:30:01.657: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet1 from FULL to DOWN, Neighbor Down: Interface down or detached
+*Jul 10 08:30:03.518: %LINK-5-CHANGED: Interface GigabitEthernet1, changed state to administratively down
+*Jul 10 08:30:04.523: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1, changed state to down
+CSR6(config-if)#
+CSR6(config-if)#no shut
+CSR6(config-if)#
+*Jul 10 08:30:45.487: %IOSXE-4-PLATFORM: R0/0: kernel: e1000: Gi1: e1000_phy_read_status: Error reading PHY register
+*Jul 10 08:30:51.997: %LINK-3-UPDOWN: Interface GigabitEthernet1, changed state to up
+*Jul 10 08:30:52.057: %LDP-5-NBRCHG: LDP Neighbor 3.3.3.3:0 (3) is UP
+*Jul 10 08:30:52.998: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet1, changed state to up
+*Jul 10 08:31:06.105: %OSPF-5-ADJCHG: Process 1, Nbr 3.3.3.3 on GigabitEthernet1 from LOADING to FULL, Loading Done
+CSR6(config-if)#
+CSR6(config-if)#
+CSR6(config-if)#
+CSR6(config-if)#
+CSR6(config-if)#end
+CSR6#
+CSR6#
+CSR6#wr
+*Jul 10 08:31:27.394: %SYS-5-CONFIG_I: Configured from console by console
+Building configuration...
+[OK]
+CSR6#
+CSR6#
+CSR6#wr
+Building configuration...
+[OK]
+CSR6#
+CSR6#
+CSR6#
+CSR6#
+CSR6#terminal length 0
+CSR6#more system:running-config
+!
+! Last configuration change at 08:31:27 UTC Tue Jul 10 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR6
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 600 699
+mpls ldp label
+ allocate global prefix-list LABELS
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 945V2JQGOFZ
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 6.6.6.6 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address 20.3.6.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.5.6.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet3
+ ip address 20.4.6.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet4
+ ip address 20.6.19.1 255.255.255.252
+ negotiation auto
+!
+router ospf 1
+ network 6.6.6.6 0.0.0.0 area 0
+ network 20.3.6.0 0.0.0.3 area 0
+ network 20.4.6.0 0.0.0.3 area 0
+ network 20.5.6.0 0.0.0.3 area 0
+ network 20.6.19.0 0.0.0.3 area 0
+ mpls ldp autoconfig
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+ip prefix-list LABELS seq 10 permit 3.3.3.3/32
+ip prefix-list LABELS seq 15 permit 4.4.4.4/32
+ip prefix-list LABELS seq 20 permit 5.5.5.5/32
+ip prefix-list LABELS seq 25 permit 6.6.6.6/32
+ip prefix-list LABELS seq 30 permit 19.19.19.19/32
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR6#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR6 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+

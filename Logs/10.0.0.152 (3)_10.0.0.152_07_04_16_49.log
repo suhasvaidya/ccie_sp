@@ -1,0 +1,1167 @@
+
+CSR4>
+CSR4>
+CSR4>
+CSR4>
+CSR4>en
+CSR4#
+CSR4#
+CSR4#
+CSR4#
+CSR4#
+CSR4#
+CSR4#
+CSR4#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR4(config)#inter
+CSR4(config)#do sh ml  
+CSR4(config)#do sh mpl   
+CSR4(config)#do sh mpls ld
+CSR4(config)#do sh mpls ldp ne
+CSR4(config)#do sh mpls ldp inter    
+CSR4(config)#do sh mpls ldp inter
+                             ^
+% Invalid input detected at '^' marker.
+
+CSR4(config)#do sh mpls inter    
+Interface              IP            Tunnel   BGP Static Operational
+GigabitEthernet1       Yes (ldp)     No       No  No     Yes        
+GigabitEthernet2       Yes (ldp)     No       No  No     Yes        
+GigabitEthernet3       Yes (ldp)     No       No  No     Yes        
+GigabitEthernet4       Yes (ldp)     No       No  No     Yes        
+CSR4(config)#
+CSR4(config)#
+CSR4(config)#inter
+CSR4(config)#interface gi1
+CSR4(config-if)#no mpl
+CSR4(config-if)#no mpls ip
+CSR4(config-if)#no mpls ip
+*Jul  4 08:53:55.216: %LDP-5-NBRCHG: LDP Neighbor 5.5.5.5:0 (4) is DOWN (LDP disabled on interface gi1
+CSR4(config-if)#interface gi2
+CSR4(config-if)#no mpls ip   
+CSR4(config-if)#interface gi2
+*Jul  4 08:54:00.275: %LDP-5-NBRCHG: LDP Neighbor 2.2.2.2:0 (2) is DOWN (LDP disabled on interface)
+CSR4(config-if)#interface gi3
+CSR4(config-if)#no mpls ip   
+CSR4(config-if)#
+CSR4(config-if)#no mpls ip
+*Jul  4 08:54:04.802: %LDP-5-NBRCHG: LDP Neighbor 6.6.6.6:0 (3) is DOWN (LDP disabled on interface gi3
+CSR4(config-if)#interface gi4
+CSR4(config-if)#no mpls ip   
+CSR4(config-if)#
+CSR4(config-if)#
+CSR4(config-if)#
+*Jul  4 08:54:09.909: %LDP-5-NBRCHG: LDP Neighbor 3.3.3.3:0 (1) is DOWN (LDP disabled on interface)
+CSR4(config-if)#
+CSR4(config-if)#
+CSR4(config-if)#
+CSR4(config-if)#
+CSR4(config-if)#
+CSR4(config-if)#exit
+CSR4(config)#router
+CSR4(config)#router os
+CSR4(config)#router ospf 1
+CSR4(config-router)#
+CSR4(config-router)#mpl
+CSR4(config-router)#mpls ld
+CSR4(config-router)#mpls ldp au
+CSR4(config-router)#mpls ldp autoconfig ?
+  area  Configure an OSPF area to run MPLS LDP
+  <cr>
+
+CSR4(config-router)#mpls ldp autoconfig 
+CSR4(config-router)#
+CSR4(config-router)#
+*Jul  4 08:54:34.862: %LDP-5-NBRCHG: LDP Neighbor 2.2.2.2:0 (1) is UP
+*Jul  4 08:54:34.878: %LDP-5-NBRCHG: LDP Neighbor 3.3.3.3:0 (2) is UP
+*Jul  4 08:54:34.882: %LDP-5-NBRCHG: LDP Neighbor 5.5.5.5:0 (3) is UP
+*Jul  4 08:54:34.941: %LDP-5-NBRCHG: LDP Neighbor 6.6.6.6:0 (4) is UP
+CSR4(config-router)#
+CSR4(config-router)#
+CSR4(config-router)#
+CSR4(config-router)#
+CSR4(config-router)#
+CSR4(config-router)#
+CSR4(config-router)#
+CSR4(config-router)#
+CSR4(config-router)#
+CSR4(config-router)#exit
+CSR4(config)#
+CSR4(config)#
+CSR4(config)#exit
+CSR4#
+CSR4#w
+*Jul  4 08:54:46.326: %SYS-5-CONFIG_I: Configured from console by consoler
+Building configuration...
+[OK]
+CSR4#
+CSR4#
+CSR4#
+*Jul  4 08:55:06.410: %LDP-5-NBRCHG: LDP Neighbor 2.2.2.2:0 (1) is DOWN (Received error notification from peer: Holddown time expired)
+*Jul  4 08:55:24.594: %LDP-5-NBRCHG: LDP Neighbor 2.2.2.2:0 (1) is UP
+CSR4#
+CSR4#
+CSR4#wr
+Building configuration...
+[OK]
+CSR4#
+CSR4#
+*Jul  4 08:55:54.035: %LDP-5-NBRCHG: LDP Neighbor 5.5.5.5:0 (3) is DOWN (Received error notification from peer: Holddown time expired)
+*Jul  4 08:56:15.365: %LDP-5-NBRCHG: LDP Neighbor 5.5.5.5:0 (3) is UP
+*Jul  4 08:58:09.555: %LDP-5-NBRCHG: LDP Neighbor 3.3.3.3:0 (2) is DOWN (TCP connection closed by peer)
+*Jul  4 08:58:19.707: %LDP-5-NBRCHG: LDP Neighbor 3.3.3.3:0 (2) is UP
+CSR4#
+CSR4#
+CSR4#
+*Jul  4 08:59:07.305: %LDP-5-NBRCHG: LDP Neighbor 6.6.6.6:0 (4) is DOWN (Received error notification from peer: Holddown time expired)
+*Jul  4 08:59:20.711: %LDP-5-NBRCHG: LDP Neighbor 6.6.6.6:0 (4) is UP
+CSR4#
+CSR4#
+CSR4#terminal length 0
+CSR4#more system:running-config
+!
+! Last configuration change at 08:54:46 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR4
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 400 499
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 94OWIUZYGUQ
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 4.4.4.4 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address 20.4.5.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.2.4.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet3
+ ip address 20.4.6.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet4
+ ip address 20.3.4.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet5
+ no ip address
+ negotiation auto
+!
+router ospf 1
+ network 4.4.4.4 0.0.0.0 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ network 20.3.4.0 0.0.0.3 area 0
+ network 20.4.5.0 0.0.0.3 area 0
+ network 20.4.6.0 0.0.0.3 area 0
+ mpls ldp autoconfig
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR4#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR4 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR4>
+CSR4>
+CSR4>enable
+CSR4#terminal length 0
+CSR4#more system:running-config
+!
+! Last configuration change at 08:54:46 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR4
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 400 499
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 94OWIUZYGUQ
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 4.4.4.4 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address 20.4.5.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.2.4.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet3
+ ip address 20.4.6.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet4
+ ip address 20.3.4.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet5
+ no ip address
+ negotiation auto
+!
+router ospf 1
+ network 4.4.4.4 0.0.0.0 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ network 20.3.4.0 0.0.0.3 area 0
+ network 20.4.5.0 0.0.0.3 area 0
+ network 20.4.6.0 0.0.0.3 area 0
+ mpls ldp autoconfig
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR4#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR4 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+CSR4>
+CSR4>en
+CSR4#wr
+Building configuration...
+[OK]
+CSR4#
+CSR4#
+CSR4#
+CSR4#
+CSR4#
+CSR4#terminal length 0
+CSR4#more system:running-config
+!
+! Last configuration change at 08:54:46 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR4
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 400 499
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 94OWIUZYGUQ
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 4.4.4.4 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address 20.4.5.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.2.4.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet3
+ ip address 20.4.6.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet4
+ ip address 20.3.4.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet5
+ no ip address
+ negotiation auto
+!
+router ospf 1
+ network 4.4.4.4 0.0.0.0 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ network 20.3.4.0 0.0.0.3 area 0
+ network 20.4.5.0 0.0.0.3 area 0
+ network 20.4.6.0 0.0.0.3 area 0
+ mpls ldp autoconfig
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR4#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR4 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+CSR4>en
+CSR4#
+CSR4#
+CSR4#ip prefix-list LABELS permit 2.2.2.2/32
+        ^
+% Invalid input detected at '^' marker.
+
+CSR4#ip prefix-list LABELS permit 3.3.3.3/32
+        ^
+% Invalid input detected at '^' marker.
+
+CSR4#ip prefix-list LABELS permit 4.4.4.4/32
+        ^
+% Invalid input detected at '^' marker.
+
+CSR4#ip prefix-list LABELS permit 5.5.5.5/32
+        ^
+% Invalid input detected at '^' marker.
+
+CSR4#ip prefix-list LABELS permit 6.6.6.6/32
+        ^
+% Invalid input detected at '^' marker.
+
+CSR4#ip prefix-list LABELS permit 19.19.19.19/32
+        ^
+% Invalid input detected at '^' marker.
+
+CSR4#
+CSR4#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR4(config)#
+CSR4(config)#ip prefix-list LABELS permit 2.2.2.2/32
+CSR4(config)#ip prefix-list LABELS permit 3.3.3.3/32
+CSR4(config)#ip prefix-list LABELS permit 4.4.4.4/32
+CSR4(config)#ip prefix-list LABELS permit 5.5.5.5/32
+CSR4(config)#ip prefix-list LABELS permit 6.6.6.6/32
+CSR4(config)#ip prefix-list LABELS permit 19.19.19.19/32
+CSR4(config)#
+CSR4(config)#
+CSR4(config)#
+CSR4(config)#end
+CSR4#
+CSR4#
+*Jul  4 09:27:58.815: %SYS-5-CONFIG_I: Configured from console by console
+CSR4#
+CSR4#
+CSR4#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR4(config)# mpls ldp label
+CSR4(config-ldp-lbl)#      allocate global prefix-list LABELS
+CSR4(config-ldp-lbl)#
+CSR4(config-ldp-lbl)#
+CSR4(config-ldp-lbl)#
+CSR4(config-ldp-lbl)#en
+                      ^
+% Invalid input detected at '^' marker.
+
+CSR4(config-ldp-lbl)#end
+CSR4#
+CSR4#
+CSR4#wr
+Building configuration...
+[OK]
+CSR4#
+CSR4#
+*Jul  4 09:36:07.356: %SYS-5-CONFIG_I: Configured from console by console
+CSR4#
+CSR4#
+CSR4#terminal length 0
+CSR4#more system:running-config
+!
+! Last configuration change at 09:36:07 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR4
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+no process cpu autoprofile hog
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 400 499
+mpls ldp label
+ allocate global prefix-list LABELS
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 94OWIUZYGUQ
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 4.4.4.4 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address 20.4.5.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.2.4.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet3
+ ip address 20.4.6.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet4
+ ip address 20.3.4.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet5
+ no ip address
+ negotiation auto
+!
+router ospf 1
+ network 4.4.4.4 0.0.0.0 area 0
+ network 20.2.4.0 0.0.0.3 area 0
+ network 20.3.4.0 0.0.0.3 area 0
+ network 20.4.5.0 0.0.0.3 area 0
+ network 20.4.6.0 0.0.0.3 area 0
+ mpls ldp autoconfig
+!
+!
+virtual-service csr_mgmt
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+ip prefix-list LABELS seq 10 permit 3.3.3.3/32
+ip prefix-list LABELS seq 15 permit 4.4.4.4/32
+ip prefix-list LABELS seq 20 permit 5.5.5.5/32
+ip prefix-list LABELS seq 25 permit 6.6.6.6/32
+ip prefix-list LABELS seq 30 permit 19.19.19.19/32
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ stopbits 1
+line vty 0
+ login
+line vty 1
+ login
+ length 0
+line vty 2 4
+ login
+!
+!
+end
+
+CSR4#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR4 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+

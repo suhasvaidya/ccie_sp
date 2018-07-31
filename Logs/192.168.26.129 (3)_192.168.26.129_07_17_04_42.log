@@ -1,0 +1,81 @@
+
+
+CSR4>en
+CSR4#
+CSR4#show mpls ldp neighbor 
+    Peer LDP Ident: 3.3.3.3:0; Local LDP Ident 4.4.4.4:0
+        TCP connection: 3.3.3.3.646 - 4.4.4.4.35894
+        State: Oper; Msgs sent/rcvd: 870/866; Downstream
+        Up time: 12:33:57
+        LDP discovery sources:
+          Targeted Hello 4.4.4.4 -> 3.3.3.3, active, passive
+          GigabitEthernet4, Src IP addr: 20.3.4.1
+        Addresses bound to peer LDP Ident:
+          3.3.3.3         20.3.6.1        20.2.3.2        20.3.4.1        
+    Peer LDP Ident: 2.2.2.2:0; Local LDP Ident 4.4.4.4:0
+        TCP connection: 2.2.2.2.646 - 4.4.4.4.18280
+        State: Oper; Msgs sent/rcvd: 872/872; Downstream
+        Up time: 12:33:57
+        LDP discovery sources:
+          Targeted Hello 4.4.4.4 -> 2.2.2.2, active, passive
+          GigabitEthernet2, Src IP addr: 20.2.4.1
+        Addresses bound to peer LDP Ident:
+          2.2.2.2         20.2.4.1        20.2.3.1        
+    Peer LDP Ident: 5.5.5.5:0; Local LDP Ident 4.4.4.4:0
+        TCP connection: 5.5.5.5.22848 - 4.4.4.4.646
+        State: Oper; Msgs sent/rcvd: 864/858; Downstream
+        Up time: 12:26:56
+        LDP discovery sources:
+          Targeted Hello 4.4.4.4 -> 5.5.5.5, active, passive
+          GigabitEthernet1, Src IP addr: 20.4.5.2
+        Addresses bound to peer LDP Ident:
+          5.5.5.5         20.4.5.2        20.5.6.1        10.5.8.1        
+          20.5.19.1       
+    Peer LDP Ident: 6.6.6.6:0; Local LDP Ident 4.4.4.4:0
+        TCP connection: 6.6.6.6.27023 - 4.4.4.4.646
+        State: Oper; Msgs sent/rcvd: 25/24; Downstream
+        Up time: 00:14:17
+        LDP discovery sources:
+          GigabitEthernet3, Src IP addr: 20.4.6.2
+        Addresses bound to peer LDP Ident:
+          6.6.6.6         20.5.6.2        20.4.6.2        20.6.19.1       
+          20.3.6.2        
+CSR4#
+CSR4#show mpls ldp neighbor 
+    Peer LDP Ident: 3.3.3.3:0; Local LDP Ident 4.4.4.4:0
+        TCP connection: 3.3.3.3.646 - 4.4.4.4.35894
+        State: Oper; Msgs sent/rcvd: 871/866; Downstream
+        Up time: 12:34:39
+        LDP discovery sources:
+          Targeted Hello 4.4.4.4 -> 3.3.3.3, active, passive
+          GigabitEthernet4, Src IP addr: 20.3.4.1
+        Addresses bound to peer LDP Ident:
+          3.3.3.3         20.3.6.1        20.2.3.2        20.3.4.1        
+    Peer LDP Ident: 2.2.2.2:0; Local LDP Ident 4.4.4.4:0
+        TCP connection: 2.2.2.2.646 - 4.4.4.4.18280
+        State: Oper; Msgs sent/rcvd: 872/873; Downstream
+        Up time: 12:34:39
+        LDP discovery sources:
+          Targeted Hello 4.4.4.4 -> 2.2.2.2, active, passive
+          GigabitEthernet2, Src IP addr: 20.2.4.1
+        Addresses bound to peer LDP Ident:
+          2.2.2.2         20.2.4.1        20.2.3.1        
+    Peer LDP Ident: 5.5.5.5:0; Local LDP Ident 4.4.4.4:0
+        TCP connection: 5.5.5.5.22848 - 4.4.4.4.646
+        State: Oper; Msgs sent/rcvd: 865/858; Downstream
+        Up time: 12:27:38
+        LDP discovery sources:
+          Targeted Hello 4.4.4.4 -> 5.5.5.5, active, passive
+          GigabitEthernet1, Src IP addr: 20.4.5.2
+        Addresses bound to peer LDP Ident:
+          5.5.5.5         20.4.5.2        20.5.6.1        10.5.8.1        
+          20.5.19.1       
+    Peer LDP Ident: 6.6.6.6:0; Local LDP Ident 4.4.4.4:0
+        TCP connection: 6.6.6.6.27023 - 4.4.4.4.646
+        State: Oper; Msgs sent/rcvd: 26/25; Downstream
+        Up time: 00:14:58
+        LDP discovery sources:
+          GigabitEthernet3, Src IP addr: 20.4.6.2
+        Addresses bound to peer LDP Ident:
+          6.6.6.6         20.5.6.2        20.4.6.2        20.6.19.1       
+          20.3.6.2        

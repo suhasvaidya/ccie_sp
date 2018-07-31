@@ -1,0 +1,575 @@
+
+CSR5>
+CSR5>en
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#co
+CSR5#co
+CSR5#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR5(config)#
+CSR5(config)#router os
+CSR5(config)#router ospf 1
+CSR5(config-router)#no mpl
+CSR5(config-router)#no mpls ld
+CSR5(config-router)#no mpls ldp au
+CSR5(config-router)#no mpls ldp autoconfig 
+CSR5(config-router)#
+CSR5(config-router)#exi
+*Jul  4 11:44:44.940: %LDP-5-SP: 4.4.4.4:0: session hold up initiated
+*Jul  4 11:44:44.941: %LDP-5-SP: 6.6.6.6:0: session hold up initiated
+*Jul  4 11:44:44.941: %LDP-5-SP: 19.19.19.19:0: session hold up initiatedt
+CSR5(config)#
+CSR5(config)#
+CSR5(config)#inter
+CSR5(config)#interface gi
+CSR5(config)#interface gigabitEthernet 1
+CSR5(config-if)#mpl
+CSR5(config-if)#mpls ip
+CSR5(config-if)#
+*Jul  4 11:44:57.509: LDP Peer 4.4.4.4:0 re-announced
+*Jul  4 11:44:57.509: LDP Peer 6.6.6.6:0 re-announced
+*Jul  4 11:44:57.509: LDP Peer 19.19.19.19:0 re-announcedmpls ip
+CSR5(config-if)#mpls ip 
+*Jul  4 11:44:57.518: %LDP-5-SP: 4.4.4.4:0: session recovery succeeded
+CSR5(config-if)#interface gigabitEthernet 2
+CSR5(config-if)#
+CSR5(config-if)#
+CSR5(config-if)#mpls ip                    
+CSR5(config-if)#
+CSR5(config-if)#
+CSR5(config-if)#
+CSR5(config-if)#
+CSR5(config-if)#mpls ip
+*Jul  4 11:45:04.147: %LDP-5-SP: 6.6.6.6:0: session recovery suinterface gigabitEthernet 4
+CSR5(config-if)#
+CSR5(config-if)#mpls ip                    
+CSR5(config-if)#
+CSR5(config-if)#
+CSR5(config-if)#end
+*Jul  4 11:45:10.543: %LDP-5-SP: 19.19.19.19:0: session recovery succeeded
+CSR5#
+CSR5#
+CSR5#wr
+Building configuration...
+[OK]
+CSR5#
+CSR5#
+CSR5#
+*Jul  4 11:45:12.156: %SYS-5-CONFIG_I: Configured from console by console
+CSR5#
+CSR5#
+CSR5#
+*Jul  4 11:48:20.850: %LDP-5-SP: 19.19.19.19:0: session hold up initiated
+*Jul  4 11:48:35.532: %LDP-5-SP: 19.19.19.19:0: session recovery succeeded
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR5 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR5>
+CSR5>
+CSR5>en
+CSR5#
+CSR5#
+CSR5#inter
+CSR5#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR5(config)#inter
+CSR5(config)#interface gi
+CSR5(config)#interface gigabitEthernet 3
+CSR5(config-if)#ip add
+CSR5(config-if)#ip address 10.5.8.1 255.255.255.252
+CSR5(config-if)#no shut
+CSR5(config-if)#
+CSR5(config-if)#ro
+*Jul  4 12:00:43.082: %IOSXE-4-PLATFORM: R0/0: kernel: e1000: Gi3: e1000_phy_read_status: Error reading PHY registeruter 
+CSR5(config-if)#router 
+CSR5(config-if)#router os
+CSR5(config-if)#router ospf 1
+CSR5(config-router)#net
+CSR5(config-router)#network 10.5.8
+*Jul  4 12:00:53.429: %LINK-3-UPDOWN: Interface GigabitEthernet3, changed state to up
+*Jul  4 12:00:54.429: %LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet3, changed state to up.0
+CSR5(config-router)#network 10.5.8.0 0.0.0.3 are
+CSR5(config-router)#network 10.5.8.0 0.0.0.3 area 0
+CSR5(config-router)#
+CSR5(config-router)#
+CSR5(config-router)#end
+CSR5#
+CSR5#sh 
+*Jul  4 12:01:19.754: %SYS-5-CONFIG_I: Configured from console by consoleip os
+CSR5#sh ip ospf ne
+CSR5#sh ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+4.4.4.4           1   FULL/DR         00:00:32    20.4.5.1        GigabitEthernet1
+6.6.6.6           1   FULL/DR         00:00:31    20.5.6.2        GigabitEthernet2
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#sh
+CSR5#show run | s r o
+router ospf 1
+ network 5.5.5.5 0.0.0.0 area 0
+ network 10.5.8.0 0.0.0.3 area 0
+ network 20.4.5.0 0.0.0.3 area 0
+ network 20.5.6.0 0.0.0.3 area 0
+ network 20.19.5.0 0.0.0.3 area 0
+ mpls ldp sync
+CSR5#
+CSR5#
+CSR5#s
+CSR5#s
+CSR5#sh
+CSR5#     
+CSR5#
+CSR5#
+CSR5#
+CSR5#sh run inter
+CSR5#sh run interface gi
+CSR5#sh run interface gigabitEthernet 4
+Building configuration...
+
+Current configuration : 99 bytes
+!
+interface GigabitEthernet4
+ ip address 20.19.5.1 255.255.255.252
+ negotiation auto
+ mpls ip
+end
+
+CSR5#
+CSR5#
+CSR5#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR5(config)#router os
+CSR5(config)#router ospf 1
+CSR5(config-router)#no network 20.19.5.0 0.0.0.3 area 0
+CSR5(config-router)#network 20.5.19.0 0.0.0.3 area 0
+CSR5(config-router)#
+CSR5(config-router)#exit
+CSR5(config)#inter
+CSR5(config)#interface gi
+CSR5(config)#interface gigabitEthernet 4
+CSR5(config-if)#no ip add
+CSR5(config-if)#no ip address 
+CSR5(config-if)#p add
+% Ambiguous command:  "p add"
+CSR5(config-if)#ip add
+CSR5(config-if)#ip address 10.5.19.1 255.255.255.252
+CSR5(config-if)#
+*Jul  4 12:05:32.409: %LDP-5-SP: 19.19.19.19:0: session hold up initiatedend
+CSR5#
+CSR5#
+CSR5#
+*Jul  4 12:05:33.608: %LDP-5-SP: 19.19.19.19:0: session recovery succeeded
+*Jul  4 12:05:34.611: %SYS-5-CONFIG_I: Configured from console by console
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#sh
+CSR5#show ip os
+CSR5#show ip ospf  ne
+CSR5#show ip ospf  neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+4.4.4.4           1   FULL/DR         00:00:34    20.4.5.1        GigabitEthernet1
+6.6.6.6           1   FULL/DR         00:00:31    20.5.6.2        GigabitEthernet2
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#show ip ospf  neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+4.4.4.4           1   FULL/DR         00:00:36    20.4.5.1        GigabitEthernet1
+6.6.6.6           1   FULL/DR         00:00:33    20.5.6.2        GigabitEthernet2
+CSR5#
+CSR5#
+CSR5#       
+CSR5#ping 20.5.19.1
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 20.5.19.1, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+CSR5#
+CSR5#ping 20.5.19.2
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 20.5.19.2, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 5/6/7 ms
+CSR5#
+CSR5#sh int 
+CSR5#sh interfaces brie
+CSR5#sh interfaces brie
+                    ^
+% Invalid input detected at '^' marker.
+
+CSR5#sh interfaces br  
+CSR5#sh ip int       
+CSR5#sh ip interface bri
+CSR5#sh ip interface brief 
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet1       20.4.5.2        YES manual up                    up      
+GigabitEthernet2       20.5.6.1        YES manual up                    up      
+GigabitEthernet3       10.5.8.1        YES manual up                    up      
+GigabitEthernet4       10.5.19.1       YES manual up                    up      
+Loopback0              5.5.5.5         YES manual up                    up      
+CSR5#
+CSR5#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR5(config)#int 
+CSR5(config)#interface gi
+CSR5(config)#interface gigabitEthernet 4
+CSR5(config-if)#no ip add
+CSR5(config-if)#no ip address 
+CSR5(config-if)#ip add
+CSR5(config-if)#ip address 20.5.19.1 
+*Jul  4 12:07:22.333: %LDP-5-SP: 19.19.19.19:0: session hold up initiated
+CSR5(config-if)#ip address 20.5.19.1 255.255.255.252
+CSR5(config-if)#
+CSR5(config-if)#
+CSR5(config-if)#
+*Jul  4 12:07:30.150: %LDP-5-SP: 19.19.19.19:0: session recovery succeeded
+CSR5(config-if)#
+CSR5(config-if)#
+CSR5(config-if)#
+CSR5(config-if)#
+CSR5(config-if)#
+CSR5(config-if)#end
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+*Jul  4 12:07:37.415: %SYS-5-CONFIG_I: Configured from console by console
+CSR5#
+CSR5#
+CSR5#sh ip interface brief 
+*Jul  4 12:07:39.610: %OSPF-5-ADJCHG: Process 1, Nbr 19.19.19.19 on GigabitEthernet4 from LOADING to FULL, Loading Done
+CSR5#sh ip interface brief 
+CSR5#show ip ospf  neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+19.19.19.19       1   FULL/DR         00:00:36    20.5.19.2       GigabitEthernet4
+4.4.4.4           1   FULL/DR         00:00:39    20.4.5.1        GigabitEthernet1
+6.6.6.6           1   FULL/DR         00:00:36    20.5.6.2        GigabitEthernet2
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#wr
+Building configuration...
+[OK]
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#sh ip inte 
+CSR5#sh ip interface brief
+Interface              IP-Address      OK? Method Status                Protocol
+GigabitEthernet1       20.4.5.2        YES manual up                    up      
+GigabitEthernet2       20.5.6.1        YES manual up                    up      
+GigabitEthernet3       10.5.8.1        YES manual up                    up      
+GigabitEthernet4       20.5.19.1       YES manual up                    up      
+Loopback0              5.5.5.5         YES manual up                    up      
+CSR5#
+CSR5#
+*Jul  4 12:11:36.389: %OSPF-5-ADJCHG: Process 1, Nbr 8.8.8.8 on GigabitEthernet3 from LOADING to FULL, Loading Done
+CSR5#
+CSR5#
+CSR5#terminal length 0
+CSR5#more system:running-config
+!
+! Last configuration change at 12:07:37 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR5
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 500 599
+mpls ldp session protection
+mpls ldp label
+ allocate global prefix-list LABELS
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9WWLW89R2O3
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 5.5.5.5 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address 20.4.5.2 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet2
+ ip address 20.5.6.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+interface GigabitEthernet3
+ ip address 10.5.8.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet4
+ ip address 20.5.19.1 255.255.255.252
+ negotiation auto
+ mpls ip
+!
+router ospf 1
+ network 5.5.5.5 0.0.0.0 area 0
+ network 10.5.8.0 0.0.0.3 area 0
+ network 20.4.5.0 0.0.0.3 area 0
+ network 20.5.6.0 0.0.0.3 area 0
+ network 20.5.19.0 0.0.0.3 area 0
+ mpls ldp sync
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+ip prefix-list LABELS seq 10 permit 3.3.3.3/32
+ip prefix-list LABELS seq 15 permit 4.4.4.4/32
+ip prefix-list LABELS seq 20 permit 5.5.5.5/32
+ip prefix-list LABELS seq 25 permit 6.6.6.6/32
+ip prefix-list LABELS seq 30 permit 19.19.19.19/32
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ login
+!
+!
+end
+
+CSR5#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR5 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+

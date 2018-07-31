@@ -1,0 +1,487 @@
+Connected to Dynamips VM "R7" (ID 7, type c7200) - Console port
+Press ENTER to get the prompt.
+nts 
+This configuration is within the PCI bus capacity and is supported. 
+
+Please refer to the following document "Cisco 7200 Series Port Adaptor
+Hardware Configuration Guidelines" on Cisco.com <http://www.cisco.com>
+for c7200 bandwidth points oversubscription and usage guidelines.
+
+
+3 FastEthernet interfaces
+125K bytes of NVRAM.
+
+131072K bytes of ATA PCMCIA card at slot 0 (Sector size 512 bytes).
+131072K bytes of ATA PCMCIA card at slot 1 (Sector size 512 bytes).
+8192K bytes of Flash internal SIMM (Sector size 256K).
+% Crashinfo may not be recovered at bootflash:crashinfo
+% This file system device reports an error
+
+
+Press RETURN to get started!
+
+
+*Jul 10 04:54:49.399: %DEC21140-1-INITFAIL: Unsupported PHY brand timed out, csr5=0x0
+*Jul 10 04:54:49.503: %DEC21140-1-INITFAIL: Unsupported PHY brand timed out, csr5=0x0
+*Jul 10 04:54:49.603: %DEC21140-1-INITFAIL: Unsupported PHY brand timed out, csr5=0x0
+*Jul 10 04:55:00.775: %LINK-3-UPDOWN: Interface FastEthernet0/0, changed state to up
+*Jul 10 04:55:00.811: %LINK-3-UPDOWN: Interface FastEthernet1/0, changed state to up
+*Jul 10 04:55:00.823: %LINK-3-UPDOWN: Interface FastEthernet2/0, changed state to up
+*Jul 10 04:55:01.615: %LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback0, changed state to up
+*Jul 10 04:55:02.055: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+*Jul 10 04:55:02.059: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet1/0, changed state to up
+*Jul 10 04:55:02.063: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet2/0, changed state to up
+*Jul 10 04:55:03.267: %SYS-5-CONFIG_I: Configured from memory by console
+*Jul 10 04:55:03.999: %SYS-5-RESTART: System restarted --
+Cisco IOS Software, 7200 Software (C7200-ADVIPSERVICESK9-M), Version 15.2(4)S5, RELEASE SOFTWARE (fc1)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2014 by Cisco Systems, Inc.
+Compiled Thu 20-Feb-14 06:51 by prod_rel_team
+*Jul 10 04:55:04.639: %LINK-5-CHANGED: Interface FastEthernet1/0, changed state to administratively down
+*Jul 10 04:55:04.807: %LINK-5-CHANGED: Interface FastEthernet2/0, changed state to administratively down
+*Jul 10 04:55:05.639: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet1/0, changed state to down
+*Jul 10 04:55:05.807: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet2/0, changed state to down
+*Jul 10 04:57:55.275: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on FastEthernet0/0 from LOADING to FULL, Loading Done
+R7>
+R7>
+R7>
+R7>
+R7>
+R7>
+R7>
+R7>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R7 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+*Jul 10 07:40:32.271: %OSPF-5-ADJCHG: Process 1, Nbr 4.4.4.4 on FastEthernet0/0 from LOADING to FULL, Loading Done
+R7>
+R7>
+R7>
+R7>
+R7>
+R7>
+R7>
+R7>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R7 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+R7>
+R7>enable
+R7#terminal length 0
+R7#write
+Building configuration...
+[OK]
+R7#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R7 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+R7>en
+R7#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R7 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+R7>
+R7>enable
+R7#terminal length 0
+R7#write
+Building configuration...
+[OK]
+R7#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R7 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+R7>
+R7>enable
+R7#terminal length 0
+R7#write
+Building configuration...
+[OK]
+R7#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R7 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+R7>
+R7>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R7 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+

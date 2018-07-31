@@ -1,0 +1,1152 @@
+
+*Jul  4 08:55:25.642: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (1) is DOWN (Received error notification from peer: Holddown time expired)
+*Jul  4 08:56:05.294: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (1) is UP
+CSR5>
+CSR5>
+CSR5>
+CSR5>
+CSR5>en
+CSR5#
+CSR5#sh mpl
+CSR5#sh mpls int
+CSR5#sh mpls interfaces 
+Interface              IP            Tunnel   BGP Static Operational
+GigabitEthernet1       Yes (ldp)     No       No  No     Yes        
+GigabitEthernet2       Yes (ldp)     No       No  No     Yes        
+GigabitEthernet4       Yes (ldp)     No       No  No     Yes        
+CSR5#
+CSR5#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR5(config)#inter
+CSR5(config)#interface gi
+CSR5(config)#interface gigabitEthernet 1
+CSR5(config-if)#no mp
+CSR5(config-if)#no mpls ip
+CSR5(config-if)#no mpls ip
+*Jul  4 08:57:24.461: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (1) is DOWN (LDP disabled on interface gigabitEthernet 1
+CSR5(config-if)#interface gigabitEthernet 2
+CSR5(config-if)#
+CSR5(config-if)#no mpls ip                 
+CSR5(config-if)#
+CSR5(config-if)#interface gigabitEthernet 2
+*Jul  4 08:57:29.515: %LDP-5-NBRCHG: LDP Neighbor 6.6.6.6:0 (2) is DOWN (LDP disabled on interface4
+CSR5(config-if)#interface gigabitEthernet 4
+CSR5(config-if)#no mpls ip                 
+CSR5(config-if)#
+CSR5(config-if)#
+CSR5(config-if)#
+CSR5(config-if)#
+CSR5(config-if)#
+CSR5(config-if)#
+*Jul  4 08:57:33.844: %LDP-5-NBRCHG: LDP Neighbor 19.19.19.19:0 (3) is DOWN (LDP disabled on interface)
+CSR5(config-if)#
+CSR5(config-if)#
+CSR5(config-if)#exit
+CSR5(config)#
+CSR5(config)#router os
+CSR5(config)#router ospf 1
+CSR5(config-router)#mpl
+CSR5(config-router)#mpls ld
+CSR5(config-router)#mpls ldp au
+CSR5(config-router)#mpls ldp autoconfig 
+CSR5(config-router)#end
+CSR5#
+CSR5#
+CSR5#
+*Jul  4 08:57:45.771: %LDP-5-NBRCHG: LDP Neighbor 4.4.4.4:0 (1) is UP
+*Jul  4 08:57:45.794: %LDP-5-NBRCHG: LDP Neighbor 6.6.6.6:0 (2) is UP
+*Jul  4 08:57:46.520: %SYS-5-CONFIG_I: Configured from console by console
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+*Jul  4 08:57:49.854: %LDP-5-NBRCHG: LDP Neighbor 19.19.19.19:0 (3) is UP
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#wr
+Building configuration...
+[OK]
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+*Jul  4 09:00:32.994: %LDP-5-NBRCHG: LDP Neighbor 6.6.6.6:0 (2) is DOWN (Received error notification from peer: Holddown time expired)
+*Jul  4 09:00:51.093: %LDP-5-NBRCHG: LDP Neighbor 6.6.6.6:0 (2) is UP
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR5 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+*Jul  4 09:08:19.319: %LDP-5-NBRCHG: LDP Neighbor 19.19.19.19:0 (3) is DOWN (Received error notification from peer: Holddown time expired)
+*Jul  4 09:10:59.392: %LDP-5-NBRCHG: LDP Neighbor 19.19.19.19:0 (3) is UP
+CSR5>
+CSR5>
+CSR5>enable
+CSR5#terminal length 0
+CSR5#more system:running-config
+!
+! Last configuration change at 08:57:46 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR5
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 500 599
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9WWLW89R2O3
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 5.5.5.5 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address 20.4.5.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.5.6.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet3
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet4
+ ip address 20.19.5.1 255.255.255.252
+ negotiation auto
+!
+router ospf 1
+ network 5.5.5.5 0.0.0.0 area 0
+ network 20.4.5.0 0.0.0.3 area 0
+ network 20.5.6.0 0.0.0.3 area 0
+ network 20.19.5.0 0.0.0.3 area 0
+ mpls ldp autoconfig
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ login
+!
+!
+end
+
+CSR5#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR5 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+CSR5>
+CSR5>
+CSR5>enable
+CSR5#terminal length 0
+CSR5#more system:running-config
+!
+! Last configuration change at 08:57:46 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR5
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 500 599
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9WWLW89R2O3
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 5.5.5.5 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address 20.4.5.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.5.6.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet3
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet4
+ ip address 20.19.5.1 255.255.255.252
+ negotiation auto
+!
+router ospf 1
+ network 5.5.5.5 0.0.0.0 area 0
+ network 20.4.5.0 0.0.0.3 area 0
+ network 20.5.6.0 0.0.0.3 area 0
+ network 20.19.5.0 0.0.0.3 area 0
+ mpls ldp autoconfig
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ login
+!
+!
+end
+
+CSR5#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR5 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+CSR5>
+CSR5>en
+CSR5#
+CSR5#wr
+Building configuration...
+[OK]
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#
+CSR5#terminal length 0
+CSR5#more system:running-config
+!
+! Last configuration change at 08:57:46 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR5
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 500 599
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9WWLW89R2O3
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 5.5.5.5 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address 20.4.5.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.5.6.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet3
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet4
+ ip address 20.19.5.1 255.255.255.252
+ negotiation auto
+!
+router ospf 1
+ network 5.5.5.5 0.0.0.0 area 0
+ network 20.4.5.0 0.0.0.3 area 0
+ network 20.5.6.0 0.0.0.3 area 0
+ network 20.19.5.0 0.0.0.3 area 0
+ mpls ldp autoconfig
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ login
+!
+!
+end
+
+CSR5#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR5 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+CSR5>en
+CSR5#
+CSR5#
+CSR5#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR5(config)#ip prefix-list LABELS permit 2.2.2.2/32
+CSR5(config)#ip prefix-list LABELS permit 3.3.3.3/32
+CSR5(config)#ip prefix-list LABELS permit 4.4.4.4/32
+CSR5(config)#ip prefix-list LABELS permit 5.5.5.5/32
+CSR5(config)#ip prefix-list LABELS permit 6.6.6.6/32
+CSR5(config)#ip prefix-list LABELS permit 19.19.19.19/32
+CSR5(config)#
+CSR5(config)#
+CSR5(config)#end
+CSR5#
+CSR5#
+*Jul  4 09:29:26.748: %SYS-5-CONFIG_I: Configured from console by console
+CSR5#
+CSR5#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR5(config)# mpls ldp label
+CSR5(config-ldp-lbl)#      allocate global prefix-list LABELS
+CSR5(config-ldp-lbl)#
+CSR5(config-ldp-lbl)#
+CSR5(config-ldp-lbl)#
+CSR5(config-ldp-lbl)#
+CSR5(config-ldp-lbl)#end
+CSR5#
+CSR5#
+CSR5#
+CSR5#en    
+*Jul  4 09:31:13.763: %SYS-5-CONFIG_I: Configured from console by console
+CSR5#enable 
+CSR5#sh     
+CSR5#show mpl
+CSR5#show mpls for
+CSR5#show mpls forwarding-table 
+Local      Outgoing   Prefix           Bytes Label   Outgoing   Next Hop    
+Label      Label      or Tunnel Id     Switched      interface              
+500        Pop Label  6.6.6.6/32       0             Gi2        20.5.6.2    
+501        Pop Label  4.4.4.4/32       0             Gi1        20.4.5.1    
+502        404        2.2.2.2/32       0             Gi1        20.4.5.1    
+503        405        3.3.3.3/32       0             Gi1        20.4.5.1    
+           601        3.3.3.3/32       0             Gi2        20.5.6.2    
+510        609        19.19.19.19/32   0             Gi2        20.5.6.2    
+CSR5#
+CSR5#
+CSR5#
+CSR5#wr
+Building configuration...
+[OK]
+CSR5#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR5 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+CSR5>
+CSR5>
+CSR5>enable
+CSR5#terminal length 0
+CSR5#more system:running-config
+!
+! Last configuration change at 09:31:13 UTC Wed Jul 4 2018
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR5
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+!
+mpls label range 500 599
+mpls ldp label
+ allocate global prefix-list LABELS
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9WWLW89R2O3
+!
+spanning-tree extend system-id
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+! 
+! 
+! 
+! 
+!
+!
+interface Loopback0
+ ip address 5.5.5.5 255.255.255.255
+!
+interface GigabitEthernet1
+ ip address 20.4.5.2 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet2
+ ip address 20.5.6.1 255.255.255.252
+ negotiation auto
+!
+interface GigabitEthernet3
+ no ip address
+ shutdown
+ negotiation auto
+!
+interface GigabitEthernet4
+ ip address 20.19.5.1 255.255.255.252
+ negotiation auto
+!
+router ospf 1
+ network 5.5.5.5 0.0.0.0 area 0
+ network 20.4.5.0 0.0.0.3 area 0
+ network 20.5.6.0 0.0.0.3 area 0
+ network 20.19.5.0 0.0.0.3 area 0
+ mpls ldp autoconfig
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+ip prefix-list LABELS seq 5 permit 2.2.2.2/32
+ip prefix-list LABELS seq 10 permit 3.3.3.3/32
+ip prefix-list LABELS seq 15 permit 4.4.4.4/32
+ip prefix-list LABELS seq 20 permit 5.5.5.5/32
+ip prefix-list LABELS seq 25 permit 6.6.6.6/32
+ip prefix-list LABELS seq 30 permit 19.19.19.19/32
+!
+mpls ldp router-id Loopback0 force
+!
+!
+control-plane
+!
+ !
+ !
+ !
+ !
+!
+!
+!
+!
+!
+line con 0
+ stopbits 1
+line vty 0 4
+ login
+!
+!
+end
+
+CSR5#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CSR5 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,789 @@
+Connected to Dynamips VM "R1" (ID 1, type c7200) - Console port
+Press ENTER to get the prompt.
+ddress 10.1.2.1 255.255.255.252
+ duplex full
+!
+interface FastEthernet1/0
+ no ip address
+ shutdown
+ duplex full
+!
+router ospf 1
+ network 1.1.1.1 0.0.0.0 area 0
+ network 10.1.2.0 0.0.0.3 area 0
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+          
+R1#
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#router os
+R1(config)#router ospf 1
+R1(config-router)#router
+R1(config-router)#router-id lo0
+                            ^
+% Invalid input detected at '^' marker.
+
+R1(config-router)#router-id 1.1.1.1
+% OSPF: Reload or use "clear ip ospf process" command, for this to take effect
+R1(config-router)#
+R1(config-router)#end
+R1#
+R1#
+R1#
+R1#clear
+R1#clear 
+*Jul  4 11:13:55.774: %SYS-5-CONFIG_I: Configured from console by console
+R1#clear 
+R1#clear ip os
+R1#clear ip ospf pr
+R1#clear ip ospf process 
+Reset ALL OSPF processes? [no]: yes
+R1#
+R1#
+*Jul  4 11:14:01.642: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on FastEthernet0/0 from FULL to DOWN, Neighbor Down: Interface down or detached
+*Jul  4 11:14:01.958: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on FastEthernet0/0 from LOADING to FULL, Loading Done
+R1#
+R1#
+R1#yes
+   ^
+% Invalid input detected at '^' marker.
+
+R1#clear ip ospf process 
+Reset ALL OSPF processes? [no]: no
+R1#
+R1#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+2.2.2.2           1   FULL/DR         00:00:36    10.1.2.2        FastEthernet0/0
+R1#
+R1#
+R1#
+R1#
+R1#
+R1#sh
+R1#trac         
+R1#traceroute 19.19.19.19
+Type escape sequence to abort.
+Tracing the route to 19.19.19.19
+VRF info: (vrf in name/id, vrf out name/id)
+  1 10.1.2.2 32 msec 48 msec 48 msec
+  2 20.2.4.2 [MPLS: Label 406 Exp 0] 48 msec 28 msec 52 msec
+  3 20.4.6.2 [MPLS: Label 609 Exp 0] 48 msec 36 msec 48 msec
+  4 20.6.19.2 48 msec 36 msec * 
+R1#
+R1#
+R1#
+R1#
+R1#
+R1#
+R1#show ip ospf neighbor 
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+2.2.2.2           1   FULL/DR         00:00:36    10.1.2.2        FastEthernet0/0
+R1#
+R1#
+R1#
+*Jul  4 11:26:13.986: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on FastEthernet0/0 from LOADING to FULL, Loading Done
+R1#
+R1#
+R1#
+R1#wr
+Building configuration...
+[OK]
+R1#
+R1#
+R1#
+R1#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+R1>en
+R1#wr
+Building configuration...
+[OK]
+R1#
+R1#
+R1#
+R1#
+R1#terminal length 0
+R1#write
+Building configuration...
+[OK]
+R1#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1>
+R1>enable
+R1#terminal length 0
+R1#write
+Building configuration...
+[OK]
+R1#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+R1>
+R1>enable
+R1#terminal length 0
+R1#write
+Building configuration...
+[OK]
+R1#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1>
+R1>enable
+R1#terminal length 0
+R1#write
+Building configuration...
+[OK]
+R1#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+R1>
+R1>
+R1>
+R1>en
+R1#
+R1#
+R1#
+R1#
+R1#conf r
+% Incomplete command.
+
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#no router os
+R1(config)#no router ospf 1
+R1(config)#
+R1(config)#exit
+R1#
+*Jul  4 12:16:20.938: %OSPF-5-ADJCHG: Process 1, Nbr 2.2.2.2 on FastEthernet0/0 from FULL to DOWN, Neighbor Down: Interface down or detached
+R1#
+R1#
+R1#
+R1#
+R1#
+*Jul  4 12:16:22.298: %SYS-5-CONFIG_I: Configured from console by console
+R1#
+R1#
+R1#
+R1#
+R1#
+R1#
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#router 
+R1(config)#router bg
+R1(config)#router bgp 1
+R1(config-router)#
+R1(config-router)#
+R1(config-router)#
+R1(config-router)#
+R1(config-router)#nei
+R1(config-router)#neighbor 10.1.2.2 ?
+  activate                 Enable the Address Family for this Neighbor
+  additional-paths         Negotiate additional paths capabilities with this
+                           neighbor
+  advertise                Advertise to this neighbor
+  advertise-map            specify route-map for conditional advertisement
+  advertisement-interval   Minimum interval between sending BGP routing updates
+  allowas-in               Accept as-path with my AS present in it
+  announce                 Announce RPKI State using an Extended Community
+  capability               Advertise capability to the peer
+  default-originate        Originate default route to this neighbor
+  description              Neighbor specific description
+  disable-connected-check  one-hop away EBGP peer using loopback address
+  distribute-list          Filter updates to/from this neighbor
+  dmzlink-bw               Propagate the DMZ link bandwidth
+  ebgp-multihop            Allow EBGP neighbors not on directly connected
+                           networks
+  fall-over                session fall on peer route lost
+  filter-list              Establish BGP filters
+  ha-mode                  high availability mode
+  inherit                  Inherit a template
+  local-as                 Specify a local-as number
+  maximum-prefix           Maximum number of prefixes accepted from this peer
+  next-hop-self            Disable the next hop calculation for this neighbor
+  next-hop-unchanged       Propagate next hop unchanged for iBGP paths to this
+                           neighbor
+  password                 Set a password
+  path-attribute           BGP optional attribute filtering
+  peer-group               Member of the peer-group
+  prefix-list              Filter updates to/from this neighbor
+  remote-as                Specify a BGP neighbor
+  remove-private-as        Remove private AS number from outbound updates
+  route-map                Apply route map to neighbor
+  route-reflector-client   Configure a neighbor as Route Reflector client
+  route-server-client      Configure a neighbor as Route Server client
+  send-community           Send Community attribute to this neighbor
+  send-label               Send NLRI + MPLS Label to this peer
+  shutdown                 Administratively shut down this neighbor
+  slow-peer                Configure slow-peer
+  soft-reconfiguration     Per neighbor soft reconfiguration
+  soo                      Site-of-Origin extended community
+  timers                   BGP per neighbor timers
+  translate-update         Translate Update to MBGP format
+  transport                Transport options
+  ttl-security             BGP ttl security check
+  unsuppress-map           Route-map to selectively unsuppress suppressed
+                           routes
+  update-source            Source of routing updates
+  version                  Set the BGP version to match a neighbor
+  weight                   Set default weight for routes from this neighbor
+
+R1(config-router)#neighbor 10.1.2.2 ma
+R1(config-router)#neighbor 10.1.2.2 a              
+R1(config-router)#neighbor 10.1.2.2 ?
+  activate                 Enable the Address Family for this Neighbor
+  additional-paths         Negotiate additional paths capabilities with this
+                           neighbor
+  advertise                Advertise to this neighbor
+  advertise-map            specify route-map for conditional advertisement
+  advertisement-interval   Minimum interval between sending BGP routing updates
+  allowas-in               Accept as-path with my AS present in it
+  announce                 Announce RPKI State using an Extended Community
+  capability               Advertise capability to the peer
+  default-originate        Originate default route to this neighbor
+  description              Neighbor specific description
+  disable-connected-check  one-hop away EBGP peer using loopback address
+  distribute-list          Filter updates to/from this neighbor
+  dmzlink-bw               Propagate the DMZ link bandwidth
+  ebgp-multihop            Allow EBGP neighbors not on directly connected
+                           networks
+  fall-over                session fall on peer route lost
+  filter-list              Establish BGP filters
+  ha-mode                  high availability mode
+  inherit                  Inherit a template
+  local-as                 Specify a local-as number
+  maximum-prefix           Maximum number of prefixes accepted from this peer
+  next-hop-self            Disable the next hop calculation for this neighbor
+  next-hop-unchanged       Propagate next hop unchanged for iBGP paths to this
+                           neighbor
+  password                 Set a password
+  path-attribute           BGP optional attribute filtering
+  peer-group               Member of the peer-group
+  prefix-list              Filter updates to/from this neighbor
+  remote-as                Specify a BGP neighbor
+  remove-private-as        Remove private AS number from outbound updates
+  route-map                Apply route map to neighbor
+  route-reflector-client   Configure a neighbor as Route Reflector client
+  route-server-client      Configure a neighbor as Route Server client
+  send-community           Send Community attribute to this neighbor
+  send-label               Send NLRI + MPLS Label to this peer
+  shutdown                 Administratively shut down this neighbor
+  slow-peer                Configure slow-peer
+  soft-reconfiguration     Per neighbor soft reconfiguration
+  soo                      Site-of-Origin extended community
+  timers                   BGP per neighbor timers
+  translate-update         Translate Update to MBGP format
+  transport                Transport options
+  ttl-security             BGP ttl security check
+  unsuppress-map           Route-map to selectively unsuppress suppressed
+                           routes
+  update-source            Source of routing updates
+  version                  Set the BGP version to match a neighbor
+  weight                   Set default weight for routes from this neighbor
+
+R1(config-router)#neighbor 10.1.2.2 remo
+R1(config-router)#neighbor 10.1.2.2 a   
+R1(config-router)#neighbor 10.1.2.2 remo
+R1(config-router)#neighbor 10.1.2.2 remot
+R1(config-router)#neighbor 10.1.2.2 remote-as 100
+R1(config-router)#
+R1(config-router)#net
+R1(config-router)#network 1.1.1.1 ma
+R1(config-router)#network 1.1.1.1 mask 255.255.255.252 
+% BGP: Incorrect network or mask/prefix-length configured
+R1(config-router)#network 1.1.1.1 mask ?               
+  A.B.C.D  Network mask
+
+R1(config-router)#network 1.1.1.1 mask 255.255.255.255 
+R1(config-router)#
+R1(config-router)#exit
+R1(config)#
+R1(config)#
+R1(config)#exit
+R1#
+R1#
+R1#
+*Jul  4 12:21:51.810: %SYS-5-CONFIG_I: Configured from console by console
+R1#
+R1#
+R1#
+*Jul  4 12:22:37.774: %BGP-5-ADJCHANGE: neighbor 10.1.2.2 Up 
+R1#
+R1#sh
+R1#show bg
+R1#show bgp sum
+R1#show bgp sum
+BGP router identifier 1.1.1.1, local AS number 1
+BGP table version is 2, main routing table version 2
+1 network entries using 144 bytes of memory
+1 path entries using 80 bytes of memory
+1/1 BGP path/bestpath attribute entries using 136 bytes of memory
+0 BGP route-map cache entries using 0 bytes of memory
+0 BGP filter-list cache entries using 0 bytes of memory
+BGP using 360 total bytes of memory
+BGP activity 1/0 prefixes, 1/0 paths, scan interval 60 secs
+
+Neighbor        V           AS MsgRcvd MsgSent   TblVer  InQ OutQ Up/Down  State/PfxRcd
+10.1.2.2        4          100       4       5        2    0    0 00:00:11        0
+R1#
+R1#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+R1>
+R1>en
+R1#
+R1#
+R1#
+R1#s
+R1#sh
+R1#show ip ro
+R1#show ip route 
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/32 is subnetted, 1 subnets
+C        1.1.1.1 is directly connected, Loopback0
+      10.0.0.0/8 is variably subnetted, 2 subnets, 2 masks
+C        10.1.2.0/30 is directly connected, FastEthernet0/0
+L        10.1.2.1/32 is directly connected, FastEthernet0/0
+      20.0.0.0/32 is subnetted, 1 subnets
+B        20.20.20.20 [20/0] via 10.1.2.2, 00:02:51
+R1#
+R1#
+R1#
+R1#
+R1#ping 20.20.20.20 so
+R1#ping 20.20.20.20 source lo0
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 20.20.20.20, timeout is 2 seconds:
+Packet sent with a source address of 1.1.1.1 
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 44/49/56 ms
+R1#
+R1#
+R1#
+R1#tra
+R1#traceroute 20.20.20.20 so lo0
+Type escape sequence to abort.
+Tracing the route to 20.20.20.20
+VRF info: (vrf in name/id, vrf out name/id)
+  1 10.1.2.2 48 msec 40 msec 48 msec
+  2 20.2.3.2 [MPLS: Label 305 Exp 0] 48 msec 48 msec 48 msec
+  3  *  *  * 
+  4 20.6.19.2 68 msec 112 msec 4 msec
+  5 10.19.20.2 40 msec 40 msec * 

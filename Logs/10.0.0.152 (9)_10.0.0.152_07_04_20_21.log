@@ -1,0 +1,442 @@
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Wed Jul  4 11:45:49.628 UTC
+RP/0/0/CPU0:XR2(config)#exi      
+RP/0/0/CPU0:XR2#show run formal mpls ldp 
+Wed Jul  4 11:46:11.117 UTC
+mpls ldp 
+mpls ldp session protection
+mpls ldp address-family ipv4 
+mpls ldp address-family ipv4 label local allocate for LABELS
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show run formal router ospf
+Wed Jul  4 11:46:24.656 UTC
+router ospf 1 mpls ldp sync
+router ospf 1 mpls ldp auto-config
+router ospf 1 area 0 
+router ospf 1 area 0 interface Loopback0 
+router ospf 1 area 0 interface GigabitEthernet0/0/0/0 
+router ospf 1 area 0 interface GigabitEthernet0/0/0/1 
+router ospf 1 
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Wed Jul  4 11:46:28.506 UTC
+RP/0/0/CPU0:XR2(config)#router ospf 1
+RP/0/0/CPU0:XR2(config-ospf)#no mpls ldp auto-config
+RP/0/0/CPU0:XR2(config-ospf)#
+RP/0/0/CPU0:XR2(config-ospf)#commit 
+Wed Jul  4 11:46:45.464 UTC
+RP/0/0/CPU0:XR2(config-ospf)#
+RP/0/0/CPU0:XR2(config-ospf)#
+RP/0/0/CPU0:XR2(config-ospf)#exit
+RP/0/0/CPU0:XR2(config)#
+RP/0/0/CPU0:XR2(config)#mpls ldp 
+RP/0/0/CPU0:XR2(config-ldp)#interface gigabitEthernet 0
+% Incomplete command.
+RP/0/0/CPU0:XR2(config-ldp)#interface gigabitEthernet 0/0/0/0 
+RP/0/0/CPU0:XR2(config-ldp-if)#interface gigabitEthernet 0/0/0/1 
+RP/0/0/CPU0:XR2(config-ldp-if)#commit 
+Wed Jul  4 11:47:13.633 UTC
+RP/0/0/CPU0:XR2(config-ldp-if)#end
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show run formal router ospf
+Wed Jul  4 11:48:04.049 UTC
+router ospf 1 mpls ldp sync
+router ospf 1 area 0 
+router ospf 1 area 0 interface Loopback0 
+router ospf 1 area 0 interface GigabitEthernet0/0/0/0 
+router ospf 1 area 0 interface GigabitEthernet0/0/0/1 
+router ospf 1 
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Wed Jul  4 11:48:07.239 UTC
+RP/0/0/CPU0:XR2(config)#router ospf 1 area 0 interface  gigabitEthernet 0/0/0/2
+RP/0/0/CPU0:XR2(config-ospf-ar-if)#commit 
+Wed Jul  4 11:48:20.678 UTC
+RP/0/0/CPU0:XR2(config-ospf-ar-if)#exit
+RP/0/0/CPU0:XR2(config-ospf-ar)#exit
+RP/0/0/CPU0:XR2(config-ospf)#exit
+RP/0/0/CPU0:XR2(config)#
+RP/0/0/CPU0:XR2(config)#interface gigabitEthernet 0/0/0/2
+RP/0/0/CPU0:XR2(config-if)#ipv4 address 10.19.20.1/30
+RP/0/0/CPU0:XR2(config-if)#commit 
+Wed Jul  4 11:49:47.102 UTC
+RP/0/0/CPU0:XR2(config-if)#end
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf t
+Wed Jul  4 11:50:35.669 UTC
+RP/0/0/CPU0:XR2(config)#interface gigabitEthernet 0/0/0/2
+RP/0/0/CPU0:XR2(config-if)#no shutdown 
+RP/0/0/CPU0:XR2(config-if)#commit 
+Wed Jul  4 11:50:45.748 UTC
+RP/0/0/CPU0:XR2(config-if)#
+RP/0/0/CPU0:XR2(config-if)#
+RP/0/0/CPU0:XR2(config-if)#end
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR2 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: 
+Username: cisco
+Password: 
+RP/0/0/CPU0:Jul  4 12:01:01.496 : exec[65700]: %SECURITY-LOGIN-4-AUTHEN_FAILED : Failed authentication attempt by user '<unknown>' from 'console' on 'con0_0_CPU0' 
+
+User Access Verification
+
+Username: 
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh run formal router ospf
+Wed Jul  4 12:01:14.935 UTC
+router ospf 1 mpls ldp sync
+router ospf 1 area 0 
+router ospf 1 area 0 interface Loopback0 
+router ospf 1 area 0 interface GigabitEthernet0/0/0/0 
+router ospf 1 area 0 interface GigabitEthernet0/0/0/1 
+router ospf 1 area 0 interface GigabitEthernet0/0/0/2 
+router ospf 1 
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#show ospf neighbor 
+Wed Jul  4 12:02:16.611 UTC
+
+* Indicates MADJ interface
+# Indicates Neighbor awaiting BFD session up
+
+Neighbors for OSPF 1
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+6.6.6.6         1     FULL/DR         00:00:35    20.6.19.1       GigabitEthernet0/0/0/0
+    Neighbor is up for 04:17:17
+10.19.20.2      1     FULL/BDR        00:00:31    10.19.20.2      GigabitEthernet0/0/0/2
+    Neighbor is up for 00:11:42
+
+Total neighbor count: 2
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh int brief 
+Wed Jul  4 12:02:24.910 UTC
+
+               Intf       Intf        LineP              Encap  MTU        BW
+               Name       State       State               Type (byte)    (Kbps)
+--------------------------------------------------------------------------------
+                Lo0          up          up           Loopback  1500          0
+                Nu0          up          up               Null  1500          0
+       Mg0/0/CPU0/0  admin-down  admin-down               ARPA  1514          0
+          Gi0/0/0/0          up          up               ARPA  1514    1000000
+          Gi0/0/0/1          up          up               ARPA  1514    1000000
+          Gi0/0/0/2          up          up               ARPA  1514    1000000
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh run interface gigabitEthernet 0/0/0/1
+Wed Jul  4 12:02:33.800 UTC
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+
+RP/0/0/CPU0:XR2#ping 20.5.19.2
+Wed Jul  4 12:02:42.649 UTC
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 20.5.19.2, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/1/1 ms
+RP/0/0/CPU0:XR2#ping 20.5.19.1
+Wed Jul  4 12:02:44.279 UTC
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 20.5.19.1, timeout is 2 seconds:
+.....
+Success rate is 0 percent (0/5)
+RP/0/0/CPU0:XR2#'
+                ^
+% Invalid input detected at '^' marker.
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#terminal length 0
+Wed Jul  4 12:11:09.384 UTC
+RP/0/0/CPU0:XR2#configure terminal
+Wed Jul  4 12:11:09.544 UTC
+RP/0/0/CPU0:XR2(config)#no logging console
+RP/0/0/CPU0:XR2(config)#commit
+Wed Jul  4 12:11:09.944 UTC
+RP/0/0/CPU0:XR2(config)#exit
+RP/0/0/CPU0:XR2#show running-config
+Wed Jul  4 12:11:10.264 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 11:50:45 2018 by cisco
+!
+hostname XR2
+ipv4 access-list LABELS
+ 10 permit ipv4 host 2.2.2.2 any
+ 20 permit ipv4 host 3.3.3.3 any
+ 30 permit ipv4 host 4.4.4.4 any
+ 40 permit ipv4 host 5.5.5.5 any
+ 50 permit ipv4 host 6.6.6.6 any
+ 60 permit ipv4 host 19.19.19.19 any
+!
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 10.19.20.1 255.255.255.252
+!
+router ospf 1
+ mpls ldp sync
+ area 0
+  interface Loopback0
+  !
+  interface GigabitEthernet0/0/0/0
+  !
+  interface GigabitEthernet0/0/0/1
+  !
+  interface GigabitEthernet0/0/0/2
+  !
+ !
+!
+mpls ldp
+ session protection
+ address-family ipv4
+  label
+   local
+    allocate for LABELS
+   !
+  !
+ !
+ interface GigabitEthernet0/0/0/0
+ !
+ interface GigabitEthernet0/0/0/1
+ !
+!
+mpls label range table 0 19000 19099
+end
+

@@ -1,0 +1,922 @@
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR1 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: 
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh run router bgp 
+Tue Jul 10 02:27:53.676 UTC
+router bgp 100
+ address-family ipv4 unicast
+ !
+ neighbor 2.2.2.2
+  remote-as 100
+  update-source Loopback0
+  address-family ipv4 unicast
+   next-hop-self
+  !
+ !
+ neighbor 10.19.20.2
+  remote-as 20
+  address-family ipv4 unicast
+   route-policy PASS in
+   route-policy PASS out
+  !
+ !
+!
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show bgp summary 
+Tue Jul 10 02:28:02.995 UTC
+BGP router identifier 19.19.19.19, local AS number 100
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0xe0000000   RD version: 8
+BGP main routing table version 8
+BGP NSR Initial initsync version 6 (Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               8          8          8          8           8           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+2.2.2.2           0   100       2       4        8    0    0 00:00:06          0
+10.19.20.2        0    20      31      30        8    0    0 00:27:52          1
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR1 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+IMPORTANT:  READ CAREFULLY
+Welcome to the Demo Version of Cisco IOS XRv (the "Software").
+The Software is subject to and governed by the terms and conditions
+of the End User License Agreement and the Supplemental End User
+License Agreement accompanying the product, made available at the
+time of your order, or posted on the Cisco website at
+www.cisco.com/go/terms (collectively, the "Agreement").
+As set forth more fully in the Agreement, use of the Software is
+strictly limited to internal use in a non-production environment
+solely for demonstration and evaluation purposes.  Downloading,
+installing, or using the Software constitutes acceptance of the
+Agreement, and you are binding yourself and the business entity
+that you represent to the Agreement.  If you do not agree to all
+of the terms of the Agreement, then Cisco is unwilling to license
+the Software to you and (a) you may not download, install or use the
+Software, and (b) you may return the Software as more fully set forth
+in the Agreement.
+
+
+Please login with any configured user/password, or cisco/cisco
+
+
+User Access Verification
+
+Username: cisco
+Password: 
+
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#conf t
+Tue Jul 10 02:46:04.701 UTC
+RP/0/0/CPU0:XR1(config)#vrf
+vrf  vrf-group  
+RP/0/0/CPU0:XR1(config)#exit      
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh run 
+Tue Jul 10 02:46:15.030 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Wed Jul  4 14:35:28 2018 by cisco
+!
+hostname XR1
+vrf VPN_A
+ address-family ipv4 unicast
+  import route-target
+   100:1
+  !
+  export route-target
+   100:1
+  !
+ !
+!
+ipv4 access-list LABELS
+ 10 permit ipv4 host 2.2.2.2 any
+ 20 permit ipv4 host 3.3.3.3 any
+ 30 permit ipv4 host 4.4.4.4 any
+ 40 permit ipv4 host 5.5.5.5 any
+ 50 permit ipv4 host 6.6.6.6 any
+ 60 permit ipv4 host 19.19.19.19 any
+!
+interface Loopback0
+ ipv4 address 19.19.19.19 255.255.255.255
+!
+interface MgmtEth0/0/CPU0/0
+ shutdown
+!
+interface GigabitEthernet0/0/0/0
+ ipv4 address 20.6.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/1
+ ipv4 address 20.5.19.2 255.255.255.252
+!
+interface GigabitEthernet0/0/0/2
+ ipv4 address 10.19.20.1 255.255.255.252
+!
+route-policy PASS
+  pass
+end-policy
+!
+router ospf 1
+ mpls ldp sync
+ area 0
+  interface Loopback0
+  !
+RP/0/0/CPU0:XR1#conf exclusive 
+Tue Jul 10 02:46:52.208 UTC
+
+Successfully entered exclusive mode with no retry needed.
+RP/0/0/CPU0:XR1(config)#interface gigabitEthernet 0/0/0/2
+RP/0/0/CPU0:XR1(config-if)#vrf VPN_A
+RP/0/0/CPU0:XR1(config-if)#?
+  address-family      AFI/SAFI configuration
+  apply-group         Apply configuration from a group
+  apply-group-append  Append apply-group configuration from a group
+  apply-group-remove  Remove a group from apply-group configuration
+  arp                 Configure Address Resolution Protocol
+  auto-ip-ring        Auto-IP-Ring interface configuration commands
+  bandwidth           Set the bandwidth of an interface
+  bundle              Link aggregation per-interface commands
+  carrier-delay       Set the carrier delay on an interface
+  cdp                 Enable CDP on an interface
+  clear               Clear the uncommitted configuration
+  commit              Commit the configuration changes to running
+  dampening           configure state dampening on the given interface
+  describe            Describe a command without taking real actions
+  description         Set description for this interface
+  do                  Run an exec command
+  dot1q               802.1Q VLAN configuration
+  duplex              Configure duplex operational mode
+  ethernet            Ethernet per-interface configuration commands
+  ethernet-services   Ethernet related services
+  exclude-group       Exclude apply-group configuration from a group
+  exclude-item        Negate a command or set its defaults
+  exit                Exit from this submode
+RP/0/0/CPU0:XR1(config-if)#
+RP/0/0/CPU0:XR1(config-if)#
+RP/0/0/CPU0:XR1(config-if)#
+RP/0/0/CPU0:XR1(config-if)#commit 
+Tue Jul 10 02:47:09.887 UTC
+
+% Failed to commit one or more configuration items during a pseudo-atomic operation. All changes made have been reverted. Please issue 'show configuration failed [inheritance]' from this session to view the errors
+RP/0/0/CPU0:XR1(config-if)#show configuration failed 
+Tue Jul 10 02:47:14.466 UTC
+!! SEMANTIC ERRORS: This configuration was rejected by 
+!! the system due to semantic errors. The individual 
+!! errors with each failed configuration command can be 
+!! found below.
+
+
+interface GigabitEthernet0/0/0/2
+ vrf VPN_A
+!!% 'RSI' detected the 'fatal' condition 'The interface's numbered and unnumbered IPv4/IPv6 addresses must be removed prior to changing or deleting the VRF'
+!
+end
+
+RP/0/0/CPU0:XR1(config-if)#
+RP/0/0/CPU0:XR1(config-if)#no ipv
+ipv4  ipv6  
+RP/0/0/CPU0:XR1(config-if)#no ipv4 address 
+RP/0/0/CPU0:XR1(config-if)#commit 
+Tue Jul 10 02:47:29.765 UTC
+RP/0/0/CPU0:XR1(config-if)#
+RP/0/0/CPU0:XR1(config-if)#
+RP/0/0/CPU0:XR1(config-if)#ipv4 address 10.19.20.1 255.255.255.252
+RP/0/0/CPU0:XR1(config-if)#commit 
+Tue Jul 10 02:47:38.275 UTC
+RP/0/0/CPU0:XR1(config-if)#end
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh run interface gigabitEthernet 0/0/0/2
+Tue Jul 10 02:47:47.084 UTC
+interface GigabitEthernet0/0/0/2
+ vrf VPN_A
+ ipv4 address 10.19.20.1 255.255.255.252
+!
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show ospfne
+                         ^
+% Invalid input detected at '^' marker.
+RP/0/0/CPU0:XR1#show ospf neighbor 
+Tue Jul 10 02:48:02.103 UTC
+
+* Indicates MADJ interface
+# Indicates Neighbor awaiting BFD session up
+
+Neighbors for OSPF 1
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+6.6.6.6         1     FULL/BDR        00:00:31    20.6.19.1       GigabitEthernet0/0/0/0
+    Neighbor is up for 00:47:54
+5.5.5.5         1     FULL/BDR        00:00:33    20.5.19.1       GigabitEthernet0/0/0/1
+    Neighbor is up for 00:40:18
+
+Total neighbor count: 2
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh run 
+Tue Jul 10 02:56:02.040 UTC
+Building configuration...
+!! IOS XR Configuration 6.0.1
+!! Last configuration change at Tue Jul 10 02:47:38 2018 by cisco
+!
+hostname XR1
+vrf VPN_A
+ address-family ipv4 unicast
+  import route-target
+   100:1
+  !
+  export route-target
+   100:1
+  !
+ !
+!
+ipv4 access-list LABELS
+ 10 permit ipv4 host 2.2.2.2 any
+ 20 permit ipv4 host 3.3.3.3 any
+ 30 permit ipv4 host 4.4.4.4 any
+ 40 permit ipv4 host 5.5.5.5 any
+ 50 permit ipv4 host 6.6.6.6 any
+ 60 permit ipv4 host 19.19.19.19 any
+!
+interface Loopback0
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show 
+% Incomplete command.
+RP/0/0/CPU0:XR1#conf t
+Tue Jul 10 02:56:22.519 UTC
+RP/0/0/CPU0:XR1(config)#router
+router  router-convergence  
+RP/0/0/CPU0:XR1(config)#router static vrf VPN_A ?      
+  address-family  VRF Static route address family configuration subcommands
+  <cr>            
+RP/0/0/CPU0:XR1(config)#router static vrf VPN_A address-family ipv
+ipv4  ipv6  
+RP/0/0/CPU0:XR1(config)#router static vrf VPN_A address-family ipv4 unicast 20$
+RP/0/0/CPU0:XR1(config)#comm
+commit  community-set  
+RP/0/0/CPU0:XR1(config)#commi
+Tue Jul 10 02:57:09.115 UTC
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#end
+RP/0/0/CPU0:XR1#ping vrf VPN_A 20.20.20.20
+Tue Jul 10 02:57:25.124 UTC
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 20.20.20.20, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/2/9 ms
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh run router bgp 
+Tue Jul 10 02:57:32.704 UTC
+router bgp 100
+ address-family ipv4 unicast
+ !
+ neighbor 2.2.2.2
+  remote-as 100
+  update-source Loopback0
+  address-family ipv4 unicast
+   next-hop-self
+  !
+ !
+ neighbor 10.19.20.2
+  remote-as 20
+  address-family ipv4 unicast
+   route-policy PASS in
+   route-policy PASS out
+  !
+ !
+!
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#conf t
+Tue Jul 10 02:57:36.634 UTC
+RP/0/0/CPU0:XR1(config)#exit         
+RP/0/0/CPU0:XR1#sh run formal router bgp 
+Tue Jul 10 02:57:47.623 UTC
+router bgp 100 
+router bgp 100 address-family ipv4 unicast 
+router bgp 100 neighbor 2.2.2.2 
+router bgp 100 neighbor 2.2.2.2 remote-as 100
+router bgp 100 neighbor 2.2.2.2 update-source Loopback0
+router bgp 100 neighbor 2.2.2.2 address-family ipv4 unicast 
+router bgp 100 neighbor 2.2.2.2 address-family ipv4 unicast next-hop-self
+router bgp 100 neighbor 10.19.20.2 
+router bgp 100 neighbor 10.19.20.2 remote-as 20
+router bgp 100 neighbor 10.19.20.2 address-family ipv4 unicast 
+router bgp 100 neighbor 10.19.20.2 address-family ipv4 unicast route-policy PASS in
+router bgp 100 neighbor 10.19.20.2 address-family ipv4 unicast route-policy PASS out
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#conf t
+Tue Jul 10 02:57:50.063 UTC
+RP/0/0/CPU0:XR1(config)#no router bgp 100 neighbor 10.19.20.2
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#router bgp 100
+RP/0/0/CPU0:XR1(config-bgp)#neighbor 2.2.2.2 address-family vpnv4 
+% Incomplete command.
+RP/0/0/CPU0:XR1(config-bgp)#neighbor 2.2.2.2 address-family vpnv4 ?
+  flowspec   Address Family modifier
+  multicast  Address Family modifier
+  unicast    Address Family modifier
+RP/0/0/CPU0:XR1(config-bgp)#address-family vpnv4                  
+% Incomplete command.
+RP/0/0/CPU0:XR1(config-bgp)#address-family vpnv4 ?
+  flowspec   Address Family modifier
+  multicast  Address Family modifier
+  unicast    Address Family modifier
+RP/0/0/CPU0:XR1(config-bgp)#address-family vpnv4 unicast ?
+  additional-paths       Additional paths configuration
+  advertise              Advertise BGP path
+  as-path-loopcheck      Configure AS Path loop checking
+  bgp                    BGP Commands
+  default-martian-check  Martian check default
+  dynamic-med            Dynamic MED Interval
+  label-security         BGP Label Security
+  nexthop                Nexthop
+  retain                 Accept/Retain specified bgp parameters
+  update                 BGP Update generation configuration
+  vrf                    Specify configurations to be inherited to all vrfs
+  weight                 Define or modify weight
+  <cr>                   
+RP/0/0/CPU0:XR1(config-bgp)#address-family vpnv4 unicast 
+RP/0/0/CPU0:XR1(config-bgp-af)#exit    
+RP/0/0/CPU0:XR1(config-bgp)#exit
+RP/0/0/CPU0:XR1(config)#comm
+commit  community-set  
+RP/0/0/CPU0:XR1(config)#commi
+Tue Jul 10 02:59:00.438 UTC
+RP/0/0/CPU0:XR1(config)#
+RP/0/0/CPU0:XR1(config)#end
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#sh run formal router bgp 
+Tue Jul 10 02:59:05.777 UTC
+router bgp 100 
+router bgp 100 address-family ipv4 unicast 
+router bgp 100 address-family vpnv4 unicast 
+router bgp 100 neighbor 2.2.2.2 
+router bgp 100 neighbor 2.2.2.2 remote-as 100
+router bgp 100 neighbor 2.2.2.2 update-source Loopback0
+router bgp 100 neighbor 2.2.2.2 address-family ipv4 unicast 
+router bgp 100 neighbor 2.2.2.2 address-family ipv4 unicast next-hop-self
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#conf t
+Tue Jul 10 02:59:18.367 UTC
+RP/0/0/CPU0:XR1(config)#router bgp 100 neighbor 2.2.2.2 address-family vpnv4 ?
+  flowspec   Address Family modifier
+  multicast  Address Family modifier
+  unicast    Address Family modifier
+RP/0/0/CPU0:XR1(config)#$2.2 address-family vpnv4 unicast ?ress-family vpnv4 un
+  accept-own                   Handle self-originated routes with Accept-Own com
+munity
+  accept-route-legacy-RT       Configure a neighbor to support legacy PE for RT-
+Constraint AF
+  advertise                    Per neighbor advertisement options
+  aigp                         Enable AIGP for this neighbor 
+  allowas-in                   Allow as-path with my AS present in it
+  as-override                  Override matching AS-number while sending update
+  default-originate            Originate default route to this neighbor
+  import                       Import options for neighbor address-family routes
+  long-lived-graceful-restart  Enable long lived graceful restart support
+  maximum-prefix               Maximum number of prefixes to accept from this pe
+er
+  multipath                    Paths from this neighbor is eligible for multipat
+h
+  next-hop-self                Disable the next hop calculation for this neighbo
+r
+  next-hop-unchanged           Do not overwrite next hop before advertising to e
+BGP peers
+  optimal-route-reflection     Configure optiomal-route-reflection for this neig
+hbor
+  remove-private-AS            Remove private AS number from outbound updates
+  route-policy                 Apply route policy to neighbor
+RP/0/0/CPU0:XR1(config)#router bgp 100 neighbor 2.2.2.2 address-family vpnv4 u$
+RP/0/0/CPU0:XR1(config-bgp-nbr-af)#
+RP/0/0/CPU0:XR1(config-bgp-nbr-af)#commit  
+Tue Jul 10 02:59:33.696 UTC
+RP/0/0/CPU0:XR1(config-bgp-nbr-af)#end
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show bgp v
+version  vpnv4  vpnv6  vrf
+vrf-db   
+RP/0/0/CPU0:XR1#show bgp vpnv4 unicast summary 
+Tue Jul 10 02:59:46.935 UTC
+BGP router identifier 19.19.19.19, local AS number 100
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0x0   RD version: 0
+BGP main routing table version 2
+BGP NSR Initial initsync version 1 (Not Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+BGP is operating in STANDALONE mode.
+
+
+Process       RcvTblVer   bRIB/RIB   LabelVer  ImportVer  SendTblVer  StandbyVer
+Speaker               2          2          2          2           2           0
+
+Neighbor        Spk    AS MsgRcvd MsgSent   TblVer  InQ OutQ  Up/Down  St/PfxRcd
+2.2.2.2           0   100      48      43        0    0    0 00:00:01          1
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show bgp vpnv4 unicast         
+Tue Jul 10 02:59:51.874 UTC
+BGP router identifier 19.19.19.19, local AS number 100
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0x0   RD version: 0
+BGP main routing table version 2
+BGP NSR Initial initsync version 1 (Not Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+Status codes: s suppressed, d damped, h history, * valid, > best
+              i - internal, r RIB-failure, S stale, N Nexthop-discard
+Origin codes: i - IGP, e - EGP, ? - incomplete
+   Network            Next Hop            Metric LocPrf Weight Path
+Route Distinguisher: 100:1
+*>i1.1.1.1/32         2.2.2.2                  0    100      0 i
+
+Processed 1 prefixes, 1 paths
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#ping vrf VPN_A 1.1.1.1
+Tue Jul 10 03:00:07.393 UTC
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 1.1.1.1, timeout is 2 seconds:
+UUUUU
+Success rate is 0 percent (0/5)
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show bgp vpnv4 unicast 
+Tue Jul 10 03:00:48.240 UTC
+BGP router identifier 19.19.19.19, local AS number 100
+BGP generic scan interval 60 secs
+Non-stop routing is enabled
+BGP table state: Active
+Table ID: 0x0   RD version: 0
+BGP main routing table version 2
+BGP NSR Initial initsync version 1 (Not Reached)
+BGP NSR/ISSU Sync-Group versions 0/0
+BGP scan interval 60 secs
+
+Status codes: s suppressed, d damped, h history, * valid, > best
+              i - internal, r RIB-failure, S stale, N Nexthop-discard
+Origin codes: i - IGP, e - EGP, ? - incomplete
+   Network            Next Hop            Metric LocPrf Weight Path
+Route Distinguisher: 100:1
+*>i1.1.1.1/32         2.2.2.2                  0    100      0 i
+
+Processed 1 prefixes, 1 paths
+RP/0/0/CPU0:XR1#sh run formal router bgp       
+Tue Jul 10 03:00:51.790 UTC
+router bgp 100 
+router bgp 100 address-family ipv4 unicast 
+router bgp 100 address-family vpnv4 unicast 
+router bgp 100 neighbor 2.2.2.2 
+router bgp 100 neighbor 2.2.2.2 remote-as 100
+router bgp 100 neighbor 2.2.2.2 update-source Loopback0
+router bgp 100 neighbor 2.2.2.2 address-family ipv4 unicast 
+router bgp 100 neighbor 2.2.2.2 address-family ipv4 unicast next-hop-self
+router bgp 100 neighbor 2.2.2.2 address-family vpnv4 unicast 
+
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#conf t
+Tue Jul 10 03:00:53.610 UTC
+RP/0/0/CPU0:XR1(config)#router bgp 100
+RP/0/0/CPU0:XR1(config-bgp)#address-family ipv4 ? 
+  flowspec   Address Family modifier
+  mdt        Address Family modifier
+  multicast  Address Family modifier
+  mvpn       Address Family modifier
+  rt-filter  Address Family modifier
+  tunnel     Address Family modifier
+  unicast    Address Family modifier
+RP/0/0/CPU0:XR1(config-bgp)#vrf ?                         
+  WORD  VRF name - maximum length 32 characters
+RP/0/0/CPU0:XR1(config-bgp)#vrf VPN_A ?
+  address-family       Enter Address Family command mode
+  bfd                  Configure BFD parameters
+  bgp                  BGP commands
+  default-information  Control distribution of default information
+  default-metric       default redistributed metric
+  mpls                 Enable mpls parameters
+  neighbor             Specify a neighbor router
+  rd                   route distinguisher
+  socket               set socket parameters
+  timers               Adjust routing timers
+  <cr>                 
+RP/0/0/CPU0:XR1(config-bgp)#vrf VPN_A address-family ?
+  ipv4  IPv4 Address Family
+  ipv6  IPv6 Address Family
+RP/0/0/CPU0:XR1(config-bgp)#vrf VPN_A address-family ipv4 ?
+  flowspec   Address Family modifier
+  multicast  Address Family modifier
+  mvpn       Address Family modifier
+  unicast    Address Family modifier
+RP/0/0/CPU0:XR1(config-bgp)#vrf VPN_A address-family ipv4 unicast ?
+  additional-paths          Additional paths configuration
+  advertise                 Advertise BGP path
+  aggregate-address         Configure BGP aggregate entries
+  allocate-label            Allocate label for selected prefixes
+  allow                     Allow sending default originate route to VPN neighbo
+r
+  as-path-loopcheck         Configure AS Path loop checking
+  bgp                       BGP Commands
+  distance                  Define an administrative distance
+  dynamic-med               Dynamic MED Interval
+  label                     Label-related configuration
+  maximum-paths             Forward packets over multiple paths
+  mvpn                      MVPN commands 
+  network                   Specify a network to announce via BGP
+  nexthop                   Nexthop
+  optimal-route-reflection  Configure optimal-route-reflection group
+  redistribute              Redistribute information from another routing protoc
+ol
+  route-target              Route target RIB installation
+  table-policy              Configure policy for installation of routes to RIB
+  weight                    Define or modify weight
+  <cr>                      
+RP/0/0/CPU0:XR1(config-bgp)#vrf VPN_A address-family ipv4 unicast 
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#?
+  additional-paths          Additional paths configuration
+  advertise                 Advertise BGP path
+  aggregate-address         Configure BGP aggregate entries
+  allocate-label            Allocate label for selected prefixes
+  allow                     Allow sending default originate route to VPN neighbo
+r
+  apply-group               Apply configuration from a group
+  apply-group-append        Append apply-group configuration from a group
+  apply-group-remove        Remove a group from apply-group configuration
+  as-path-loopcheck         Configure AS Path loop checking
+  bgp                       BGP Commands
+  clear                     Clear the uncommitted configuration
+  commit                    Commit the configuration changes to running
+  describe                  Describe a command without taking real actions
+  distance                  Define an administrative distance
+  do                        Run an exec command
+  dynamic-med               Dynamic MED Interval
+  exclude-group             Exclude apply-group configuration from a group
+  exclude-item              Negate a command or set its defaults
+  exit                      Exit from this submode
+  label                     Label-related configuration
+  maximum-paths             Forward packets over multiple paths
+  mvpn                      MVPN commands 
+  network                   Specify a network to announce via BGP
+  nexthop                   Nexthop
+  no                        Negate a command or set its defaults
+  optimal-route-reflection  Configure optimal-route-reflection group
+  pwd                       Commands used to reach current submode
+  redistribute              Redistribute information from another routing protoc
+ol
+  root                      Exit to the global configuration mode
+  route-target              Route target RIB installation
+  show                      Show contents of configuration
+  table-policy              Configure policy for installation of routes to RIB
+  weight                    Define or modify weight
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#ne
+network  nexthop  
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#network 20.20.20.20 ?
+  IPV4 subnet mask  IPv4 network and mask or masklength
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#network 20.20.20.20 ? 
+  IPV4 subnet mask  IPv4 network and mask or masklength
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#network 20.20.20.20/32 ?
+  backdoor      Specify a BGP backdoor route
+  route-policy  Route-policy to modify the attributes
+  <cr>          
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#network 20.20.20.20/32 
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#commit 
+Tue Jul 10 03:02:28.124 UTC
+
+% Failed to commit one or more configuration items during a pseudo-atomic operation. All changes made have been reverted. Please issue 'show configuration failed [inheritance]' from this session to view the errors
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#RP/0/0/CPU0:Jul 10 03:02:30.193 : bgp[1051]: %ROUTING-BGP_VRF-3-RD_INIT : Failed to get VRF RD Configuration for VRF: VPN_A ('sysdb' detected the 'warning' condition 'A SysDB client tried to access a nonexistent item or list an empty directory') 
+show configuration failed
+Tue Jul 10 03:02:34.563 UTC
+!! SEMANTIC ERRORS: This configuration was rejected by 
+!! the system due to semantic errors. The individual 
+!! errors with each failed configuration command can be 
+!! found below.
+
+
+router bgp 100
+ vrf VPN_A
+  address-family ipv4 unicast
+!!% 'BGP' detected the 'warning' condition 'The RD for the VRF must be present before an address family is activated'
+  !
+ !
+!
+end
+
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#
+RP/0/0/CPU0:XR1(config-bgp-vrf-af)#exit
+RP/0/0/CPU0:XR1(config-bgp-vrf)#exit
+RP/0/0/CPU0:XR1(config-bgp)#exit
+RP/0/0/CPU0:XR1(config)#vrf VPN_A 
+RP/0/0/CPU0:XR1(config-vrf)#? 
+  address-family          AFI/SAFI configuration
+  apply-group             Apply configuration from a group
+  apply-group-append      Append apply-group configuration from a group
+  apply-group-remove      Remove a group from apply-group configuration
+  clear                   Clear the uncommitted configuration
+  commit                  Commit the configuration changes to running
+  describe                Describe a command without taking real actions
+  description             A description for the VRF
+  do                      Run an exec command
+  exclude-group           Exclude apply-group configuration from a group
+  exclude-item            Negate a command or set its defaults
+  exit                    Exit from this submode
+  fallback-vrf            Fallback vrf for this VRF
+  mhost                   Multicast host stack options
+  mode                    VRF mode which determines the max prefix scale
+  no                      Negate a command or set its defaults
+  pwd                     Commands used to reach current submode
+  remote-route-filtering  Enable/Disable remote route filtering per VRF
+  root                    Exit to the global configuration mode
+  show                    Show contents of configuration
+  vpn                     VPN ID for the VRF
+RP/0/0/CPU0:XR1(config-vrf)#address-family ?
+  ipv4  IPv4 address family
+  ipv6  IPv6 address family
+RP/0/0/CPU0:XR1(config-vrf)#address-family ipv4 ?
+  flowspec   Flowspec sub address family
+  multicast  Multicast topology
+  unicast    Unicast sub address family
+RP/0/0/CPU0:XR1(config-vrf)#address-family ipv4 unicast ?
+  export   VRF export
+  import   VRF import
+  maximum  Set maximum prefix limit
+  <cr>     
+RP/0/0/CPU0:XR1(config-vrf)#address-family ipv4 unicast 
+RP/0/0/CPU0:XR1(config-vrf-af)#?
+  apply-group         Apply configuration from a group
+  apply-group-append  Append apply-group configuration from a group
+  apply-group-remove  Remove a group from apply-group configuration
+  clear               Clear the uncommitted configuration
+  commit              Commit the configuration changes to running
+  describe            Describe a command without taking real actions
+  do                  Run an exec command
+  exclude-group       Exclude apply-group configuration from a group
+  exclude-item        Negate a command or set its defaults
+  exit                Exit from this submode
+  export              VRF export
+  import              VRF import
+  maximum             Set maximum prefix limit
+  no                  Negate a command or set its defaults
+  pwd                 Commands used to reach current submode
+  root                Exit to the global configuration mode
+  show                Show contents of configuration
+RP/0/0/CPU0:XR1(config-vrf-af)#exit
+RP/0/0/CPU0:XR1(config-vrf)#exit
+RP/0/0/CPU0:XR1(config)#router bgp 100
+RP/0/0/CPU0:XR1(config-bgp)#vrf VPN_A
+RP/0/0/CPU0:XR1(config-bgp-vrf)#r
+rd  root  
+RP/0/0/CPU0:XR1(config-bgp-vrf)#rd 100:1
+RP/0/0/CPU0:XR1(config-bgp-vrf)#
+RP/0/0/CPU0:XR1(config-bgp-vrf)#commit 
+Tue Jul 10 03:04:05.217 UTC
+RP/0/0/CPU0:XR1(config-bgp-vrf)#end
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#show route 2.2.2.2
+Tue Jul 10 03:10:22.691 UTC
+
+Routing entry for 2.2.2.2/32
+  Known via "ospf 1", distance 110, metric 4, type intra area
+  Installed Jul 10 02:07:47.378 for 01:02:35
+  Routing Descriptor Blocks
+    20.6.19.1, from 2.2.2.2, via GigabitEthernet0/0/0/0
+      Route metric is 4
+    20.5.19.1, from 2.2.2.2, via GigabitEthernet0/0/0/1
+      Route metric is 4
+  No advertising protos. 
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+RP/0/0/CPU0:XR1#
+*
+* The idle timeout is soon to expire on this line
+*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XR1 con0/0/CPU0 is now available
+
+
+
+
+
+Press RETURN to get started.
+

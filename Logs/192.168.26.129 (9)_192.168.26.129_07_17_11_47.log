@@ -1,0 +1,35 @@
+
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#conf exclusive 
+Tue Jul 10 16:35:23.932 UTC
+
+Successfully entered exclusive mode with no retry needed.
+RP/0/0/CPU0:XR2(config)#route-policy PASS
+Tue Jul 10 16:35:24.922 UTC
+% WARNING: Policy object route-policy PASS' exists! Reconfiguring it via CLI will replace current definition. Use 'abort to cancel.
+RP/0/0/CPU0:XR2(config-rpl)#      pass
+RP/0/0/CPU0:XR2(config-rpl)#     end-policy
+RP/0/0/CPU0:XR2(config)#
+RP/0/0/CPU0:XR2(config)#exit
+Uncommitted changes found, commit them before exiting(yes/no/cancel)? [cancel]:
+RP/0/0/CPU0:XR2(config)#exit
+Uncommitted changes found, commit them before exiting(yes/no/cancel)? [cancel]:no
+RP/0/0/CPU0:XR2#
+RP/0/0/CPU0:XR2#sh run for 
+formal  forward-protocol  
+RP/0/0/CPU0:XR2#sh run formal router bgp
+Tue Jul 10 16:35:59.950 UTC
+router bgp 1 
+router bgp 1 address-family ipv4 unicast 
+router bgp 1 address-family ipv4 unicast network 20.20.20.20/32
+router bgp 1 neighbor 10.19.20.1 
+router bgp 1 neighbor 10.19.20.1 remote-as 100
+router bgp 1 neighbor 10.19.20.1 address-family ipv4 unicast 
+router bgp 1 neighbor 10.19.20.1 address-family ipv4 unicast route-policy PASS in
+router bgp 1 neighbor 10.19.20.1 address-family ipv4 unicast route-policy PASS out
+
+RP/0/0/CPU0:XR2#

@@ -1,0 +1,492 @@
+Connected to Dynamips VM "R1" (ID 1, type c7200) - Console port
+Press ENTER to get the prompt.
+            Interpacket delay for RIP updates
+  passive-interface       Suppress routing updates on an interface
+  redistribute            Redistribute information from another routing
+                          protocol
+  timers                  Adjust routing timers
+  traffic-share           How to compute traffic share over alternate paths
+  validate-update-source  Perform sanity checks against source address of
+                          routing updates
+  version                 Set routing protocol version
+
+R1(config-router)#network 1.1.1.1 
+R1(config-router)#
+R1(config-router)#
+R1(config-router)#
+R1(config-router)#add
+R1(config-router)#address-family v
+R1(config-router)#vr              
+R1(config-router)#vrf
+R1(config-router)#add
+R1(config-router)#address-family ip
+R1(config-router)#address-family ipv4 vr
+R1(config-router)#address-family ipv4 vrf VPN_A ?
+  <cr>
+
+R1(config-router)#address-family ipv4 vrf VPN_A 
+% VRF VPN_A does not exist or does not have a RD
+R1(config-router)#exit
+R1(config)#
+R1(config)#exit
+R1#
+R1#sh run | 
+*Jul 10 08:57:47.770: %SYS-5-CONFIG_I: Configured from console by consoles r 
+R1#sh run | s r r
+R1#sh run | s r r
+router rip
+ version 2
+ network 1.0.0.0
+ network 10.0.0.0
+ no auto-summary
+R1#
+R1#
+R1#
+R1#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+R1>en
+R1#
+R1#sh ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/32 is subnetted, 1 subnets
+C        1.1.1.1 is directly connected, Loopback0
+      10.0.0.0/8 is variably subnetted, 3 subnets, 2 masks
+C        10.1.2.0/30 is directly connected, FastEthernet0/0
+L        10.1.2.1/32 is directly connected, FastEthernet0/0
+R        10.19.20.0/30 [120/1] via 10.1.2.2, 00:00:05, FastEthernet0/0
+R1#
+R1#
+R1#
+R1#
+R1#sh ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/32 is subnetted, 1 subnets
+C        1.1.1.1 is directly connected, Loopback0
+      10.0.0.0/8 is variably subnetted, 3 subnets, 2 masks
+C        10.1.2.0/30 is directly connected, FastEthernet0/0
+L        10.1.2.1/32 is directly connected, FastEthernet0/0
+R        10.19.20.0/30 [120/1] via 10.1.2.2, 00:00:17, FastEthernet0/0
+      20.0.0.0/32 is subnetted, 1 subnets
+R        20.20.20.20 [120/2] via 10.1.2.2, 00:00:02, FastEthernet0/0
+R1#
+R1#
+R1#wr
+Building configuration...
+[OK]
+R1#
+R1#
+R1#vutn1k0n0opn
+    ^
+% Invalid input detected at '^' marker.
+
+R1#
+R1#terminal length 0
+R1#write
+Building configuration...
+[OK]
+R1#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+R1>
+R1>en
+R1#
+R1#
+R1#
+R1#sh
+R1#show route
+% Ambiguous command:  "show route"
+R1#sh ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/32 is subnetted, 1 subnets
+C        1.1.1.1 is directly connected, Loopback0
+      10.0.0.0/8 is variably subnetted, 3 subnets, 2 masks
+C        10.1.2.0/30 is directly connected, FastEthernet0/0
+L        10.1.2.1/32 is directly connected, FastEthernet0/0
+R        10.19.20.0/30 [120/1] via 10.1.2.2, 00:00:13, FastEthernet0/0
+      20.0.0.0/32 is subnetted, 1 subnets
+R        20.20.20.20 [120/2] via 10.1.2.2, 00:00:13, FastEthernet0/0
+R1#
+R1#
+R1#trac
+R1#           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+R1>
+R1>
+R1>en
+R1#
+R1#
+R1#ping 20.20.20.20 so lo0 
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 20.20.20.20, timeout is 2 seconds:
+Packet sent with a source address of 1.1.1.1 
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 36/46/56 ms
+R1#
+R1#
+R1#
+R1#
+R1#sh ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/32 is subnetted, 1 subnets
+C        1.1.1.1 is directly connected, Loopback0
+      10.0.0.0/8 is variably subnetted, 3 subnets, 2 masks
+C        10.1.2.0/30 is directly connected, FastEthernet0/0
+L        10.1.2.1/32 is directly connected, FastEthernet0/0
+R        10.19.20.0/30 [120/1] via 10.1.2.2, 00:00:09, FastEthernet0/0
+      20.0.0.0/32 is subnetted, 1 subnets
+R        20.20.20.20 [120/2] via 10.1.2.2, 00:00:09, FastEthernet0/0
+R1#
+R1#
+R1#
+R1#
+R1#       
+R1#
+R1#
+R1#
+R1#terminal length 0
+R1#write
+Building configuration...
+[OK]
+R1#quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R1 con0 is now available
+
+
+
+
+
+Press RETURN to get started.
+
+
+R1>
+R1>en
+R1#
+R1#
+R1#sh run | s r e
+R1#
+R1#
+R1#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+R1(config)#
+R1(config)#no router rip
+R1(config)#
+R1(config)#
+R1(config)#router ei
+R1(config)#router eigrp 1
+R1(config-router)#
+R1(config-router)#net
+R1(config-router)#network 10.1.2.0 ?
+  A.B.C.D  EIGRP wild card bits
+  <cr>
+
+R1(config-router)#network 10.1.2.0 0.0.0.3 ?
+  <cr>
+
+R1(config-router)#network 10.1.2.0 0.0.0.3 
+R1(config-router)#
+R1(config-router)#
+R1(config-router)#netwo
+R1(config-router)#network 1.1.1.1 0.0.0.0. 
+                                         ^
+% Invalid input detected at '^' marker.
+
+R1(config-router)#network 1.1.1.1 0.0.0.0 
+R1(config-router)#
+R1(config-router)#
+R1(config-router)#no
+R1(config-router)#no au
+R1(config-router)#no auto-summary 
+R1(config-router)#
+R1(config-router)#
+R1(config-router)#end
+R1#
+R1#
+R1#sh run 
+*Jul 10 09:51:21.890: %SYS-5-CONFIG_I: Configured from console by consoleip 
+R1#sh ip ei  
+R1#sh ip eigrp ne
+R1#sh ip eigrp neighbors 
+EIGRP-IPv4 Neighbors for AS(1)
+R1#
+R1#
+R1#
+R1#
+R1#sh ip eigrp neighbors 
+EIGRP-IPv4 Neighbors for AS(1)
+R1#
+R1#
+R1#sh run | s r e
+router eigrp 1
+ network 1.1.1.1 0.0.0.0
+ network 10.1.2.0 0.0.0.3
+R1#
+R1#
+R1#ping 10.1.2.1
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.1.2.1, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 4/8/12 ms
+R1#ping 10.1.2.2
+Type escape sequence to abort.
+Sending 5, 100-byte ICMP Echos to 10.1.2.2, timeout is 2 seconds:
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 48/49/52 ms
+R1#

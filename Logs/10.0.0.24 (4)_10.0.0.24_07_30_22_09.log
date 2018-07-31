@@ -1,0 +1,52 @@
+
+CSR5>en
+CSR5#
+CSR5#
+CSR5#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+CSR5(config)#vrf definition VPN_C
+CSR5(config-vrf)# rd 100:3
+CSR5(config-vrf)# route-target export 100:3
+CSR5(config-vrf)# route-target import 100:3
+CSR5(config-vrf)# !
+CSR5(config-vrf)# address-family ipv4
+CSR5(config-vrf-af)# exit-address-family
+CSR5(config-vrf)#!
+CSR5(config-vrf)#!
+CSR5(config-vrf)#interface GigabitEthernet3
+CSR5(config-if)#vrf forwarding VPN_C
+% Interface GigabitEthernet3 IPv4 disabled and address(es) removed due to enabling VRF VPN_C
+CSR5(config-if)# ip address 10.5.8.5 255.255.255.0
+CSR5(config-if)#!
+CSR5(config-if)#router bgp 100
+CSR5(config-router)# no bgp default ipv4-unicast
+CSR5(config-router)# neighbor 2.2.2.2 remote-as 100
+CSR5(config-router)# neighbor 2.2.2.2 update-source Loopback0
+CSR5(config-router)# !
+CSR5(config-router)# address-family vpnv4
+CSR5(config-router-af)#  neighbor 2.2.2.2 activate
+CSR5(config-router-af)#  neighbor 2.2.2.2 send-community extended
+CSR5(config-router-af)#exit-address-family
+CSR5(config-router)#
+CSR5(config-router)#
+*Jul 31 02:09:49.644: %OSPF-5-ADJCHG: Process 1, Nbr 8.8.8.8 on GigabitEthernet3 from FULL to DOWN, Neighbor Down: Interface down or detached
+*Jul 31 02:09:50.344: %BGP-5-ADJCHANGE: neighbor 2.2.2.2 Up 
+CSR5(config-router)#
+CSR5(config-router)#interface GigabitEthernet3
+CSR5(config-if)#ip address 10.5.8.1 255.255.255.252
+CSR5(config-if)#router bgp 100
+CSR5(config-router)#
+CSR5(config-router)#address-family ipv4 vrf VPN_C
+CSR5(config-router-af)# network 8.8.8.8 mask 255.255.255.255
+CSR5(config-router-af)#exit-address-family
+CSR5(config-router)#! !
+CSR5(config-router)#ip route vrf VPN_C 8.8.8.8 255.255.255.255 10.5.8.2
+CSR5(config)#
+CSR5(config)#en
+% Incomplete command.
+
+CSR5(config)#end
+CSR5#w
+*Jul 31 02:12:25.135: %SYS-5-CONFIG_I: Configured from console by consoler
+Building configuration...
+[OK]
