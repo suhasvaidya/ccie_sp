@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="INE - CCIE v5_Full_Topology_CSR1000v" id="53417423-0272-4c3d-9eb2-90e675fa3aee" version="1" scripttimeout="300" lock="0" author="Calin Chiorean">
+  <description>INE's CCIE R&amp;amp;amp;S v5 Topology Diagrams; Initial Configurations (http://labs.ine.com/workbook/view/rs-v5-workbook/task/ccie-r-s-v5-topology-diagrams-initial-configurations-MTk3Ng%3D%3D) adapted to be used in Eve-ng using CSR1000v and vIOS-L2 images.
+
+The Real Cisco switches are replaced with vIOS-L2.
+This caused the interfaces to change as follows:
+Real Switches - vIOS-L2
+Fa0/19 - Gi0/2
+Fa0/20 - Gi0/3
+Fa0/21 - Gi1/0
+Fa0/22 - Gi1/1
+Fa0/23 - Gi1/2
+Fa0/24 - Gi1/3
+
+The official INE initial configuration files where adapted to fit the above interface changes. 
+If you don't have the modified INE initial configuration files for this topology, please visit https://firstdigest.com/</description>
+  <topology>
+    <nodes>
+      <node id="1" name="R1" type="qemu" template="csr1000v" image="csr1000v-universalk9.03.16.00.S.155-3.S5" console="telnet" cpu="1" cpulimit="0" ram="3072" ethernet="4" uuid="98df94d8-5244-4294-876c-1de4925b20cc" delay="0" icon="CSRv1000.png" config="0" left="216" top="192">
+        <interface id="0" name="Gi1" type="ethernet" network_id="1"/>
+      </node>
+      <node id="2" name="R2" type="qemu" template="csr1000v" image="csr1000v-universalk9.03.16.00.S.155-3.S5" console="telnet" cpu="1" cpulimit="0" ram="3072" ethernet="4" uuid="d1623046-b4e4-4765-871b-9b05bebcfa94" delay="0" icon="CSRv1000.png" config="0" left="336" top="192">
+        <interface id="0" name="Gi1" type="ethernet" network_id="1"/>
+      </node>
+      <node id="3" name="R3" type="qemu" template="csr1000v" image="csr1000v-universalk9.03.16.00.S.155-3.S5" console="telnet" cpu="1" cpulimit="0" ram="3072" ethernet="4" uuid="b956550d-e749-4017-a154-22523fd86cd8" delay="0" icon="CSRv1000.png" config="0" left="453" top="192">
+        <interface id="0" name="Gi1" type="ethernet" network_id="1"/>
+      </node>
+      <node id="4" name="R4" type="qemu" template="csr1000v" image="csr1000v-universalk9.03.16.00.S.155-3.S5" console="telnet" cpu="1" cpulimit="0" ram="3072" ethernet="4" uuid="90b2270f-4851-49ae-a92a-77e91c807b35" delay="0" icon="CSRv1000.png" config="0" left="576" top="192">
+        <interface id="0" name="Gi1" type="ethernet" network_id="1"/>
+      </node>
+      <node id="5" name="R5" type="qemu" template="csr1000v" image="csr1000v-universalk9.03.16.00.S.155-3.S5" console="telnet" cpu="1" cpulimit="0" ram="3072" ethernet="4" uuid="593b7b80-bbdd-4b15-880a-2fecb309c0d4" delay="0" icon="CSRv1000.png" config="0" left="693" top="192">
+        <interface id="0" name="Gi1" type="ethernet" network_id="1"/>
+      </node>
+      <node id="6" name="R6" type="qemu" template="csr1000v" image="csr1000v-universalk9.03.16.00.S.155-3.S5" console="telnet" cpu="1" cpulimit="0" ram="3072" ethernet="4" uuid="9e669d53-b03b-42a3-8c12-8c5900c39b58" delay="0" icon="CSRv1000.png" config="0" left="813" top="192">
+        <interface id="0" name="Gi1" type="ethernet" network_id="1"/>
+      </node>
+      <node id="7" name="R7" type="qemu" template="csr1000v" image="csr1000v-universalk9.03.16.00.S.155-3.S5" console="telnet" cpu="1" cpulimit="0" ram="3072" ethernet="4" uuid="7f8e39f4-748f-4160-bb7b-9faaf480b2ba" delay="0" icon="CSRv1000.png" config="0" left="933" top="192">
+        <interface id="0" name="Gi1" type="ethernet" network_id="1"/>
+      </node>
+      <node id="8" name="R8" type="qemu" template="csr1000v" image="csr1000v-universalk9.03.16.00.S.155-3.S5" console="telnet" cpu="1" cpulimit="0" ram="3072" ethernet="4" uuid="17b47d9e-9bd3-4943-9b57-545c29bf5440" delay="0" icon="CSRv1000.png" config="0" left="1053" top="192">
+        <interface id="0" name="Gi1" type="ethernet" network_id="1"/>
+      </node>
+      <node id="9" name="R9" type="qemu" template="csr1000v" image="csr1000v-universalk9.03.16.00.S.155-3.S5" console="telnet" cpu="1" cpulimit="0" ram="3072" ethernet="4" uuid="ccd31651-2ded-48d5-b655-9ad3a8f2a824" delay="0" icon="CSRv1000.png" config="0" left="1179" top="192">
+        <interface id="0" name="Gi1" type="ethernet" network_id="1"/>
+      </node>
+      <node id="10" name="R10" type="qemu" template="csr1000v" image="csr1000v-universalk9.03.16.00.S.155-3.S5" console="telnet" cpu="1" cpulimit="0" ram="3072" ethernet="4" uuid="ce62e337-dc24-4748-bf19-302c4b5e22c0" delay="0" icon="CSRv1000.png" config="0" left="1293" top="192">
+        <interface id="0" name="Gi1" type="ethernet" network_id="1"/>
+      </node>
+      <node id="11" name="SW1" type="qemu" template="viosl2" image="" console="telnet" cpu="1" cpulimit="0" ram="768" ethernet="8" uuid="110debe8-b7e1-4eef-9db2-802f7c257731" delay="0" icon="Switch L3.png" config="0" left="753" top="579">
+        <interface id="0" name="Gi0/0" type="ethernet" network_id="1"/>
+        <interface id="2" name="Gi0/2" type="ethernet" network_id="2"/>
+        <interface id="3" name="Gi0/3" type="ethernet" network_id="3"/>
+        <interface id="4" name="Gi1/0" type="ethernet" network_id="6"/>
+        <interface id="5" name="Gi1/1" type="ethernet" network_id="7"/>
+        <interface id="6" name="Gi1/2" type="ethernet" network_id="10"/>
+        <interface id="7" name="Gi1/3" type="ethernet" network_id="11"/>
+      </node>
+      <node id="12" name="SW2" type="qemu" template="viosl2" image="" console="telnet" cpu="1" cpulimit="0" ram="768" ethernet="8" uuid="d467e7d4-0f12-41bc-9ebb-17958c9674fc" delay="0" icon="Switch L3.png" config="0" left="1077" top="579">
+        <interface id="2" name="Gi0/2" type="ethernet" network_id="4"/>
+        <interface id="3" name="Gi0/3" type="ethernet" network_id="5"/>
+        <interface id="4" name="Gi1/0" type="ethernet" network_id="8"/>
+        <interface id="5" name="Gi1/1" type="ethernet" network_id="9"/>
+        <interface id="6" name="Gi1/2" type="ethernet" network_id="10"/>
+        <interface id="7" name="Gi1/3" type="ethernet" network_id="11"/>
+      </node>
+      <node id="13" name="SW3" type="qemu" template="viosl2" image="" console="telnet" cpu="1" cpulimit="0" ram="768" ethernet="8" uuid="9cd70767-a7ce-49ba-bc1c-060bc351ec7c" delay="0" icon="Switch L3.png" config="0" left="753" top="786">
+        <interface id="2" name="Gi0/2" type="ethernet" network_id="2"/>
+        <interface id="3" name="Gi0/3" type="ethernet" network_id="3"/>
+        <interface id="4" name="Gi1/0" type="ethernet" network_id="8"/>
+        <interface id="5" name="Gi1/1" type="ethernet" network_id="9"/>
+        <interface id="6" name="Gi1/2" type="ethernet" network_id="12"/>
+        <interface id="7" name="Gi1/3" type="ethernet" network_id="13"/>
+      </node>
+      <node id="14" name="SW4" type="qemu" template="viosl2" image="" console="telnet" cpu="1" cpulimit="0" ram="768" ethernet="8" uuid="c75e824d-7555-447d-a3a0-96b812a1278f" delay="0" icon="Switch L3.png" config="0" left="1077" top="786">
+        <interface id="2" name="Gi0/2" type="ethernet" network_id="4"/>
+        <interface id="3" name="Gi0/3" type="ethernet" network_id="5"/>
+        <interface id="4" name="Gi1/0" type="ethernet" network_id="6"/>
+        <interface id="5" name="Gi1/1" type="ethernet" network_id="7"/>
+        <interface id="6" name="Gi1/2" type="ethernet" network_id="12"/>
+        <interface id="7" name="Gi1/3" type="ethernet" network_id="13"/>
+      </node>
+    </nodes>
+    <networks>
+      <network id="1" type="bridge" name="Net" left="751" top="462" visibility="1"/>
+      <network id="2" type="bridge" name="Net-SW1iface_2" left="813" top="619" visibility="0"/>
+      <network id="3" type="bridge" name="Net-SW1iface_3" left="813" top="619" visibility="0"/>
+      <network id="4" type="bridge" name="Net-SW2iface_2" left="1041" top="619" visibility="0"/>
+      <network id="5" type="bridge" name="Net-SW2iface_3" left="1041" top="619" visibility="0"/>
+      <network id="6" type="bridge" name="Net-SW1iface_4" left="813" top="619" visibility="0"/>
+      <network id="7" type="bridge" name="Net-SW1iface_5" left="813" top="619" visibility="0"/>
+      <network id="8" type="bridge" name="Net-SW3iface_4" left="813" top="784" visibility="0"/>
+      <network id="9" type="bridge" name="Net-SW3iface_5" left="813" top="784" visibility="0"/>
+      <network id="10" type="bridge" name="Net-SW1iface_6" left="813" top="619" visibility="0"/>
+      <network id="11" type="bridge" name="Net-SW1iface_7" left="813" top="619" visibility="0"/>
+      <network id="12" type="bridge" name="Net-SW3iface_6" left="816" top="826" visibility="0"/>
+      <network id="13" type="bridge" name="Net-SW3iface_7" left="816" top="826" visibility="0"/>
+    </networks>
+  </topology>
+  <objects>
+    <textobjects>
+      <textobject id="1" name="txt 1" type="text">
+        <data>PGRpdiBpZD0iY3VzdG9tVGV4dDEiIGNsYXNzPSJjdXN0b21TaGFwZSBjdXN0b21UZXh0IGNvbnRleHQtbWVudSBqdGstZHJhZ2dhYmxlIGRyYWdzdG9wcGVkIHVpLXJlc2l6YWJsZS1hdXRvaGlkZSIgZGF0YS1wYXRoPSIxIiBzdHlsZT0iZGlzcGxheTogaW5saW5lOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDE1M3B4OyB0b3A6IDQ3NHB4OyBjdXJzb3I6IG1vdmU7IHotaW5kZXg6IDEwMDE7IGhlaWdodDogMjUycHg7IHdpZHRoOiBhdXRvOyI+PHAgYWxpZ249ImNlbnRlciIgc3R5bGU9InZlcnRpY2FsLWFsaWduOiB0b3A7IGNvbG9yOiByZ2IoMCwgMCwgMCk7IGJhY2tncm91bmQtY29sb3I6IHJnYmEoMjU1LCAyNTUsIDI1NSwgMCk7IGZvbnQtc2l6ZTogMTcuMzc5M3B4OyBmb250LXdlaWdodDogbm9ybWFsOyIgY29udGVudGVkaXRhYmxlPSJmYWxzZSIgY2xhc3M9IiI+SW50ZXJmYWNlIG1hcHBpbmcgZnJvbSB0aGUgb3JpZ2luYWwgSU5FPGJyPmluaXRpYWwgY29uZmlndXJhdGlvbiBmaWxlczo8YnI+PGJyPlJlYWwgU3dpdGNoZXMgLSB2SU9TLUwyPGJyPkZhMC8xOSAtIEdpMC8yPGJyPkZhMC8yMCAtIEdpMC8zPGJyPkZhMC8yMSAtIEdpMS8wPGJyPkZhMC8yMiAtIEdpMS8xPGJyPkZhMC8yMyAtIEdpMS8yPGJyPkZhMC8yNCAtIEdpMS8zICAgICAgICA8L3A+PC9kaXY+</data>
+      </textobject>
+    </textobjects>
+  </objects>
+</lab>
